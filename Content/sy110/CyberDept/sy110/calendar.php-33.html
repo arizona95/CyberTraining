@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "c04e06e2d5c9cbc48d3f9d00caab124c1e7989db5e363dbe949e5d06a1fdf852";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Cyber Attack
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'><font color='black'><b>30 - Cyber Attack</b></font></a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+  <title>BRAND: Cyber Attack</title>
+
+  </head>
+  <body>
+    <div class="header">
+
+      <div class="noScreen">
+      <br><br><br>
+        <h1>Cyber Attack</h1>
+      </div>
+    </div>
+<div class="learnObjs">
+      <h2>Learning Outcomes <!--SPAN class="samePageLink">[<A href="#top">Top</A>]</SPAN--></h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Explain what a DoS attack and DDoS attack are and how they differ from each other.</li>
+        <li>Explain the difference between a brute force, dictionary, and rainbow table attack as it pertains to password cracking.</li>
+     <li>Explain the process of escalating privileges on a computer system.</li>
+      </ul>      
+    </div>
+    <br>
+    <p>
+      This lesson looks at <em>network attack</em>.  It's not encyclopedic, i.e. it does not begin to attempt to explore all
+      the different ways attacks might occur.  However, it does discuss the kinds of attacks you'll be carrying out in your
+      network attack lab. The basic scenario we're considering is that you, the attacker, are outside the network you want to attack.  More precisely, the hosts you can execute commands on are outside your target's network.  We will focus on attacks on the <em>infrastructure</em>, not the <em>people</em>, that comprise your target.  Attacks on the people on your target's network often involves the use of tricks like phishing or malicious websites to install malware (as shown in the previous lesson).  Of course there's also the possibility of physical attacks on both infrastructure and people, and of "social engineering", which involves manipulating or tricking people, like a con man would do.  These are important for security, but outside the scope of this course, which focuses on the <em>technical</em> foundations of cyber security.  To sum up, we'll talk about breaking in, but it's good to keep in mind that it's often easier to trick people into simply letting you in.
+    </p>
+  
+  <p><h2>Mandatory Reading: <a href="../../2019/09/26/763545811/how-the-u-s-hacked-isis.html">Article from NPR.org, "How The U.S. Hacked ISIS"</a></h2>
+
+
+    <p>
+      <h2>Attacking availability: Denial of Service and Distributed Denial of Service Attacks</h2>
+      Suppose you're an attacker and your goal is to bring down a particular service provided by your target system.  Clearly, <em>availability</em> is the IA pillar you intend to violate. An attack that accomplishes this is called a <em>Denial of Service</em> (DoS) attack.  Typically a denial of service attack involves either trying to crash the server that provides the service, or to keep it so busy doing spurious work for you, the attacker, that it has no time (or memory space) left to do its real work.
+      <p>
+  A DoS attack does not need to involve network services.  For example, if there is a host that several people work on, and we (as attackers) have an account on the host, we could make the host essentially unavailable to the other users in the following way. There is a limit on the number of processes (executing instances of programs) a host can have running at the same time (in the thousands).  Once that limit is reached, no new processes can be created until existing processes start terminating.  You can write a program called a <em>fork bomb</em> that does nothing but spawn new processes, which spawn new processes, etc.  Eventually the host's process limit is reached and no new processes can be created.  This stops other users from doing almost anything.
+      </p>
+      <p>
+  Normally, however, a DoS attack targets a network service. If there's a bug in the server software, i.e. a bug in the program that receives and processes the network traffic that constitutes requests for the service, the attacker might find a way to crash the server by sending some badly formatted request that exploits that bug.  However, even if the server program is bug-free, an attacker can still keep it too busy with spurious work to do real work.  For example, there's a limit on the number of TCP connections a host can have at any given moment. So you might target a web-server by sending a whole bunch of netcat (nc) requests to connect to that web server that never actually send their HTTP GET requests, but instead just sit there.  The server then has all these pointless connections that leave it unavailable for legitimate connection requests.
+      </p>
+      <p>
+  DoS attacks that simply flood servers with spurious requests in order to keep them too busy to handle real requests are more effective when, instead of one host sending spurious requests, there are many hosts sending spurious requests. This is called a <em>Distributed Denial of Service</em> (DDoS) attack.   We could pull this off pretty easily on courses.cyber.usna.edu, for example.  Recall that the URL
+  <pre>http://courses.cyber.usna.edu/SY110/ex0.jsx?</pre> runs a server-side script that produces a page with 1000 "GO NAVY"s and sends the page back to the browser.  Now imagine all 500+ SY110 students entered this in their browser URL bars and started clicking refresh over and over.  Courses.cyber.usna.edu would be so busy dealing with this, that none of the faculty could access the website.  <em>That</em> would be a DDoS attack. Worse still would be a script that you all could run, that issued that same request over and over again.  Then you wouldn't be limited by your patience for clicking "refresh".
+      
+      <p>
+  A DoS attack is a pretty blunt instrument.  Everyone knows it's happening, it doesn't really help with infiltrating a network, i.e. it doesn't really help us get in to accomplish other evil goals.
+      </p>
+    
+
+
+
+    <p>
+      <h2>Infiltration</h2>
+      <img style="float: right; clear: right; height: 20em; " src="http://courses.cyber.usna.edu/SY110/resources/09.diagram/conceptualHostV2.png">
+      We're going to assume the same scenario that we discussed in the "Phases of a Cyber Attack" lecture: namely that we (as attackers) have as an evil goal to steal a file <code>secret.txt</code> in the account of user <code>timvic</code> on a target host within a network outside of our own network.  There is an "other host" within the target network that is a web server.  The network has a firewall that only lets in port 80 traffic. Both hosts have ssh servers running on them.  The diagram to the right illustrates this scenario.
+      <p>
+  <img style="float: left; height: 20em; padding-right: 2em;" src="http://courses.cyber.usna.edu/SY110/resources/09.diagram/conceptualHostV3-0.png">
+  We can't accomplish our goal directly, because firewalls and password authentication stand in our way, so infiltration will have to proceed in several steps.
+  <ol>
+    <li>
+      Our only way to gain a foothold into this network is by sending port 80 traffic to the "other" host. We'd like to exploit some vulnerability in the web server to open up a shell on the "other" host. How such an exploit might be possible is discussed in section <em>Remote code execution: Buffer overflow attacks</em>.
+    </li>
+    <li>
+      Once we have a shell on the "other" host, we'd like to use it to initiate an ssh connection to the target host &mdash; since ssh from the "other" host is allowed because the traffic is already inside the network. Of course this requires either exploiting a vulnerability in the target host's ssh server, or finding/guessing a valid username and password to login with. How we might come up with valid usernames and passwords is discussed in section <em>Getting a Username and Password</em>.
+    </li>
+    <li>
+      At this point, we have a shell on the target system. However, we can only access the file <code>secret.txt</code> if we are logged on as user <code>timvic</code> (the file's owner) or the system administrator.  In other words, we need "privileged" access. So, the last thing we need to do is <em>escalate privileges</em> so that we can access the file. How we might be able to accomplish that is discussed in section <em>Escalating privileges</em>.
+    </li>
+  </ol>
+      
+      The diagram above illustrates the three steps.  A dot at a location in the diagram represents being able to execute commands "at" the location with the associated permissions (privileged [elevated], non-privileged [normal user]).
+    
+
+
+
+    <p>
+      <h2>Remote code execution: Buffer overflow attacks</h2>
+      This section is devoted to how vulnerabilities in a web server might be exploited to allow an outside attacker to gain access
+      to (i.e. execute code on) the web server host. The real goal is to execute code that ends up giving the
+      attacker a shell on the web server host. Although we're concentrating on the scenario of a web server, the same idea applies to other kinds of servers that listen to ports and respond to data delivered to those ports.
+
+      <p>
+  <div class="annotation">
+    If you peruse <a href="../../security/vulnerabilities_24.html" target="_blank">https://httpd.apache.org/security/vulnerabilities_24.html</a> you'll find descriptions of the kinds of bugs that have been uncovered in the Apache web server.  If you scroll down the page looking for bugs marked <strong>important</strong>, you'll see that bugs have been uncovered that attackers can exploit to make the apache web server user excessive amounts of memory (denial of service attack), crash the web server (another denial of service attack), or execute arbitrary code on the web server.
+  </div>
+  We saw in the JavaScript Programs portion of the course that it is difficult to write a program that is prepared to deal with badly formed input.  There are simply too many ways input could stray from what the programmer expects.  The bugs that arise from this problem can sometimes be exploited to do bad things, especially when those bugs are in programs that provide network services &mdash; like a web server. If reconnaissance tells us exactly what web server is being used, down to the version number, we can grab our own version of that software and start looking for bugs!  The most notorious of these kinds of attacks are <em>buffer overflow attacks</em>.  The details of how these work are beyond the scope of this course. However, the idea behind the simplest kind of buffer overflow attack is relatively easy to understand. A client connected to a web server sends a sequence of bytes to the web server as an HTTP request. The web server copies those bytes into the computer's memory and, when it's received the last byte of the request, processes those bytes. If the web server isn't careful, and the client sends <em>lots</em> of bytes, eventually the bytes the server is copying will start to overwrite bytes in memory that contain important data. Worse, you might start to overwrite data that controls what the program does next. If you set things up right, you'll overwrite what the program was going to do next with what you want it to do next: like open up a shell that you can
+  enter commands into! Then you, the attacker, are connected not to a web server on the remote host, but to a shell running on the remote host.
+    
+    <p>
+      This kind of attack is called a <em>Buffer Overflow Attack</em>, because server copies the stream of bytes into a fixed size region of memory called a "buffer", and the stream of bytes literally overflowed that region.
+      Regular programs (as opposed to those running as network services) may also be susceptible to buffer overflow attacks, as we'll discuss a bit later.
+    </p>
+    <p>
+      Explore this simple <a href="calendar.php-97.html?key=fef7a43a423967d7c725975f7746310acc190e12&type=class&event=30" target="none">Buffer Overflow Demo</a>.
+      After innocuously exploring the demo, enter in <code>rm -r /</code> preceded by any 10 characters.
+      The first ten characters will fill up the buffer allocated for the <code class="var">buffer</code> variable, and the <code>rm -r /</code> will overwrite what is stored in the <code class="var">comm</code> (command) variable.
+    </p>
+    <p>
+      We already learned about <em>malware</em>, which provides another way to execute code on a remote host &mdash; essentially by tricking users into executing it for you!
+    </p>
+    <p>
+      <h2>Getting a Username and Password</h2>
+      If, as an attacker, you have the opportunity to simply login to a system &mdash; as is the case in Step 2 of our attack scenario &mdash; it's useful to know some usernames and passwords!  In this section we take a look at how we might get that information.  In particular, we're considering a scenario in which you do not have access to the file containing the password hashes.
+
+      <ul>
+  <li>
+    <em>websites</em> &mdash; If your target organization has a website, that's a good place to start.
+    The website may identify individuals and e-mail addresses. E-mail addresses often start with the username, and personal information on the page may provide you with good ideas for guessing passwords.  With names of individuals in hand, you can use other publicly available information, social media sites, etc, to gather more information that may help for guessing passwords or setting up some of the other attacks on this list.
+  </li>
+  <li><em>violence and threats</em> &mdash;
+    Violence or other kinds of non-cyber threats.  This kind of speaks for itself. "Gimme you password or I'll break your kneecaps!"
+  </li>
+  <li><em>trickery</em> &mdash; Phishing attacks or other kinds of misdirection to try and trick users into giving away passwords. Since people often reuse passwords, stealing passwords for other accounts may be useful.
+  </li>
+  <li><em>unchanged defaults</em> &mdash;
+    Some accounts, like the administrator account for the wireless base stations in our wireless lab, have a <em>default password</em>.  If the owners of those accounts neglect to change the password, breaking in is easy, because the values of the default passwords are usually well-known, i.e. can be discovered by a simple internet search. Your instructor broke into your base stations this way in the wireless lab.  Routers, base stations, administrator accounts for web servers are all examples of places where unchanged default passwords offer a way in.
+  </li>
+  <li>
+    <em>predictable passwords</em> &mdash;
+    There are some passwords, like <code>iloveyou</code>, <code>123456</code> and <code>password</code> that are commonly used.  For systems that don't enforce more stringent requirements on their users, these are good guesses.
+  </li>
+  <li>
+    <em>passwords sent in clear</em> &mdash;
+    When passwords are sent over networks without encryption (sent "in the clear"), anyone able to snoop the network traffic can simply read them.  Some older tools, like <code>ftp</code> clients (as opposed to <code>sftp</code>) sent passwords in the clear and, sadly, those tools have not completely disappeared. Up until quite recently, professors at the Academy were allowed to manage their web pages using <code>ftp</code>. Now, fortunately, our web server does not allow ftp connections.  Websites that you log into but which use http instead of https are probably sending your password in the clear.
+  </li>
+      </ul>
+    
+
+
+    <p>
+      <h2>Escalating privileges</h2>
+      Simply gaining access to a host is not necessarily enough for an attacker to accomplish his goal.  As in Step 3 above, the attacker may have to <em>escalate privileges</em> to those of another user.  The example we're considering is that we (as attackers) want to access a file that belongs to another user (<code>timvic</code>) and which has permissions set so that only that user is allowed to access it.  Other examples of access an attacker might want to take that require higher privileges are killing processes  they don't own or opening network connections on "low-numbered" ports, like port 80, that have special meanings.
+      <p>
+  In our case, to access a file owned by user <code>timvic</code>, we could try to get authenticated as as <code>timvic</code>, or we could try to get authenticated as the system administrator (user <code>root</code> on UNIX machines).  The two ways we'll look at doing that are to try stronger attacks on users' passwords, and to hijack a process running at the privilege level we want.
+      </p>
+
+      <ol>
+  <li>
+    <em>Stronger password attacks</em> &mdash;
+    Now that we're actually on the target host, we have more attacks we can make on passwords.  In particular, if we are able to get the file containing the password hashes, we can then search for a string whose hash matches what's in the file and so identify a correct password without ever having to try logging in.  This is important because login attempts are slow (so we can't try many guesses in a reasonable period of time) and login attempts are logged (so that an observant sysadmin will realize that something is up when they find 10,000 unsuccessful login attempts in one day!). With the password file &mdash; i.e. the file containing the hashes of passwords &mdash; we have usernames, salt values (if salt is used) and password hashes.  So we can crack passwords by
+    <ol>
+      <li><em>brute force attack</em>, which means generating and
+      checking all possible passwords,</li>
+      <li><em>dictionary attack</em>, which means starting with a list
+      of potential passwords and hashing and comparing them (and perhaps
+      variations of them) against what's in the password file, and</li>
+      <li><em>rainbow table attack</em>, which means looking up
+      the hashes you've found in a large table of precomputed
+      hash values (note that the use of salt essentially defeats this attack).</li>
+    </ol>
+    There are tools out there (including freely available tools) for cracking passwords. One such tool is <em>John-the-Ripper</em>, which can perform brute force attacks and dictionary attacks.
+  </li>
+  <li>
+    <em>Hijacking a process running with higher privileges</em> &mdash;
+    We already discussed how a buffer overflow attack against a server, like a web server, could trick the server process into executing a command for us &mdash; essentially hijacking that server process.  The same kind of thing can be done with programs that are not providing network services.  If we can hijack a process that is running with administrator privileges we can access any file or service on the host.  Some programs that we run ourselves,  ping for example, run with administrator privileges, even if we start up the program as a regular old user.  Other processes, like <em>device drivers</em>, a host's DHCP client, or the program that actually logs a user on, are not initiated by us as regular users, but are there running on the system. If we as attackers can exploit a vulnerability in such a program to execute code &mdash; especially code that gives us a shell! &mdash; that code is executed as the administrator, which means it has privileges to access anything.  What's really changed once we are actually on the target host, is that we have access to many more processes, not just the ones listening to open ports.  Perhaps we can find a process that runs as root and carry out a buffer overflow attack on it. Or perhaps we can trick it into executing code for us in some other way.
+  </li>
+      </ol>
+
+    
+
+
+
+    <div class="news">
+      <h1>Passwords Stolen from Formspring</h1><br>
+      In July 2012, attackers stole approximately 420,000 password hashes from formspring, a social media site. (<a href="../../formspring-hacked-420000-passwords-leaked.html">Securityweek article</a>) One interesting aspect of the story is that formspring's explanation of what happened includes some details into how the attack was carried out.  As they explain it, the attackers managed to gain access to one of formspring's "development servers", and then were able to exploit that access to trick that "database server" into showing the password hashes.  This exactly the kind of process we described earlier in the notes. In fact, we get a diagram like this:<br>  <div style="text-align: center"><img src="formspring/formspring.png" width="80%"></div>
+    </div>
+
+
+    <p>
+      <h2>Other things along the way</h2>
+      One of the important takeaways from the discussion of this scenario is that an attack may hop from host to host until it gets to the host and resource it's really interested in.  In our example, this was by necessity, since there is no access to the target host from outside its own network. Since, in this example, our first step is to gain access to the web server, it's worth noting that we had an opportunity to do some more damage, for example defacing the target's website, as happened to PBS at the end of May, 2011: <a href="../../archive/pbs-hacked-tupac-shakur-still-dead-update-pbs-issues-statement-265037.html#fbid=mgeMLImvwGf">PC Magazine article</a>. Breaking into the web server host, as we did, gives us an opportunity to do this.  It's worth noting, however, that injection attacks, like you carried out on the message board in class, provides another way to deface web pages.
+      <p>
+  <div class="news">
+    <b>Infrastructure accessible via the Internet</b><br>
+    Check out this <a href="../../2013/04/08/technology/security/shodan/index.html">CNN Money article</a>  about "Shodan", a website that allows you to search for Internet accessible devices and infrastructure.  The scary thing is how many of them still have their default admin accounts and passwords!
+  </div>
+  As we mentioned above, infrastructure like routers and wireless base stations often have administration accounts that come with default passwords, which can be easily looked up on the Internet if you know the make and/or model involved. So in addition to attacking regular hosts, infrastructure components are targets as well.
+      
+    
+  <h2>Review Questions</h2>
+  <p>
+  1. What are DDoS and DoS attacks? List the differences between them.  <br>
+  2. How are brute force attacks, dictionaries and rainbow tables used to crack passwords? <br>
+  3. What is a buffer overflow attack and how can a hacker use it? <br>
+  4. Why does an attacker need to escalate privileges in a system and how do they do it? <br>
+  </p>
+  
+
+  </body>
+</html>
+</div> <!-- /container --></body></html>

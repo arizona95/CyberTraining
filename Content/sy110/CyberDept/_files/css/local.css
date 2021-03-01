@@ -1,0 +1,272 @@
+/* CSS Document */
+/* Place any styles unique to your site here */
+
+/*This is the local file for the Sample Template */
+.outlined{ 
+    border: 1px solid #ccc; 
+    padding: 5px 10px 5px 10px;
+    margin-bottom:10px;
+    }
+    
+/* Lighten up the colors. */
+.outlined img { border:0; background-color:white; }
+/*.outlined img.float-left { padding:5px 5px 5px 0; }*/
+
+.imgcentered{ display:block; margin: auto; }
+.headline {
+    background: url("/CMS/_standard3.0/_files/img/Top.jpg") no-repeat scroll center top #153a5e;
+    color: white !important;
+    width:100%;
+    padding: 0.5rem 10px 0;
+}
+#content .headline {
+ background:#FD5;
+ color:black !important;
+}
+.headline2 {
+ width:100%;
+ padding: 0px 10px;
+ background:#5B8CA7;
+ color:black;
+}
+
+.headline h1 {background:rgba(30, 82, 130, 0.5); color:white !important;}
+.headline2 h1 {background:rgba(30, 82, 130, 0.5); color:white !important;}
+
+.headline h3 {background:rgba(30, 82, 130, 0.5); color:white !important;}
+.headline2 h3 {background:rgba(30, 82, 130, 0.5); color:white !important;}
+#content .headline h3 {background:none; color:black !important;}
+#content .headline2 h3 {background:none; color:yellow !important;}
+
+
+h3 { margin-bottom:10px; }
+p { margin:5px 0px 0px 0px;
+ padding:0px; }
+.topspace { margin-top:20px; }
+
+/* CSS for the faculty page */
+#content .isotope {
+  max-width: 950px;
+}
+
+.item:hover {
+ background: #ddd;
+}
+
+.item { 
+ background: white;
+ padding: 10px 0;
+ border: 1px solid #ccc;
+ text-align:center;
+}
+
+#content .item { 
+ width:200px;
+ margin:6px;
+}
+
+.isotope .item img { 
+ max-height:170px;
+ border:0;
+}
+
+.item p {
+ margin:0;
+ padding:0;
+}
+
+p.name {
+ margin-top:8px;
+ font-size:110%;
+ font-weight:bold;
+ color:black;
+}
+
+p.title {
+ margin-top:8px;
+ font-size:110%;
+ color:black;
+}
+
+p.email {
+ margin-top:8px;
+ font-size:110%;
+ color:black;
+}
+
+p.phone {
+ margin-top:8px;
+ font-size:110%;
+ color:black;
+}
+
+#matrix th, #matrix td, #matrix p{
+    font-size: xx-small
+}
+div.scroll-table, div.table-scroll{
+    width:100%;
+    overflow:auto;
+}
+/*
+.fadein-text {
+    padding-left:15px;
+    margin-left:15px;
+}
+
+.fadein-wrapper {
+    margin-right:15px;
+}
+*/
+
+
+	/* info (hed, dek, source, credit) */
+.rg-container {
+
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  color: #222;
+}
+.rg-header {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.rg-header > * {
+  display: block;
+}
+.rg-hed {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.rg-dek {
+  font-size: 1em;
+}
+
+.rg-source {
+  margin: 0;
+  font-size: 0.75em;
+  text-align: right;
+}
+.rg-source .pre-colon {
+  text-transform: uppercase;
+}
+
+.rg-source .post-colon {
+  font-weight: bold;
+}
+
+/* table */
+table.rg-table {
+  width: 100%;
+    border-spacing: 2px;
+}
+table.rg-table tr {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  color: #333;
+}
+table.rg-table thead {
+  border-bottom: 3px solid #ddd;
+}
+table.rg-table tr {
+  border-bottom: 1px solid #ddd;
+  color: #222;
+}
+table.rg-table tr.highlight {
+  background-color: #dcf1f0 !important;
+}
+table.rg-table.zebra tr:nth-child(even) {
+    background-color: #e0e0e0;
+}
+table.rg-table th {
+  font-weight: bold;
+  padding: 0.35em;
+  font-size: 0.9em;
+}
+table.rg-table td {
+    padding: .64286rem .71429rem;
+    font-size: 0.85em;
+    border-right: 2px solid white;
+}
+table.rg-table .highlight td {
+  font-weight: bold;
+}
+table.rg-table th.number,
+td.number {
+  text-align: right;
+}
+
+/* media queries */
+@media screen and (max-width: 990px) {
+  .rg-container {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+  table.rg-table {
+    width: 100%;
+  }
+  table.rg-table tr.hide-mobile,
+  table.rg-table th.hide-mobile,
+  table.rg-table td.hide-mobile {
+    display: none;
+  }
+  table.rg-table thead {
+    display: none;
+  }
+  table.rg-table tbody {
+    width: 100%;
+  }
+  table.rg-table tr,
+  table.rg-table th,
+  table.rg-table td {
+    display: block;
+    padding: 0;
+  }
+  table.rg-table tr {
+    margin: 0 0 1em 0;
+    padding: 0.3em;
+  }
+  table.rg-table tr.highlight {
+    background-color: inherit !important;
+  }
+  table.rg-table.zebra tr:nth-child(even) {
+    background-color: transparent;
+  }
+  table.rg-table.zebra td:nth-child(even) {
+    background-color: #e7e7e7;
+  }
+  table.rg-table tr:nth-child(even) {
+    background-color: transparent;
+  }
+  table.rg-table td {
+    padding: 0.5em  0.25em;
+    text-align: right;
+  }
+  table.rg-table td[data-title]:before {
+    content: attr(data-title);
+    font-weight: bold;
+    display: inline-block;
+    content: attr(data-title);
+    float: left;
+    margin-right: 0.5em;
+    font-size: 0.95em;
+  }
+  table.rg-table td:last-child {
+    padding-right: 0;
+  }
+  table.rg-table td:empty {
+    display: none;
+  }
+  table.rg-table .highlight td {
+    background-color: inherit;
+    font-weight: normal;
+  }
+}

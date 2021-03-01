@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "2ae03290867694c4f68705aa9c024e1141e148accf3abaf86d113e51afb3a6fe";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Cyber Recon
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'><font color='black'><b>28 - Cyber Recon</b></font></a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "HTTP://www.w3.org/TR/HTML4/loose.dtd">
+<html lang="en">
+    <head>
+        <title>BRAND: Phases of a Cyber Attack / Cyber Recon</title>
+
+    </head>
+    <body>
+        <div class="header">
+
+            <div class="noScreen">
+                <br> 
+                </br>
+                <h1>Cyber Reconnaissance</h1>
+            </div>
+        </div>
+        <div class="learnObjs">
+            <h2>Learning Outcomes</h2>
+            <p>
+                After completing these activities you should be able to:
+            </p>
+            <ul>
+                <li>Describe what information makes up cyber reconnaissance.</li>
+                <li>Explain the difference between passive and active reconnaissance.</li>
+                <li>Explain the purpose of network reconnaissance during a cyber attack.</li>
+                <li>List some basic network reconnaissance tools.</li>
+            </ul>
+        </div>
+<br>
+
+      In this lecture, we will discuss the fundamental phases of a cyber attack. The first phase, <em>reconnaissance</em>, will be covered
+      in detail here, while the remaining phases will be covered in the
+      Attack lecture.
+        <p class="sec">
+            <h2>What is a "Cyber Attack"?</h2>
+    <div id="intro">
+    <ul>
+        <li><strong>Violating a Pillar of Information Assurance</strong>. As we've discussed in a <a href="http://faculty.cyber.usna.edu/~tgalvin/sy110/calendar.php?type=class&event=3"> previous lesson</a>, "security" for an information system means its ongoing ability to provide its services while maintaining the properties described as the "Pillars of Cyber Security".  Therefore an attack is an action that violates one of the pillars. What kind of nefarious goals might an enemy have, what kind of evil action might someone want to undertake that would require violating a Cyber Security pillar?  Here are some examples:<br><br>
+
+        <table>
+        <tr><td><strong>Evil goal: I want to ...</strong></td><td><strong>pillar violated</strong></td></tr>
+        <tr><td>steal a file</td><td>confidentiality</td></tr>
+        <tr><td>deface a web page</td><td>integrity</td></tr>
+        <tr><td>bring down a DNS server</td><td>availability</td></tr>
+        <tr><td>send a malicious e-mail from someone else's account</td><td>non-repudiation</td></tr>
+        <tr><td>use stolen login credentials</td><td>authentication</td></tr>
+        </table><br><br>
+
+        <li><strong>Using Security Tools for Defense</strong>. Suppose you are a wannabe attacker, meaning that you have a goal &mdash; either a particular goal that requires violating a pillar or the general goal of violating as many pillars as possible &mdash; and a target system. The target could be a single host or a network, or a large information system infrastructure.  What's stopping you?  Well, we just finished looking at tools we can use to protect the Cyber Security pillars:
+            <ul>
+                <li>Firewalls<li>Encryption (symmetric & asymmetric)<li>Hashing & Salting<li>Password authentication<li>Certificates
+            </li></ul>These are the things that are stopping you from achieving your     evil goal.
+
+        <li><strong>Confidentiality Examples</strong>. Let's look at some very simple examples in which we just want to steal some data, i.e. to violate confidentiality:
+            <ul>
+                <li>You know that George from Accounting keeps the secret recipe for his award-winning chili on his office computer, and your goal is to steal the recipe.  What's stopping you?  Password authentication!  You need his username and password to log in to his computer and access the recipe.
+                  <li> You want to view a web page with secret planning information housed on your competitor's internal web server.  What's stopping you?  A firewall! Your competitor's network sits behind a firewall that doesn't allow port-80-bound traffic in.
+                  <li>There's a guy on your Wifi network whom you want to discredit. You want to snoop in on his browser traffic to see what pages he's looking at. What's stopping you?  Encryption!         He's accessing sites via HTTPS and all the traffic is AES encrypted!
+            </li></ul>
+
+        <li><strong>Bottom Line</strong>. The moral here is this: If you want to attack a system, you need to violate a pillar. In order to violate a pillar, you need to defeat the tools that are being used to protect the pillars.
+
+    </li></ul>
+    </div>
+
+<img style="float: right; height: 20em; clear: right;" src="calendar.php-59.png?key=40ac8ea1a66b65d3b5e5b28a2a4de8564843a1d2&type=resources&event=9">
+<h2>Conceptual View of an Attack</h2>
+
+    <div id="barriers">
+    <ul>
+
+        <li><strong>Defining Barriers</strong>. Consider an attack from the attacker's perspective. We can define different "barriers" where the security tools we've mentioned are normally employed. The attacker wants to overcome these barriers, and the defender wants to keep him out.
+
+          <ul>
+              <li><strong>Network Barrier (Outermost)</strong>. This is the barrier between the Internet at large and the target host's network. The tool we normally use here is the Perimeter Firewall. However, we also discussed the security value of tools like Network Address Translation; firewalls are important, but may not be the only tool employed here. An attacker might penetrate the Network Barrier using a phishing e-mail or a remote code execution attack against a publicly accessible server.
+
+              <li><strong>Host Barrier (Middle)</strong>. If an attacker has gained access to the network, what protects the host? Usually, a combination of Authentication and a Host-Based Firewall. Users will require credentials to access this host. There will probably also be a Host-Based Firewall (like the one Windows runs on your laptop). The Host-Based Firewall is especially important if the host is a server since it helps restrict what ports are open. An attacker could penetrate the Host Barrier using password cracking tools, network packet-sniffing tools, or again employ a phishing attack or remote code execution attack against a running service.
+
+              <li><strong>The Privilege Barrier (Inside)</strong>. This barrier separates unprivileged users from privileged users, like those with Administrator (Windows) or root (UNIX) credentials, on the same host. The operating system enforces this barrier in a number of ways. Here, the attacker is trying to perform a "privilege escalation" if he has access to the host, but lacks privileged access. An attacker could penetrate this barrier using password cracking tools (if he can crack an Administrator account), or "privilege escalation" attacks, in which specially designed malware attacks flaws in the operating system. This would allow the attacker, for example, to bypass protections based on file ownership.
+
+          </li></ul>
+
+          <li>This idea of barriers is conceptual, and not meant to be all-encompassing. For example, we can provide added deterrence to attackers by simply encrypting our sensitive files. This would represent, in a way, another barrier to the attacker.
+
+        <li><strong>Gaps in the Barriers</strong>. <em>Ports allowed through by the firewall and services running on hosts are like gaps in the barriers</em>.  Potentially, such a gap can be exploited to provide access that an attacker shouldn't have.
+
+          <img style="float: right; height: 20em; clear: right;" src="calendar.php-60.png?key=ceacf08fd3547435c97652118c323cef5762dd53&type=resources&event=9">
+
+          A more accurate picture would reflect the fact that there are       (generally) more hosts on the target host's network than just the target host itself.  Also, different hosts on the network might have different services running, thus allowing different potential paths in from the outside.  Consider the diagram to the right, which shows that there are two hosts: the target and a host running a web server.
+
+          <li><strong>"Pivoting" to a Target Host</strong>. In our diagram, outsiders have no way to access our target host directly. The only service it runs is SSH on port 22, but the firewall does not let port 22 traffic in. However, we could imagine an attack proceeding by sending port 80 traffic into the network (which the firewall allows) to the web server with some carefully crafted content that exploits a       bug in the webserver, ultimately allowing the attacker to execute commands on it. The attacker can then make an SSH connection to the target host <em>from the web server</em>. This type of attack is sometimes referred to as a "pivot" attack because the attacker pivots from one host to another (either because the first host was more accessible from the outside, or because it was more vulnerable for some other reason).
+
+    </li></ul>
+    </div>
+
+
+<h2>Phases of an Attack</h2>
+
+    <div id="phases">
+
+    <br>For this class, we define a cyber attack as occurring in three basic phases:
+
+    <ul>
+
+        <li><strong>Reconnaissance</strong>. In this phase, the attacker finds out the information he needs to actually get in: what traffic the firewall lets through, what hosts are in the network, what services they actually have running, etc. In the previous example, reconnaissance would have discovered that the firewall lets in port 80 traffic, that there's this other host running a web server, that the target has an SSH server, etc.
+
+        <li><strong>Infiltration &amp; Maneuver</strong>. In this phase, the attacker gains the access needed to achieve his goal.  This might involve multiple steps, as it did in the example where the attacker first gained access to the "other host", and then used that access to get into the target host.
+
+        <li><strong>Exfiltrate &amp; Maintaining Access</strong>. In this phase, the attacker takes the action that actually violates a Pillar of Cyber Security, <em>and</em> takes whatever steps are necessary to cover his tracks.</li>
+
+    </ul>
+    </div>
+
+    The following sections discuss these three phases, with an emphasis on <em>reconnaissance</em>
+
+
+<p class="sec"><h2>Phase I: Reconnaissance</h2>
+
+    <div id="recon"><br>
+
+    The goal of the reconnaissance phase is to identify the weak points of the target. A successful military strategist would dedicate ample resources on reconnaissance to find weaknesses in the enemy's defenses or to assess the enemy's capabilities. In either case, <em>any</em> information gathered about the target may be the crucial piece needed to reveal a critical weakness in defense or an unknown offensive capability of the enemy.
+
+    <img src="calendar-32.php?key=5cb41b40a1ea54bd8a3f3cd246636d54c01ba2f2&type=class&event=28" style="margin:4em; float:right" alt="Hacker on computer">
+
+    <p>A cyber attack is not all that different than a military attack. A
+    cyber attacker will dedicate a significant amount of time observing and probing the target computer network to find weaknesses in its defense. Any weakness found may lead to infiltration of the target network. Here is a list of some critical information that should be
+    obtained during the reconnaissance phase:
+
+    <ul>
+        <li><strong>Network Information</strong>.
+            <ul>
+                <li>IP Addresses</li>
+                <li>subnet mask</li>
+                <li>network topology</li>
+                <li>domain names</li>
+            </ul>
+
+           <li><strong>Host Information</strong>.
+            <ul>
+                <li>user names</li>
+                <li>group names</li>
+                <li>architecture type (<em>e.g.</em> x86 vs SPARC)</li>
+                <li>operating system family and version</li>
+                <li>TCP and UDP services running with versions</li>
+            </ul>
+
+        <li><strong>Security Policies</strong>.
+            <ul>
+                <li>password complexity requirements</li>
+                <li>password change frequency</li>
+                <li>expired/disabled account retention</li>
+                <li>physical security (<em>e.g.</em> locks, ID
+                badges, etc.)</li>
+                <li>firewalls</li>
+                <li>intrusion detection systems</li>
+            </ul>
+
+
+         <li><strong>Human Information</strong>.
+            <ul>
+                <li>home address</li>
+                <li>home telephone number</li>
+                <li>frequent hangouts (physical and online)</li>
+                <li>computer knowledge</li>
+                <li>hobbies and interests</li>
+            </ul>
+
+    </li></ul>
+
+
+    <p>This information is obtained by scouring all the resources
+    available to the attacker using two distinct methods: <em>passive</em>
+    and <em>active</em>.</p>
+
+    <ul>
+
+        <li><strong><u>Passive Reconnaissance</u>: gathering information, often indirectly, in a manner unlikely to alert the subject of the surveillance</strong>. This is the natural start of any reconnaissance because once alerted, a target will likely react by drastically increasing security in anticipation of an attack. This is like casing a place prior to robbing it.
+
+        <li>In passive reconnaissance, the attacker <em>minimizes any interaction with the target network which may raise flags in the computer logs</em>. For example, visiting the target's website may leave behind a trace that your IP Address established a TCP connection to the target's web server, but it will be one of the millions of connections that day - probably not going to stand out to the administrator in the periodic review of server logs. On the other hand, visiting the target's website so frequently that the server becomes overloaded is <em>certain</em> to alert an administrator.
+
+                <li><strong>Banner Grabbing from Open Ports and Services</strong>.
+                    netkitten can be used to probe version information from open ports.
+                    The following example demonstrates this technique on port 80 of Verizon.net's web server:
+
+    <pre>
+    $ nk verizon.net 80
+    GET / HTTP/1.1
+
+    HTTP/1.1 302 Found
+    Date: Wed, 27 Jul 2011 20:21:06 GMT
+    <span style="background:yellow">Server: Microsoft-IIS/6.0</span>
+    X-Powered-By: ASP.NET
+    X-AspNet-Version: 2.0.50727
+    Location: HTTP://www.verizon.net/central
+    Set-Cookie: ASP.NET_SessionId=rurvikyswhz0xijy4p1hzt55; path=/; HTTPOnly
+    Cache-Control: private
+    Content-Type: text/HTML; charset=utf-8
+    Content-Length: 147
+    Age: 25
+    Via: 1.1 localhost.localdomain
+
+    . . .
+    </pre>
+                <p>
+                    Highlighted in yellow is the name and version of the HTTP service running on Verizon's web server.
+                    This also hints at the web server's operating system.
+                    It must be running Microsoft Windows since it has Microsoft's IIS web server software running.
+                </p>
+                <p>
+                    Additionally banner grabbing information is often available from the normal utility used for that service; e.g. you can view the HTTP Headers via the <em>Web Developer Console</em> in modern browsers.
+                </p>
+                <div class="annotation">
+                    <h1>Modern Web Browser Features</h1>
+                    Modern web browsers come with a lot of standard features.
+                    Any of the following web browsers and many others can be used for passive reconnaissance:
+                    <ul>
+                        <li>Apple Safari</li>
+                        <li>Google Chrome</li>
+                        <li>Microsoft Edge</li>
+                        <li>Mozilla Firefox</li>
+                    </ul>
+                </div>
+                <p>
+                    Banner Grabbing with a Web Browser:
+                </p>
+                <ol>
+                    <li>Open <em>Google Chrome</em>.<br>
+                        <span class="note">These directions are for Google Chrome, other browsers have similar features, just different ways to show the same data.</span>
+                    </li>
+                    <li>Open a new tab and go to a web page, on the web, of your choosing.</li>
+                    <li>Open the <em>Web Developer Console</em> (<code>Ctrl-Shift-J</code> [Windows]).</li>
+                    <li>Navigate to the <em>Network</em> pane.</li>
+                    <li>Reload the web page (<code>Ctrl-r</code>).</li>
+                    <li>In the tree view select one of the source documents in the <em>Name</em> column.</li>
+                    <li>Select the <em>Header</em> tab.</li>
+                    <li>Explore the information returned by the web server:
+                        <ul>
+                            <li><em>Remote Address</em>: IP address of the web server.</li>
+                            <li><em>Date</em>: Date the server thinks it is, includes time zone location.</li>
+                            <li><em>Server</em>: Information about the web server prorgram, and likely operating system of the web server.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+
+        <li><strong>Google is an Attacker's Ally</strong>. There is a lot of information freely available via the Internet. It can all be yours with a web browser and a bit of patience. The best starting place is the target's public website. View the source HTML files to find any clues. Users may provide personal information on their company website or a social media site, which could give hints as to what their user account password is. Names can be entered in a white pages search to reveal home addresses and telephone numbers, which can expand footprinting to an employee's home. There are special ways to use search engines, like Google, to <a href="http://www.exploit-db.com/google-dorks/">gather vulnerability information</a> (may be blocked inside USNA by WebSense) as well.
+
+        <li><strong>Public Network Information</strong>. Network information can also be obtained freely via public records online (example <a href="../../index-20.htm">here</a>). Every IP Address and Domain Name must be registered in a public database. As a result, a few queries to the right places will provide anyone with the target domain's IP Address range, DNS servers, and a contact address and telephone number.
+
+        <li><strong><u>Active Reconnaissance</u>: gathering information while interacting with the subject directly, in a way that usually can be discovered</strong>. If footprinting is like casing a place, then active reconnaissance would be actually trying to open doors and windows to see which ones are unlocked.  We already know about a number of tools that can be used for active network recon: ping, traceroute, and netkitten (nk).  If we know the range of potential IP Addresses for our target network, we can use ping to determining which IP's are actually in use by hosts on the network.  We can use traceroute to figure out the topology of the network: i.e. where the routers are with respect to the hosts.  Finally, we can use netkitten (nk) to determine which ports are open with servers listening on them.
+
+        <li><strong>Scanning</strong>. Active reconnaissance is commonly referred to as <em>scanning</em>. A simple scan would be to <code>ping</code> every     IP Address owned by the target network to see which ones belonged to real hosts. More sophisticated scans attempt a TCP connection with every port number of a specific IP Address to determine which ports are open and, therefore, which services are running on the host at that IP Address. Scanning is more intrusive than footprinting but provides more specific information. There is also more risk that the target may be alerted to a potential attack since scanning results in more abnormal connections to target hosts, so it must be done carefully to avoid alerting.
+
+        <li><strong>NMAP - The Network Mapper</strong>. One of the best tools for network scanning is a program called <code>nmap</code>. Nmap is a very powerful network scanner that we will be using to discover hosts on a target network during the Network Reconnaissance lab. We will discuss more detail on nmap during that lab.
+
+        <li><strong>Common Tools</strong>. Some other tools used for network scanning should already be familiar to you. Tools such as traceroute, ping, and netkitten are commonly used to discover information about networks and their hosts. Let's analyze the traceroute information to Verizon.net.
+
+    <pre>
+traceroute to verizon.net (206.46.232.39), 30 hops max, 60 byte packets
+ 1  131.122.88.250 (131.122.88.250)  11.327 ms  11.378 ms  11.456 ms
+ 2  usna-c2-v726.net.usna.edu (10.0.2.21)  11.515 ms  11.550 ms  11.568 ms
+ 3  border-d1-v722.net.usna.edu (10.0.2.6)  17.075 ms  16.930 ms  16.797 ms
+ 4  border-f1-gi1_0.net.usna.edu (131.122.6.249)  11.016 ms  16.153 ms  16.112 ms
+ 5  border-r1-po1.net.usna.edu (192.190.228.1)  16.058 ms  6.819 ms  3.974 ms
+ 6  dren-sdp.net.usna.edu (138.18.45.5)  3.913 ms  1.319 ms  1.209 ms
+ 7  so48-2-1-0.ray.dren.net (138.18.1.59)  3.969 ms  3.894 ms  4.435 ms
+ 8  pos1-1-1.gw8.dca6.alter.net (152.179.75.129)  4.363 ms  4.298 ms  4.234 ms
+ 9  0.xe-3-0-3.xt1.dca6.alter.net (152.63.40.78)  4.171 ms  4.114 ms  4.046 ms
+10  0.so-1-2-0.xl3.dfw7.alter.net (152.63.98.77)  268.630 ms  268.637 ms  267.884 ms
+11  pos6-0.gw2.dfw13.alter.net (152.63.103.225)  265.903 ms  266.073 ms  267.466 ms
+12  verizon-gw.customer.alter.net (63.65.122.26)  267.530 ms  264.703 ms  264.601 ms
+13  po121.ctn-core1.vzlink.com (206.46.225.18)  280.754 ms  280.736 ms 280.663 ms <span style="color:red;">&lt;== this is Verizon's router</span>
+14  * * *
+</pre>
+
+        Line 13 begins Verizon's network, marked by vzlink.com. It's IP Address is given along with a domain name, which can be probed later for open TCP ports. At line 14, we see three asterisks. That means that there was no response from the next router within Verizon's network - this is a common security practice to make reconnaissance more difficult. In this case, we do not get much information about the internal network topology on Verizon, but we do know the existence of packet filtering by their network.
+
+
+
+    </li></ul>
+    </div>
+
+
+<p class="sec"><h2>Phase II: Infiltration &amp; Maneuver</h2>
+
+    <ul>
+
+        <li>The goal of this phase is to gain control of a host on the target's network. This is typically done by gaining remote access to a shell or terminal as the administrator on that host.
+
+        <li>Knowing a weakness is not enough to infiltrate the target; an attacker must discover a way to take advantage of that weakness. This does not necessarily require advanced knowledge and skill of computer programming, but having it can significantly improve the probability of success. Anyone can guess weak passwords to gain access, but developing a custom-made program to exploit poorly written code in software requires advanced programming knowledge and skill. But not everyone needs to develop exploits in order to use them. Do you have the knowledge and skill to build a car? Probably not, but that knowledge is not required to obtain a driver's license. The same goes for cyber exploits. As long as <em>someone</em> possesses the     knowledge and skill to create exploitation programs, others can use     them with little or no understanding of how they work.
+
+        <li>There are many automated tools for the exploitation of <em>known</em>     computer weaknesses freely available on the Internet. The most popular exploitation program is actually a framework or collection of programs called <a href="../../index-21.htm">Metasploit</a>, (blocked on USNA Network) which you will use in the Attack portion of the course.
+
+    </li></ul>
+
+
+<p class="sec"><h2>Phase III: Exfiltrate & Maintaining Access</h2>
+
+    <ul>
+
+        <li>The goal of the final phase is to achieve the intended objective and back out leaving no trace of the trespass. In practice, this is very difficult because computers keep records of every logon, logoff, startup, shutdown, network connection, program execution, and error received. With so many records left on every computer accessed, including routers, it is nearly impossible to eliminate all traces of an intrusion. Often times, an attacker will use techniques to deceive authorities as to the actual origin of the attack.
+
+        <div class="news">
+        <strong>Critical Infrastructure A Major Target</strong><br>
+        Scanning a target for vulnerabilities is often not much a concern, unless that target is the US Power Grid, and the people scanning are responsible for some of the most destructive cyberattacks in history. The Triton hacker group has probed the US Power Grid at least 20 times since 2018. The article <a href="../../story/triton-hackers-scan-us-power-grid/index.htm"><em>THE HIGHLY DANGEROUS 'TRITON' HACKERS HAVE PROBED THE US GRID</em></a>, from Wired Magazine,
+        describes in some detail the potential repercussions of such actions.
+        </div>
+
+            <li>An attacker driven by monetary gains may sell credit card information obtained with privileged access on the black market. Or,     an attacker motivated by political gains may expose private, and embarrassing, information about a political opponent to hurt the opponent's popular opinion. There are many possible examples.</li>
+            <li>Finally, the attacker may either terminate the connection, if no     further access is required or create a backdoor for future access to     the target.</li>
+        </ul>
+
+
+ <h2>References</h2>
+    <p>
+    <ol>
+    <li>The Navy's Cybersecurity Focus - <a href="../../CHIPS/ArticleDetails.aspx.html?ID=9606">https://www.doncio.navy.mil/CHIPS/ArticleDetails.aspx?ID=9606</a> October 2017</li>
+    <li>What is Defense in Depth? - <a href="../../cyber-edu/defense-depth.html">https://www.forcepoint.com/cyber-edu/defense-depth</a> July 2019</li>
+    <li>Metasploit - <a href="../../index-21.htm">https://www.metasploit.com/</a> July 2019</li>
+    <li>THE HIGHLY DANGEROUS 'TRITON' HACKERS HAVE PROBED THE US GRID - <a href="../../story/triton-hackers-scan-us-power-grid/index.htm">https://www.wired.com/story/triton-hackers-scan-us-power-grid/</a> June 2019</li>
+    
+
+
+    </ol></body>
+</html></div> <!-- /container --></body></html>

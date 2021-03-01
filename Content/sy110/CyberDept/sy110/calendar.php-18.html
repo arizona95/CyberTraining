@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "3ba1c996ce3ef0c29caf76ac65d336cfed9d7c191de7c52ce8f688f1fa92bc66";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Server-Side Scripting
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'><font color='black'><b>15 - Server-Side Scripting</b></font></a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/HTML4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/HTML;charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>BRAND: Server Side Scripting</title>
+
+  </head>
+  
+  <body>
+  
+    <div class="header">
+
+    <div class="noScreen">
+      <h1>Server-Side Scripting</h1>
+    </div>
+    
+    
+    
+  </div>
+    
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+      
+        <li>Discuss tradeoffs between client-side and server-side scripts, and explain why client-side input validation is weaker than server-side.</li>
+        <li>Describe and identify the risks associated with the use and/or execution of scripts on client-side or server-side web interactions.</li>
+        
+      </ul>
+    </div>  
+
+
+
+    <br>
+
+    <div class="sec">
+      In previous lessons we explored <em><a class="glossLink" href="calendar.php-76.html?load=glossary#C">client side scripts</a></em>, which are <a class="glossLink" href="calendar.php-76.html?load=glossary#P">programs</a> embedded in the <a class="glossLink" href="calendar.php-76.html?load=glossary#H">HTML</a> code for a web page; programs that the <a class="glossLink" href="calendar.php-76.html?load=glossary#B">browser</a> (web <a class="glossLink" href="calendar.php-76.html?load=glossary#C">client</a>) executes.  In this lesson, we explore <em><a class="glossLink" href="calendar.php-76.html?load=glossary#S">server side scripts</a></em>, which are programs that the web <a class="glossLink" href="calendar.php-76.html?load=glossary#S">server</a> machine runs in response to something done by a web client (browser).
+    </div>
+
+
+    <div class="sec">
+      <h2>A first look at a server side script</h2> A <em>server side script</em> is a program run <b>on a web server</b> that generates content (usually HTML) for a web client or otherwise responds to some web client action. The simplest server side script is one that generates HTML content which then gets sent to the browser on the other end. These <a class="glossLink" href="calendar.php-76.html?load=glossary#S">scripts</a> can be written in a number of languages, including <a class="glossLink" href="calendar.php-76.html?load=glossary#J">JavaScript</a>.  Of course we'll use JavaScript, since we already know it. We start off by looking at an old familiar example:  a script that writes <code>"G O  N A V Y !"</code> 50 times.  We've already done this as a client side script, now we'll do this as a server side script. To start off with, look at these <a class="glossLink" href="calendar.php-76.html?load=glossary#L">links</a>:
+      <ol>
+  <li><a href="resources/33.server-side/ex0.html">ex0.html</a>, client side</li>
+  <li><a href="ex0.jsx.txt?">ex0.jsx?</a>, server side</li> <!-- jsx files only run in home SY110 directory -->
+  <li><a href="ex0.jsx-1.txt">ex0.jsx</a>, server side (source)</li>
+      </ol>
+    
+      Note that the link to the script has the "?" at the end, indicating to the server that it's a script to execute and not a <a class="glossLink" href="calendar.php-76.html?load=glossary#F">file</a> to serve/send.  The code for the server side is almost the same as the client side. The big difference is: what gets executed where, and what actually gets sent.  The following should illustrate the differences:
+  <div>
+    <table>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            Client Side &ndash; client sends <a class="glossLink" href="calendar.php-76.html?load=glossary#G">GET</a> for <code>ex0.html</code>
+          </td>
+        </tr>
+        <tr>
+          <td>Server finds
+          </td>
+            <td>
+              <div style="width:25em; font-size: 0.65em;  border-style: solid; border-width: 1pt;">
+                <pre style="margin-bottom:0">
+&lt;HTML&gt;
+  &lt;HEAD&gt; ... &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;SCRIPT type="text/javascript"&gt;
+      var iter = 0;
+      while (iter &lt; 50) {
+        document.write("G O N A V Y ! ");
+        iter = iter + 1;
+      }
+    &lt;/SCRIPT&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+              </div>
+            </td>
+            <td>, server sends
+            </td>
+            <td>
+              <div style="width:25em; font-size:0.65em; border-style:solid; border-width:1pt;">
+                <pre style="margin-bottom:0">
+&lt;HTML&gt;
+  &lt;HEAD&gt; ... &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;SCRIPT type="text/javascript"&gt;
+      var iter = 0;
+      while (iter &lt; 50) {
+        document.write("G O N A V Y ! ");
+        iter = iter + 1;
+      }
+    &lt;/SCRIPT&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+              </div>
+            </td>
+            <td>, browser executes &amp; <a class="glossLink" href="calendar.php-76.html?load=glossary#R">renders</a> as </td>
+              <td>
+                <div id="res2" style="font-size:0.7em; width:10em; border-style:solid; border-width: 1pt; text-align:center">
+                </div>
+                <script type="text/javascript">
+                  var out = "";
+                  var iter = 0;
+                  while (iter < 50) {
+                    out = out + "G O N A V Y ! <br>";
+                    iter = iter + 1;
+                  }
+                  document.getElementById("res2").innerHTML = out;
+                </script>
+              </td>
+        </tr>
+        <tr>
+          <td colspan="6"><br><strong>Server Side</strong> &ndash; client sends GET for ex0.jsx?</td>
+        </tr>
+        <tr>
+          <td>server finds &amp; executes
+          </td>
+          <td>
+            <div style="width:25em; font-size:0.65em; border-style:solid; border-width:1pt;">
+              <pre style="font-size:1.1em; margin-bottom:0">
+function () {
+  var out = &quot;&quot;;
+  var iter = 0;
+  while(iter &lt; 50) {
+    out = out + &quot;G O N A V Y ! &quot;;
+    iter = iter + 1;
+  }
+  return out;
+}</pre>
+            </div>
+          </td>
+          
+          <td>, server sends
+          </td>
+          
+          <td>
+            <div id="res3" style="font-size:0.7em; width:10em; border-style:solid; border-width:1pt; text-align:center">
+            </div>
+              <script type="text/javascript">
+                  var out = "";
+                  var iter = 0;
+                  while (iter < 50) {
+                    out = out + "G O N A V Y ! <br>";
+                    iter = iter + 1;
+                  }
+                  document.getElementById("res3").innerHTML = out;
+              </script>
+              
+          </td>
+          
+          <td>, browser renders as
+          </td>
+          
+          <td>
+            <div id="res4" style="font-size: 0.7em; width: 10em; border-style: solid; border-width: 1pt; text-align:center">
+            </div>
+              <script type="text/javascript">
+                  var out = "";
+                  var iter = 0;
+                  while (iter < 50) {
+                    out = out + "G O N A V Y ! <br>";
+                    iter = iter + 1;
+                  }
+                  document.getElementById("res4").innerHTML = out;
+              </script>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      Now, which version do you think is better for this job of printing GO NAVY! 50 times? Why? Which side assumes risk of running vulnerable code in each version?
+    </div>
+
+    <p class="sec">
+      <h2>Sending data to server side scripts with <a class="glossLink" href="calendar.php-76.html?load=glossary#F">forms</a></h2>
+      Let's consider a very simple interactive web-page that converts a temperature in Fahrenheit into Celsius. We'll look at a client side version of this and a server side version, side-by-side.
+      <div>
+        <table>
+          <thead>
+  <tr>
+    <th align="center">Client Side Fahrenheit-to-Celsius Converter</th>
+    <th align="center">Server Side Fahrenheit-to-Celsius Converter</th>
+  </tr>
+          </thead>
+          <tbody>
+  <tr>
+    <td>
+      <form name="clientSide" onsubmit="return false;">
+        <input type="text" name="fahrenheit"> &#176;F
+        <input type="button" value="Convert" onclick="var f = document.forms.clientSide.fahrenheit.value;
+            var c = 5/9*(f - 32);
+            document.body.innerHTML = c + ' &#176;C';
+            ">
+      </form>
+      <br>(shift+refresh to return)
+    </td>
+    
+    <td>
+      <form name="serverSide" action="http://courses.cyber.usna.edu/SY110/f2c.jsx" method="get">
+        <input type="text" name="fahrenheit"> &#176;F
+        <input type="button" onclick="submit()" value="Convert">
+      </form>
+      <br>(browser back-button to return)
+    </td>
+  </tr><tr>
+    <td><pre><font><strong><font><strong>&lt;</strong></font><font>form</font> <font>name=</font><font color="#008000">&quot;clientSide&quot;</font> <font>onsubmit=</font><font color="#008000">&quot;return false;&quot;</font><font><strong>&gt;</strong></font></strong></font>
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;text&quot;</font> <font>name=</font><font color="#008000">&quot;fahrenheit&quot;</font><font><strong>&gt;</strong></font></strong></font> <font color="ff0000">&amp;#176;</font>F
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;button&quot;</font> <font>value=</font><font color="#008000">&quot;Convert&quot;</font> <font>
+  </font> <font>onclick=</font><font color="#008000">&quot;var f = document.forms.clientSide.fahrenheit.value;
+      var c = 5/9*(f - 32);
+      document.body.innerHTML = c + ' &amp;#176;C';
+      &quot;</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>/form</font><font><strong>&gt;</strong></font></strong></font></pre>
+    </td>
+    <td><pre>
+<font><strong><font><strong>&lt;</strong></font><font>form</font> <font>name=</font><font color="#008000">&quot;serverSide&quot;</font><font>
+  </font>  <font>action=</font><font color="#008000">&quot;http://courses.cyber.usna.edu/SY110/f2c.jsx&quot;</font> <font>
+  </font>  <font>method=</font><font color="#008000">&quot;get&quot;</font><font><strong>&gt;</strong></font></strong></font>
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;text&quot;</font> <font>name=</font><font color="#008000">&quot;fahrenheit&quot;</font><font><strong>&gt;</strong></font></strong></font> <font color="ff0000">&amp;#176;</font>F
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;button&quot;</font> <font>onclick=</font><font color="#008000">&quot;submit();&quot;</font> <font>value=</font><font color="#008000">&quot;Convert&quot;</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>/form</font><font><strong>&gt;</strong></font></strong></font></pre></td></tr>
+          </tbody>
+        </table>
+      </div>
+  
+
+    <p>Verify that both work, then try look for differences in how they work <em>from the user's perspective</em>.  You should notice that the client side version keeps you at the same <a class="glossLink" href="calendar.php-76.html?load=glossary#U">URL</a>. The client side form has <code>onsubmit="return false;"</code> and a small Mathematical computation after the <code>onclick</code> for the button input. The server side version, however, takes you to a different URL &mdash; and a strange one at that!  The server side URL ends with something like:
+  
+      <pre>f2c.jsx?fahrenheit=45</pre> Additionally, while the form also has <code>onsubmit="return false"</code> there are two additional <a class="glossLink" href="calendar.php-76.html?load=glossary#A">attributes</a> within the form start <a class="glossLink" href="calendar.php-76.html?load=glossary#T">tag</a>: <code>action</code> and <code>method</code>, and finally, the <code>onclick</code> for the button input has the value <code>"submit()"</code>. These are the key differences that tell you, the user, that the page will send input to the server for processing.<br><br>
+      There are two basic methods for sending arguments (inputs) to server side scripts: <em>GET</em> and <em>POST</em>.
+      The <em>GET</em> method is simpler and will be the only one we discuss in SY110.  The <em>GET</em> method is what we see here as a value for the <code>method</code> attribute. The GET method sends the user's input as part of the URL. Recall that the server will record the <a class="glossLink" href="calendar.php-76.html?load=glossary#F">file system</a> path of a GET request URL in its server <a class="glossLink" href="calendar.php-76.html?load=glossary#A">access logs</a>. So, in this case, the file system path contains the user's input and this means that the value a user enters into a form executing a server side script will be permanently entered into the server's access logs.<br><br>
+      The URL for the script ends with a "?" followed by <code>name=value</code> pairs that give the names and values of the parameters the server side script will use as inputs. Interestingly, we don't need the nice fancy web page with the form field and button in order to use this conversion script.  Simply enter the URL
+      <pre>http://courses.cyber.usna.edu/SY110/f2c.jsx?fahrenheit=78</pre>
+      in your browser's address bar with different values for "fahrenheit"
+      and you can get the conversions directly.  In other words, without typing anything into the form and without clicking the button, you can send a GET request.  The server still processes your input, sending the browser the results. This presents a potential security risk if the server side program (script) has not taken into account unanticipated user input. <br><br>Here are a couple of
+      URLs from the wild that you can copy and paste into your browser's address bar, then edit the name=value pairs - look for the = signs and edit the content on the right-side of the = sign.
+    
+      <ul>
+    
+  <li>http://www.zip-info.com/cgi-local/zipsrch.exe?zip=21401&amp;Go=Go</li>
+  <li>Change the zip code to whatever you like, and the page will tell you the community it belongs to.
+  </li>
+  <br>
+  <li>http://forecast.weather.gov/MapClick.php?CityName=Annapolis&amp;state=MD&amp;site=LWX&amp;textField1=38.9716&amp;textField2=-76.503&amp;e=1</li> 
+  
+  <li>textField1 and textField2 are lat/long coordinates for the
+    map on the page.  You can change those and change what the
+    map shows you.  Try small changes first.
+  </li>
+  
+      </ul>
+    
+      You should have noticed that in both URLs above, there are multiple arguments (inputs) which are separated by &amp;'s. Usually, each text box on the form will generate a name=value pair in the URL, but there may be other aspects on the page that also contribute to a name=value pair in the URL.
+    
+
+    <p>
+      <table style="float: left; margin: 0.2em;" class="RM">
+  <tr><td><code>f2c.jsx</code></td></tr>
+  <tr>
+    <td><pre>function(fahrenheit) {
+   var c = 5/9*(fahrenheit - 32);
+   return c + ' &amp;#176;C';
+}</pre></td>
+  </tr>
+      </table>
+      The server side script <code>f2c.jsx</code> is very simple, as you see - the code performs that same Mathematical computation that the client side version performed.  In looking at it, don't worry about the <code>function(fahrenheit){ ... }</code>
+      wrapped around the code except to accept that it's there, and to know that inside the ( )'s is/are the parameter (input) names that the code needs to execute.  The corresponding form on the page will contain an input element for each of these function parameters in the ( )'s for the server side script. So, in the case of the f2c.html file, there is a form with a text box that accepts user input: <code>&lt;input type="text" name = "fahrenheit"&gt;</code> which is not a coincidence. The names of the inputs in the form must match the parameter names for the server side script. 
+    
+      <br>
+    
+    The script ends by <code>return</code>ing a <a class="glossLink" href="calendar.php-76.html?load=glossary#S">string</a>.  That string becomes the <code>&lt;body&gt;</code> contents of the HTML code that gets sent to the browser. These server side scripts can do many things, including read from and write to files sitting on the server.  How one would do that with JavaScript is way outside the scope of this course and, actually, is dependent on the particular JavaScript <a class="glossLink" href="calendar.php-76.html?load=glossary#I">interpreter</a> you're using.  We're using the <a href="../../index-11.htm">JSEXT</a> interpreter, in case you'd like to look into this more deeply.
+    
+
+    <p>
+      Now, let's turn to the browser's part in a server side scripted system.  We could make use of server side scripts using only the tools we already know: we could write client side scripts that build a URL string with the name/value pairs determined by some interaction with the user.  However, that's not how it's usually done.  Usually server side scripts are called automatically using a feature of forms we haven't yet discussed: <em>submit</em>.  Form <a class="glossLink" href="calendar.php-76.html?load=glossary#E">elements</a> were actually introduced specifically to get user input and call server side scripts.  There is a <a class="glossLink" href="calendar.php-76.html?load=glossary#D">DOM</a> function called <code>submit()</code>
+      that automatically grabs the <code>value</code> attribute for each named form <code>input</code> element, and builds the name/value pairs from the names and values of those input elements. The first part of the URL that will be called, i.e. everything
+      before the "?", comes from the form's <code>action</code> attribute. Recall the server side example's form element was defined like this:
+    
+      <pre><font><strong><font><strong>&lt;</strong></font><font>form</font> <font>name=</font><font color="#008000">&quot;cs&quot;</font> <font>
+  </font>  <font>action=</font><font color="#008000">&quot;http://courses.cyber.usna.edu/SY110/f2c.jsx&quot;</font> <font>
+  </font>  <font>method=</font><font color="#008000">&quot;get&quot;</font><font><strong>&gt;</strong></font></strong></font>
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;text&quot;</font> <font>name=</font><font color="#008000">&quot;fahrenheit&quot;</font><font><strong>&gt;</strong></font></strong></font> <font color="ff0000">&amp;#176;</font>F
+  <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;button&quot;</font> <font>onclick=</font><font color="#008000">&quot;submit()&quot;</font> <font>value=</font><font color="#008000">&quot;Convert&quot;</font><font><strong>&gt;</strong></font></strong></font>
+  <font><strong><font><strong>&lt;</strong></font><font>/form</font><font><strong>&gt;</strong></font></strong></font></pre>
+  
+      Here's how things work:
+    
+      <ol>
+  <li>The user enters a value (say, 78.3) in the <code>fahrenheit</code> named text-input.</li>
+  <li>The user clicks the <code>Convert</code> button.</li>
+  <li>The button's <code>onclick</code> script is executed, which simply calls the <code>submit()</code> function from the DOM  - this is a client side action.</li>
+  <li>The <code>submit</code> function builds a URL as follows (because the form's <code>method</code> attribute is <code>GET</code>):
+  
+    <pre>
+http://courses.cyber.usna.edu/SY110/f2c.jsx?fahrenheit=78.3
+       \__________________________________/ \________/ \__/
+    <strong>from the FORM's "action" attribute</strong>        INPUT     INPUT element's
+                                              element's value      
+                                              name    
+                             
+                                        </pre>
+  </li>
+  <li>The browser sends the above link in a GET request to the server specified in the URL.
+  </li>
+<li>The server executes and returns the new page - logging the GET request in its access logs.</li>
+      </ol>
+    
+  
+    <p>
+      Now we are in a position to understand why our client side only use of forms always included the form attribute definition <code>onsubmit="return false;"</code>, it was to stop the browser from trying to form a URL and pull up a new page!
+    </p>
+    <p>
+      <b>Note:</b> if you hit <em>enter</em> after typing something into the text box, the form is automatically submitted. This can be turned off, but it's a bit of a pain, since Explorer does it differently than the other browsers.  One way to do this
+      is to keep the form element's <code>onsubmit="return false;"</code> attribute definition.  When our button calls <code>submit()</code>, the form's <code>onsubmit</code> is bypassed.
+    </p>
+
+    
+
+<hr>
+
+      <h5>Exercise</h5>
+      Here's a bit of a silly exercise, but one that will show whether or not you've got the mechanism down for all of this:
+    
+      Create a web page that takes a number from the user and prints that many GONAVY!'s.  You should be able to modify existing scripts and web pages to make that work for both client side and server side.
+    <br><br>
+  Question 1: If you choose a big number, which version is faster?
+      <br><br>
+  Question 2: Why?
+      
+
+<hr>
+
+    <p class="sec">
+
+      <div class="news">
+  <b>The Trap of Client-Side Validation</b>
+  <br>
+  In an <a href="../../exploiting-filepickerio.html">October 2012 blog post</a>, Chris Foster pointed out a <a class="glossLink" href="calendar.php-76.html?load=glossary#V">vulnerability</a> in a JavaScript library
+  called <a href="../../index-12.htm">filepicker.io</a>.  The vulnerability boils down to this: they use client side  <a class="glossLink" href="calendar.php-76.html?load=glossary#I">input validation</a> and, as we know, an attacker can bypass
+  client side validation.
+  
+  <p>
+    Lots of businesses and individuals are moving to "cloud storage", which means that a big company (like amazon.com) stores your data for you, and you / your company can access the data from anywhere.  Filepicker.io is a JavaScript library (<code>http://api.filepicker.io/v0/filepicker.js</code>) that you include in your HTML just like we've already done, and it provides easy-to-use functions that allow the website to give users the ability to upload files to cloud storage space owned by the website.  Now, the website will be charged more or less money for that cloud storage depending on how many <a class="glossLink" href="calendar.php-76.html?load=glossary#G">gigabytes</a> of storage they use.  For that reason (and others) the site needs to limit the size of files that can be uploaded.  Filepicker.io provides that functionality, but checks the file size <em>client side</em>. In the blog post, Mr. Foster demonstrates that he can send the the same GET requests to cause a file to be uploaded to
+    a site's cloud storage that the filepicker.io library would send from a script that he wrote (a glorified application of <a class="glossLink" href="calendar.php-76.html?load=glossary#N">netcat</a>).  The difference is that, with his script, the client side validation code is completely bypassed.  Thus, he can lie about the file-size when he uploads with his script, and can upload as big a file as he likes to the website's cloud storage ... which could end up costing big money!
+  </p>
+      </div>
+
+      <h2>Validation / Sanitizing Input</h2>
+    <p>When you are filling out a form, a user will often get alerted that to re-enter information if the information is not properly formatted.  For example, if you enter an email address, and it is not in the proper form, the client side will have code to detect that improper form, and then within the code there will be an alert() function that will tell the user that the email format is not valid and have the user correct their input into the form.  With that being said, this is client side input validation which is dependent on JavaScript.  Before the user can even submit the form and the data be passed to the server, the input is sanitized in the browser itself. </p>
+    
+    <p>However, we know that if a server side script it being used, we can change inputs into the form directly into the resulting URL in our address bar.  Going back to the email example, imagine if the email was an input value in the form, and the user manually put the email address directly in the URL it would bypass the client side input validation and be submitted directly to the server.  For this reason, we need server side validation, so the data submitted to the form is sanitized prior to being submitted and feedback of the invalid input is sent back to the client a new web page.  In the instance of our email example, the server side would detect the invalid email even if the user bypassed our client side scripting by inputting in the URL, and report back to the user on a dynamically generated webpage on the client side (web browser) of the invalid input.</p>
+    
+    <p>Server side validation protects against malicious users desiring to submit dangerous input to the server by easily bypassing Client Side validation.  Both have their advantages, but server side validation is the best defense!</p>
+    
+    <p>Now let's look at an example, if a user wanted to print 10,000,000 GONAVY!'s in his browser window using a client side script, that'd be his own business. If a user wanted to do that using a server side scripted system, on <em>my</em> server, that'd be another matter altogether. It'd be my server that was slowed down processing the script, and all that silly data would be sent out over my network. So I'd like to put a limit, maybe of 5,000, on the size of the number I'd allow my server script to process. This means that I should check the number and refuse the request
+      if it's too big ... or, I suppose, if it's not a valid number. This is called input <em>validation</em>.  I might also decide to change the value of the user input to something that is acceptable. In this case we say we're <em>sanitizing the input</em>. There are two places I could decide to do validation and sanitizing of user input, on the client
+      or on the server.
+      <p>
+    
+  Let's look at client side validation first.  Your instructor will have a a server side script for you like this:
+<pre>function (N) {
+  var out = &quot;&quot;;
+  var iter = 0;
+  while(iter &lt; N)
+  {
+    out = out + &quot;G O N A V Y ! &quot;;
+    iter = iter + 1;
+  }
+  return out;
+}</pre>
+
+  that you can use.  It's expecting a URL with a name/value pair for the name N, like this: "<code>?N=800</code>". The web page should take N, the number of times to print GONAVY!, from the user via forms, and call the server side script with it.  When you have that working, modify the HTML form so it refuses to submit to the server with N &gt; 5,000.  Only if N &lt; 5000 should the JavaScript attached to the button's <code>onclick</code> attribute should execute <code>submit()</code>.  (Remember to keep the form's <code>onsubmit="return false;"</code> set.)
+      
+    
+<p>So, instead of just the onclick = "submit()" you need to insert an <a class="glossLink" href="calendar.php-76.html?load=glossary#I">if statement</a> that checks to see if the value the user entered into the input text box for N is &gt; 5,000, and either sanitize that value (change it) or do nothing and include an else for the submit().</p>
+
+
+      <p>
+  This is client side validation.  It is not the best choice for validation and sanitizing user input when using a server side script.  What's the problem here?
+  Well, someone who's up to no good can still hammer my server
+  with requests for N=999999999999 because they can always craft
+  the appropriate URL without using the original web page (the form and the button), thus
+  bypassing my client side validation.  In other words, if the user understands HTML forms and JavaScript, the user can view the HTML source code, and see the client side validation, build the appropriate URL, never clicking the button, thus never executing that <code>if</code> statement you just put into your HTML source code to stop user's from sending a larger N value to the server. The browser simply sends the GET request for the URL the user built to the server with <code>N=999999999999</code>. The server crashes. Therefore it's critical
+  to also use server side validation when there is a server side script. In this case. we could do something simple like this in the server side script itself:
+        </p>
+<pre>
+function (N) {
+  if (N &gt; 5000) {
+    N = 0;
+  }
+  var out = "";
+  var iter = 0;
+  while(iter &lt; N) {
+    out = out + "G O N A V Y ! ";
+    iter = iter + 1;
+  }
+  return out;
+}</pre>
+      <p>
+This is server side input validation (<code> if (N &gt; 5000)</code>) and server side sanitizing user input (<code>{ N = 0; }</code>).  Now, it doesn't matter whether the user uses the form or the URL to send the GET request. The server is protected.
+      </p>
+
+    
+
+    <div class="sec">
+      <h2>Extra Example You Can Try</h2>
+    There is a script at <a href="http://courses.cyber.usna.edu/SY110/checkers.jsx">http://courses.cyber.usna.edu/SY110/checkers.jsx</a> that creates a page with a nice checkerboard pattern whose dimensions are given to the script as values named <code>rows</code> and <code>cols</code>.  Try to craft a URL from that information alone to get a page with the checkerboard pattern.
+      <b onclick="document.getElementById('URLAnswer').style.visibility='visible';">[click to show answer]</b>
+      <code id="URLAnswer" style="visibility:hidden;">http://courses.cyber.usna.edu/SY110/checkers.jsx?rows=10&amp;cols=20</code>
+    
+    <p>
+      Next, try to create an HTML file with a form that allows the user to enter a number of rows and a number of columns and submits them to the script to get the checkerboard pattern.  Use one of the examples from above as a starting point. <b onclick="document.getElementById('FormAnswer').style.visibility='visible';">[click to show answer]</b>
+    <pre id="FormAnswer" style="visibility: hidden;">
+<font><strong><font><strong>&lt;</strong></font><font>HTML</font><font><strong>&gt;</strong></font></strong></font>
+  <font><strong><font><strong>&lt;</strong></font><font>body</font><font><strong>&gt;</strong></font></strong></font>
+
+    <font><strong><font><strong>&lt;</strong></font><font>form</font> <font>name=</font><font color="#008000">&quot;checkers&quot;</font> <font>
+  </font>  <font>action=</font><font color="#008000">&quot;http://courses.cyber.usna.edu/SY110/checkers.jsx&quot;</font> <font>
+  </font>  <font>onsubmit=</font><font color="#008000">&quot;return false;&quot;</font><font><strong>&gt;</strong></font></strong></font>
+      Number of rows: <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;text&quot;</font> <font>name=</font><font color="#008000">&quot;rows&quot;</font><font><strong>&gt;</strong></font></strong></font><font><strong><font><strong>&lt;</strong></font><font>br</font><font><strong>&gt;</strong></font></strong></font>
+      Number of columns: <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;text&quot;</font> <font>name=</font><font color="#008000">&quot;cols&quot;</font><font><strong>&gt;</strong></font></strong></font><font><strong><font><strong>&lt;</strong></font><font>br</font><font><strong>&gt;</strong></font></strong></font>
+      <font><strong><font><strong>&lt;</strong></font><font>input</font> <font>type=</font><font color="#008000">&quot;button&quot;</font> <font>
+  </font>     <font>value=</font><font color="#008000">&quot;Get Checkerboard Pattern&quot;</font><font>
+  </font>     <font>onclick</font> <font>=</font> <font color="#008000">&quot;submit();&quot;</font><font><strong>&gt;</strong></font></strong></font>
+    <font><strong><font><strong>&lt;</strong></font><font>/form</font><font><strong>&gt;</strong></font></strong></font>
+
+  <font><strong><font><strong>&lt;</strong></font><font>/body</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>/HTML</font><font><strong>&gt;</strong></font></strong></font></pre>
+
+
+    </div>
+  </body>
+</html>
+</div> <!-- /container --></body></html>
