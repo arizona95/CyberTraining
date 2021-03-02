@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "2865a2f03c9f8cdc8891439b769592dc7bdc135fa726a44e8102cecd505312d3";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Digital Certificates
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'><font color='black'><b>7 - Digital Certificates</b></font></a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>SY110: Digital Certificates</title>
+
+    <style>
+      @-webkit-keyframes blinker {
+        from {
+          opacity:1.0;
+        }
+        to {
+          opacity:0.0;
+        }
+      }
+      .css3-blink {
+        -webkit-animation-name:blinker;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-timing-function:cubic-bezier(1.0,0,0,1.0);
+        -webkit-animation-duration:1s;
+        text-decoration:blink;
+      }
+      pre.wincommand {
+        overflow:visible;
+        overflow-x:auto;
+      }
+    </style>
+
+    <script type="text/Javascript">
+      var ygYY="22";
+      var host = "";
+      var webserverPort = 3389;  // MIDN Firewall blocks 443
+      function fetchHostName() {
+        if (typeof(document.cookie) != 'string') return "";
+        var pat = /hostname=([^;]*)/;
+        var m = pat.exec(document.cookie);
+        if (m != null && m.length > 1) {
+          return m[1];
+        } else {
+          return "";
+        }
+      }
+
+      function sethostname() {
+        var hostName = "";
+        hostName = fetchHostName();
+        if (hostName == "" && document.forms.hostnameform.hostname.value == "") {
+          return;
+        }
+        if (hostName != "" && document.forms.hostnameform.hostname.value == "") {
+          host = hostName + '.academy.usna.edu';
+          document.forms.hostnameform.hostname.value = hostName;
+        } else {
+          hostName = document.forms.hostnameform.hostname.value;
+          document.cookie = 'hostname=' + hostName;
+          host = hostName + '.academy.usna.edu';
+        }
+        document.getElementById('commandKeyCreate').innerHTML = 'openssl genrsa -out pubpri.key 1024';
+        document.getElementById('commandRequestCreate').innerHTML = 'openssl req -new -key pubpri.key -out ' + host + '.csr -config C:\\OpenSSL-Win32\\bin\\openssl.cfg';
+        /* document.getElementById('commandPemCreate').innerHTML = 'type ' + host + '.key ' + host + '.crt &gt; ' + host + '.pem'; */
+        document.getElementById('commandLaunchwebserver').innerHTML = 'openssl s_server -cert ' + host + '.crt -key pubpri.key -WWW -accept <SPAN class=\'yellow\'>' + webserverPort + '</SPAN>';
+        document.getElementById('nameInPage').innerHTML = host;
+        document.getElementById('nameInPage0').innerHTML = host;
+        document.getElementById('nameInPage05').innerHTML = host;
+        /*document.getElementById('nameInPage1').innerHTML = host;*/
+        /*document.getElementById('nameInPage1a').innerHTML = host;*/
+        document.getElementById('nameInPage2').innerHTML = host;
+        /*document.getElementById('nameInPage3').innerHTML = host;
+        document.getElementById('nameInPage3a').innerHTML = host;*/
+        document.getElementById('nameInPage4').innerHTML = host;
+        document.getElementById('nameInPage6').innerHTML = host;
+        document.getElementById('nameInPage6a').innerHTML = host;
+        document.getElementById('nameInPage6b').innerHTML = host;
+      }
+    </script>
+  </head>
+  <body>
+  
+    <div class="noScreen">
+      <h1>SY110 - Cryptography - X.509 Certificates Lab Activity</h1>
+      <h1>(Short Version)</h1>
+    </div>
+
+    <div class="annotation">
+      Fonts matter.<br>
+      <pre class="wincommand">This is an <span color="blue">i</span> (lower case letter)</pre>
+      <pre class="wincommand">This is a  <span class="blue">1</span> (Arabic numeral)</pre>
+      <pre class="wincommand">This is an <span class="blue">l</span> (lower case letter)</pre>
+      <pre class="wincommand">This is an <span class="blue">I</span> (upper case letter)</pre>
+    </div>
+    
+    
+    <div class="sec">
+      <h2>STEP 0: Lab Prep</h2>
+  <ol class="inst">
+    <li>
+      <strong style="padding: 2pt; background-color: yellow;">Make  sure you are viewing this page in Firefox, and do the lab in Firefox!</strong><br> 
+    If not, close your browser and reopen this page in Firefox.  This page uses forms in which you will enter values, so Javascript must be enabled. Once the page is open in Firefox, <strong>DO NOT</strong> refresh/reopen the page: you will lose information you have already entered.
+    </li>
+    <li>
+      Create a directory named <code>digCertLab</code> on your <code>Desktop</code>. All files downloaded and created for this lab MUST be <strong>in this directory!</strong>
+    </li>
+    <li>
+      Open two Administrator command-prompt windows.<br>
+            All commands for this lab <span class="red">MUST</span> be entered and executed <strong>in these command-prompt windows</strong>.<br>
+            DO <u>NOT</u> CLOSE THESE WINDOWS! <br>
+            <span class="important">In the command-prompt windows, use the <code>cd</code> command to change directory to <code>digCertLab</code> directory you just created.<br>
+      In case you don't remember it will be something like:<br>
+      <code class="cmd">cd c:\users\m<script type="text/javascript">document.write(ygYY);</script>xxxx\desktop\digcertlab</code></span>
+    </li>
+        
+        <li> 
+          This lab will use <code class="cmd">openssl</code>.
+          You should have already installed <code class="cmd">openssl</code> when you installed the SY110 Course Software.
+          The following command will ensure that Windows will find the <code class="cmd">openssl</code> program (assuming you installed it!).
+          Copy the following command, paste it into your command window, and execute it.
+          <!--<PRE class="wincommand">set path=%path%;C:\OpenSSL-Win32\bin</PRE>-->
+          <code>set path=%path%;C:\OpenSSL-Win32\bin</code>
+        </li>
+        <li>If you do not have openssl installed on your system, install <a href="temp/vc_redist.x64.exe">this</a> program first, and then install openssl from <a href="temp/Win32OpenSSL_Light-1_0_2d.exe">here</a>.  Mac users: ask your instructor for guidance on the lab steps that require openssl.
+        </li>
+        <br>
+                
+      </ol>
+      <!--<SPAN class="wrkshtQuestion">&nbsp;&uarr; Worksheet Step 0.&nbsp;</SPAN><br><br>
+    </DIV>
+    
+    <!--
+    <DIV>
+      <H2>STEP 0.5: Instructor Demo</H2>
+      <P>
+        Sit tight and participate in this demo.
+      </P>
+      <SPAN class="wrkshtQuestion">&nbsp;&uarr; Worksheet Step 0.5&nbsp;</SPAN>
+    </DIV>
+    -->
+    
+    <div>
+      <h2>STEP 1: Certificates and Trust</h2>
+      <strong style="padding: 2pt; background-color: yellow;">Make  sure you are viewing this page in Firefox, and do the lab in Firefox!</strong><br> 
+      If not, close your browser and reopen this page in Firefox.    This page uses forms in which you will enter values, so Javascript must be enabled. Once the page is open in Firefox, <strong>DO NOT</strong> refresh/reopen the page: you will lose information you have already entered.
+    
+    In a new Firefox tab, open
+    <a href="../../index-31.htm"><code>https://www.navyfederal.org</code></a>.<br>
+    This is Navy Federal Credit Union's page.
+    Certainly we would like to be sure that this really is Navy
+    Federal's page before entering a username and password!
+    If a Bad Guy using a Man-In-The-Middle attack could
+    successfully pose as the Navy Federal website,
+    some very bad things could result.
+      <ol class="inst">
+        <li>Click on the green lock icon in the left of the address bar.<br>
+          <img src="calendar.php-80.png?key=ea9f7712e73eb87872ede6795e31ca408374a40d&type=lab&event=7" alt="Firefox View Certificate - 01" style="height:40pt;" onmouseover="this.style.height='150pt';" onmouseout="this.style.height='40pt';">
+        </li>
+        <li>Click the Right Arrow and then the <em>More Information</em> button. You will see a pop-up box that tells you:
+      to whom you are connected, who verified this identity, and
+      that your communication is encrypted.  It's the identity
+      and the verification of that identity that we care about.
+      That information comes to your browser as
+      a <em>certificate</em> (more precisely, a certificate using the X.509 standard).<br>
+          <img src="calendar.php-81.png?key=478fcb1a34d6e70ba174d3be5bcd8f44dc117d8a&type=lab&event=7" alt="Firefox View Certificate - 02" style="height:40pt;" onmouseover="this.style.height='350pt';" onmouseout="this.style.height='40pt';">
+          <p>
+            The certificate <strong>certifies</strong> that the <em>identity</em>
+      www.navyfederal.org is associated with a particular public key.<br>
+            Why? So that when you send data to navyfederal.org that has been encrypted with that public key,
+            you know the actual entity "www.navyfederal.org" is the only one who can decrypt the data.
+          </p>
+          <p>
+            But what makes you trust the certificate?
+          </p>
+          <p>
+            The idea is that there are <em>Certificate Authorities</em>,
+      entities that vouch for the validity of certificates by <em>signing</em>
+      them.  When your browser was installed, it came with a list of Certificate
+      Authorities that it (and thus you) already trust -- but you can add or remove
+            authorities.
+          </p>
+            You might be surprised at who you are currently trusting. Let's look!
+    </li>
+
+        <li>
+          <div class="news">
+        <strong>Certificate authority TURKTRUST not so trustworthy</strong><br>
+        Certificates that your browser is set to "trust" are
+        labeled with what exactly you trust them for: HTTPS
+        sessions, digitally signing e-mail, digitally signing
+        code, or issuing certificates, are some examples.
+        Certificate authorities that your browser is set to trust to
+        <em>issue certificates</em> are given essentially
+        unlimited trust.
+        <p>
+        In January 2013, it was discovered that the authority
+        Certificate Authority TURKTRUST had accidentally issued a
+        certificate to a customer that stated that the
+        certificate was valid for issuing new certificates
+        &mdash; it should only have been valid for HTTPS sessions.
+        This certificate was then used to issue fraudulent
+        certificates for Google domain names, which allowed the
+        bad guys to carry out man-in-the-middle attacks.
+        The blog <code>krebsonsecurity.com</code> has the story:
+        <a href="../../2013/01/turkish-registrar-enabled-phishers-to-spoof-google/index.htm">Turkish Registrar Enabled Phishers to Spoof Google</a>.
+        </p>
+          </div>
+          Click on the <em>hot dog menu</em> (three horizontal bars) on the right side of the Firefox toolbar.
+        </li>
+        <li>Click the <em>Options</em> button to open the options in a tab.<br>
+          <img src="calendar.php-82.png?key=a09a542eb37c39ec091a7a04ab6c20831b5e1893&type=lab&event=7" alt="Firefox Options" style="height:40pt;" onmouseover="this.style.height='350pt';" onmouseout="this.style.height='40pt';">
+        </li>
+        <li>Click <em>Privacy and Security</em> in the navigation menu on the left.</li>
+        <li>Scroll down to the <em>Certificates</em> section.</li>
+        <li>Click the <em>View Certificates</em> button.<br></li>
+          <img src="calendar.php-83.png?key=4e54aeeed81e4aebf782cc6efd9db491664fff2a&type=lab&event=7" alt="Firefox Advanced Certificate" style="height:40pt;" onmouseover="this.style.height='300pt';" onmouseout="this.style.height='40pt';">
+        
+        <li>Click the <em>Authorities</em> tab.<br>
+          <img src="calendar.php-84.png?key=f756d2b3d8a433ed6e71a0c13b774347377ecb69&type=lab&event=7" alt="Firefox Certificate Authorities" style="height:40pt;" onmouseover="this.style.height='350pt';" onmouseout="this.style.height='40pt';">
+            <p>
+              In the display window you will see the list of Certificate Authorities that you are trusting.
+            </p>
+        </li>
+        <li>Scroll through the list, find a Certificate Authority that you are surprised you are (didn't expect to be) trusting. <!--<SPAN class="wrkshtQuestion">&nbsp;&larr; Worksheet Step 1. Part 2.&nbsp;</SPAN>--><font color="red"><b>WORKSHEET!</b></font></li>
+        <li>Let's explore more details of the Navy Federal certificate. Reopen the <em>Page Info</em> dialog window.<br>
+          <img src="calendar.php-81.png?key=478fcb1a34d6e70ba174d3be5bcd8f44dc117d8a&type=lab&event=7" alt="Firefox View Certificate - 02" style="height:40pt;" onmouseover="this.style.height='350pt';" onmouseout="this.style.height='40pt';">
+        </li>
+        <li>Click the <em>View Certificate</em> button.<br>
+          <img src="calendar.php-85.png?key=9d3f17281fe4fd59ed19808cbb517a48eb76d818&type=lab&event=7" alt="Firefox View Certificate - 03" style="height:40pt;" onmouseover="this.style.height='350pt';" onmouseout="this.style.height='40pt';">
+        </li>
+        <li>Explore the <em>Certificate Viewer</em> dialog window.<br>
+          <img src="calendar.php-86.png?key=dba85dd2b1e6496816f2134a11e6515bd1625da9&type=lab&event=7" alt="Firefox View Certificate - 04" style="height:40pt;" onmouseover="this.style.height='400pt';" onmouseout="this.style.height='40pt';">
+        </li>
+        <li>Answer the following questions on the <font color="red"><b>WORKSHEET!</b></font>: <!--<SPAN class="wrkshtQuestion">&nbsp;&darr; Worksheet Step 1. Part 3.&nbsp;</SPAN>-->
+          <ul>
+            <li>Who issued the certificate (Common Name)?</li>
+            <li>When does the certificate expire?</li>
+            <!-- Shift back to Details tab, SHA256 with AES -->
+            <li>What algorithms are used as fingerprints (used as Integrity checks)?</li>
+          </ul>
+          <p>
+            <span class="note">The subject's <em>Common Name</em> is the real identity the certificate is about.
+          </span></p>
+        </li>
+        <li>You will now download an unknown certificate and look at it.
+          <p>
+            Right click the following link, select <code>Save Link As ...</code>, navigate to your <em>digCertLab</em> directory, and save the certificate there: <a href="ra37891_cert.pem?key=4e99d1ee86af81920299d69ab196b73d1123d93c&type=lab&event=7">unknown certificate</a>.
+          </p>
+          <p>
+            Examine the certificate by entering the following command in your command window:
+          </p>
+          <pre class="wincommand">openssl x509 -text -in ra37891_cert.pem</pre>
+          <ul>
+            <li>Whose identity is this certifying? (look for the subject's Common Name)</li>
+            <li>Who signed the certificate? (look for issuer's Common Name)</li>
+            <li>What's fishy about this?</li>
+          </ul>
+          
+            <!--<SPAN class="wrkshtQuestion">&nbsp;&uarr; Worksheet Step 1. Part 4.&nbsp;</SPAN>--><font color="red"><b>&uarr; WORKSHEET &uarr;</b></font>
+            <!--<br><br>
+            Mac users: if you do not have openssl installed, you can use this <a href="https://www.usna.edu/CyberDept/sy110/temp/opennssl_screenshot.PNG">screenshot</a> to answer the questions in the worksheet.-->
+          
+          <!--
+          <P>
+            To see what happens when you send your browser to a site with a fishy certificate like this, pull up:
+          </P>
+          <pre>https://rona.academy.usna.edu</pre>
+          <P>
+            What happened?
+            Check out the "Advanced".
+          </P>
+          -->
+        </li>
+      </ol>
+    </div>
+<br>
+    <div class="sec">
+        <h2>How the Digital Certificate System Works</h2>
+  Under the hood, here's basically what happens:<br>
+  Alice wants to connect via https to bob.org, which is Bob's server. <br>
+  Alice trusts a Certificate Authority named Cedric. <br>
+        All three of these - Alice, Bob, and Cedric - have public/private key pairs.
+        Alice, of course, has Cedric's public key, and she trusts it is authentic, because she trusts
+        that Certificate Authority.
+        <ol>
+    <li>Bob submits to Cedric: proof of his identity, the domain name he wants a certificate for,
+              and his public key.</li>
+    <li>After verifying Bob's identity, Cedric uses Cedric's private key to encrypt the pair
+              (<em>domain name, public key</em>) ... which in this case is (<em>bob.org,Bob's-public-key</em>).
+              That encrypted "thing" is the actual certificate bob.org will use to prove its identity.</li>
+    <li>
+      When Alice browses to <code>bob.org</code>, <code>bob.org</code> sends Alice its certificate:
+            (<em>bob.org,Bob's-public-key</em>) which has been encrypted with Cedric's private key.
+    </li>
+    <li>
+      Alice decrypts the certificate with Cedric's public key (remember,
+      Cedric is a certificate Authority she trusts). She now has
+      (bob.org,Bob's-public-key).  She knows Cedric must indeed have created
+            this certificate, because his private key is required to make something
+            decryptable by his public key.
+    </li>
+    <li>
+      Because she trusts Cedric,
+      Alice trusts that the public key in the certificate
+      really belongs to bob.org. She can then use it to send
+      data and ensure confidentiality.
+    </li>
+        </ol>
+  The actual scheme used by X.509 is a little more complicated
+  that what we described, but conceptually the same.<br><br><br>
+  <!--<SPAN class="wrkshtQuestion">&nbsp;&uarr; Worksheet Step 2.&nbsp;</SPAN><br><br>-->
+    </div>
+    <div class="sec">
+      <h2>STEP 2: Certificates at the Academy</h2>
+      <ol>
+        <li>Open <em>Chrome</em>, then open the Developer's Console (ctrl+shft+I), and then select the 'Security' tab.</li>
+        <li>Browse to: <code>https://gozer.usna.edu</code>.  You may receive a warning that your connection is not private, that's OK.</li>
+        <li>Click on the warning icon in the address bar, and select 'Certificate'.</li>
+        <!--<LI>Open the <EM>Web Developer Console</EM> by pressing: <CODE>Ctrl-Shift-J</CODE></LI>
+        <LI>Select the <EM>Security</EM> tab.</LI>-->
+        <li>Using the information in the site's certificate, as well as the connection information displayed in the developer console, answer the questions on your worksheet.</li>
+      </ol>
+      <!--<SPAN class="wrkshtQuestion">&nbsp;&uarr; Worksheet Step 7.&nbsp;</SPAN>--><font color="red"><b>&uarr; WORKSHEET &uarr;</b></font><br><br>
+    </div>
+
+    <div class="sec">
+      <h2>OPTIONAL STEP <span style="font-size: 1.3em;">&infin;</span>: Your Personal Certificates</h2>
+    <strong>NOTE: THIS STEP CAN ONLY BE COMPLETED IF YOU KNOW YOUR CAC PIN. If you do not, then skip it.</strong>
+  <br>Using Chrome, and <em>without</em> your CAC card, visit one
+    or all of following
+     sites:
+     <ul>
+      <li><a href="https://mypay.dfas.mil" target="_blank"><code>https://mypay.dfas.mil</code></a>
+        (Click on DoD CAC Login Button to test)</li>
+      <li><a href="https://wwwa.nko.navy.mil/" target="_blank"><code>https://wwwa.nko.navy.mil/</code></a>
+      (Click on the CAC Log In button to test)
+    </li></ul>
+    Did that work? What was the website looking for?
+   <p>
+You need to use DoD issued personal certificates!
+To learn about your own digital certificates on your CAC card, perform the
+following steps.
+    </p>
+<ol>
+<li>
+Insert your CAC card in the card reader slot on your laptop.
+Double click on the gray and blue ActiveClient Agent - Smart Card Inserted
+icon in the lower right portion of your screen.
+Click on My Certificates and then you should see your certificate. You probably only have one. When you are commissioned, you will probably have two more added to use with digitally signing and encrypting email. The one certificate you do have allows you to access protected DoD and Navy websites, like those above.
+Right click on the certificate and select View to see what information that certificate stores.
+</li>
+<li>
+Now that your CAC has been inserted to the card reader, your certificate
+has been loaded into the browser and is ready for use. To see this, Close
+Chrome, reopen, and try to visit any of the sites again (NOTE: The
+https://www.portal.navy.mil site can be finicky and slow). This time you
+should be prompted to select one of your digital certificates from your CAC
+card. Select one (EMAIL certificate is usually best) and you should be
+prompted next to enter your CAC PIN. If you know your PIN, type it, and you
+will get access to the sites. If you do not know your PIN, you cannot get to
+the site. The site requires two-factor authentication: something you have
+(your CAC card) and something you know (your CAC PIN)!
+</li>
+<li>
+To see your certificates in Chrome's certificate list, go to Chrome's
+Options --> Under the Hood. Scroll down to HTTPS/SSL and click on Manage
+certificates...select the tab for Personal and you will see your CAC
+certificates there. The Intermediate Certificate Authorities tab should show
+a bunch of DOD certificates - those are also needed to get to DoD sites and
+are part of the chain of trust from DoD root certificates down to your DoD
+issued personal certificate!
+        </li>
+      </ol>
+    </div>
+    <br><br>
+  </div></body>
+</html>
+</div> <!-- /container --></body></html>

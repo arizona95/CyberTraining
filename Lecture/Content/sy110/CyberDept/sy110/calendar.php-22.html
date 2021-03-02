@@ -1,0 +1,876 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "60e93eb93c9512cb1115f5c492a0c8c75466ac5e1c954fd4d54c546d2b4626f4";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Stack - Network Layer
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'><font color='black'><b>19 - Stack - Network Layer</b></font></a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>BRAND: Network Layer</title>
+
+
+  </head>
+  <body>
+    <span id="top"></span>
+
+    <div class="noScreen">
+      <h1>Stack-Network Layer</h1>
+    </div>
+
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Describe terms associated with the Network Layer: packet, IP address, routing, private IP space, internet</li>
+        <li>Explain the purpose of the following protocols: IPv4, ICMP, IPv6</li>
+        <li>Explain the problems that the Network Layer protocols above handle; i.e. the services the Network Layer protocols provide</li>
+        <li>Explain the problems that the Network Layer protocols above do not handle; i.e. the issues that other layers need to address</li>
+        <li>Describe the purpose/functionality of the following hardware devices: router</li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <div id="discussion">
+      <h2>Discussion</h2>
+      <div>
+        <h3>Introduction to the Network Layer</h3>
+        <div class="fleet">
+          <h1>NIPRNet</h1>
+          <p>
+          "Nippernet" is the colloquial name for the DoD subset of the Internet that carries sensitive but UNCLASSIFIED IP data.
+          Access to the NIPRNet is tightly controlled: all data crossing the NIPRNet/Internet boundary must pass through a DoD-owned router, and hosts on the NIPRNet resolve names using DNS servers operated by the DoD Network Information Center.
+          The DoD also owns and operates the SIPRNet (pronounced Sippernet), for classified data.
+          </p>
+          <p style="text-align:center;">
+            <a href="calendar.php-38.png?key=c2e64a0d6654d89ec2831541bf20d24fa438e190&type=class&event=19"><img src="calendar.php-38.png?key=c2e64a0d6654d89ec2831541bf20d24fa438e190&type=class&event=19" alt="The Internet, NIPR, and SIPR" style="padding:10px 0px 10px 0px; width:320px;" title="Click for a higher-resolution image"></a>
+          </p>
+          <p>
+            Both the NIPRNet (Non-secure Internet Protocol Routed Network) and SIPRNet (Secret Internet Protocol Routed Network) use the TCP/IP Stack that you are learning about.
+            So, best practices from the Internet apply to the NIPRNet and SIPRNet, but vulnerabilities from the Internet also apply to the NIPRNet and SIPRNet.
+            Ships and other war fighting platforms are connected to the NIPRNet and SIPRNet.
+          </p>
+        </div>
+        <p>
+          So, the Data Link Layer provides a local network, but how do Alice and Bob talk if they are on different networks?
+          That is the exact problem that the Network Layer solves.
+          Within the TCP/IP Stack the Network Layer interconnects local networks, forming interconnected networks; i.e. an <em>internet</em>.
+          An internet is simply a collection of interconnected networks.
+          Just like there are different types of local networks, different Data Link Layer protocols, there are different Network Layer protocols.
+          However, in practice there is one vastly dominate (usage wise) Network Layer protocol: the Internet Protocol (IP).
+          The Internet Protocol was named because it is used to interconnect networks.
+          The Internet is the largest, public, global collection of interconnected networks.  In fact, the Internet is interplanetary as the <a href="../../MarsCuriosity.html" target="_blank">Curiosity Rover</a> on Mars has a Twitter feed.
+        </p>
+      </div>
+      <div>
+        <h3>Network Layer Basics</h3>
+        <p>
+          <a class="glossLink" href="calendar.php-76.html?load=glossary#I"><strong>IP address</strong></a>.
+          On the Internet, hosts are identified by their <em>IP addresses</em>, Internet Protocol (IP) address.
+          They may or may not have a name as well, but always an IP address.
+          IPv4 (IP version 4) addresses are usually written down as four numbers with dots in between, like <code>146.145.5.67</code>, though more on that later.
+        </p>
+        <p>
+          <a class="glossLink" href="calendar.php-76.html?load=glossary#P"><strong>Packets</strong></a>.
+          Information travels around the Internet like notes being passed in class.
+          Suppose Host A has a message to send to Host B.
+          Host A breaks his message into small chunks and sends each chunk, prefaced with Host B's address, across the Internet.
+          This address information + message chunk is called a <em>packet</em>.
+          Each packet gets passed from one host to another (again, like a note passed in class) until it finally reaches Host B.
+        </p>
+        <p>
+          <strong><a class="glossLink" href="calendar.php-76.html?load=glossary#R">Routers</a></strong>.
+          The intermediate packet-passing hosts in this process are called <em>routers</em>.
+          Hosts normally live at the end points of communication, and routers live along the communication links in the middle.
+          When passing notes in class, when a note gets passed to you, you can't usually hand it directly to the recipient, instead you can only hand it to one of your <em>neighbors</em> &mdash; and you choose a neighbor that gets the packet closer to the recipient.
+          Routers work the same way.
+          A router's neighbors are the routers (or hosts) it has direct connections to (e.g. connected by a cable).
+          The diagram below depicts two local, edge networks interconnected via two routers; no Data Link Layer hardware devices (like a switch) are depicted in the diagram.
+          Host 0 and Host 1 are on one local network, and Host 2 and Host 3 are on a separate local network.
+          Router 0 and Router 1 are connected, and thus able to interconnect the two edge local networks.
+        </p>
+        <p style="text-align:center;">
+          <img src="calendar.php-39.png?key=61afef7ff2f465149d3b113af3f96b3e08b796d9&type=class&event=19" alt="Local Networks Connected via Routers" style="height:150px; width:300px;">
+        </p>
+        <p>
+          A router uses a packet's IP Address to choose a neighbor host that gets the packet closer to the recipient (destination IP Address), and passes the packet on to that neighbor.
+          The process of forwarding a packet to the next closer network performed by a router is known as <em>routing</em>.
+          Basically, routers are the networking devices that interconnect separate local networks.
+          The largest public global collection of such interconnected networks is known as ... drum roll ... the Internet.
+          Since a router interconnects multiple local networks, it has to be on (be a member of each local network).
+          If a router interconnects two local networks, then it will be a member of each local network.
+          So, looking back at the diagram above, there are actually three local networks:
+        </p>
+        <ol>
+          <li>Network 0: Host 0, Host 1, Router 0</li>
+          <li>Network 1: Host 2, Host 3, Router 1</li>
+          <li>Network 2: Router 0, Router 1</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Internet Protocol version 4</h3>
+        <p>
+          With some of the basics covered, we will now take a deeper look at IPv4 (Internet Protocol version 4).
+          Being a Network Layer protocol, IPv4 interfaces with the Data Link Layer and the Transport Layer; we will talk about the Transport Layer in the next discussion.
+          Recall, that ARP translates between a Data Link Layer address and a Network Layer address (see diagram below).
+          The <em>Internet Address</em> column is the Network Layer address, in the case below the IPv4 addresses of the hosts on the local network.
+          ARP is one of the protocols that binds the Data Link Layer and the Network Layer together; i.e. ARP is part of the interfacing between the Data Link Layer and the Network Layer.
+        </p>
+        <p>
+          <img src="calendar.php-40.png?key=a24664d8f4c6a34c86615ea461bc46f92a8b6b38&type=class&event=19" alt="Windows 7 arp -a">
+        </p>
+        <p>
+          So, beyond interconnecting local networks, what else does IPv4 do?
+          What services does IPv4 provide?
+          Well, unfortunately IPv4 like Ethernet is a best effort protocol, so there is no guarantee of delivery.
+          That being said, the technologies, IPv4 being one of them, that make up the Internet are quite robust, and resilient.
+        </p>
+        <p>
+          IPv4 provides a mechanism for large amounts of data from upper layers to be broken down into smaller chunks of data, a process called fragmenting.
+          This allows the data in a packet to be fit into the associated size of the frame at the Data Link Layer, different Data Link Layer protocols support difference frame sizes, as the packet traverses across different types of local networks.
+          In IPv4 the fragmenting of packets is done by routers, this allows the data to traverse across networks without involving the sending (source) host.
+          Fragmented packets are then reassembled at the receiving (destination) end.
+        </p>
+        <p>
+          Like Ethernet, IPv4 has a way to detect data transmission errors from the lower layers, at least errors within the IP header.
+          Remember the concepts of encapsulation and de-encapsulation (see below).
+        </p>
+        <p>
+          <img src="calendar.php-41.png?key=29d3846123c943b3314a6e7720dc45056f92448c&type=class&event=19" alt="TCP/IP Data Encapsulation/De-encapsulation" style="">
+        </p>
+        <p>
+          IPv4 does have a companion protocol, called Internet Control Message Protocol (ICMP), that it uses to report errors back to source address.
+          For example, if a router does not know how to get to the destination network, then the router will send a specific ICMP message back to the source host letting them know that there is no route to the destination.
+        </p>
+        <p>
+          It is important to point out a couple other aspects of best effort.
+          Think back to the passing notes in class example.
+          Just like in class, on the Internet a packet may be dropped, or lost.  If there is too much interference at the Physical Layer, then a frame may not be reconstructed.  Therefore the associated packet will not make it to the next router or destination host.
+          Similarly, one packet of a message make take a different route between the interconnected networks than the next packet and arrive out of order (Janet left the message in her pocket overnight).
+          Since IPv4 does not solve these problems, it is up to layers higher in the protocol stack to address these issues.
+        </p>
+        <p>
+          One of the key problems that IPv4 does solve is identifying hosts across all of the interconnected networks.
+          That seemingly easy sounding problem, is actually a challenging problem in and of itself; a problem that has had to be readdressed multiple times over the decades.
+          Just like Ethernet, all IP packets have a source and destination address.
+          But instead of a MAC address, IPv4 uses IP addresses.
+        </p>
+        <p>
+          <strong><a class="glossLink" href="calendar.php-76.html?load=glossary#D">Dotted Quad</a> Notation</strong>.
+          An IP Address is a 32-<a class="glossLink" href="calendar.php-76.html?load=glossary#B">bit</a> number.
+          A 32-bit number can be viewed as four 8-bit pieces (four <a class="glossLink" href="calendar.php-76.html?load=glossary#B">bytes</a>) and we usually write IPv4 Addresses as four 8-bit numbers, separated by dots.
+          This is called a <em>dotted quad</em> notation.
+          For example:
+        </p>
+        <pre style="clear:right;">
+          146.145.5.67
+       ___/    /   \  \____
+      /       /     \      \
+10010010.10010001.00000101.01000011 &rarr; 10010010100100100000010101000011 &rarr; 2458977603</pre>
+        <p>
+          The reason we prefer dotted quad notation is a) they're generally easier to remember than a string of 32 bits, and b) the first two to three bytes are often the same for all hosts on the same local network.
+          For example, IP Addresses in Michelson Hall often begin with <code>10.53.*.*</code> or <code>10.22.*.*.</code>
+          The similarity is harder to see when addresses are written out as a single 32-bit number.
+        </p>
+        <div style="border-style:solid; text-align:center;">
+          <script type="text/javascript">
+            function dottedQuadHandler(IPvalue) {
+              var quads = IPvalue.split(".");
+              var decimal = 0;
+              var decimalSum = 0;
+              if ( quads.length != 4 ) {
+                alert("Invalid IP Address input!");
+                return false;
+              }
+              for ( var j=3; j >= 0; j-- ) {
+                decimal = parseInt(quads[3-j]);
+                if ( isNaN(decimal) || decimal < 0 || decimal > 255 ) {
+                  alert("Invalid IP Address input!");
+                  return false;
+                }
+                decimalSum += decimal * Math.pow(2,j*8);
+              }
+              document.conversionForm.decimalTextbox.value = decimalSum;
+              document.conversionForm.binaryTextbox.value=decToBinString(decimalSum);
+            }
+
+            function padTextPrefix (InString, PadChar, DefLength)  {
+              if (InString.length >= DefLength)
+                return (InString);
+              OutString = InString
+              for (Count = InString.length; Count < DefLength; Count++)  {
+                OutString = PadChar + OutString;
+              }
+              return (OutString);
+            }
+
+            function decHandler(decNumber) {
+              //handle decimal to binary conversion and output
+              var decNumber = Number(document.conversionForm.decimalTextbox.value);
+              if ( isNaN(decNumber) || decNumber > 4294967295 || decNumber < 0 ) {
+                alert("Invalid decimal input!");
+                return false;
+              }
+              // first convert dec -> binary and fill binary in binTextBox
+              document.conversionForm.binaryTextbox.value = decToBinString(decNumber);
+              // convert decimal number to dottedquad format
+              document.conversionForm.dottedQuadTextbox.value=toDottedQuad(decNumber);
+            }
+
+            function decToBinString(decNumber) {
+              var binOutput = decNumber.toString(2);
+              return padTextPrefix(binOutput,"0",32) ;
+            }
+
+            function toDottedQuad(n)
+            {
+              var total = "";
+              var quad = 0;
+              for ( var i=0; i < 4; i++ ) {
+                quad = n % 256;
+                total = quad.toString(10) + "." + total;
+                n = Math.floor(n / 256);
+              }
+              return total.slice(0,-1);
+            }
+
+            function binHandler(binNumber) {
+              binNumber = parseInt(binNumber,2);
+              if ( isNaN(binNumber) || binNumber < 0 ) {
+                alert("Invalid binary input!");
+                return false;
+              }
+              //handle decimal to binary conversion and output
+              document.conversionForm.decimalTextbox.value=binNumber.toString(10);
+              //handle decimal to hex conversion and output
+              document.conversionForm.dottedQuadTextbox.value=toDottedQuad(binNumber);
+            }
+          </script>
+          <form action="#" name="conversionForm">
+            <p>
+              Enter an IPv4 Address in either a dotted-quad, decimal, or <a class="glossLink" href="calendar.php-76.html?load=glossary#B">binary</a> and press <code>Enter</code>:
+              <br>
+              <br>
+              Dotted-quad: <input style="width:15ex;" maxlength="15" name="dottedQuadTextbox" onchange="dottedQuadHandler(dottedQuadTextbox.value);">
+              Decimal: <input style="width:12ex;" maxlength="10" name="decimalTextbox" onchange="decHandler(decimalTextbox.value);">
+              Binary: <input style="width:34ex;" maxlength="32" name="binaryTextbox" onchange="binHandler(binaryTextbox.value);">
+            </p>
+          </form>
+        </div>
+        <div class="annotation">
+          <h1>UNIX Version of Windows <code class="cmd">ipconfig</code></h1>
+          In UNIX, <code class="cmd">ifconfig</code> (Interface Configure) is used to get information, and configure network interfaces much like the Windows equivalent <code class="cmd">ipconfig</code>.
+        </div>
+        <p>
+          <strong>Your IP Address</strong>.
+          You can determine the IP Address of your Windows laptop using the utility <code><a class="glossLink" href="calendar.php-76.html?load=glossary#I">ipconfig</a></code> in the <a class="glossLink" href="calendar.php-76.html?load=glossary#S">shell</a>.
+        </p>
+        <ol>
+          <li>Open a Windows shell</li>
+          <li>Enter the command: <code><span class="prompt">C:&gt;</span><span class="cmd">ipconfig</span></code></li>
+          <li>There will be a line in the output that looks like:
+            <pre>IPv4 Address. . . . . . : 10.22.88.124</pre>
+            which is the IPv4 Address of your computer</li>
+        </ol>
+        <div class="fleet">
+          Just like in other warfare domains, we need to classify entities within the domain as friendly, neutral, or hostile.
+          Network Layer addresses are one of the ways in which we identify players on the cyber battlefield.
+          In cyber operations it is important to know the IP addresses of friendly forces, neutral forces, and hostile forces.
+          Also, just like other warfare domains identifying who the hostiles are is a challenge in and of itself.
+          Attribution in the cyber domain is a challenge, but often times there are indicators that serve as sources of attribution.
+        </div>
+        <p>
+          <strong>Network Address</strong>.
+          The subnet mask is used to reveal a network address within an IP address.
+          The <em>network address</em> is common to all IP addresses on the same network.
+          <strong>Every host on the same network shares the same network address</strong>.
+          If you were to apply a network's subnet mask to every IP address on that network, each one would reveal the same network address.
+        </p>
+        <div class="annotation" style="clear:right;">
+          You will not need to calculate a host's network address by hand (although it is easy to do since you know binary and basic boolean logic), but you need to understand the concept that determining whether a host is on your network or not is crucial to communicating with hosts in and out of your network.
+        </div>
+        <p>
+          <strong><a class="glossLink" href="calendar.php-76.html?load=glossary#S">Subnet Mask</a></strong>.
+          As we know, each host has an <a class="glossLink" href="calendar.php-76.html?load=glossary#I">IP address</a>.
+          Two hosts on the same network have the same initial chunk of <a class="glossLink" href="calendar.php-76.html?load=glossary#B">bits</a> within their IP addresses.
+          How big that initial chunk of bits is is defined by a 32-bit number called the <em>subnet mask</em>.
+          If you write it out a subnet mask in <a class="glossLink" href="calendar.php-76.html?load=glossary#B">binary</a> it looks like a sequence of 1's followed by a sequence of 0's.
+          The sequence of 1's defines the bits that are identical for every host in the network.
+          You can see your subnet mask by looking in the output from <code class="cmd">ipconfig</code>, or <code class="cmd">ifconfig</code>.
+        </p>
+        <p>
+          <strong>Is Host X on my network?</strong>
+          A host uses its own subnet mask to determine if a remote host is on its own local network or not.
+          For example, Host Alice wants to send a message to Host Bob.
+          Alice knows her own IP address, and can lookup the IP address of Bob since he's connected to the Internet.
+          Alice bit-wise AND's, boolean logic operation (you remember your true/false values right?), her subnet mask with her IP address to determine what network she is on.
+          Alice then bit-wise AND's her subnet mask with the IP address of Bob.
+          Alice compares the results (there's <code>if</code> statement again) of her network address and what she calculated Bob's network address to be.
+          If the two network addresses match, then Alice and Bob are on the same network.
+          If Alice and Bob are on the same network, then Bob should be in Alice's ARP table, and we know about local network communications from the Data Link Layer.
+        </p>
+        <p>
+          But if Alice and Bob are on different networks, what does Alice do?
+          Well, what device interconnects different networks?
+          Right, a router interconnects different local networks.
+          Since Alice's router is on her network, Alice transmits a frame to her router at the Data Link Layer because Alice and her router are directly connected (on the same network).
+          The data inside that frame includes the IPv4 header information, but at the Network Layer the packet is addressed to Bob, not Alice's router.
+          By keeping the source address as Alice, and the destination address as Bob in the IP header the packet can hop between networks, still reach Bob, and Bob knows who the packet came from so he can reply.
+        </p>
+        <div class="spanannotation" style="clear:right;">
+          Each network has two special addresses which cannot be used by a host.
+          They are the <em><a class="glossLink" href="calendar.php-76.html?load=glossary#N">network address</a></em> and the <em><a class="glossLink" href="calendar.php-76.html?load=glossary#B">broadcast address</a></em>.
+          The broadcast address is used to send a packet to <em>all</em> hosts on the network and is characterized by the network address followed by all <code>1</code>'s.
+        </div>
+      </div>
+      <div>
+        <h3>Routing: Hardware and Software</h3>
+        <p>
+          <strong>Routers</strong>.
+          Routers are special devices that are connected to multiple networks and make decisions on where next to forward, or route, the packets they receive.
+          In addition to forwarding packets for others, routers also generate their own packets used to communicate with other routers.
+          Routers communicate using a <em>routing protocol</em>, which is used to maintain accurate routing information for the Internet, and to determine where the best next <em>hop</em> is for a packet based on its destination network.
+          <em>All routers must be connected to at least two different networks to actually route packets</em>.
+          A hop is a unit of measure at the Network Layer, each router that a packet passes through en route to its destination is considered a hop.
+          A hop is unitless; i.e. it is simply a counter.
+        </p>
+        <p>
+          A router is considered a Network Layer device since it processes packets based on IP addresses.
+          A router additionally performs the same functions of a switch (a router reads and writes MAC addresses) and a hub (detects signals and collisions).
+          Since a router has multiple IP addresses, so it can perform the interconnections, a router also has multiple MAC addresses.
+          Again routers are hosts on networks, where as hubs and switches are not hosts on a network.
+        </p>
+        <p>
+          When determining where to send a packet, the originating host first must calculate if the destination IP and its source IP are on the same network (as defined above).
+          If the destination IP is on the <em>same</em> network, the packet will be sent to the destination host directly.
+          If the destination IP address is on a <em>different</em> network, the packet will be sent out via the local network's router, which will then forward the packet out a different network connection.
+        </p>
+        <p>
+          When a packet is sent to another host on the <em>same</em> network (as defined above), the frame's destination MAC address is set to the MAC address of the destination host.
+          When a packet is sent to another host on a <em>different</em> network, the frame's destination MAC address is set to the MAC address of the local network's router.
+        </p>
+        <p>
+          <strong>Demo</strong>.
+          <a href="../../SY110/calendar.php?key=9e4daf91109567f5eb7cfcadf48a41e18855576e&type=resources&event=17">Local Network/Inter-Network Demo</a> (credit: Aaron Herber, USNA 2012): This demo illustrates how packets are sent within a single network and between hosts on different networks.
+          Additionally, it has a nice animation for ARP requests, which is how a host builds up an ARP table, the table that matches IP addresses to MAC addresses for host on the same network.
+        </p>
+        <div class="annotation">
+          <a href="../../gp/product/0448421658.html?keywords=story%20about%20ping&qid=1444235985" target="_blank">The Story About Ping</a> continues to be a valuable early introduction to the UNIX networking utility even though it pre-dates formal UNIX implementations by decades (see reviews).
+        </div>
+        <p>
+          <strong><code class="cmd">ping</code></strong>.
+          One of the most fundamental questions you might ask involving IP networking is this: is there a <a class="glossLink" href="calendar.php-76.html?load=glossary#H">host</a> at a given <a class="glossLink" href="calendar.php-76.html?load=glossary#I">IP address</a>?
+          The <a class="glossLink" href="calendar.php-76.html?load=glossary#S">shell</a> utility <code>ping</code> is designed to answer this question.
+          <code class="cmd">ping</code> makes use of a part of the Internet Control Message Protocol (ICMP), specifically echo request and echo reply.
+          ICMP is a companion protocol to IPv4, ICMP operates at the Network Layer just like IPv4.
+          <code class="cmd">ping</code> takes an IP address (or a host name, MTF) and sends an ICMP "echo request" <a class="glossLink" href="calendar.php-76.html?load=glossary#P">packet</a> to the destination address.
+          <code class="cmd">ping</code> waits for a response for a while, then tries again.
+          <code class="cmd">ping</code> prints out statistics about how many packets were received, round trip time, etc.
+          Here are the results of two pings:
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+$ ping 10.1.83.17
+PING 10.1.83.17 (10.1.83.17) 56(84) bytes of data.
+64 bytes from 10.1.83.17: icmp_seq=1 ttl=255 time=0.269 ms
+64 bytes from 10.1.83.17: icmp_seq=2 ttl=255 time=0.363 ms
+64 bytes from 10.1.83.17: icmp_seq=3 ttl=255 time=0.229 ms
+64 bytes from 10.1.83.17: icmp_seq=4 ttl=255 time=0.243 ms
+^C
+--- 10.1.83.17 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 2998ms
+rtt min/avg/max/mdev = 0.229/0.276/0.363/0.052 ms</pre>
+              </td>
+              <td>
+                <pre>
+$ ping 131.122.88.244
+PING 131.122.88.244 (131.122.88.244) 56(84) bytes of data.
+From 131.122.90.156 icmp_seq=1 Destination Host Unreachable
+From 131.122.90.156 icmp_seq=2 Destination Host Unreachable
+From 131.122.90.156 icmp_seq=3 Destination Host Unreachable
+From 131.122.90.156 icmp_seq=4 Destination Host Unreachable
+From 131.122.90.156 icmp_seq=5 Destination Host Unreachable
+From 131.122.90.156 icmp_seq=6 Destination Host Unreachable
+^C
+--- 131.122.88.244 ping statistics ---
+7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6032ms
+, pipe 3</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          In the first case, the destination host was "up" (responding) and responded with an echo reply for each echo request received.
+          In the second case, there was no host at that address.
+          <code class="cmd">ping</code> is useful for debugging network problems; e.g. midn.cyber.usna.edu is not refreshing ... is the <a class="glossLink" href="calendar.php-76.html?load=glossary#S">server</a> down/unreachable right now, or is it something else?
+          It's also used as a tool for network reconnaissance, as we'll see later in this course.
+          You could ping every address in a range in order to find out what hosts there are on a given network.
+          Another nefarious use for ping is to have a group of <a class="glossLink" href="calendar.php-76.html?load=glossary#C">computers</a> send lots and lots of ping requests to a given server, hoping to keep it so busy answering the stupid pings that it can't do any useful work.
+          This is a simple <em>Denial of Service (DoS) attack</em>, which we'll see more of later.
+          Not all hosts reply to a ping request, mainly because the tool is sometimes abused by malicious people and <a class="glossLink" href="calendar.php-76.html?load=glossary#P">programs</a>.
+          Still, it is a useful tool.
+        </p>
+        <div class="annotation" style="clear:right;">
+          Windows also has a <code class="cmd">traceroute</code> shell command: <code class="cmd">tracert</code>.
+          Open a shell and try it from your laptop.
+        </div>
+        <p>
+          <strong>Routes</strong>.
+          We know that each host on the Internet has an IP Address, and we learned that information is communicated between hosts in <em>packets</em>.
+          We can use software tools to get an idea of the path a network packet takes as it transits from source to destination.
+          There's a shell utility called <code><a class="glossLink" href="calendar.php-76.html?load=glossary#T">traceroute</a></code> that shows the path a single packet travels  from a source host to a destination host on the Internet.
+          The following output from <code>traceroute</code> shows the route from a host here at USNA to a host (in this case, a web server) in Austria.
+        </p>
+        <pre>
+<span class="prompt">$ </span><span class="cmd">traceroute</span> <span class="arg">www.risc.uni-linz.ac.at</span>  <span class="cmnt"># Host names are used here, we will discuss host names when we get to the Application Layer</span>
+
+1  michelson-3a-as1-v401.gw.usna.edu (10.53.33.1)  1.779 ms  1.180 ms  1.167 ms
+2  michelson-1a-ag1-v2x05.net.usna.edu (10.48.1.93)  1.200 ms  1.274 ms  0.904 ms
+3  yard-d2-v3x60.net.usna.edu (10.48.2.81)  0.776 ms  0.681 ms  0.734 ms
+4  usna-c2-v2x14.net.usna.edu (10.0.2.25)  0.922 ms  0.786 ms  0.805 ms
+5  border-d2-v2x18.net.usna.edu (10.0.2.34)  1.533 ms  0.992 ms  1.011 ms
+6  border-f2-gi0_8s3001.net.usna.edu (10.4.16.2)  1.506 ms  1.044 ms  1.230 ms
+7  maryland-r1-po1s2001.net.usna.edu (136.160.88.4)  1.335 ms  1.714 ms  1.487 ms
+8  gig1-8.umab-core.net.ums.edu (136.160.255.49)  2.477 ms  2.763 ms  12.486 ms
+9  balt-usm.maxgigapop.net (206.196.177.17)  4.015 ms  3.218 ms  3.271 ms
+10  i2-newy-rtr.maxgigapop.net (206.196.177.51)  11.083 ms  11.311 ms  12.932 ms
+11  198.71.45.237 (198.71.45.237)  110.292 ms  110.289 ms  109.886 ms
+12  ae3.mx1.ams.nl.geant.net (62.40.98.115)  97.495 ms  110.193 ms  97.360 ms
+13  ae0.mx1.fra.de.geant.net (62.40.98.128)  91.859 ms  95.822 ms  104.412 ms
+14  ae0.mx1.pra.cz.geant.net (62.40.98.52)  98.401 ms  98.421 ms  101.505 ms
+15  ae2.mx2.bra.sk.geant.net (62.40.98.55)  103.908 ms  125.384 ms  114.995 ms
+16  ae0.mx1.vie.at.geant.net (62.40.98.63)  116.916 ms  130.063 ms  117.406 ms
+17  aconet-gw.rt1.vie.at.geant.net (62.40.124.2)  117.472 ms  119.264 ms  129.666 ms
+18  vlan73.wien21.aco.net (193.171.23.41)  129.450 ms  116.790 ms  116.867 ms
+19  vlan71.wien1.aco.net (193.171.23.17)  116.849 ms  135.726 ms  117.317 ms
+20  vlan311.linz1.aco.net (193.171.15.2)  132.574 ms  119.865 ms  132.131 ms
+21  jku-gw.edvz.uni-linz.ac.at (193.171.22.26)  132.455 ms  120.046 ms  120.938 ms
+22  jkuc3hb1.edvz.uni-linz.ac.at (140.78.200.225)  120.389 ms  120.000 ms  120.348 ms
+23  router.risc.uni-linz.ac.at (140.78.222.31)  120.341 ms  120.172 ms  120.265 ms
+24  crow.risc.uni-linz.ac.at (193.170.37.138)  132.354 ms  132.261 ms  120.308 ms</pre>
+        <p>
+          Examine the sample output above. In the command, we gave the name of the server instead of its IP Address. Usually we use names, but we could just as easily have used the IP Address instead. Below the command, each numbered row lists the name of the hosts, the host's IP Address, and some data about how long it takes the packet to travel that far along the route. We say that a move from one host to the next host along the way (whether that host is a router or computer) is one "<a class="glossLink" href="calendar.php-76.html?load=glossary#H">hop</a>". The packet takes a large number of <em>hops</em> on its way to Europe! Occasionally, we will see * * * in our traceroute output. This usually means that one of the hosts along the way is not responding to our request, possibly due to a firewall setting. Once we hit such a roadblock, unfortunately, that particular trace won't succeed. There are ways to modify our traceroute request to increase its chances of success, but that's beyond the scope of this discussion.
+        </p>
+        <p>
+          What traceroute provide us is not just IP Addresses, but also a list of names for the hosts along the way, and those names actually tell a story. The packet travels from usna.edu (that's us!) to ums.edu (USNA's internet access is provided through the University of MD, Eastern Shore) to maxgigapop.net, then across the Atlantic Ocean to the Netherlands (.nl), Germany (.de), Czech Republic (.cz), Slovak Republic (.sk), then finally to some routers in Austria (.at), and to the city of Linz, to uni-linz.ac.at, which is the University of Linz. Notice that in several places we have a few consecutive host with similar IP Address.  For example, there are three consecutive 62.40.98.x addresses. This tells a story too, though exactly what it means will have to wait. It's important to note that packets don't always follow the same route from the same host <em>A</em> to the same host <em>B</em>.  Once again, it's like note passing: there are many possible ways to the same destination.
+        </p>
+        <p>
+          The following listings show the outputs of <code class="cmd">ipconfig</code>, <code class="cmd">tracert</code>, and <code class="cmd">arp</code> from the same host (<code>mich<span class="red">300</span>csd01w</code>).<br>
+          <img src="calendar.php-42.png?key=c16ce1feeaac1d390d99ddcff1b9556db7b32dfe&type=class&event=19" alt="Windows 7 ipconfig /all">
+        </p>
+        <p>
+          Notice that the host (<code>mich<span class="red">300</span>csd02w</code>) on the same local network (Link Layer) is a single hop away, or directly connected from the perspective of the Network Layer, and that the host (<code>mich<span class="red">392</span>csd02w</code>) on a separate network is multiple hops away (Network Layer).<br>
+          <img src="calendar.php-43.png?key=cb5f1295e64b293b416559171fe35cdd438f513a&type=class&event=19" alt="Windows 7 tracert Other Network">
+        </p>
+        <p>
+          Additionally, notice that the host (<code>mich<span class="red">300</span>csd02w</code>) on the same local network (Link Layer) <em>is in</em> the host's (<code>mich<span class="red">300</span>csd01w</code>) own ARP table, and how the host (<code>mich<span class="red">392</span>csd02w</code>) on a separate network <em>is not in</em> the host's own ARP table.<br>
+            <img src="calendar.php-40.png?key=a24664d8f4c6a34c86615ea461bc46f92a8b6b38&type=class&event=19" alt="Windows 7 arp -a">
+        </p>
+      </div>
+      <div>
+        <h3>IPv4 Address Space: Classes and Limitations</h3>
+        <div class="annotation" style="clear:right;">
+          <h1>Why only 32 bits?</h1>
+          At this 2008 conference sponsored by Google, Vinton Cerf tells us why.
+          Listen to the discussion at <em>13:00 - 14:35</em>.
+          Vinton Cerf, Project Director for the TCP/IP research program at <a href="../../about-us/about-darpa.html">DARPA</a> in 1976, is at the podium.
+          Bob Hinden, who is seated, helped develop the first Internet routers.
+          <div style="text-align:center;">
+            <iframe src="../../embed/mZo69JQoLb8.html?start=780" feature="player_detailpage#start=780&quot;" frameborder="0" allowfullscreen="" style="height:420px; width:320px;">
+            
+            </iframe><br>
+            [Embedded by permission of the YouTube Terms of Service]
+          </div>
+        </div>
+        <p>
+          The IPv4 address space is divided up into different blocks, or classes, of IP addresses.
+          There are five classes of public IP addresses:
+        </p>
+        <ol>
+          <li>Class A: Networks in the class can have the most number of hosts in them; only the first octet (first byte) is used to identify the network. Networks range from <code>1.*.*.*</code> to <code>127.*.*.*</code> (the <code>*</code> indicates the host portion of the IP address; i.e. the unique part to each host on the local network)</li>
+          <li>Class B: The first two octets identify the network. Networks range from <code>128.0.*.*</code> to <code>191.255.*.*</code></li>
+          <li>Class C: The first three octets identify the network. Networks range from <code>192.0.0.*</code> to <code>223.255.255.*</code>.</li>
+          <li>Class D: IP addresses in this class are used for multicasting; i.e. broadcast traffic, like a live stream. The IP addresses (note not network) range from <code>224.0.0.0</code> to <code>239.255.255.255</code>. Each multicast IPv4 address represents a unique broadcast group.</li>
+          <li>Class E: IP addresses in this class are experimental, and used for IPv4 research and development. The IP addresses range from <code>240.0.0.0</code> to <code>255.255.255.254</code></li>
+        </ol>
+        <p>
+          Beyond the classful IP blocks there are some IPv4 address blocks that are not routed across the public Internet.
+          Besides the <em>loopback</em> block (see below) all the non-routable address blocks are called <em>private</em> address block because routers are the public Internet should be configured to drop packets destined for or coming from a private IP space.
+        </p>
+        <ol>
+          <li>Class A Private: The <code>10.0.0.0</code> network; IP addresses take on the form <code>10.*.*.*</code></li>
+          <li>Class B Private: Networks range from <code>172.16.*.*</code> to <code>172.31.*.*.</code>, there are 16 such private networks.</li>
+          <li>Class C Private: Networks range from <code>192.168.0.*</code> to <code>192.168.255.*</code></li>
+          <li>Loopback: The <code>127.0.0.0</code>, IP addresses take on the form <code>127.*.*.*</code>. The loopback network is internal to the local host; i.e. network traffic destined for the localhost does not exit the host.</li>
+        </ol>
+        <div class="news" style="clear:right;">
+          <h1>North America Out of IPv4 Addresses</h1>
+          The limited availability of IPv4 addresses has been coming for a while (years in fact). ...
+          Well the day has finally come for North America.
+          ARIN (American Registry for Internet Numbers) recently <a href="../../vault/announcements/2015/20150924.html" target="_blank">reported</a> (retrieved 28 Sep 2015) that they do not have any more IPv4 addresses.
+          ArsTechnica also <a href="../../information-technology/2015/09/north-america-is-out-of-ipv4-addresses-for-really-real-this-time/index.htm" target="_blank">discusses</a> the status of transitioning from IPv4 to IPv6.
+        </div>
+        <div class="annotation" style="clear:right;">
+          The first rule of the Internet is that you don't talk about IPv5.
+          The second rule of the Internet is that you don't talk about IPv5.
+        </div>
+        <p>
+          The IP addresses that we talk about in this course are IPv4 addresses.
+          With 32 bits, there are a little over four billion such addresses possible (2<sup>32</sup>).
+          When an organization wants to set up a network, it needs to ask for some IP addresses for web servers, e-mail servers, etc.
+          There are agencies responsible for allocating blocks of addresses to organizations, and they'd say something like "you get block <code>131.122.88.0/24</code>", which means you get all addresses whose first 24-bits (3 bytes) are the same as <code>131.122.88.0</code> &mdash; i.e. addresses of the form <code>131.122.88.*</code>, where "*" means anything.
+          That's why addresses within an organization usually share a common prefix.
+          Check out <a href="../../comics/map_of_the_internet.jpg" target="_blank">this visualization</a> of how <code>/8</code> blocks (i.e. the blocks <code>1.*.*.*</code>, <code>2.*.*.*</code>, ..., <code>255.*.*.*</code>) were allocated.
+        </p>
+        <p>
+          Despite having over four billion addresses, the IPv4 Address space has essentially been exhausted.
+          There's a newer standard, IPv6, that uses 128-bit addresses.
+          That gives about 3.4 &times; 10<sup>38</sup> addresses (specifically 2<sup>128</sup>), which ought to be enough for all eternity, right?
+          Well, that's what we said with IPv4 ...Although IPv6 has existed since 1998, it still has relatively low adoption, due to the widespread prevalence of an alternative solution called network address translation (NAT), a demo of which can be seen <a href="http://faculty.cyber.usna.edu/~tgalvin/sy110/calendar.php?key=1286d76efdf1c61f8e33e880353d746bd6f54528&type=resources&event=17">here</a>.
+        </p>
+        <p>
+          We will only use IPv4 Addresses in this course, but it's good to be aware that the IPv6 standard is being slowly adopted worldwide. <b> See this cool <a href="../../intl/en/ipv6/statistics.html">chart</a> provided by Google to get up to date information on the current state of IPv6 adoption worldwide.</b>  The good news is that your laptop is already capable of utilizing both IPv4 and IPv6.
+        </p>
+        <p style="text-align:center">
+          <img src="../../comics/nanobots.png" title="I think the IETF hit the right balance with the 128 bits thing. We can fit MAC Addresses in a /64 subnet, and the nanobots will only be able to devour half the planet." style="height:200pt;"><br>
+          <cite><a href="../../index-17.htm">xkcd.com</a></cite>
+        </p>
+      </div>
+      <!-- BEGIN: Transport early SY110 networking material - netBasics - Internet -->
+      <!--<DIV class="sec">
+          <UL>
+            <LI><STRONG>Notation</STRONG>. There is more than one way to specify a network. For example, we could specify the network 10.1.1.0, with a subnet mask of 255.255.255.0. This means that hosts will be in the range of IP addresses from 10.1.1.1 to 10.1.1.254. Because the subnet mask is a number of 1s followed by a number of 0s, we can use a shorthand notation to specify the subnet mask, by simply writing a '/' and the number of bits that are 1s (this is also known as CIDR notation). Using the same example, we would simply write 10.1.1.0/24, since 255.255.255.0 is 24 1s followed by 8 0s. Try some "subnet mask" examples using the tool below.</p>
+            <LI><STRONG>Calculator</STRONG>.
+              <div class="annotation">To view your IP address and subnet mask, enter <CODE><A class="glossLink" href="calendar.php?load=glossary#I">ipconfig</A></CODE> in a Windows command <A class="glossLink" href="calendar.php?load=glossary#P">prompt</A> or <CODE>ifconfig</CODE> in a UNIX terminal.</div>
+              To find out what your network address is, type in your IP address and subnet mask below:
+              <form style="clear:both;">
+                <TABLE style="margin:auto;" cellspacing="0">
+                  <tr>
+                    <td>IP Address:</td>
+                    <td><input name="ipaddr" size="15" maxlength="15" onkeyup='dec2binIP(this.form)'>&rArr;</td>
+                    <td style="width:1em;">&nbsp;</td>
+                    <td><div id="ipbits" style="font:10pt monospace;width:24em;"></div></td>
+                  </tr>
+                  <tr>
+                    <td>Subnet Mask:</td>
+                    <td><input name="netmask" size="15" maxlength="15" onkeyup='dec2binMASK(this.form)'>&rArr;</td>
+                    <td style="border-bottom:solid 2px;text-align:center;">&bull;</td>
+                    <td style="border-bottom:solid 2px;"><div id="maskbits" style="font:10pt monospace;width:24em;"></div></td>
+                  </tr>
+                  <tr>
+                    <td>Network Address:</td>
+                    <td><input name="netaddr" size="15" disabled="true">&lArr;</td>
+                    <td>&nbsp;</td>
+                    <td><div id="netbits" style="font:10pt monospace;width:24em;"></div></td>
+                  </tr>
+                  <tr>
+                    <td>CIDR:</td>
+                    <td><input name="mycidr" size="15" disabled="true"/></td>
+                    <td>&nbsp;</td>
+                    <td><div id="cidrbits" style="font:10pt monospace;width:24em;"></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" style="text-align:center;"><input type="button" name="calc" value="Calculate" onclick='updateAll(this.form)'></td>
+                  </tr>
+                </table>
+              </form>
+              <div class="annotation">
+                <TABLE class="RM" style="margin-left:0.5em;text-align:center;float:right;">
+                  <tr>
+                    <th style="width:33%;">A</th>
+                    <th style="width:33%;">B</th>
+                    <th>A&bull;B</th>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </table>
+                Bitwise AND (&bull;) is just a variant of the logical AND, discussed in a previous lecture. Essentially, bitwise AND applies the logical AND to two numbers, bit by bit. Additionally, <CODE>true</CODE> and <CODE>false</CODE> are replaced with <CODE>1</CODE> and <CODE>0</CODE>, respectively. The adjacent truth table defines the result of A&bull;B.
+              </div>
+            </LI>
+            <LI><STRONG>Calculation</STRONG>. The network address is calculated, bit by bit, as the logical AND of the bit in the IP address with the bit in the subnet mask. Recall that, in binary, 0 AND X = 0, while 1 AND X = X (where X could be 0 or 1). The subnet mask is so-named because it has the effect of "masking" out the bits that are not part of the network address. This is how computers determine if an IP address is on the same network as they are. The subnet mask is applied to two IP addresses. <STRONG>If the resultant network addresses are the same, then the two hosts are on the same network and, therefore, able to communicate directly with each other</STRONG>.</LI>
+            <LI><STRONG><A class="glossLink" href="calendar.php?load=glossary#N">Network Prefix</A></STRONG>.In the example tool above, the "network prefix" is highlighted in yellow. The network prefix is the first <EM>n</EM> bits of the network address, where <EM>n</EM> is the number of bits in the subnet mask. The remaining bits of each IP address are used to distinguish each individual IP address on the network.</LI>
+            <LI><STRONG>Number of Hosts on a Network</STRONG>. The maximum possible number of IP addresses, and, therefore, hosts on any network is determined by its subnet mask. <strong>Example</strong>: For a 255.255.255.0 network (prefix of 24),   the last eight bits are available for different IP addresses. Therefore, since each bit can only be a <CODE>1</CODE> or <CODE>0</CODE> (one of two possibilities), the total number of unique numbers is given by 2<sup>8</sup>. Two IP addresses in every network are reserved, therefore, the total number of available IP addresses of the example network is 2<sup>8</sup> - 2 (see note). The more bits in the subnet mask, the fewer host IPs can fit on the network. The fewer bits in the subnet mask, the more host IPs can fit on the network.</LI>
+          </UL>
+        </div>-->
+        <!-- END: Transport early SY110 networking material - netNutBolt - Networking -->
+    </div>
+
+    <div id="refs">
+    <h2>References</h2>
+      <ol>
+        <li>Network Working Group. <a href="../../html/rfc1918.html" target="_blank">RFC 1918 - Address Allocation for Private Internets</a>. <cite>Internet Engineering Task Force</cite>. Feb 1996. retrieved 25 Jan 2017.</li>
+        <li>DARPA Internet Program. <a href="../../html/rfc791.html" target="_blank">RFC 791 - Protocol Specification</a>. <cite>Internet Engineering Task Force</cite>. Sep 1991. retrieved 10 Jul 2019.</li>
+        <li>IBM Knowledge Center. <a href="../../support/knowledgecenter/en/ssw_ibm_i_73/rzai2/rzai2compipv4ipv6.htm" target="_blank"> Comparison of IPv4 and IPv6</a>. <cite>IBM</cite>. retrieved 10 Jul 2019.</li>
+        <li>Lifewire. <a href="../../ip-routing-3426716.html" target="_blank"> How IP Network Routing Works.</a>  <cite>Lifewire</cite>.  Jul 2019.  retrieved 10 Jul 2019.</li>
+      </ol>
+    </div>
+    <div class="footer">
+      <hr>
+      <div class="table">
+        <div class="tableRow">
+          <div class="tableCell noPrint">
+            <a href="../../index.htm"><img class="badge" src="../../img/valid-html-blue.png" alt="Valid HTML"></a>
+          </div>
+          <!-- <DIV class="tableCell pubDomain">
+            <A rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/"><IMG class="badge" src="img/pub-domain.png" alt="Public Domain Mark"></A>
+          </DIV> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+</div> <!-- /container --></body></html>

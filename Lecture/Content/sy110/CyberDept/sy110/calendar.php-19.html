@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "963e8d7865b168f31937a22905cf971287a9a7695b3ecd4745d8f8a977dadb88";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>SY110 (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                SY110 - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Human Factors in Cyber Operations
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'><font color='black'><b>16 - Human Factors in Cyber Operations</b></font></a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+figure {
+  float: right;
+  width: 30%;
+  border-top: none;
+  padding-top: 0;
+}
+figcaption {
+  border-bottom: none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  border
+}
+
+</style>
+
+</head>
+<body>
+<title>Human Factors in Cyber Operations</title>
+<!-- Begin providing the contents of the page -->
+<div class="container">
+  
+  
+    <span id="top"></span>
+    <div class="noScreen">
+      <br> 
+      </br> 
+      <h1>Human Factors in Cyber Operations</h1>
+    </div>
+  
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After reviewing this material you should be able to:
+      </p>
+      <ul>
+    <li>Describe the cyber domain as an inescapably human domain.</li>
+    <li>Understand and describe human factors that contribute to vulnerabilities in computer networks.</li>
+    <li>Understand common offensive cyber techniques that prey upon human factors.</li>
+    <li>Recognize defensive strategies that help mitigate against human-targeting.</li>
+      </ul>
+    </div>
+    
+  <br>
+    <br>
+    
+  <div id="discussion">
+  
+  <img src="calendar.php-26.png?key=b2949fb22a845095fea578b3731533bbe1f1b7ba&type=class&event=16" alt="picture_002" align="right" height="30%" width="30%">
+  
+      <h2>Discussion <!--SPAN class="samePageLink">[<A href="#top">Top</A>]</SPAN--></h2>
+
+    <p>So far in this course we have examined mostly technical matters, including those utilized by attackers to gain access to networks (e.g. code injection, cross-site scripting, rainbow tables, man-in-the-middle attacks) and those utilized by defenders to protect their networks (e.g. digital cryptography, firewalls, authentication using passwords). By contrast, this lesson will examine non-technical human factors in cyber operations.</p>
+    
+    <p>Successful cyber operations require the integration of both technical and human factors.  Technical factors include the theory and design of computers and network architectures, but also the practical employment and exploitation of programs, hardware, communication protocols, cryptographic techniques, firewalls, and so on.  Human factors involve <i>people</i>—the choices people and groups make, the behaviors they habituate, which influence the success of cyber operations.  Human decisions can render a technically secure network insecure, and, in fact, do so quite regularly.  Humans can be tricked, manipulated, and influenced to an attacker’s advantage.  Similarly, they can be trained to recognize human-focused attacks and mitigate that risk through proper countermeasures.  Management policies—another form of human decision making—can limit the scope of human choices within an organization, thereby bettering or worsening an organization’s vulnerability to attack.  Human behavior is also influenced by ethical, legal, and normative constraints which can be exploited by an attacker, buttressed by a defender, and discovered by inquisitive collectors.  For these reasons the Cyber Domain is an inescapably human domain. Humans develop new technology, manage information processes, create and code new applications, use and misuse these products, and act as attackers and defenders.  There is no part of the cyber domain that is not affected by human choices and behavior.</p>
+    
+    <p>As such, human factors are at least as relevant to the successful attack or defense of computer networks as technical factors.  With the advent of powerful security tools—privacy-focused operating systems, end to end encryption, and anonymizing browsers—human factors have arguably become even more important to network security than technical factors.  For this reason, some observers refer to human-focused cyber-attacks as “the highest form of hacking” (Grenier 2008).  Scholars and practitioners who limit their focus purely to technical factors have an incomplete understanding of the cyber domain, just as inadequate technical exposure leads to misunderstandings of the opposite kind.</p>
+
+  </div>
+  
+  <div id="human_error">
+  <h2>Human Error</h2>
+  <p>While data thefts that result from high-profile cyber operations (e.g. The <a href="../../2016/10/inside-cyberattack-shocked-us-government/index.htm">OPM hack</a>, the <a href="../../story/how-facebook-hackers-compromised-30-million-accounts/index.htm">Facebook</a> hack) receive a disproportional amount of media coverage, the truth is that simple human error accounts for the majority of privacy breaches.  Error is “the failure to achieve the intended outcome in a planned sequence of mental or physical activities when failure is not due to chance” (Reason 1990).  Human errors can be categorized either as <b>slips</b> or <b>mistakes</b>.  A slip is the incorrect execution of a correct action (execution failures).  A mistake is the correct execution of an incorrect action (planning failures).</p>
+  
+  <img src="calendar.php-27.png?key=c756e2a8f857875a8cb5636cedb373d2fb29db2c&type=class&event=16" alt="picture_001" align="right" height="275" width="275">
+  
+  <p>A study (Liginlal et al. 2009) of 1,046 privacy breach incidents found that 67% of the incidents could be attributed to human error, while 36% could be attributed to malicious acts.  Of these errors, 74% were mistakes and 26% were slips.</p>
+  
+  <p>Since humans are involved in every facet of the cyber domain, preventing human error may be the most important strategy defenders can take to secure their networks.  As a corollary, offensive cyber operators have found that discovering and exploiting human errors is one of the most successful attack strategies.</p>
+  
+  <p>Research suggests that <b>mistakes</b> arise from incorrect or incomplete knowledge, a misuse of knowledge, the application of faulty heuristics (methods or processes), or information overload.  Therefore, preventing mistakes is best accomplished through better education, information reduction, decision support, and by increasing supervisory controls.  This can be accomplished by creating a past error database, reassessing operator performance regularly, studying operator habits during routine operations, and making individuals aware of risk-enhancing factors (Liginlal et al. 2009).</p>
+  
+  <p>Research suggests that a loss of situational awareness is the main cause of <b>slips</b>. Situational awareness is “the perception of the elements in the environment within a volume of time and space, the comprehension of their meaning, and the projection of their status in the near future” (Endsley 1995). Better training, reducing interruptions and multitasking, and providing memory aids are common methods for reducing slips (Liginlal et al. 2009).</p>
+
+  </div>
+  
+  <div id="humans_enemy">
+  <h2>Humans: The Enemy of Security Tools</h2>
+  <p>Empirical studies of human interaction with security tools have concluded that technology-based security solutions often fail because security features are presented in such a way that users cannot understand them.  For example, a study (Furnell et al. 2006) of highly-educated regular computer users found that:
+  
+  <ul>
+    <li>While over 80% claimed to understand the terms “firewall,” “auto-updates,” and “antivirus,” this quickly dropped to 70% when asked about “firewall configuration settings,” indicating that even the mildest level of technical or security-oriented terminology can potentially limit user understanding.</li>
+    <li>36% of users did not know the difference between “trusted” or “restricted” websites (using the Internet Explorer browser).</li>
+    <li>Nearly two-thirds did not understand what was meant by “Unsigned ActiveX controls will not be downloaded.”</li>
+  
+  <img src="calendar.php-28.png?key=99f0562515ba043305ecf9d1f687b5ea5a2b2242&type=class&event=16" alt="picture_002" align="right" height="175" width="475">
+  
+    <li>Users were presented a Word document password dialog box, which allowed them to enter one password to <b>open</b> the document and another to <b>modify</b> it. 32% of users who were asked whether they understood the difference reported that they did not.</li>
+    <li>When choosing the type and strength of encryption to be used when protecting a document, 74% indicated that they would not know how to choose a suitable encryption type.  This should come as no surprise given that 66% of these users admitted to not knowing the meaning of the term “encryption.”</li>
+  </ul>
+  
+  <p>Other studies focusing on user interactions with firewalls found that most users are unaware of the functionality of firewalls or even their existence.  Most users did not have a useful mental model of what a firewall does and therefore could not even begin to configure them.  When actively prompted by a security tool display (e.g. firewall prompt) most users lack the required knowledge to assess the consequences of allowing or blocking a connection.  For this reason, most users choose “Allow” simply so they can have access.  Users base their decisions on prior experience with prompts, but because most connections aren’t malicious, their inference that any given future prompt should be allowed is flawed.  Eventually, many users falsely conclude that the firewall is an enemy and turn it off completely (Raja et al. 2010).</p>
+  
+  <p>To help prevent these misunderstandings, scholars argue (Furnell et al. 2006) that security tools, such as firewall interfaces, should be:
+      <div class="fleet noInst" style="clear:right;">
+      <h1><a href="../../2015/09/cybersecuritys-human-factor-lessons-from-the-pentagon.html">Lessons learned by US Military</a></h1>
+      <p>
+      With a lot still to learn, the US military has made big improvements in its cyber security stance over the last decade. Many of these improvements are thought to be
+        not due to a large leap forward in technology, but rather a large leap forward in personnel training. The level of training from the average user to the
+        administrator or IT professional in the US military has proven to make a real difference in the US military's ability to deter and respond to cyber attacks. 
+        The answer to providing cyber security lays not in new technology, but in the human operator.
+      </p>
+      
+    </div>  
+  <ul>
+    <b>Understandable</b><li>Options and descriptions should be presented in a manner that is meaningful to the human user.</li>
+    <b>Locatable</b><li>Users need to be able to find the security features they need.</li>    
+    <b>Visible</b><li>The system should give a clear indication of whether security is being applied.</li>
+    <b>Convenient</b><li>The security provision should not become so prominent that it becomes inconvenient or intrusive to the user.</li>
+  </ul>
+  
+  
+  </div>
+
+
+  <div id="humans_overconfidence">
+  <h2>Human Overconfidence</h2>
+  
+  <p>Humans have been integral parts of understanding the workings of computational devices since their invention.  The relationship between humans and computers has been studied since the 1950s (Grudin 2005).  One of the most important discoveries that researchers have uncovered is that humans are quite unreliable when it comes to self-assessments on topics relating to cybersecurity, with most rating their own security awareness much higher than what is actually true (Friedman et al. 2002).  This overconfidence makes users vulnerable to offensive cyber attacks.</p>
+  
+  <p>Research into users’ browsing habits provides a useful example of this unreliability. One study (Kline et al. 2011) of technologically-informed young people, mostly aged 17-22, found that:
+  <ul>
+    <li>Only 15% claimed both that URL inspection is “very important” to security and that they “always” did this in practice.</li>    
+    <li>Most used the same password for multiple websites.</li>  
+    <li>Users’ self-assessed expertise was wildly incongruent with reality.  For example, 17% of respondents who considered themselves “above average” did not know what a secure protocol was.</li>
+    <li>Less than half thought digital certificates were important for security, while less than a quarter actually inspected them.</li>  
+    <li>When evaluating a website’s authenticity, most users ignored technical indicators and relied upon “soft” assessments involving peer opinion and a general sense of the site’s “felt” reputation.</li>  
+  </ul>
+  
+  
+  <img src="calendar.php-29.png?key=33ee80ec52fffecade54d02ae2061e08d13441be&type=class&event=16" alt="picture_003_004" align="right" width="275" height="400">
+  
+  <p>Using eye-tracking technology, where experimental participants wear glasses that track their eye gaze while they browse websites, scholars have shown that an individual’s self-reported areas of interest on the screen does not match their gaze data.  Subjects report, for example, studying the URL or taking notice of the protocol, while their gaze never actually looked for these items at all.  Or conversely, gaze data that dwelt on security-related features did not match the subjects’ self-reports which said they didn’t take any notice of these features (Whalen and Inkpen 2005).</p>
+  
+  
+  <p>Interestingly, gaze data is a much more reliable indicator of security awareness than people’s self-reporting.  For example, studies have shown that when gaze data showed an interest in browser-related security features, subjects were more inclined to conduct business transactions when connections were encrypted.  When no security-interest was evident in gaze data, individuals showed no difference in willingness to conduct transactions using non-encrypted vs. encrypted connections (Sobey et al. 2008).</p>
+  
+  <p>Somewhat surprisingly, these results do not improve with subjects’ security knowledge.  Researchers have found (Arianezhad et al. 2013) that when users had security-related gaze points (as tracked by gaze data) they were better at identifying phishing websites than those whose gaze points were not security-related, but whether their gaze points were security related was not determined by security knowledge.  Rather, while browsing, a user’s <b>task context</b> influences their attention to security features to a greater extent than any other factor (Arianezhad et al. 2013).</p>
+  
+  <p>
+  <b>Task Context</b>
+  <ul>
+    <li>Is the user shopping, banking, or just seeking entertainment?</li>
+    <li>Is the user in a hurry?</li>
+    <li>How badly does the user need the information?</li>
+    <li>Is the user at home or using public WiFi?</li>
+    <li>And so on…</li>
+  </ul>
+  
+  
+  </div>
+  
+  <div id="humans_vulnerability_both_innate_behavioral">
+  <h2>Human Vulnerability: Both Innate and Behavioral</h2>
+  
+  <p>The old debate about nature vs. nurture also applies to human activity in the cyber domain.  Is user vulnerability hard-wired or can behavioral factors such as education, training, and habit-formation mitigate our susceptibility to cyber attacks?  The answer, unsurprisingly, is that both innate and behavioral factors play a role.  Let’s take a look at these within the context of cyber operations.</p>
+  
+  <p>Studies of personality traits, cultural background, sex, age, and other characteristics have shown that these categories impact the way technology is used, and therefore how vulnerable its users are to exploitation by cyber attackers.  For example, extroverted cell phone users tend to be more prone to risky behavior than introverted cell phone users (Bianchi & Phillips 2005).  And extroversion is associated with sensitive data misuses more generally (Butt & Phillips 2008).  Many mobile phone users do not use (or are not aware of) security features, and this correlates with the age of the user.  For example, 80% of young people aged 16-30 are aware of PINs, yet a 2010 study found that less than a third use them to lock their smart phones (Kurkovsky & Syta 2010).  Other studies show that 75% of young people who use smart phone passwords never change them.  While 54% never share their password, 23% share with one person, 17% share with two to three people, and seven percent share with four or more people (Barn et al. 2013).</p>
+  
+  <p>In this same (UK-based) study, student participants with nonwhite ethnic backgrounds tended to have a higher awareness of mobile phone data security than whites. Black and Asian ethnicities reported greater awareness.  UK/EU students reported less mobile phone security awareness than overseas students.  Older students reported significantly greater awareness of security threats on mobile phones than younger students.  White and UK/EU students were more likely to report a more extroverted personality, while white and UK/EU students were also less IT literate (Barn et al. 2013).  Other studies on user-susceptibility to phishing e-mails (much more about these below) also underscore the importance of innate factors by placing these alongside behavioral ones.  Phishing e-mails are a critical vulnerability for defenders and an easy way into a network for attackers.  One such study found that users who are experienced with computers, less impulsive, more psychologically open, extraverted, and frequently trained, have a greater degree of success in identifying phishing scams (Pattinson et al. 2012).</p>
+  
+  <p>These considerations show that there are factors which are not chosen by individuals, and are unchangeable in themselves, but which may significantly impact an individual’s innate vulnerability to cyber attacks.  Offensive attackers would do well to understand such factors when designing their exploits and identifying their victims.  Similarly, defenders who ignore these psychological, cultural, and ethnic predictors will find their ability to mitigate against targeted attacks at least partially vitiated by these innate factors.</p>
+  
+  <p>Of course, many vulnerabilities result from behavioral habits that cannot be reduced simply to innate factors, and such habits have been studied by scholars seeking to identify and cultivate defensive behaviors.  For instance, in an in-depth analysis of real-world operationally gathered cybersecurity data about human behavior, researchers (Ovelgönne et al. 2017) analyzed over 1.6 million end-hosts from January to August 2011 to identify human behaviors which increase the risk of malware attacks on a host.  They found that the risk of malware infection can be directly linked not just to technical security features but also to human choices and behaviors such as:</p>
+  
+  <ul>
+    <li>Downloading high numbers of programs</li>
+    <li>Installing unsigned and/or unique programs</li>
+    <li>Installing programs from disreputable or uncommon vendors</li>
+    <li>Traveling (i.e. accessing the web from many unsecure locations)</li>
+  </ul>
+  
+  <br>
+
+  <p>Through avoiding these risky behaviors individuals can decrease their vulnerability to malware quite significantly even if they are members of an innately risk-prone sociological group.
+  </p>
+  
+  <p>One way in which organizations—such as USNA—seek to alter human behavior is through security-related policies.  Policies help constrain human choices, and good policies tend to do so in a way that tips the balance in favor of computer network security without overburdening the human user.  Users who feel overburdened will be prone to breaking policies meant to help them.</p>
+  
+  <p>The psychology of password management provides a useful example of the complexities surrounding the creation of sound organizational policies.  Researchers have found (Tam et al. 2010) that when users strongly associate immediate negative consequences with password breaches they are more likely to choose a strong password.  For this reason, online banking passwords tend to be much stronger than e-mail passwords, despite the fact that bank-related password reset options typically involve using e-mail accounts to authenticate the user.  A bank whose password reset policy necessitates the use of two-factor authentication (2FA), such as the use of a secure one-time pin sent to the user’s smartphone in addition to an e-mail, will greatly secure their customer while only a slightly increasing the hardship felt by the user.  Similar tradeoffs occur with secure data deletion policies (Reardon et al. 2014), policies that govern teleworking (Godlove 2012), those that determine which employees get access to an organization’s network (Greitzer et al. 2012 & Sokolowski et al. 2016), and so on.</p>
+
+  </div>
+
+  <div id="humans_hacking_the">
+  <h2>Hacking the Human Being: Social Engineering</h2>
+  
+  <p>In cyber operations, the attempt to target and manipulate human vulnerabilities in order to gain access to or otherwise exploit computer networks is called “social engineering” or human hacking.  Like a traditional engineer who bends and stretches metal to build a bridge, social engineers manipulate the human dimension of a computer network in order to achieve their goals.  Scholars have offered theoretical models identifying the various stages of social engineering attacks (Mouton et al. 2016, Indrajit 2017) and the underlying principles that have governed the use of social engineering throughout history (Hatfield 2018). In this section we will consider a number of forms that social engineering takes and try to understand why humans remain vulnerable to such attacks.</p>
+  
+  <h3>Phishing</h3>
+  
+  <img src="calendar.php-30.png?key=98daaea6f95d37b03e4ed5f3cff7bd22b4f4a43c&type=class&event=16" alt="picture_005" align="right" width="375" height="255">
+  
+  <p>A classic example of social engineering occurred during the 2016 US election, when Russian hackers stole the credentials of Hilary Clinton’s campaign manager, John Podesta, by sending him a phony e-mail claiming to be a Google message warning him that his password had been compromised and that his password needed to be changed.  The “change password” button was actually a password harvester, which asked Mr. Podesta to enter his old and new passwords thereby giving the Russians access to his gmail account.  They then logged into the real gmail, updated his real password to the new one, thereby preventing him from realizing anything was amiss (AP 2017).  Rather than a regular phishing email that is sent indiscriminately to a large number of people, this is an example of “<b>spearphishing</b>” because it targeted a single high-value target.  Unlike <b>phishing</b>, spearphishing requires a considerable amount of reconnaissance work and is associated with a much higher success rate.  Mass phishing e-mails on the other hand require little reconnaissance work and rely on the fact that someone is bound to be tricked by the scam.</p>
+
+
+  
+  <p>Not all phishing is e-mail based.  Websites, instant messenger, online social networks, blogs and forums, mobile apps, and VOIP have all been used as the communication medium in phishing attacks (Aleroud & Zhou 2017).  Alarmingly, research suggests that the amount of training or security knowledge one possesses does not correlate with a higher ability to identify phishing scams over those with less security knowledge (Pattinson et al. 2012).</p>
+  
+  <figure>
+    <img src="calendar.php-31.png?key=b893cd0c1ebeadbb2862322d2e1e3234542602f4&type=class&event=16" alt="picture_006_video" width="205" height="175">
+    <figcaption>Voice Phishing (Vishing): <a href="../../watch-5.html?v=lc7scxvKQOo">https://www.youtube.com/watch?v=lc7scxvKQOo</a></figcaption>
+  </figure>
+  
+  <h3>Reverse Social Engineering</h3>
+  
+  <p>In traditional social engineering, such as most phishing scams, the attacker contacts the victim.  In reverse social engineering, it is the victim who contacts the attacker, either by accident or because they were manipulated into doing so.  For example, an attacker might set up a website that looks very much like a normal site but is actually a misspelling of a normal site (example: <a href="http://www.amazom.com/">www.amazom.com</a>) and wait for unwary victims to misspell their way into the trap.  The source code of the phony site might also have been copied from the original site so that the two look quite similar.  Unfortunately for the victim, the misspelled site has no security features and harvests usernames and passwords from its victims.  As an added bonus, when users enter their credentials into the fake site a <code>document.location=</code> redirects them to the real site immediately after victims click the “submit” button.  Most users will see their screens appear to “reload” the intended site and will continue on as if nothing had happened, especially if they have a cookie in their browser that logs them into the real site.  This is called <b>domain-squatting</b> and is a potent reverse social engineering attack.  A variant of this attack occurs when a victim’s DNS server is compromised (called <b>DNS poisoning</b>) allowing the attacker to replace the IP Address for <a href="../../index-13.htm">www.amazon.com</a> with that of their fake site.  This means that the attack can take place without any misspellings on the part of the victim.  Still another variant, called <b>pharming</b>, utilizes an <code>onmouseover</code> event to redirect from a legitimate site to an illegitimate copy (Abu-Nimeh & Nair 2008).  A final variant (although the possibilities are endless), called a <b>visitor tracking attack</b>, involves the attacker attracting the victim’s notice by visiting the victim’s social media site many times and then allowing curiosity to run its course.  Many victims will wonder who it is that seems so interested in their profile and will find their way to the attacker’s malicious page (Irani et al. 2011).</p>
+  
+  <figure>
+    <img src="calendar.php-32.png?key=5ce0ad71cf49c2c921e804a3330dfa65642146bd&type=class&event=16" alt="picture_007_video" width="205" height="175">
+    <figcaption>Reverse Social Engineering: <a href="../../watch-6.html?v=PWVN3Rq4gzw">https://www.youtube.com/watch?v=PWVN3Rq4gzw</a></figcaption>
+  </figure>
+  
+  <h3>Automated Social Engineering</h3>
+  
+  <p>Not all social engineering attacks involve human-to-human contact.  Increasingly, social engineers have automated their attacks particularly in the domain of social networks, where automated scripts or “bots” are used in interpersonal communication.  This type of attack is known as automated social engineering (ASE) and takes a number of forms.</p>
+  
+  <p>For example, in social engineering parlance a <b>Sybil Attack</b> is a social media attack in which many online personas are created using bots who then, using automated and pre-programmed responses, flood a social media space and fill it with opinions and commentary desired by the attacker. This can be used in a variety of ways, some of which are merely disruptive and annoying while other uses contribute directly to violating a Pillar of Information Assurance.  For example, real human victims in a social media space who find that their opinions, political views, etc. are seemingly in the minority may begin to shift their views bit-by-bit to the “group norm” which the attacker has manipulated (Jhaveri et al. 2014). This disruptive method was used by Russia during the 2016 US election to influence voters in key districts.  In another example, an attacker may increase the likelihood that a victim might click on a malicious link (a phishing attack) by surrounding the victim with social media bots that speak favorably of the link. The term “Sybil” comes from the famous case in the history of psychology wherein a woman pseudonymously called by that name claimed to have many personalities living inside her, although this was later revealed to have been a hoax (NPR 2011).</p>
+  
+  <p>Another type of ASE attack, called a <b>honeybot</b> or <b>bot-in-the-middle attack</b>, occurs when an attacker programs a bot to enter a social network and begin a discussion with at least two members where the bot passes questions and replies back and forth between the two users whilst the users do not know they are interacting through a third party.  Auto-replies and keyword lookups allow the bot to alter male and female pronouns, replace links with links of its own, and other techniques.  The bot often lets a majority of traffic flow through it unaltered so as to remain largely undetected, particularly because natural language remains difficult for bots to mimic except in small samples (i.e. short responses).  The goal is to gather information, insert a malicious link into the flow of the conversation, or even shift the subject of conversation in a direction desired by the attacker (Lauinger 2010, Kaul & Sharma 2013).</p>
+
+  <p>The Russian Internet Research Agency, located in St. Petersburg, is well-known to use these sorts of techniques, even creating fake organizations that fill social media with memes and other political opinions in an effort to inflame domestic political disagreements within the US and elsewhere (NYT 2015).  This has led to recent efforts on the part of victims to monitor fake profiles on the web, such as the <a href="../../index-14.htm">Alliance for Securing Democracy.</a></p>
+  
+    <p><img src="calendar.php-33.png?key=3183bd651fa8c38db42325f6256a6adf8cd5155c&type=class&event=16" alt="picture_008" width="675" height="475" class="center"></p>
+    Can You Spot the Deceptive Facebook Posts? <a href="../../interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html">https://www.nytimes.com/interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html</a>
+
+  <br><br>
+  
+  <h3>In Person Attacks</h3>
+  
+  <p>Many social engineering attacks involve little use of technology at all, yet these are some of the most effective cyberattacks against unwary victims.  Social engineers often find success because they are less restricted in their ability to use social and psychological techniques than when attacker-to-victim communication is mediated by technology.</p>
+  
+  <p>One type of in person social engineering attack is <b>impersonation</b>, when an attacker takes on or spoofs the identity of someone else in order to gain access to a computer system, a server room, a secure vault, or to elicit information from their victim, implant malware, or otherwise compromise their security.  An attacker might use a simple smartphone application, such as <i>Spoofcard</i>, to spoof the location of their call as if they were inside an organization.  The attacker could then call a member of the organization’s staff, pretending to be part of the IT department, and ask the victim to allow them to remotely access (using <code>rdesktop</code>, <code>ssh</code>, etc.) their machine in order to make a routine security update.  Not all impersonation attacks are low-tech.  For instance, <b>targeted biometric impersonation</b> involves locating an innocent person in the verification system with a similar biometric signature and then fraudulently assuming that identity to spoof a verification check (Bustard et al. 2014).</p>
+  
+  <p><b>Tailgating</b> involves the manipulation of a social custom to gain access to rooms, buildings, and vaults that one does not have permission to enter.  The social custom to hold the door for someone coming into a room after you is so ingrained into our habits that, assuming the timing is right and no obvious “red flags” are evident, most people will fall victim to its misuse.  This is particularly true if the attacker is holding items that prevents their hands from allowing them to open the door.  The principle of <i>reciprocity</i>, if a favor has been given to you it is important that you return it, is particularly effective if (as is often the case) the secure room is inside a foyer or another set of doors.  In this case, the attacker makes sure s/he opens the door for the victim who then “returns the favor” by allowing the attacker through the secure inner doors (AlliedBarton 2018).</p>
+  
+  <figure align="right">
+    <img src="calendar.php-34.png?key=c08b79c1d2ba9bde2f5ec08c18fee155607e900d&type=class&event=16" alt="picture_009">
+    <figcaption>Shoulder surfing Kanye West <a href="../../barstoolsports/videos/461448261010579/index.htm">https://www.facebook.com/barstoolsports/videos/461448261010579/</a></figcaption>
+  </figure>
+  
+  <p>Another very effective in person attack involves looking over the shoulder of a victim to see information on their computer screen, or view their keypad as they type.  This can be done organically (using eyeballs) or through recording devices (using cameras).  Such attacks are called <b>shoulder surfing attacks</b> and allow attackers to crack passwords and view sensitive data otherwise denied them by security features of a victim’s system.  For example, in Oct. 2018, the artist Kanye West was recorded in the Oval Office putting his password “000000” into his smartphone.  The ease of shoulder surfing attacks has led researchers to propose various shoulder surfing resistant password schemes (Rao & Yalamanchili 2012).</p>
+  
+  <p>A final in person attack is generally referred to as <b>dumpster diving</b>.  As the name suggests, it involves sifting through the discarded trash that a victim has thrown away in order to gain access to clues about the victim’s security posture.  Dumpster diving may or may not involve actual dumpsters, but when it does and those dumpsters are held under lock and chain, another in person attack—<b>lock picking</b>—becomes necessary.  Individuals and organizations routinely discard information valuable to their security, including such items as credit card offers, billing and banking statements, 401K statements, legal paperwork, usernames and passwords (Fried 2018).</p>
+  
+  <h3>Psychological Explanations: Why Humans are Vulnerable</h3>
+  
+  <p>Humans seem innately vulnerable to social engineering attacks, and scholars have proposed a number of psychological models that explain why human beings continually fall prey to them.  These models utilize studies in human psychology and human-computer interaction to categorize various cognitive and emotional tendencies most humans possess.  Not every social engineering attack will utilize all of these tendencies, but the degree to which a social engineer utilizes these principles the greater the chance of success.  Similarly, defenders who find ways to mitigate these psychological tendencies will find themselves relatively less vulnerable to human hacking.</p>
+  
+  <p>David Gragg (2003) identified a number psychological principles that exhibit the power to influence or persuade people, leading them to become victims of social engineering attacks.
+  
+  <ul>
+    <li><b>Strong Affect</b> – uses a heightened emotional state to enable a hacker to get away with more than what would be normally reasonable.</li>
+    <li><b>Overloading</b> – attacker uses an abundance of information to numb the victim, thereby overriding their critical thinking.</li>
+    <li><b>Reciprocation</b> – the social principle which says that we should return favors.</li>
+    <li><b>Deceptive Relationships</b> – building a relationship with the purpose of exploiting the other person.</li>
+    <li><b>Diffusion of Responsibility and Moral Duty</b> – the target is made to feel that s/he will not be held solely responsible for her or his action.</li>
+    <li><b>Authority</b> – People are conditioned to respond to authority.</li>
+    <li><b>Integrity</b> and Consistency – People tend to follow through with their commitments, however unwisely made. </li>    
+  </ul>
+  <br>
+  Other scholars argue for alternative principles (Stajano & Wilson 2011):
+  <br>
+  <ul>
+    <li><b>Distraction Principle</b> – while we are distracted by what grabs our interest, hustlers can do anything to us and we won’t notice.</li>
+    <li><b>Social Compliance Principle</b> – society trains people to not question authority. Hustlers exploit this to make us do what they want.</li>
+    <li><b>Herd Principle</b> – we let our guards down when others around us share in our risks (i.e. safety in numbers).</li>
+    <li><b>Dishonesty Principle</b> – victims convinced they did something wrong originally which led to a security breach are less likely to report the breach.</li>
+    <li><b>Kindness Principle</b> – people are fundamentally nice and willing to help, an attribute hustlers take advantage of.</li>
+    <li><b>Need and Greed Principle</b> – Our needs and desires make us vulnerable.</li>
+    <li><b>Time Principle</b> – When under pressure to make an important choice, we use a different decision strategy, and hustlers steer us toward one involving less reasoning.</li>    
+  </ul>
+  
+  
+  
+  <p>Social engineering attacks are effective because these psychological tendencies are present in all of us.  Since humans are central to the operation of computer networks, some aspect of human hacking is typically present in every sophisticated computer network attack.  Successful defensive policies and postures requires a multi-layer strategy (Gragg 2003).  Although scholars have identified a number of ways in which organizations can mitigate these risks, so long as human beings form a central part of computer networks they will remain potent attack vectors.</p>
+    
+  </div>
+    
+  <h2>Phishing Survey</h2>
+  <p>
+  Now that we've covered these topics, please take a very brief <a href="../../ServiceLogin.html">survey</a> about your personal experiences with Phishing and/or Social Engineering.  Your responses are anonymous, and are being collected in support of a MIDN capstone research project.  Please only submit your responses once.<br> 
+  </p>
+      
+  <h2>References</h2>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Abu-Nimeh, Saeed, and Saku Nair. 2008. &ldquo;Bypassing Security Toolbars and Phishing Filters via DNS Poisoning.&rdquo; <em>IEEE Global Telecommunications Conference</em> (2008), pp. 1-6.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Aleroud, Ahmed, and Lina Zhou. 2017. &ldquo;Phishing environments, techniques, and countermeasures: A survey.&rdquo; <em>Computers &amp; Security</em>, Vol. 68, pp. 168-196.<br><a href="../../publication/315853086_Phishing_Environments_Techniques_and_Countermeasures_A_Survey.html">https://www.researchgate.net/publication/315853086_Phishing_Environments_Techniques_and_Countermeasures_A_Survey</a></span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">AlliedBarton, &ldquo;Security Tailgating: Best Practices in Access Control&rdquo; <em>White Paper</em>.&nbsp; Accessible at this URL: </span><span style="font-family: 'Helvetica',serif;"><a href="http://www.alliedbarton.com/Portals/0/SRC/WhitePapers/Security%20Tailgating%20-%20Best%20Practices%20in%20Access%20Control.pdf">http://www.alliedbarton.com/Portals/0/SRC/WhitePapers/Security%20Tailgating%20-%20Best%20Practices%20in%20Access%20Control.pdf</a></span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Associated Press. 2017. &ldquo;Inside Story: How Russians Hacked the Democrats&rsquo; Emails.&rdquo; </span><span style="font-family: 'Helvetica',serif;"><a href="../../dea73efc01594839957c3c9a6c962b8a.html">https://www.apnews.com/dea73efc01594839957c3c9a6c962b8a</a></span><span style="font-family: 'Helvetica',serif; color: black;"> (accessed 20 October 2018).</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Arianezhad, M., Camp, L.J., Kelley, T. and Stebila, D.&nbsp; 2013. &ldquo;Comparative eye tracking of experts and novices in web single sign-on&rdquo;, <em>Proceedings of the third ACM Conference on Data and Application Security and Privacy &ndash; CODASPY &rsquo;13</em>, <em>ACM Press, New York, NY</em>, p. 105.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Barn, Balbir S., Ravinder Barn, and Jo-Pei Tan. 2013. &ldquo;Smart Phone Activity: Risk-Taking Behaviours and Perceptions on Data Security among Young People in England.&rdquo; <em>International Journal of Social and Organizational Dynamics in IT</em> 3(4): 43-58.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Bianchi, A., &amp; Phillips, J. G.&nbsp; 2005. Psychological predictors of problem mobile phone use. <em>Cyber&shy;psychology &amp; Behavior</em>, 8(1), 39&ndash;51.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Bustard, John D., John N. Carter, Mark S. Nixon, and Abdenour Hadid. 2014. &ldquo;Measuring and Mitigating Targeted Biometric Impersonation.&rdquo; <em>IET Biometrics</em> 3(2): 55-61.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Butt, S., &amp; Phillips, J. G.&nbsp; 2008. Personality and self-reported mobile phone use. <em>Computers in Human Behavior</em>, <em>24</em>(2), 346&ndash;360.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Endsley M. R. 1995. &ldquo;Toward a theory of situation awareness in dynamic systems.&rdquo; <em>Human Factors</em> 37: 32&ndash;64.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Fried, Robert B. 2018. &ldquo;Dumpster Diving.&rdquo; Social-Engineer.org. </span><span style="font-family: 'Helvetica',serif;"><a href="../../wiki/archives/DumpsterDiving/CrimeandClues_dumpster_diving.htm">https://www.social-engineer.org/wiki/archives/DumpsterDiving/CrimeandClues_dumpster_diving.htm</a></span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Friedman, B., Hurley, D., Howe, D.C., Felten, E. and Nissenbaum, H. 2002. &ldquo;Users&rsquo; conceptions of web security&rdquo;, <em>CHI &rsquo;02 Extended Abstracts on Human Factors in Computing Systems &ndash; CHI &lsquo;02</em>, ACM Press, New York, NY, p. 746.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Furnell, S.M., A. Jusoh, and D. Katsabas. 2006. &ldquo;The Challenges of Understanding and Using Security: A Survey of End-Users.&rdquo; <em>Computers &amp; Security</em> 25(1): 27-35.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Godlove, Timothy. 2012. &ldquo;Examination of the Factors that Influence Teleworkers&rsquo; Willingness to Comply with Information Security Guidelines.&rdquo; <em>Information Security Journal: A Global Perspective</em> 21(4): 216-229.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Gragg, David. 2003. &ldquo;A Multi-Level Defense Against Social Engineering.&rdquo; <em>SANS Institute InfoSec Reading Room</em>, pp. 1-21.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Greiner, Lynn. 2008. &ldquo;Hacking your network&rsquo;s weakest link &ndash; you.&rdquo; <em>Network Magazine</em> 12(1):9&ndash;12.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Greitzer, Frank L., Lars J. Kangas, Christine F. Noonan, Angela C. Dalton, Ryan E. Hohimer. 2012. &ldquo;Identifying At-risk Employees: Modeling Psychosocial Precursors of Potential Insider Threats.&rdquo; <em>45<sup>th</sup> Hawaii International Conference on System Sciences</em> (2012), pp. 2,392-2,401.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Grudin, Jonathan. 2005. &ldquo;Three Faces of Human-Computer Interaction.&rdquo; <em>IEEE Annals of the History of Computing</em> 27(4): 46-62.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Hatfield, Joseph. 2018. &ldquo;Social Engineering in Cybersecurity: The Evolution of a Concept.&rdquo; <em>Computers &amp; Security</em>, Vol. 73, pp. 102-113.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Indrajit, Richardus Eko. 2017. &ldquo;Social Engineering Framework: Understanding the Deception Approach to the Human Element of Security.&rdquo; <em>International Journal of Computer Science Issues</em>, 14(2): 8-16.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Irani D., Balduzzi M., Balzarotti D., Kirda E., Pu C. 2011. "Reverse Social Engineering Attacks in Online Social Networks." In: Holz T., Bos H. (eds) <em>Detection of Intrusions and Malware, and Vulnerability Assessment</em>. DIMVA 2011. Lecture Notes in Computer Science, vol. 6739. Springer, Berlin, Heidelberg. pp. 55-74.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Jhaveri, Hardik, Harshit Jhaveri, and Dhaval Sanghavi. 2014. "Sybil Attack and its Proposed Solution." <em>International Journal of Computer Applications</em> 105(3): 17-19.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Kaul, Priya, and Deepak Sharma. 2013. "Study of Automated Social Engineering, its Vulnerabilities, Threats and Suggested Countermeasures." <em>International Journal of Computer Applications</em> 67(7): 13-16.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Kelley, Timothy, and Bennett I. Bertenthal. 2016. &ldquo;Attention and Past Behavior, Not Security Knowledge, Modulate Users&rsquo; Decisions to Login to Insecure Websites.&rdquo; <em>Information and Computer Security</em> 24(2): 164-176. </span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 3.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Kline, Douglas M., Ling He, and Ulku Yaylacicegi. 2011. &ldquo;User Perceptions of Security Technologies.&rdquo; <em>International Journal of Information Security and Privacy</em> 5(2): 1-12.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Kurkovsky, S., &amp; Syta, E.&nbsp; 2010. <em>Digital natives and mobile phones: A survey of practices and attitudes about privacy and security</em>. Paper pre&shy;sented at the 2010 IEEE International Symposium on Technology and Society (ISTAS).</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Lauinger, Tobias, Veikko Pankakoski, Davide Balzarotti, and Engin Kirda. 2010. &ldquo;Honeybot, Your Man in the Middle for Automated Social Engineering.&rdquo; <em>Proceedings of USENIX Symposium on Networked Systems Design and Implementation</em>, April 2010.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Liginlal, Divakaran, Inkook Sim, and Lara Khansa. 2009. &ldquo;How Significant is Human Error as a Cause of Privacy Breaches? An Empirical Study and a Framework for Error Management.&rdquo; <em>Computers &amp; Security</em> 28(3-4): 215-228.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Mouton, Francois, Louise Leenen, and H. S. Venter. 2016. "Social Engineering Attack Examples, Templates, and Scenarios." <em>Computers &amp; Security</em>, Vol. 59, pp. 186-209.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">National Public Radio. 2011. &ldquo;Real &lsquo;Sybil&rsquo; Admits Multiple Personalities Were Fake.&rdquo; </span><span style="font-family: 'Helvetica',serif;"><a href="../../2011/10/20/141514464/real-sybil-admits-multiple-personalities-were-fake.html">https://www.npr.org/2011/10/20/141514464/real-sybil-admits-multiple-personalities-were-fake</a></span><span style="font-family: 'Helvetica',serif; color: black;"> (accessed 20 October 2018).</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">New York Times. 2015. &ldquo;The Agency.&rdquo; </span><span style="font-family: 'Helvetica',serif;"><a href="../../2015/06/07/magazine/the-agency.html">https://www.nytimes.com/2015/06/07/magazine/the-agency.html</a></span><span style="font-family: 'Helvetica',serif; color: black;"> (accessed 20 October 2018).</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Ovelg&ouml;nne, Michael, Tudor Dumitras, B. Aditya Prakash, V.S. Subrahmanian, and Benjamin Wang. 2017. &ldquo;Understanding the Relationship between Human Behavior and Susceptibility to Cyber Attacks: A Data-Driven Approach.&rdquo; <em>ACM Transactions on Intelligent Systems and Technology</em> 8(4): 1-25.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Pattinson, Malcolm, Cate Jerram, Kathryn Parsons, Agata McCormac, and Marcus Butavicius. 2012. &ldquo;Why Do Some People Manage Phishing E-mails Better Than Others?&rdquo; <em>Information Management &amp; Computer Security</em>, 20(1): 18-28.</span></p>
+<p style="text-indent: -.25in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Raja, Fahimeh, Kirstie Hawkey, Pooya Jaferian, Konstantin Beznosov, and Kellogg S. Booth. 2010. &ldquo;It&rsquo;s Too Complicated, So I Turned It Off! Expectations, Perceptions, and Misconceptions of Personal Firewalls.&rdquo; <em>Proceedings of the 3rd ACM Workshop on Assurable and Usable Security Configuration</em> (Oct. 2010): pp. 53-62.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Reason J. 1990. <em>Human Error</em>. New York, NY: Cambridge University Press.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Reardon, Joel, David Basin, and Srdjan Capkun. 2014. &ldquo;On Secure Data Deletion.&rdquo; <em>IEEE Security &amp; Privacy</em> 12(3): 37-44.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Rao, Kameswara, and Sushma Yalamanchili. 2012. &ldquo;Novel Shoulder-Surfing Resistant Authentication Schemes using Text-Graphical Passwords.&rdquo; <em>International Journal of Information and Network Security</em>, 1(3): 163-170.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Sobey, J., Biddle, R., van Oorschot, P. and Patrick, A.S. 2008. &ldquo;Exploring user reactions to new browser cues for extended validation certificates&rdquo;, in Jajodia, S. and Lopez, J. (Eds), <em>Proceeding 13th European Symposium on Research in Computer Security</em> (ESORICS) 2008, Springer, pp. 411-427</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Sokolowski, John A., Catherine M. Banks, and Thomas J. Dover. 2016. &ldquo;An Agent-Based Approach to Modeling Insider Threat.&rdquo; <em>Computational and Mathematical Organization Theory</em> 22(3): 273-287.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Stajano, Frank, and Paul Wilson. 2011. &ldquo;Understanding Scam Victims: Seven Principles for Systems Security.&rdquo; <em>Communications of the ACM</em> 54(3): 70-75.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Tam, L., M. Glassman, and M. Vandenwauver. 2010. &ldquo;The Psychology of Password Management: A Tradeoff between Security and Convenience.&rdquo; <em>Behaviour &amp; Information Technology</em> 29(3): 233-244.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Whalen, T. and Inkpen, K.M.&nbsp; 2005. &ldquo;Gathering evidence: use of visual security cues in web browsers&rdquo;, <em>Proceedings of Graphics Interface</em>, <em>Waterloo, ON</em>, pp. 137-144.</span></p>
+<p style="text-indent: -.25in; tab-stops: .5in 1.0in 1.5in 2.0in 2.5in 3.0in 3.5in 4.0in 4.5in 5.0in 5.5in 6.0in; margin: 0in 0in 6.0pt .25in;"><span style="font-family: 'Helvetica',serif; color: black;">Winnefeld Jr., James A. (Sandy), Kirchhoff, Christopher and David M. Upton. 2015. Cybersecurity’s Human Factor: Lessons from the Pentagon. <em>Harvard Business Review</em>
+  </span></p></div>
+  </body>
+  </html></div> <!-- /container --></body></html>
