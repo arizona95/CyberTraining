@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "cccd835a6620b4b919d1359b16d4de39976d32a25ace8f0723093953ceb5465e";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Symmetric Encryption
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'><font color='black'><b>24 - Symmetric Encryption</b></font></a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>BRAND: Symmetric Encryption</title>
+
+  </head>
+  <body>
+    <div class="header">
+
+      <div class="noScreen">
+        <br> 
+        </br> 
+        <h1>Symmetric Encryption</h1>
+      </div>
+    </div>
+    
+    
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Define symmetric encryption and be able to discuss what it is used for.</li>
+        <li>Describe how symmetric encryption is used in the context of the Cyber Pillars discussed earlier in this course.</li>
+        <li>Be able to decrypt ciphertext given an example that was encrypted using the Caesar Cipher.</li>
+        <li>Be able to understand, describe, and execute a real-world example of symmetric encryption, Advanced Encryption Standard (AES).</li>
+      </ul>
+    </div>  
+    
+  <br>  
+    
+    
+    <div class="sec">
+      There are a common set of tools that help provide <em><a class="glossLink" href="calendar.php-76.html?load=glossary#C">confidentiality</a></em>, <em><a class="glossLink" href="calendar.php-76.html?load=glossary#I">integrity</a></em>, 
+      <em><a class="glossLink" href="calendar.php-76.html?load=glossary#A">authentication</a></em>, and <em><a class="glossLink" href="calendar.php-76.html?load=glossary#N">non-repudiation</a></em> that fall under the umbrella of <a class="glossLink" href="calendar.php-76.html?load=glossary#C"><em>cryptography</em></a>.  Over this and the next several lessons we will learn about  several cryptographic techniques: symmetric encryption, asymmetric encryption, hashing, and steganography; we will use and understand simple examples of those techniques, and we will learn about and use real-world tools that make use of those techniques. We will also look at attacks on these techniques.
+    </div>
+
+
+    <p class="sec">
+      <h2>What is Cryptography</h2>
+      Cryptography is the study and practice of hiding information.  There are three fundamental areas that we'll look at:
+      <ul>
+  <li>
+    <a class="glossLink" href="calendar.php-76.html?load=glossary#E"><em>encryption</em></a> - With encryption, the idea is to scramble a message in such a way that only the intended recipient of the message can unscramble it, so that only the
+    two of you know the message.  A method of encryption is called a <em><a class="glossLink" href="calendar.php-76.html?load=glossary#C">cipher</a></em>.  A cipher is a method of transforming a message to conceal its original meaning. It should be immediately obvious to you that encryption is used to help provide <em>confidentiality</em>, what we'll see later is that it also helps with the other pillars of IA.
+  </li>
+  <li>
+    <a class="glossLink" href="calendar.php-76.html?load=glossary#H"><em>hashing</em></a> - With hashing, you create a number (called the <a class="glossLink" href="calendar.php-76.html?load=glossary#H"><em>hash</em></a>) from a <a class="glossLink" href="calendar.php-76.html?load=glossary#F">file</a> or <a class="glossLink" href="calendar.php-76.html?load=glossary#S">string</a> using a process that's hard to reverse.  When a new file or string comes in, you hash it and compare to the previous value.  If the hashes are the same, you say the file or string is probably the same as the previous one.  Unlike encryption, it's hard to see immediately why anyone cares about this.  We'll address it later!     
+  </li>
+  <li>
+    <div class="bareannotation">
+      <img height="200pt" src="../../wikipedia/en/4/42/Yellowbeard_poster.jpg"><br>
+      <small>In the movie <a href="../../wiki/FileYellowbeard_poster.jpg.html">Yellowbeard</a>,<br> a treasure map was tattooed<br> on a
+        pirate's head, which is a <br>form of steganography.<br>
+      </small>
+    </div>
+    <a class="glossLink" href="calendar.php-76.html?load=glossary#S"><em>steganography</em></a> - With encryption, there's no secret about the fact that the message is there, it's just the contents of the message that are secret.  Sometimes you want to hide the fact that there is even a message.  For example, if Morgan Webb mails a letter to me, my wife will ask questions, even if the letter is in a secret code that she can't break. With steganography, the goal is to hide the existence of the message.  It's like the pirate shaving a crew member's head, tattooing the map on the top of his head, then having him grow his hair back.  Steganography is used to help provide <em>confidentiality</em>.<br>
+    <small>[ Check out this <a href="../../2010/06/alleged-spies-hid-secret-messages-on-public-websites/index.htm">Wired article</a> ]</small>
+  </li>
+      </ul>
+      These tools can be used individually or in combination to provide Pillars of Cyber Security.
+    
+
+     <p class="sec">
+    <h2>Symmetric Encryption: </h2>
+    First let us define symmetric encryption.  Symmetric means the same, so when we talk about symmetric encryption, the SAME key is used for both encryption and decryption. The key used for encryption and decryption must first be a SECRET and it also must be the SAME when we are referring to symmetric encryption.   The key can be a number, a word, or just a string of random letters, is applied to the text of a message to change the content in a particular way.  Both the sender and recipient must know the key before they can exchange messages.  
+    
+
+    <p class="sec">
+      <h2>Caesar Shift: a Simple Symmetric Encryption Method</h2>
+      <img src="calendar.php-53.png?key=4630a6bf90b0283de480a17ae25acb4acbd61913&type=class&event=24" style="height: 20em; float: right;">
+      Every introduction to cryptography starts with the <em><a class="glossLink" href="calendar.php-76.html?load=glossary#C">Caesar Shift Cipher</a></em>, and who am I to buck tradition. To set the scene, we have two communicating parties: Alice and Bob.  Alice is sending a message and Bob is receiving.  Then we have eavesdropper, Eve, who wants to know what's in the message.  Alice's original message is called the <em><a class="glossLink" href="calendar.php-76.html?load=glossary#P">plaintext</a></em>.  She wants to scramble the message to produce what we call the <em><a class="glossLink" href="calendar.php-76.html?load=glossary#C">ciphertext</a></em>, which should be  unintelligible to Eve, but easily unscrambled by Bob.  The scrambling process is called <em>encrypting</em>, the unscrambling called <em>decrypting</em>.
+    
+      <p>
+    The Caesar Shift Cipher assumes your message is all capital  letters, and replaces each letter in the plaintext with a new letter to produce the ciphertext.  The replacement scheme is based on <em>secret key</em> that Alice and Bob have agreed upon ahead of time &mdash; a number in the range 1-25 called the shift value.  The replacement scheme is simple: if the shift value is <em>s</em>, the <em>k</em>th letter in the alphabet is replaced by letter <em>k+s</em> in the alphabet, circling back  around to the front of the alphabet if necessary.  So with a shift value of 3, the letter B (the 2nd letter in the alphabet) is replaced with the letter E (the letter number 2+3 =  5 in the alphabet).  You can use the little applet below to help encrypt a message once you've chosen a shift value. <i>The applet should also more clearly show you how the shift has the effect of mapping the original plaintext value to a new letter which when complete will become the new ciphertext value.</i>
+      </p>
+
+      <script type="text/javascript">
+  var A = "A".charCodeAt(0);
+  document.write('<TABLE style="font-family: monospace;" class="RM"><tr>');
+  for(var i = 0; i < 26; i++)
+        {
+    document.write("<td>"+String.fromCharCode(A + i) + "</td>");
+        }
+  document.write('<td>&larr; Original Character</td></tr><tr>');
+        for(var i = 0; i < 26; i++)
+        {
+    document.write('<td id="cell' + i + '">'+String.fromCharCode(A + i) + "</td>");
+        }
+  document.write('<td>&larr; Shifted Character</td></tr></tr></table>');
+         </script>
+  <form name="simpleCaesar" onsubmit='return false;'>
+Shift Value <select name="shift" onchange='
+var shift = Number(document.forms.simpleCaesar.shift.value);
+for(var i = 0; i < 26; i++)
+{
+  document.getElementById("cell" + i).innerHTML = String.fromCharCode(A + (shift + i)%26);
+}
+'>
+<option value="0" selected="selected">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+</select>
+<script type="text/javascript">document.forms.simpleCaesar.shift.value=0</script>
+        </form>
+     <p>
+       Decrypting is means subtracting rather than adding the shift value, although you might notice that a shift value of 26-<em>s</em> actually reverses a shift of <em>s</em>.  Let's follow this process through from start to finish:
+       <ol>
+   <li>
+     At some earlier time, Alice and Bob agree to a secret key/shift-value <em>k = 11</em>.
+   </li>
+   <li>
+     Alice decides to send Bob the secret message "MEET ME AT NOON", i.e. <em>plaintext = MEET ME AT NOON</em>.
+   </li>
+   <li>
+     Alice encrypts the plaintext (using something like the table above) with key <em>k=11</em> to get: <em>ciphertext = XPPE XP LE YZZY</em>.
+   </li>
+   <li>
+     Alice sends Bob the ciphertext.
+   </li>
+   <li>
+     Eve manages to read the message in transit, but since she reads the ciphertext, XPPE XP LE YZZY, she can't make sense of it.  Not knowing the <a class="glossLink" href="calendar.php-76.html?load=glossary#K">key</a>, she can't decrypt it to
+     recover the plaintext.
+   </li>
+   <li>
+     Bob receives the ciphertext and decrypts it using something like the table above, in reverse, with key <em>k=11</em>, recovering the plaintext MEET ME AT NOON.
+   </li>
+       </ol>
+     
+     
+     <p>
+     <figure style="float:right">
+       <img src="calendar.php-54.png?key=2717d9fb49bac3ab5a704cc1d061e314dbc2dc90&type=class&event=24" alt="Symmetric Encryption Diagram" style="height: 20em;">
+     <figcaption style="font-size:10px;text-align:center">https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences</figcaption>
+     </figure>
+     Although very simple and, as we'll see, not very secure, the Caesar Cipher is a good example.  It has the basic properties of any <a class="glossLink" href="calendar.php-76.html?load=glossary#C&quot;">cryptosystem</a>: two communicating parties Alice/Bob, nefarious eavesdropper Eve, plaintext/ciphertext, encryption/<a class="glossLink" href="calendar.php-76.html?load=glossary#D">decryption</a>. Moreover, it's representative of one of the two basic classes of cryptosystem, <em>symmetric encryption</em> (also called secret-key), where there is a secret key, shared by both Alice and Bob, that is used to encrypt and decrypt the message.
+     </p>
+
+     
+
+  
+    <div class="fleet" style="clear:right;">
+    <h1>Encryption Key Management</h1><br>
+    Much of military communications are encrypted today for obvious reasons. What is not so obvious is how the Navy and Marine Corps manage all of the encryption keys used for encrypted communications. The system used throughout the military is called the Electronic Key Management System (EKMS) and is centrally controlled by the National Security Agency (NSA). EKMS is in place to provide communications security (COMSEC) material (<em>i.e.</em> encryption keys) and support tools for tracking and     managing encryption key material, generation, distribution, and accounting.
+
+    <p>Sound like an important job? It is and <strong>you</strong> might be the one doing it at your command as a junior officer. Every Naval or Marine unit that uses secure communications has at least two EKMS managers and it is common practice to have a junior officer act as one of them.</p>
+    </div>
+    
+
+     <p class="sec">
+       <h2>Frequency Analysis &mdash; breaking the Caesar cipher</h2>
+       Not all letters get used with the same frequency in English.  E's get used all the time, whereas Z's are not very common. One kind of <em>cryptographic attack</em>, i.e. a way to foil a cryptosystem so you can read secret messages, is based on       analyzing the frequencies of letters in the ciphertext to get information about what key value produced that ciphertext.   If you can deduce the key, you can decrypt the message (crack the code). 
+       <p>
+   Let's suppose you are Eve, and you've intercepted the message(ciphertext) XPPE XP LE YZZY.  There are more P's than anything else, so you might guess (correctly in this case) that a P in the ciphertext came from an E in the plaintext. This would lead you to guess the key/shift-value <em>k = 11</em>.
+       </p>
+       <p>
+   It's not always going to be that easy of course. The ciphertext RNCP KU QHH has more H's than anything else. If we assume that H's in the ciphertext came from E's in the plaintext, we would deduce a key/shift-value of 3. Decrypting assuming <em>k = 3</em> gives OKZM HR NEE... which is probably not the secret message.  In fact, the plaintext that produced this message was PLAN IS OFF.
+       </p>
+       <p>
+   The problem with this approach is that that we only considered one letter &mdash; the most common appearing in the ciphertext.  Assuming H's came from E's gave us lots of E's in our "cracked" message, but it also gave us Z's and K's, which are pretty uncommon.  To do frequency analysis properly, we should consider all the letters in the message. This is tedious, of course, but when something is tedious, it just means that we ought to write a <a class="glossLink" href="calendar.php-76.html?load=glossary#P">program</a> and let the <a class="glossLink" href="calendar.php-76.html?load=glossary#C">computer</a> do it for us. Try out <a href="calendar.php-94.html?key=bdf70f1505112dccd2af92b2938e7a5f5e680c61&type=resources&event=5"><b>this page</b></a> which features a <a class="glossLink" href="calendar.php-76.html?load=glossary#J">Javascript</a> program for cracking Caesar shift encryption via frequency analysis.  It functions by calculating for each shift value the likelihood of that shift value being correct based on the frequencies of the letters
+   that result from decrypting the given ciphertext with that shift value.  It's very interesting to see how few characters of ciphertext are required to recover the key with a high degree of certainty.
+       </p>
+     
+       <p>
+   So we see that the Caesar Shift Cipher is not very secure. In particular, it's quite vulnerable to attack via frequency analysis. Its problems are a) there are only 26 key values, so trying them all is a viable option, and b) since a given character in the plaintext is always replaced with the same character in the ciphertext, letter frequencies carry over from plaintext to ciphertext.   
+       </p>
+     
+
+
+   <p class="sec">
+      <h2>More Sophisticated Symmetric Encryption: The <a class="glossLink" href="calendar.php-76.html?load=glossary#V">Vigenere Cipher</a></h2>
+<div style="float: right; font-size: 0.5em;">
+<table id="vctable"><tr><td style="border-bottom-style: solid; border-bottom-width: 2pt; border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">.</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#65</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#66</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#67</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#68</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#69</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#70</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#71</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#72</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#73</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#74</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#75</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#76</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#77</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#78</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#79</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#80</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#81</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#82</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#83</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#84</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#85</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#86</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#87</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#88</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#89</td><td style="border-bottom-style: solid; border-bottom-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#90</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td></tr>
+<tr>
+
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td></tr>
+
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td></tr>
+<tr>
+
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#89</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td></tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 2pt; font-weight: bold; text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#90</td><td style="text-align: center; width: 1.25em">&#65</td><td style="text-align: center; width: 1.25em">&#66</td><td style="text-align: center; width: 1.25em">&#67</td><td style="text-align: center; width: 1.25em">&#68</td><td style="text-align: center; width: 1.25em">&#69</td><td style="text-align: center; width: 1.25em">&#70</td><td style="text-align: center; width: 1.25em">&#71</td><td style="text-align: center; width: 1.25em">&#72</td><td style="text-align: center; width: 1.25em">&#73</td><td style="text-align: center; width: 1.25em">&#74</td><td style="text-align: center; width: 1.25em">&#75</td><td style="text-align: center; width: 1.25em">&#76</td><td style="text-align: center; width: 1.25em">&#77</td><td style="text-align: center; width: 1.25em">&#78</td><td style="text-align: center; width: 1.25em">&#79</td><td style="text-align: center; width: 1.25em">&#80</td><td style="text-align: center; width: 1.25em">&#81</td><td style="text-align: center; width: 1.25em">&#82</td><td style="text-align: center; width: 1.25em">&#83</td><td style="text-align: center; width: 1.25em">&#84</td><td style="text-align: center; width: 1.25em">&#85</td><td style="text-align: center; width: 1.25em">&#86</td><td style="text-align: center; width: 1.25em">&#87</td><td style="text-align: center; width: 1.25em">&#88</td><td style="text-align: center; width: 1.25em">&#89</td></tr>
+</table>
+</div>
+      Next we'll consider a more sophisticated (and, in fairness, more recent) cryptosystem called the Vigenere Cipher.  It is a symmetric key encryption method, like the Caesar Cipher, but it addresses the problem of too few key possibilities and the
+      carrying over of letter frequencies from plaintext to ciphertext.  
+      <p>
+  The key is a string of letters like JOE.  To encrypt, you take your plaintext (we'll reuse MEET ME AT NOON)  and write it down.  Then you write down th key string over the plaintext, with letters matching up.  If the plaintext is longer than the key, you simply repeat the key.  Like this:
+  <pre>
+JOEJ OE JO EJOE &larr; key (repeated as needed)
+MEET ME AT NOON &larr; plaintext
+  </pre>
+  Next you write down (or have on hand) the <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/27.vigenere/vctable.html">table</a> you see on the right. The encrypted value a plaintext character is the table entry whose row is given by the plaintext character and whose column is given by the key character written above it.  Thus, the first letter of our message encrypts to the table entry at  row M and column J, which is a V. (Check out <a href="calendar.php-95.html?key=c4a8a41190f468461a1c06317bf2701f23afcbb8&type=resources&event=27"><b>this demo</b></a> to see the process on a short message.) Decryption is straightforward if you understand encryption: write down the ciphertext with the key written above it (repeated as needed).  To decrypt a character in the ciphertext, identify the column given by the key character above the ciphertext character.  Find the ciphertext character in that column.  The row at which it appears is labeled with decrypt value, i.e. with the corresponding plaintext character.
+      
+      <p>
+  Think about how the Vigenere Cipher addresses the flaws in the Caesar Shift.  The key is a <em>string</em> of characters, and since there are roughly 6 trillion strings of length less than 10, for instance, the problem of too few keys has been  addressed.  The same letter at different positions in the plaintext generally does not get mapped to the same character  in the ciphertext, since the key-character written above plays a role in the encryption.  So letter frequencies in the plaintext do not get carried over to the ciphertext. 
+      </p>
+   
+
+
+   <p class="sec">
+     <h2><a class="glossLink" href="calendar.php-76.html?load=glossary#F">Frequency Analysis Attacks</a> on the Vigenere Cipher &amp; the One Time Pad</h2>
+
+
+
+     <div class="annotation">
+       <b>The Venona Project: Poor Practice Defeats Perfect Security</b><br>  <a class="glossLink" href="calendar.php-76.html?load=glossary#O">One-time pads</a> provide provably perfect security ... but at a price.  Managing keys is really difficult! After all, you have to have as many <a class="glossLink" href="calendar.php-76.html?load=glossary#B">bytes</a> of key as you have bytes of plaintext to communicate. During WWII, the British and US intercepted a large amount of Soviet Russian communication that was encrypted with one-time pad encryption.  However, cryptanalysis revealed that some of the one-time pad key had been reused ... which is the big no-no with one-time pad encryption. This misuse of the system allowed small parts of the communication to be encrypted.  NSA's effort to exploit this misuse of one-time pad keys to decrypt as much as possible of the traffic was code-named VENONA.  Over the years (Venona lasted until 1980), this code-breaking effort revealed Soviet espionage campaigns and spys at places like Los Alamos National Labs, the State Department and the White House.  It identified the Rosenbergs and Alger Hiss as spies.
+       <ul>
+   <li><a href="../../wiki/Venona_project.html">http://en.wikipedia.org/wiki/Venona_project</a></li>
+   <li><a href="http://www.nsa.gov/public_info/declass/venona/index.shtml">http://www.nsa.gov/public_info/declass/venona/index.shtml</a></li>
+       </ul>
+       With any cryptographic <a class="glossLink" href="calendar.php-76.html?load=glossary#P">protocol</a>, even a small deviation from the protocol can compromise security.  This fact should be a major take-away from the story of the Venona project!
+     </div>
+
+     <div class="news" style="clear: right;">
+       <b>Cyber Pigeons?</b><br>
+       Before there was the <a class="glossLink" href="calendar.php-76.html?load=glossary#I">Internet</a>, there were pigeons.  In late 2012, a British man found a dead carrier pigeon in his
+       chimney.  Turns out it was from WWII and it carried an
+       encrypted message tied to its leg.
+       CNN has a nice story
+       <a href="../../2012/11/23/world/europe/uk-wwii-pigeon-mystery/index.html"><em>UK
+       spies unable to crack coded message from WWII carrier
+       pigeon</em></a> about it and the fact that nobody's been able
+       to decrypt the message.  Turns out, the sender used a one-time
+       pad. 
+     </div>
+
+     The Vigenere Cipher is still susceptible to a frequency analysis attack.  First of all, you have to convince yourself that if the key length is <em>n</em>, what we see if we restrict ourselves to every <em>n</em>th character of the plaintext/ciphertext is simply a Caesar Shift.  The shift value is simply the first key character's position in the alphabet (A=0, B=1, etc).  Starting from the second position and restricting to every <em>n</em>th character gives us a shift value corresponding to the second character in the key, and so on.  Since we can crack Caesar Shift (given enough characters), we can crack each of these "every <em>n</em>th  character" problems and recover the key.  Then we can decrypt just as easily as the recipient.
+   
+   <p>
+       Finding the key length can be a problem, but one easy way given what we already know is this:  for each possible key length <em>n</em>, form the string consisting of every <em>n</em>th character starting from the first, give that as a ciphertext input to our Caesar Shift Frequency Analysis page, and make a note of the probability of the shift index it
+       gave you for that <em>n</em>.  Whichever <em>n</em> value gave us the highest score is probably the actual length of the key. In class, we will actually have performed this exercise.
+     </p>
+
+     <p>
+       This kind of attack requires enough text that our Caesar Shift frequency analysis of every <em>n</em>th character finds the proper shift index with high probability.  If the message length is <em>L</em>, and we assume we need about 20 characters to be assured of having a high probability with our Caesar Shift frequency analysis, we'd like to have <em>L/n &gt; 20</em>.  If <em>L</em> is short or <em>n</em> is long, our attack will fail.  So, in general, a longer key gives you more security from frequency analysis.  If you have a key that is a completely random sequence of letters, and which is as long or longer than the message, the Vigenere Cipher is unbreakable &mdash; provided you never use the key again. In this situation, the system becomes what is called a <em>one-time pad</em>.  The problem with such a system is that arranging to have this one huge key is difficult.
+     </p>
+   
+
+
+   <p class="sec">
+      <h2><a class="glossLink" href="calendar.php-76.html?load=glossary#C">Chosen Plaintext Attack</a> &amp; the Vigenere Cipher</h2>
+      <div class="annotation" style="clear: right;">
+  A kind of chosen plaintext attack was done by the US during WWII.  We knew a Japanese attack was imminent because we had cracked a code, but we didn't know whether the string
+  designating the target was referring to Hawaii or Midway.  So we leaked a story about a water shortage on Midway, and discovered that same symbol in a message that was, we were
+  sure, relaying that leaked information.
+  <p>
+    If you watched the video at the end of the <a href="http://courses.cyber.usna.edu/CYBERWAR/calendar.php?type=lab&event=5">WLAN Lab</a> you would have seen a real-world example of a program cracking <a class="glossLink" href="calendar.php-76.html?load=glossary#W">WEP</a>-encryption using a chosen plaintext attack.
+  </p>
+      </div>
+    
+    
+      The thing about the Vigenere and Caesar Shift Ciphers is that
+      there are three strings &mdash; the key, the plaintext and the
+      ciphertext &mdash; and knowing any two is enough to get the
+      third. As an attacker, i.e. as "Eve", you know the ciphertext.
+      If you haven't got that, you've got nothing.
+      What if you knew the message?  What if you could induce Alice 
+      to send a specific message to Bob?  Or at least a message that
+      contains some text you know.  For instance, if Bob is a spy, and
+      I leak to him that I'm planning an attack on Albuquerque, I can
+      guess that the next message he sends will contain the word
+      "Albuquerque" somewhere.  So, suppose Bob goes and sends the
+      message:
+      <pre>JZFDEYNFUDS MB KLNFI CVIH KMUZ ECHELY</pre>
+      We'll assume that "Albuquerque" is in fact the first word,
+      so we have
+      <pre>???????????
+ALBUQUERQUE
+&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;
+JZFDEYNFUDS</pre>
+      We work through to recover the key like this: row A has a J in
+      the J-column, so J is the first letter of the key.
+      Row L has a Z in the O-column, so we have an O as the second
+      letter, and so on.  In this way we recover JOEJOEJOEJO and
+      deduce that the key was JOE.
+   
+   
+   <p class="sec">
+      <h2>Real-World Symmetric (Secret Key) Encryption: <a class="glossLink" href="calendar.php-76.html?load=glossary#A">AES</a> (Advanced Encryption Standard) </h2>
+      <div class="annotation" style="clear: left;">
+  <b>A stick figure guide to AES</b><br>
+  Check out the <a href="../../2009/09/stick-figure-guide-to-advanced.html">stick figure guide to AES</a>
+  which tells you as much or as little as you want to know about
+  AES, how it came to be and how it works.  Plus, it's pretty
+  funny.
+      </div>
+      AES (Advanced Encryption Standard) is a symmetric key
+      (i.e. there is a single, shared secret key) encryption algorithm
+      for encrypting digital data.  It is a 128-bit <i><a class="glossLink" href="calendar.php-76.html?load=glossary#B">block cipher</a></i>, i.e.,
+      it always operates on 128 input bits at a time, although it has several
+      variants with different key sizes. The
+      variant we'll talk about uses 128-bit keys.
+      It's widely used, and it has been approved by the National
+      Security Agency (NSA) for encrypting top secret information.
+      <p>
+  Usually, AES is not a stand-alone tool.  Instead, it is
+  embedded in systems that use it for security.  For example,
+  the archiving tool <em>PKZIP</em> uses it to provide the
+  option of creating a password protected .zip file.  Windows
+  offers <em>BitLocker</em>, which allows you to encrypt your
+  hard disk.  That way, if your computer, or disk, or backups
+  are stolen, your data is still secure.  Bitlocker uses AES.
+  <a class="glossLink" href="calendar.php-76.html?load=glossary#S">SSL</a> traffic may use AES.  <em>IPSec</em>, which is a standard
+  for secure IP (<a class="glossLink" href="calendar.php-76.html?load=glossary#I">Internet Protocol</a>) traffic uses AES.
+  Suffice it to say, there are many more examples.
+      </p>
+      Although AES is usually embedded in other tools, we've provided
+      you with a <a class="glossLink" href="calendar.php-76.html?load=glossary#S">shell</a>/command-line tool called
+      <a href="../../resources/aes/index.html"><code>aes</code></a> that
+      you can use as a stand-alone tool to encrypt and decrypt files
+      and strings.  You can use it to generate passwords (because
+      coming up with random strings of 32 hex bits is tedious), to
+      encrypt, and to decrypt.
+      <table>
+  <tr valign="top">
+    <td>Generate a 128-bit key</td><td><pre>$ <span class="red">aes -k</span>
+adccbb42e647d10370992205ddc268e6</pre></td></tr>
+
+  <tr valign="top">
+    <td>Encrypt</td><td><pre>$ <span class="red">aes -e adccbb42e647d10370992205ddc268e6 "Who's afraid of the big bad wolf?"</span>
+d31cfef5689d1cf37b725934c8d314f9e57a26bbbeb528c0364ab4edd0819b70829cc4f22add97df1a866a4ef176c2c4</pre></td></tr>
+
+  <tr valign="top">
+    <td>Decrypt</td><td><pre>$ <span class="red">aes -d adccbb42e647d10370992205ddc268e6 d31cfef5689d1cf37b725934c8d314f9e57a26bbbeb528c0364ab4edd0819b70829cc4f22add97df1a866a4ef176c2c4</span>
+Who's afraid of the big bad wolf?</pre></td></tr>
+      </table>
+      <b>Identify</b> the key, plaintext and ciphertext.<br>
+      The <code>aes</code> tool also operates on files.  You can give
+      the <code>aes -h</code> command for more information.
+   
+
+    
+  <h2>References</h2>
+    
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+    margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Committee on National Security Systems. 2015. <i>Committee on National Security Systems (CNSS) Glossary.</i> Ft. Meade, MD: April 6, 2015.</span></p>
+  
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+    margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Martinez, Michael. 2012. "UK Spies Unable to Crack Coded Message from WWII Carrier Pigeon" <i>CNN</i>, November 24, 2012.<br><a href="../../2012/11/23/world/europe/uk-wwii-pigeon-mystery/index.html">https://www.cnn.com/2012/11/23/world/europe/uk-wwii-pigeon-mystery/index.html</a></span></p>  
+
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+    margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>National Security Agency. <i>VENONA</i> Washington: National Security Agency and Central Security Service.<br><a href="../../news-features/declassified-documents/venona/index.htm">https://www.nsa.gov/news-features/declassified-documents/venona/</a></span></p>
+
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+    margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>U.S. Code. 2012. <i>Title 44 - Public Printing and Documents Section 3542.</i> Washington: Government Printing Office, January 3, 2012.</span></p>
+
+  <hr>
+  <br>
+  </body>
+</html>
+
+</div> <!-- /container --></body></html>

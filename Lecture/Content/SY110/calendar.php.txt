@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+# This is a wrapper around the si110 udps.jar program, which
+# provides a true udp server --- unlike netcat.
+# This script is very careful about arguments
+# and path dependencies.  It requires that java is in the path,
+# and that udps.jar is in the same directory as this script.
+
+# Set $dirname to directory containing this executing script
+use File::Basename;
+use File::Spec;
+my $dirname = File::Spec->rel2abs(dirname( __FILE__ ));
+
+# create command vector
+@comm = ("java","-jar","${dirname}/udps.jar");
+push(@comm,@ARGV);
+
+# call command ... this way, shell meta-characters in @comm
+# are left unexpanded
+system { $comm[0] } @comm;

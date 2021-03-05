@@ -1,0 +1,1 @@
+var msgtxt = "The coordinates are Latitude: 38&deg; 59.0' N, Longitude: 76&deg; 28.8' W. Proceed with attack.";

@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "56f34f935a8bbc954c68deaeab83c44e1ffa188258179dba0bcd0200aa77edbc";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Stack - Application Layer
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'><font color='black'><b>21 - Stack - Application Layer</b></font></a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>BRAND: Application Layer</title>
+
+    <script type="text/javascript">
+      var courseSection="Cyber Battlefield";
+      var firstLecture="crsIntro";
+      var prevLecture="netTrans";
+      var nextLecture="netBuildLAN";
+      var lastLecture="finalExam";
+    </script>
+  </head>
+  <body>
+    <span id="top"></span>
+
+    <div class="noScreen">
+      <br>
+      </br>
+      <h1>Stack-Application Layer</h1>
+    </div>
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Explain the purpose of the following protocols: ICMP, HTTP, HTTPS, DNS, SSH, RDP, SFTP,  DHCP, SMB, SMTP.</li>
+        <li>Know the well known ports that the above protocols use.</li>
+        <li>Know the tools or applications that use these protocols (ie HTTP, Web Browsers)</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Discussion</h2>
+      <div>
+        <h3>Introduction to the Application Layer</h3>
+        <p>
+          Recall from our introduction to networking that the Application Layer is where programs that provide end user services reside in the TCP/IP Stack.
+          The programs that you use on a daily basis operate at the Application Layer; e.g. web browsing, email.
+          We will look at some <a href="calendar.php-76.html?load=glossary#P">protocols</a> that you know you make use of on a daily basis, and some protocols that you probably didn't know you make use of on a daily basis.
+          Just like the lower layer protocols in the TCP/IP Stack, all of the protocols we discuss here all provide a service, and all of them are based on a client-server model.
+        </p>
+      </div>
+      <div>
+        <h3>Application Layer Protocol Basics</h3>
+        <p>
+          The Application Layer is at the top of the TCP/IP Stack, but in practice that does not mean that an Application Layer protocol or service is only used by the user.
+          In fact as we continue to expand the use of the Internet, and technology, more and more services at the Application Layer are using other Application Layer protocols or services in order to provide their service.
+          For example, Application A, at the Application Layer, will make use of Application B, also at the Application Layer, in order to provide its (Application A) service.
+        </p>
+        <div class="annotation">
+          <h1>Security through Obscurity</h1>
+          Time and time again it has been publicly and privately shown that security through obscurity is not a long term effective defense principle.
+          Offering a service on the non-standard port will not thwart determined adversaries.
+        </div>
+        <p>
+          Each of the below protocols have a default Transport Layer port that the server will listen for incoming client requests on.
+          The default Transport Layer port is a part of the Application Layer protocol specification.
+          However, there is nothing preventing the use of any Application Layer protocol on any Transport Layer port.
+          That is, any of the below protocols can be used on any Transport Layer port.
+          But, in order for a client to use the service being provided they need to know the port the server is listening on.
+          By offering services on the default port, then clients (users) are able to easily find and use the service.
+          Offering services on other than default ports only makes it more difficult, but not impossible, for users on the Internet to find the service.
+        </p>
+      </div>
+      <div>
+        <h3>Dynamic Host Configuration Protocol (DHCP)</h3>
+        <div class="annotation">
+          Remember, a broadcast is a special message that is sent to all hosts on the same local network.
+          It is the similar to a live news cast on television, where everyone tuned into the same channel is simultaneously watching the same presentation.
+        </div>
+        <p>
+          At this point you might be wondering, if my host (computer) needs an IP address so that it can communicate via the Internet, then why have I never had to configure, much less know, what my IP address is?
+          Connecting to and using a network is effortless for even beginner computer users in part because of DHCP.
+          Right now, you are using a network to access this page, but you probably did not concern yourself with configuring your IP settings and DNS server address (more to follow).
+          That is because it was automatically done for you by a service called DHCP (Dynamic Host Configuration Protocol) provided by the network.
+          Your computer is already configured to use DHCP, so when you plug in the <a href="calendar.php-76.html?load=glossary#E">Ethernet</a> cable (or connect to a wireless network), your computer <em>broadcasts</em> a request for an IP address.
+          The DHCP server replies with an IP address, <a href="calendar.php-76.html?load=glossary#S">subnet mask</a>, and default <a href="calendar.php-76.html?load=glossary#G">gateway</a> router for your host to use.
+          For networks without the DHCP service, users must obtain their IP settings from the network administrator and manually configure their computers.
+        </p>
+        <p>
+          The DHCP protocol runs over UDP, using ports 67 and 68.
+          So, why UDP for DHCP?
+          Well, let's think about that a little.
+          TCP certainly has a great feature in that it provides reliable communications between the two hosts.
+          Recall, that we said TCP is <em>connection oriented</em>, and that the two hosts need to synchronize in order to start exchanging messages, exchanging data.
+          Well, that synchronization cannot occur if one of the hosts does not have an IP address.
+          The whole reason why a client uses DHCP is so that it can get an IP address.
+          Therefore, DHCP cannot use TCP, DHCP must use UDP.
+          UDP allows a host to send a message without a connection; a host does not need to establish a connection in order to create a UDP datagram and an associated IP packet.
+        </p>
+      </div>
+      <div>
+        <h3>Domain Name System (DNS)</h3>
+        <div class="annotation">
+          Shell commands <a href="http://faculty.cyber.usna.edu/~tgalvin/sy110/calendar.php?key=3a50af6a3f71ddff08be91e84d7f272573dbc4b1&type=resources&event=1">resource</a>.
+          <code class="cmd">nslookup</code> requires an <em>Administrator</em> shell.
+        </div>
+        <p>
+          <a href="calendar.php-76.html?load=glossary#D"><strong>Domain Names</strong></a>.
+          When communicating over the phone, we distinguish between a person's <em>name</em> and their phone number.
+          In fact we only need the number to make a call.  The name by itself isn't useful.
+          On the other hand, the name is what we actually associate with the person.
+          If your friend says "Who did you just call?", you say "Bill" not "410-293-9999".
+          Phone numbers may change, but usually a person's name stays the same.
+        </p>
+        <p>
+          The situation on the Internet is similar: a host's IP address may often change, but it's associated name usually does not.
+          What you need to communicate with another host on the Internet is its IP address.
+          But when we as people identify a host, it's with a name, like <code>www.usna.edu</code>.
+          This kind of name is called  a <em>domain name</em>.
+        </p>
+        <p>
+          <strong>Domain names are <em>Hierarchical</em></strong>.
+          They're just like paths in a <a href="calendar.php-76.html?load=glossary#F">file system</a>; the only difference is that we write them the other way around: <code>usna.edu</code> instead of <code>/edu/usna</code>.
+          In a domain name, the more specific portion is to the left, the more general portion is to the right.
+          For example, <code>intranet.usna.edu</code> is a subset of <code>usna.edu</code>, which is in turn a subset of <code>.edu</code>, which is called a "top-level domain".
+        </p>
+        <p>
+          The top of the entire hierarchy is called <em>the root</em>, and the root domain is the name "<code>.</code>".
+          <span class="note">It is common practice not to write the ending <code>.</code> of the domain name, in DNS the root is always inferred.</span>
+          The next level down in the hierarchy is the name at the right end: <code>.edu</code>, <code>.com</code>,<code>.mil</code> etc.
+          <code>.edu</code>, <code>.com</code>, <code>.mil</code> are are all examples of top-level domains.
+          Check out this <a href="https://www.icann.org/resources/pages/tlds-2012-02-25-en">list of top-level domain names</a>.
+        </p>
+        <p>
+          The <code>www</code> at the front of a name, like <code>www.usna.edu</code> usually is meant to indicate a web server, but having <code>www</code> at the front of a domain name doesn't make a host a web server any more than having the first name "Prince" makes you royalty.
+          Having your web server named <code>www</code> is just a convention, a convention that helps clients find your publicly available services.
+        </p>
+        <p>
+          <strong>Why We Need It</strong>.
+          Before you can communicate with another host on the Internet, you need an IP address for it.
+          However, we usually have a domain name, not an IP address.
+          So we need to consult some kind of "phonebook" equivalent to get the IP address from the symbolic name.
+          The irony is that the DNS "phonebook" is itself another host on the Internet, and talking to it requires an IP address ... so there's a whole chicken-egg thing here.
+        </p>
+        <p>
+          <strong>What It Does</strong>.
+          The "phonebook" of the Internet is called DNS (Domain Name System).
+          It consists of a global system of servers, called <em><a href="calendar.php-76.html?load=glossary#N">name server</a></em>, that translate symbolic names to IP addresses either by knowing the answer, or passing the query along to a server that does.
+          To translate a symbolic name to an IP address, you need to query a name server, which requires knowing the name server's IP address.
+          If you only had the symbolic name of the name server, you'd be in trouble.
+          However, when your computer joins a network, it is usually given the IP address of one or more name servers, from a protocol like DHCP.
+          You can see these addresses with the shell command <code>ipconfig /all</code>.
+          Look for the line
+        </p>
+        <pre>DNS Servers. . . . . : 10.1.74.10</pre>
+        <p>
+          that contains the IP addresses of one or more name servers.
+        </p>
+        <p>
+          <strong>A Tool for DNS: nslookup</strong>.
+          The <code class="cmd"><a href="calendar.php-76.html?load=glossary#N">nslookup</a></code> utility is a shell tool (for both Windows and UNIX) that will carry out a DNS request for you.
+          Here's an example:
+        </p>
+        <pre>
+$ nslookup courses.cyber.usna.edu
+Server:    ns1.usna.edu
+Address:  10.1.74.10
+
+Name:  courses.cyber.usna.edu
+Address: 10.1.83.55</pre>
+        <p>
+          From this we see that the IP address of the host <code>courses.cyber.usna.edu</code> is <code>10.1.83.55</code>.
+          Furthermore, the output is telling us that the name server that provided us this answer has IP address <code>10.1.74.10</code>.
+          The <code>nslookup</code> utility is also able to do <em>reverse DNS</em> requests &mdash; i.e. "here's an IP address, what's the name?".
+          We can use that to find the name of the name server we just queried.
+        </p>
+        <pre>
+$ nslookup 10.1.74.10
+Server:    ns1.usna.edu
+Address:  10.1.74.10</pre>
+        <p>
+          From this we see that the name server at <code>10.1.74.10</code> has the name <code>ns1.usna.edu</code>.
+        </p>
+        <p>
+          <strong>Querying Other Name servers</strong>.
+          Normally, <code>nslookup</code> will query the name server listed by the call to <code>ipconfig /all</code> to do DNS lookups.
+          However, if you call <code>nslookup</code> with a second argument that is the name or IP address of a name server, <code>nslookup</code> will query that name server instead. So, for example:
+        </p>
+        <code>nslookup www.google.com 8.8.8.8</code>
+        <br>
+        <br>
+        <p>
+          ... actually causes my host to contact <code>8.8.8.8</code> to resolve the name <code>www.google.com</code>.
+          However, if I run this request inside the USNA network, it can't complete, because (for security reasons), USNA does not want DNS requests to be fulfilled by outside (potentially untrusted) name servers.
+          This is another example of by using a service you are opening your self up to a vulnerability.
+          DNS like most of the protocols in the TCP/IP Stack accept the first reply received.
+          This means that protocol designers and tool developers have to take extra steps to ensure that a request received is valid.
+        </p>
+        <p>
+          <strong><a href="calendar.php-76.html?load=glossary#N">Name Resolution</a> in Action</strong>.
+          It's worthwhile thinking a bit about what happens when you send your browser to a website.
+          When you enter <pre>http://www.martinguitar.com/</pre> in your browser's address bar, the browser is supposed to send a request to the web server <code>www.martinguitar.com</code> (specifically an <a href="calendar.php-76.html?load=glossary#H">HTTP</a> <a href="calendar.php-76.html?load=glossary#G">GET</a> request, more to follow).
+          But that can't happen until the browser finds out what IP address goes with that name.
+          In fact, you can enter the IP address directly into the browser's address bar, like this <pre>http://209.235.218.124</pre> ... and you'll get the website. <!--(Side note: this trick occasionally can run into problems if the particular web server or browser requires use of the HTTP/1.1 <A href="calendar.php?load=glossary#P">protocol</A> rather than HTTP/1.0, but in general a web site is accessible via its IP address only, if you know the address)-->
+          If you use the symbolic name, however, the browser first makes a DNS request to a name server to get the IP address for the name <code>www.martinguitars.com</code>, and then actually sends the HTTP GET request to the web server.
+          If you don't have access to a name server, and you know only a web site's URL, not its IP address, you can't access the web site!
+        
+        <p>
+          DNS servers listen on port 53.
+          DNS uses <a href="calendar.php-76.html?load=glossary#U">UDP</a> rather than TCP.
+          If DNS is so crucial to Internet communications, then why does it use an unreliable protocol like UDP.
+          Well, the answer is in the question, since DNS is so crucial to Internet communications, and is used a lot by a majority of hosts on the Internet, then the protocol needs to be efficient.
+          If DNS used TCP, then the overhead associated with TCP would severely reduce the efficiency of networking.
+          This should become clearer once we go through how DNS resolves an IP address from a domain name.
+        </p>
+        <p>
+          DNS is a complicated system, with millions of servers spread out across the earth.
+          Suppose you query your local name server for www.foo.com.
+          The general scheme works like this:
+          There are 13 <em>root name servers</em>.
+          If your name server doesn't know the IP address of www.foo.com, it sends a query to one of the 13 root name servers, such as the root server for .com.
+          The .com name server will send you to the name server for the foo.com domain, and that name server ought to be able to give the IP address for www.foo.com.
+          If this much traffic was required for every name resolution, the <a href="calendar.php-76.html?load=glossary#I">Internet</a> would be a much slower place.
+          Instead, name servers remember in a <em>cache</em> the answers to queries they've answered recently.
+        </p>
+        <p>
+          From a security perspective it's crucial that DNS works properly.
+          If the name bankwithallmymoney.com gets resolved incorrectly to an IP address owned by a bad guy, I could be in trouble.
+          He could put up a dummy web page that looks just like bankwithallmymoney.com's, but isn't and he could perhaps steal my password ... and then my money.
+        </p>
+      </div>
+      <div>
+        <h3>HyperText Transfer Protocol (HTTP) and HyperText Transfer Protocol Secure (HTTPS)</h3>
+        <p>
+          HTTP (HyperText Transfer Protocol) is the Application Layer protocol that the web is based on.
+          HTTP servers (web servers) use <a href="calendar.php-76.html?load=glossary#T">TCP</a> and listen on port 80.
+          HTTP <a href="calendar.php-76.html?load=glossary#C">clients</a> are called web <a href="calendar.php-76.html?load=glossary#B">browsers</a>.
+          HTTPS (HTTP Secure) is a more secure version of HTTP.
+          It employs Transport Layer Security (TLS), a set of cryptographic protocols which support <a href="calendar.php-76.html?load=glossary#A">authentication</a> as well as <a href="calendar.php-76.html?load=glossary#E">encryption</a> of the Application Layer HTTP data.
+          HTTP traffic is sent in the clear, meaning that anyone can read the data in the message if they receive the message.
+          Remember a packet will flow through many networks as it makes it way from Host A to Host B.
+          HTTPS on the other hand encrypts (we will talk about encryption later in the course) the data such that only someone that knows the key can read the contents of the message.
+          If you don't have the key to decrypt an encrypted message, then you cannot make sense of the data.
+          You may be able to receive, and read the encrypted data, but encrypted data is gibberish.
+        </p>
+        <p>
+          The protocol behind the web, HTTP, governs the interaction between web servers and web clients (browsers).
+          Browsers can send messages like
+        </p>
+        <pre>GET /prices.html HTTP/1.1</pre>
+        <p>
+          to a server (of course you need its IP address to send it this message!).
+          In the above GET request <code>/prices.html</code> is the path and file name of the file the web client is requesting to view.
+          The web server process accepts the GET requests, and looks in its file system for <code>/prices.html</code>.
+          The HTTP protocol specifies exactly what this can look like and what response the request should elicit from the server.
+          For example, the server might send back the message
+        </p>
+        <pre>HTTP/1.1 404 Not Found</pre>
+        <p>
+          which indicates that it did not have a <a href="calendar.php-76.html?load=glossary#F">file</a> <code>prices.html</code> available to send.
+        </p>
+      </div>
+      <div>
+        <h3>Secure SHell (SSH)</h3>
+        <div class="annotation">
+          There are SSH clients for Windows, too, like <a href="../../~sgtatham/putty/index.htm">PuTTY</a>, which is freely available.
+        </div>
+        <p>
+          SSH (Secure SHell) is a protocol that allows secure, remote command shell access.
+          In this setting, secure means preserving <a href="calendar.php-76.html?load=glossary#C">confidentiality</a> and authentication.
+          Nobody snooping on the network traffic can read off your password or other information that gets sent back and forth during the session.
+          Generally, you use ssh like this: <code>ssh username@hostname</code>, e.g. <code>ssh mxxxxxx@flux.academy.usna.edu</code>.
+          You'll be prompted for a password, and assuming you give the right one, you have a shell on the remote host (flux.academy.usna.edu in the example).
+        </p>
+        <p>
+    SSH is a client/server system just like the web (HTTP).  For example, there
+    is an ssh-<em>server</em> <a href="calendar.php-76.html?load=glossary#P">process</a> running on midn.cyber.usna.edu listening on port 22 for connection requests.  On Windows,
+    the ssh command (which is actually an alias for a program
+    called PuTTY) is an ssh-<em>client</em>.  When you run it
+    as <code>ssh midn.cyber.usna.edu</code>,
+      the client resolves the name <code>midn.cyber.usna.edu</code>
+    to an IP address, makes a TCP connection to that IP address on
+    port 22, and from
+    that point on follows (communicates using) the SSH protocol
+    with the server process to carry out your shell commands.
+        </p>
+        <p>
+    So, you already have an ssh client installed on your machine (PuTTY).
+    You just need to pull up a Windows shell and start up the ssh
+    client with:
+    <br><br>
+    <code>ssh mxxxxxx@midn.cyber.academy.usna.edu</code><br>
+        </p>
+      
+      </div>
+    </div>
+    <div>
+      <h3><a href="calendar.php-76.html?load=glossary#R">RDP</a></h3>
+      The "Remote Desktop Protocol" is sort of like the Windows
+      equivalent of ssh, except that you get a full desktop on the
+      remote machine instead of just a shell.
+      It uses TCP on port 3389.
+      In this class, we won't do this from one Windows host to
+      another, but we will be doing this later from a UNIX host to a
+      Windows host using the UNIX tool <code>rdesktop</code>.
+      The Windows RDP client is just called "Remote Desktop Connection".
+      Just like HTTP, DNS, and SSH, this is a client/server system.
+      The Windows host you want to connect to must have an RDP
+      server process listening to port 3389 waiting for connection
+      requests from remote desktop clients.
+    </div>
+    <div class="sec">
+      <h3><a href="calendar.php-76.html?load=glossary#S">SFTP</a></h3>
+      Secure File Transfer Protocol (SFTP) offers secure <a href="calendar.php-76.html?load=glossary#F">file</a>
+      transfer.  You've already used WinSCP,
+      which is an SFTP client, to transfer web content over to midn.cyber.usna.edu.
+      SFTP uses TCP port 22 ... just like SSH.  That's because SFTP is
+      actually an extension of SSH.  So the "secure" in SFTP comes
+      from the fact that traffic is encrypted, so an eavesdropper can't snoop in. The protocol also provides for authentication.
+    </div>
+    <div class="sec">
+      <h3><a href="calendar.php-76.html?load=glossary#S">SMB</a></h3>
+      The SMB (Server Message Block) protocol, is an Application Layer
+      protocol used for network file sharing. There are two popular
+      implementations of the SMB protocol: Microsoft SMB and Samba.
+      Windows systems use Microsoft SMB to share files over the
+      network, which is what most people are familiar with. Unix systems
+      use Samba primarily to use resources shared using the Microsoft
+      SMB protocol. Both versions are based on the original SMB protocol
+      and are compatible with one another. SMB servers usually listen on
+      port 445. The SMB protocol runs over TCP.
+    </div>
+    <div class="sec">
+      <h3>SMTP</h3>
+    SMTP (Simple Mail Transfer Protocol) is an application layer protocol
+    for transporting email. An SMTP client is responsible
+    for transferring electronic mail (email) messages to one or more SMTP
+    servers. Message transfer can occur in
+    a single connection between the original SMTP sender and the final
+    SMTP-recipient, or can occur in a series of <a href="calendar.php-76.html?load=glossary#H">hops</a> through intermediary systems.
+    DNS is used to identify hosts that act as SMTP servers (or relays).
+  </div>
+    <div class="sec">
+      <h3>Other Services/Protocols</h3>
+      <ul>
+  <li>FTP (21) - File Transfer Protocol for <strong>non-secure</strong> transfer of files
+      (pre-dates SFTP, circa 1971)</li>
+  <li>TELNET (23) - provides a <strong>non-secure</strong>
+      bi-directional <a href="calendar.php-76.html?load=glossary#A">ASCII</a>-text communication connection to a remote host
+    (pre-dates SSH, circa 1969, i.e., the very early days of the Internet). </li>
+    <li>IMAP (143) - Internet Message Access Protocol, for e-mail
+    clients to manage e-mail held on servers</li>
+  <li>IRC (6667) - Internet Relay Chat, real-time chat.
+  </li></ul>
+  <strong class="red">Important:</strong>
+  Each network <em><strong>service</strong></em> a host provides corresponds
+  to a <em><strong>process</strong></em> sitting and listening for requests at
+  a specific TCP or UDP <em><strong>port</strong></em>.
+  <br><br>
+  Each of these processes is a "server".  Each process provides
+  services to other hosts, but each process also represents a potential avenue into the
+  host for attackers.  These server processes are programs reading input
+  from other hosts, often outside the local network.  They are expecting input that
+  follows the rule of whichever <em>protocol</em> the service
+  uses. But what happens when input doesn't follow the rules?
+  We know how hard it is to write
+  programs that deal gracefully with all possible inputs!
+</div>
+    <div class="sec">
+      <h3><a id="serviceProtocolPort"></a>Summarizing it all</h3>
+      The following table summarizes all of this service/protocol/port/tool information.  You need to be able to match up the service to protocol name to standard tool for each
+      table entry.  Why, because these are all so fundamental. You only need to memorize the ports that are <span class="highlight">highlighted</span>.
+      <br>
+      <br>
+    <div id="services">
+      <table>
+  <tr><td>
+    <table>
+      <tr><th>Service</th><th>Protocol</th><th>Port</th><th>TCP/UDP</th><th>Software/Tools</th></tr>
+      <tr>
+  <td>Network Connectivity / Host Status</td>
+  <td>ICMP</td>
+  <td>--*</td>
+  <td>--</td>
+  <td>ping</td>
+      </tr>
+      <tr>
+  <td><a href="calendar.php-76.html?load=glossary#W">World Wide Web</a></td>
+  <td>HTTP</td>
+  <td class="highlight">80</td>
+  <td>TCP</td>
+  <td>browsers</td>
+      </tr>
+      <tr>
+  <td>Secure Web</td>
+  <td>HTTPS</td>
+  <td class="highlight">443</td>
+  <td>TCP</td>
+  <td>browsers</td>
+      </tr>
+      <tr>
+  <td><a href="calendar.php-76.html?load=glossary#N">Name Resolution</a></td>
+  <td>DNS</td>
+  <td class="highlight">53</td>
+  <td>UDP</td>
+  <td>nslookup</td>
+      </tr>
+      <tr>
+  <td>Secure <a href="calendar.php-76.html?load=glossary#R">Remote Shell</a></td>
+  <td>SSH</td>
+  <td class="highlight">22</td>
+  <td>TCP</td>
+  <td>ssh (PuTTY)</td>
+      </tr>
+      <tr>
+  <td>Remote Desktop (Windows)</td>
+  <td>RDP</td>
+  <td>3389</td>
+  <td>TCP</td>
+  <td>rdesktop (UNIX), Remote Desktop Connection (Windows)</td>
+      </tr>
+      <tr>
+  <td>Secure Remote File Transfer</td>
+  <td>SFTP</td>
+  <td>22**</td>
+  <td>TCP</td>
+  <td>WinSCP, FileZilla, CyberDuck</td>
+      </tr>
+      <tr>
+  <td>Dynamic Host Configuration Protocol***</td>
+  <td>DHCP</td>
+  <td>67, 68****</td>
+  <td>UDP</td>
+  <td>built into <a href="calendar.php-76.html?load=glossary#O">operating systems</a>
+  </td>
+      </tr>
+      <tr>
+  <td>Network file &amp; printer sharing</td>
+  <td>SMB</td>
+  <td>445</td>
+  <td>TCP</td>
+  <td>File browser (see "map network drive" in Windows)</td>
+      </tr>
+  <tr>
+  <td>email</td>
+  <td>SMTP</td>
+  <td>25</td>
+  <td>TCP</td>
+  <td>any email client: Outlook, Thunderbird, Mail, browser, etc.</td>
+      </tr>
+   </table>
+  * Ping doesn't use the Transport Layer, so there's no associated port<br>
+    ** Same port as SSH because it actually uses SSH<br>
+    *** Means you can join a network "on the fly" and get assigned an IP address and find a DNS server<br>
+    **** Port 67 is for the server, 68 is for the client<br><br><br>
+  <h3> Review Questions </h3>
+  1. How do Application Layer protocols interact with Transport Layer protocols?
+  </br>
+  2. Which Application layer protocol assigns your device an IP address?
+  </br>
+  3. Which pillars of security are provided by HTTPS?
+  
+   
+    
+    </td>
+  </tr></table>
+  </div>
+    </div>
+  <h2>References</h2>
+    <ol>
+      <li>Simon Tatham. <a href="../../~sgtatham/putty/index.htm" target="_blank"><cite>PuTTY: a free SSH and Telnet client</cite></a>. Jul 8 2019.</li>
+      <li>Internet Corporation for Assigned Names and Numbers. <a href="https://www.icann.org/resources/pages/tlds-2012-02-25-en" target="_blank"><cite>List of Top-Level Domains</cite></a>. Jul 2019.</li>
+    </ol>
+  </body>
+</html>
+</div> <!-- /container --></body></html>

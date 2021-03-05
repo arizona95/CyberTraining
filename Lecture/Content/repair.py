@@ -2,8 +2,8 @@ import os
 from pathlib import Path
 from shutil import copyfile
 
-root_translated_dir = ".\\translated"
-root_repair_dir = ".\\repair"
+root_translated_dir = "SY110"
+root_repair_dir = "CyberWar"
 
 # read repair_word_list
 
@@ -45,8 +45,10 @@ def copy_by_filename(filename) :
 	copyfile(os.path.join(root_translated_dir,filename), os.path.join(root_repair_dir,filename))
 
 file_list_in_translated = [os.path.join(root_translated_dir, f) for root_translated_dir, dn, filenames in os.walk(root_translated_dir) for f in filenames]
+print(file_list_in_translated)
+
 for filename in file_list_in_translated :
-	file_low_name = "\\".join(filename.split('\\')[2:])
+	file_low_name = "\\".join(filename.split('\\')[1:])
 	if file_low_name.split('.')[-1] == 'html' :
 		repair_html(file_low_name)
 	else :

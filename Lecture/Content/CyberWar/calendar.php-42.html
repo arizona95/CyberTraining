@@ -1,0 +1,805 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "7e216cac0a0286bdf7e4092a480407ed977ed4b47f8de34d9cbb41b698bb88c2";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Digital Forensics
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'><font color='black'><b>8 - Digital Forensics</b></font></a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>BRAND: Digital Forensics Lab</title>
+
+    <style>
+      table.carve {
+        border-collapse:collapse;
+      }
+      table.carve td {
+        font-size:8pt;
+        font-family:monospace;
+        border-style:solid;
+        border-width:1pt;
+      }
+      table.carve tr.offset td {
+        border-style:none;
+        border-width:0;
+        text-align:center;
+        font-size:7pt;
+      }
+      .yellow {
+        background-color:#FFFF00;
+      }
+      .ltyellow {
+        background-color:#FFFFC0;
+      }
+    </style>
+
+    <script type="text/javascript">
+      var courseSection="Cyber Operations";
+      var firstLecture="intro";
+      var prevLecture="forensics";
+      var nextLecture="recon";
+      var lastLecture="finalExam";
+    </script>
+  </head>
+  <body>
+    <div class="header">
+
+      <div class="noScreen">
+        <h1>CYBERWAR - Cyber Operations/Digital Forensics</h1>
+      </div>
+    </div>
+
+    <div class="learnObjs">
+      <h2>Learning Outcomes <span class="samePageLink">[<a href="#top">Top</a>]</span></h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Describe the use of and use MD5 in digital forensics.</li>
+        <li>Perform basic digital forensics activities.</li>
+        <li>Analyze basic forensic artifacts to deduce events that occurred in information systems.</li>
+      </ul>
+    </div>
+    
+    <br>
+    <!--
+        
+    -->
+    
+    <div class="sec">
+      <p>
+        This lab emphasizes the aspects of digital forensics that are commonly encountered.
+        The activities are broken into small activities, each with a specific focus.
+      </p>
+      <p>
+        Your Digital Forensics <!--<SPAN class="red"><A href="labworksheet.pdf">worksheet</A> is due</SPAN>--> worksheet is due to your instructor at the beginning of class on the day listed on the course calendar, typically a week from the date assigned.
+      </p>
+    </div>
+    <div class="sec">
+      <!--<SPAN style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet A.1. &nbsp;</SPAN></LI>
+      </OL>
+    </DIV>
+<!-- <DIV>
+<H2>B. Web Browser Forensics</H2>
+Among the more popular
+browsers are Firefox, Chrome, Safari, Opera, and Internet Explorer. Did you know that
+these all retain information about what you do online?  With our newfound computer
+forensics expertise and knowledge, we can use the tools you installed to see what they save. In general, they each maintain a lengthy
+history of web sites you visit, cookies web sites give you, stored passwords and form
+data, and often search terms. Today we'll explore Firefox and Chrome.
+
+<P>
+Both Firefox and Chrome build a profile for a user.  This allows the browser to store
+all of this information for multiple users on a computer. It's very convenient, but
+do you want all of this information stored on the computer?  We have taken some time to
+put together a couple profiles for you to use. Just download and then <STRONG>unzip</STRONG> the files
+to your forensics directory. The actual profile folder for Chrome is called <EM>
+Default</EM> and the Firefox profile is called <EM>ebkkqy8u.default</EM>.<BR>
+<OL>
+<LI>Save the below files to the forensics directory you created.</LI>
+<UL>
+<LI>Firefox Profile: <A href="browser/firefox_profile.zip">Firefox Profile</A></LI>
+<LI>Chrome Profile: <A href="browser/chrome_profile.zip">Chrome Profile</A></LI>
+</UL>
+
+<LI>
+For each of the two downloaded browser profile files,
+right-click on the file and extract all files.      </LI>
+</ol>
+<P>
+The tools we'll use for this activity come from the same author. FoxAnalysis and ChromeAnalysis, the two tools you installed,
+are sister tools that accomplish the same thing for different browsers. They each attempt
+to load the profile of the user, and then parse the information.</P>
+
+<P>
+We need a tool to help us, because the data is stored in sqlite3 database format, which
+is not readable to the average human. Because the task is well understood on a small
+scale, we can build a tool that helps automate the task for larger data sets. First we
+will analyze the Firefox profile.</P>
+<OL>
+<LI>Run the FoxAnalysis program. Go to your start menu and type "FoxAnalysis"</LI>
+<LI>Select File &rArr; New Case.</LI>
+<LI>In the window that opens, click on the ellipsis [...] to navigate to the Firefox profile
+you downloaded from above. Select
+the <CODE>ebkkqy8u.default</CODE> folder
+within the Firefox Profile folder.</LI>
+<LI>Click on the Check Files button just below. This will verify that you have the
+required sqlite files in the profile directory. Close the window when all files have
+been found.</LI>
+<LI>Click Next three times.</LI>
+<LI>Click Extract.</LI>
+<LI>Click Finish.</LI>
+<LI>Analyze the history, bookmarks, cookies, downloads, form history, and logins for
+any suspicious activity. If the Downloads tab is empty, note that you can still spot downloaded content on the Website History tab, check the Visit Type column.</LI>
+Example FoxAnalysis Results:<BR>
+<img id="im5" style="height: 40pt;" src="images/FoxAnalysisResults-01.png"
+onmouseover='document.getElementById("im5").style.height="360pt";'
+onmouseout='document.getElementById("im5").style.height="40pt";'>
+</ol>
+<OL>Now let's look at what this user did in Chrome.
+<LI>Run the ChromeAnalysis program. Go to your start menu and type "ChromeAnalysis"</LI>
+<LI>Select File &rArr; New Case.</LI>
+<LI>In the window that opens, click on the ellipsis [...] to navigate to the Chrome profile
+you downloaded from above. Select
+the <CODE>Default</CODE> folder
+within the Chrome Profile folder.</LI>
+<LI>Click on the Check Files button just below. This will verify that you have the
+required sqlite files in the profile directory. Close the window when all files have
+been found.</LI>
+<LI>Click OK.</LI>
+<LI>Analyze the history, bookmarks, cookies, downloads, search terms, logins, Archived Website History, and Archived Search Terms for
+any interesting or suspicious activity.</LI>
+Example ChromeAnalysis Results:<BR>
+<img id="im6" style="height: 40pt;" src="images/ChromeAnalysisResults-01.png"
+onmouseover='document.getElementById("im6").style.height="360pt";'
+onmouseout='document.getElementById("im6").style.height="40pt";'>
+</ol>
+</DIV> -->
+    <div class="sec">
+      <h2>A. Trace an Email</h2>
+      <p> Before you begin, create a directory named <code>forensics</code> on your desktop.  All of the files created in this lab will be stored there.
+        Email is one of the most common forms of communication today.
+        While older forms of communication required the presence and participation of two parties, email is more asymmetric in nature.
+        Email makes use of the SMTP protocol, meaning that it follows a prescribed set of rules, which makes it predictable and simple to understand.
+        Today we're going to look at a few emails and determine if they are legitimate, a spam email, or something else.
+        The basis for this analysis will come primarily from the header of the email.
+        An email header contains information from every Mail Transfer Agent it comes in contact with on its way to the destination.
+        This can be very helpful when putting together the information systems the email message passed through.
+      </p>
+      <p>
+        First examine this email by simply clicking on this link (don't download): <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/email/email-1.txt" target="_blank"><span style="color:orange; border-style:solid; border-width:1pt;">Email&nbsp;1</span></a>.
+        If we start from the bottom of the email, you'll see several large chunks of data that look like some sort of encoding.
+        These encodings are images being sent through email.
+        All attachments get encoded into the <em>base64</em> format for transfer.
+        Before each chunk you can actually see the file name, for when it gets reconstituted on the receiving end.
+        If you scroll up past the images, you'll eventually arrive at the actual text of the message.
+        Interesting, but this rarely helps with attribution (Non-Repudiation).
+      </p>
+      <p>
+        As you move up the email, you can see the following fields and their meaning:
+      </p>
+      <table class="RM" cellpadding="3">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 7em;">Message-ID</td>
+            <td>A unique message ID as it passes through SMTP servers.
+              This is used to avoid duplication of messages.</td>
+          </tr>
+          <tr>
+            <td>From</td>
+            <td>The address the sender filled in here.
+              <u>This could be made up!</u></td>
+          </tr>
+          <tr>
+            <td>To</td>
+            <td>This is the destination address.</td>
+          </tr>
+          <tr>
+            <td>X-Mailer</td>
+            <td>The mail client (program) from which the email was sent.</td>
+          </tr>
+          <tr>
+            <td>Subject</td>
+            <td>The subject of the email.</td>
+          </tr>
+          <tr>
+            <td>Reply-To</td>
+            <td>This is the address the "reply" button usually uses and is where the reply email will be sent.
+              The sender can fill this in with whatever he/she wants!
+              The receiver may not even realize there is a different address here.</td>
+          </tr>
+          <tr>
+            <td>Received</td>
+            <td>There are several lines for this field which each indicate the location and time of receipt of this email by a mail server.
+              The top received is closest to the receiver, while the received that is lowest is closest to the sender.</td>
+          </tr>
+          <tr>
+            <td>Return-Path</td>
+            <td>This is the address delivery error (bounce) messages should be sent to.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        All emails will have some or all of these lines (called the email header) and possibly other lines as well.
+        If email is potentially considered to be spam, there is usually a line or two in the header details that flag the email as spam.
+        In Gmail, you can view the header and the email contents for any of your emails by clicking on the &blacktriangledown; button next to the reply button in the header information of the email message.
+        Click <em>Show original</em> in the resulting drop down menu.
+      </p>
+      <p>
+        Typically, we want to determine through which mail servers the email message passed, and in what order.
+        The mail server data in the email header represents the real path that the email took, and it is hard to forge all of this data.
+        Examine the fields described above for Email&nbsp;1. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet A.1. &ndash; A.7. &nbsp;</span>
+      </p>
+      <p>
+        Now, investigate <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/email/email-2.txt" target="_blank"><span style="color:orange; border-style:solid; border-width:1pt;">Email&nbsp;2</span></a>, which is a spoofed email, and see if you can determine from where it originated. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet A.8. &ndash; A.10. &nbsp;</span>
+      </p>
+      <p>
+        Finally, investigate <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/email/email-3.txt" target="_blank"><span style="color:orange; border-style:solid; border-width:1pt;">Email 3</span></a>.
+        This time, examine not only the header, but also the actual email message.
+        Often, email servers can be compromised and used to send legitimate looking emails.
+        Domain names in legitimate emails will be consistent throughout, especially if an email is providing a link to the website or a file to download.
+        Other indications of spam and phishing emails are misspellings or poor grammar. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet A.11. &ndash; A.13. &nbsp;</span>
+      </p>
+    </div>
+    <div class="sec">
+      <h2>B. File Carving</h2>
+      Read the section on File Carving in the Digital Forensics course notes.  
+      <p>
+        <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet B.1. &nbsp;</span>
+      </p>
+      <p><strong>File Carving Activity Starts ...</strong><br>
+        Suppose you recover a hard drive from a bad guy's computer.
+        Your job is to find incriminating data, or data that will help in an investigation.
+        Your goal is to recover files from raw bytes from a recovered disk image:
+      </p>
+      <ol>
+        <li>To start with, let's review a basic file format.
+          The Joint Photographic Experts Group (JPEG) format gives us files with a .jpg extension.
+          This file type has a very distinctive header and footer.
+          <ul>
+            <li>Header in hex: <code style="color:green;">ff d8 ff e0</code></li>
+            <li>Footer in hex: <code style="color:green;">ff d9</code></li>
+          </ul>
+        </li>
+        <li>Save the following file into your <code>forensics</code> directory: <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/files/oneFile"><span style="color:orange; border-style:solid; border-width:1pt;">oneFile</span></a>. <!--<SPAN style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C. &nbsp;</SPAN></LI>-->
+        <li>Using <code>frhed</code>, open the saved file.
+          Can you see the JPG header in the file anywhere?
+          Not easily!
+        </li>
+        <li>Press <code>Ctrl-f</code> and enter a search for the header in hex by typing <strong>&lt;bh:ff&gt;&lt;bh:d8&gt;&lt;bh:ff&gt;&lt;bh:e0&gt;</strong> into the search prompt.
+          The <code>bh</code> is specifying you want to search for the byte specified in hex.
+          When the bytes are located, they will all be highlighted in <code>frhed</code>.
+          <span class="note">Do not use uppercase hex characters.</span>
+        </li>
+        <li>At the bottom of frhed the byte offset (in hex and in decimal) is given (i.e. offset 245=0xf5).
+          The 245 in this example is the offset in decimal, the 0x in front of the f5 is simply indicating that this equivalent offset is in hex.
+          In other words, 245 in decimal = f5 in hex.
+          Write down the decimal <em>and</em> hex offsets (the location relative to the start of the file, which is shown at the bottom left of the <code>frhed</code> window) of the first byte of the header and the last byte of the header on your worksheet. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.2. &nbsp;</span>
+        </li>
+        <li>You can follow the same process for the footer.<br>
+          <span class="note">You can specify the search to look up or down from the current cursor location in frhed.</span>
+        </li>
+        <li>Once you have the header and footer located, i.e. you know their offsets, now it is time to carve (copy) the entire file from the start of the header to the end of the footer.
+          To do this:
+          <ul>
+            <li>Select Edit &rArr; Copy, and enter the start and ending offsets for the entire file.
+              If you enter decimal values, just the value is entered.
+              If you want to enter the hex value, you must include the x before the hex value to tell <code>frhed</code> the entered offset is hex.</li>
+            <li>Select File &rArr; New to create a new document.</li>
+            <li>Select Edit &rArr; Paste, choosing the option to <strong>Insert</strong> (<span class="red">NOT OVERWRITE</span>).
+              Press OK.
+            </li>
+            <li>Choose File &rArr; Save and save as a .jpg file in your forensics directory.</li>
+            <li>Open the file from the file browser to see the image. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.3. &nbsp;</span></li>
+          </ul>
+        </li>
+        <li>Your next task is to carve two files from a chunk of data called <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/files/twoFiles"><span style="color:orange; border-style:solid; border-width:1pt;">twoFiles</span></a>, which you first need to download, saving into your <code>forensics</code> directory, and open with <em>frhed</em> like you did with <strong>oneFile</strong>.
+          You will use the same file carving technique with your hex editor.
+          In this case, one file is a pdf file and the other file is an audio file of the wav format.
+          The information below should help you on your task. <!--<SPAN style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C. &nbsp;</SPAN>-->
+          <p>
+            Remember, if you need to search for the hex values, use this format: <strong>&lt;bh:89&gt;&lt;bh:50&gt;&lt;bh:4e&gt;&lt;bh:47&gt;</strong> (which searches for a PNG file - you need to change the hex values for the header or footer you are specifically searching for)
+          </p>
+          <table class="RM" cellpadding="3">
+            <thead>
+              <tr>
+                <th>File Format</th>
+                <th>Header in hex</th>
+                <th>To Search in <code class="cmd">fhred</code></th>
+                <th>Footer in hex</th>
+                <th>To Search in <code class="cmd">fhred</code></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>jpg&nbsp;&nbsp;&nbsp;</td>
+                <td><code style="color:green;">ff d8 ff e0</code></td><td><code style="color:red;">&lt;bh:ff&gt;&lt;bh:d8&gt;&lt;bh:ff&gt;&lt;bh:e0&gt;</code></td>
+                <td><code style="color:green;">ff d9</code></td><td><code style="color:red;">&lt;bh:ff&gt;&lt;bh:d9&gt;</code></td>
+              </tr>
+              <tr>
+                  <td>pdf&nbsp;&nbsp;&nbsp;</td>
+                  <td><code style="color:green;">25 50 44 46 2d 31 2e</code> (%PDF-1.4)</td><td><code style="color:red;">&lt;bh:25&gt;&lt;bh:50&gt;&lt;bh:44&gt;&lt;bh:46&gt;&lt;bh:2d&gt;&lt;bh:31&gt;&lt;bh:2e&gt;</code></td>
+                  <td><code style="color:green;">25 25 45 4f 46</code> (%%EOF)</td><td><code style="color:red;">&lt;bh:25&gt;&lt;bh:25&gt;&lt;bh:45&gt;&lt;bh:4f&gt;&lt;bh:46&gt;</code></td>
+              </tr>
+              <tr>
+                  <td>wav&nbsp;&nbsp;&nbsp;</td>
+                  <td><code style="color:green;">52 49 46 46</code> (RIFF)</td><td><code style="color:red;">&lt;bh:52&gt;&lt;bh:49&gt;&lt;bh:46&gt;&lt;bh:46&gt;</code></td>
+                  <td>NO FOOTER!</td>
+                  <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Some file formats do not have footers.
+            This can be problematic, but humans are often better than computers at solving this problem.
+            In the case of the audio file, for this lab, the wav file continues to the end of the remainder of bytes.  In a real-life file carving scenario, you would hope to see an obvious <em>change</em> in the information in the file.
+            You could also try cutting differing amounts of data into the file, or work backwards from the last byte of the file.  However, for this lab, we will tell you that the .wav file encompasses all remaining bytes following the .wav header. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.4. &ndash; B.7. &nbsp;</span>
+          </p>
+        </li>
+        <li>
+          You are now skilled at file carving by hand! But what if the data in question is megabytes large and the number of files is either very large or unknown.
+          Because we know how to do this task on a small scale, it can be automated for larger sets of data, which is great.
+          We'll be using a file carving program called <code>scalpel</code>, which is free software; if you did it correctly, <code>scalpel</code> was installed to your <code>C:\CYBERWARPrograms</code> directory during the first homework assignment.
+          <code>scalpel</code> automates file carving.
+          A user sets up a configuration file that lists different types of files it can search for, based on headers and footers.
+          We've prepared a <code>scalpel</code> configuration file for you to use.
+          <div class="annotation">
+            Recall the <code class="cmd">md5</code> command syntax.<br>
+            <code><span class="cmd">md5</span> <span class="opt">-h</span> <span class="cmnt">&nbsp;&larr; print help/usage statement</span></code><br>
+            <code><span class="cmd">md5</span> <span class="arg">fileToHash</span></code><br>
+            <code><span class="cmd">md5</span> <span class="opt">-d</span>"<span class="arg">inputText</span>"</code>
+          </div>
+          <p>
+            Follow these steps:
+          </p>
+          <ol>
+            <li>A forensic analyst works with copies of raw data, rather than originals.
+              The analyst must be able to prove, without a doubt, that the original data was not modified - that the <em>integrity</em> of the data is intact.
+              Therefore, the analyst must hash the original data, create a copy, hash the copy; the hashes must match.
+              As the analyst works on the copy, she will periodically hash the data and ensure no changes have been made.
+              If the hash value ever changes, then the analyst must make a new copy from the original, hashing again.
+              So, you will be expected to work on the extracted content and not modify it in any way.
+            </li>
+            <li>Right-click and download <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/files/unknownChunk.raw"><code>unknownChunk.raw</code></a> and <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/scalpel.conf" target="_blank"><code>scalpel.conf</code></a> and save them in the <code>forensics</code>
+            directory. <!--<SPAN style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C. &nbsp;</SPAN>--><br>
+              <code>unknownChunk.raw</code> - Raw bytes recovered off the hard drive of a confiscated information system.<br>
+              <code>scalpel.conf</code> - Describes file headers and footers in a form <code>scalpel</code> can use.
+            </li>
+            <li>Open a shell and navigate to your <code>forensics</code> directory using the shell command <code class="cmd">cd</code>.</li>
+            <li>Compute a hash of the <code>unknownChunk.raw</code> file: <code>md5 unknownChunk.raw</code> and record the hash value on your worksheet. (HINT: Use the Table above, which explains how to use md5 to get a hash.  If you need to refer back to your own notes or the course notes from the Hashing and Passwords lesson, do so!)<span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.8. &nbsp;</span></li>
+            <li>Execute this command: <code>scalpel.exe -c scalpel.conf unknownChunk.raw</code></li>
+            <li>A summary of how many files and of what types scalpel found are produced as output in the shell (if everything was done correctly).
+              Read through the output and determine how many and what types of files scalpel found.
+              In other words, what data were recovered from the hard drive.
+              A directory called <code>scalpel-output</code> will be created in the <code>forensics</code> directory. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.9. &nbsp;</span>
+            </li>
+            <li>Compute the hash of the <code>unknownChunk.raw</code> file again and record the results on your worksheet.
+              If the hash is different from the start of the activity, you need to download unknownChunk.raw again and repeat the scalpel activity after computing the hash. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet B.10. &nbsp;</span>
+            </li>
+            <li>Using the file browser, explore the <code>scalpel-output</code> directory and confirm what was reported in the shell about what the file carver (<code>scalpel</code>) was able to retrieve.
+              Then answer the questions on your worksheet.
+              If you got an error instead of <code>scalpel</code> results in the shell (<code>scalpel</code> never ends &ndash; you get stuck in the shell), then you will need to start over.
+              There will still be a <code>scalpel-output</code> directory created.<br>
+              <span class="note"><code>scalpel</code> will not run if it detects a directory named <code>scalpel-output</code> already exists.
+                If you need to run scalpel again, first delete the <code>scalpel-output</code>.</span>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+    <div class="sec">
+      <h2>C. File Decryption</h2>
+      <div class="annotation" style="clear:right;">
+        Recall the <code>aes</code> command syntax.<br>
+        <code><span class="cmd">aes</span> <span class="cmnt">&nbsp;&larr; print help/usage statement</span></code><br>
+        <code><span class="cmd">aes</span> <span class="opt">-d</span> <span class="arg">symEncKey</span> <span class="opt">-i</span> <span class="arg">inFile</span> <span class="opt">-o</span> <span class="arg">outFile</span></code>
+      </div>
+      <div class="annotation" style="clear:right;">
+        <strong>If at first you don't succeed, then think and ...</strong> Some different file types actually have the same file headers. For example file formats for a suite of related programs, like an office product suite, sometimes use a common file format structure and therefore have the same file header; e.g. Microsoft Excel, Microsoft Power Point, and Microsoft Word. So how do you know what file type to use? Well, sometimes you have to look deeper in the file structure to determine, or we can perform a little trial and error by cycling through possible file types until the data are interpreted correctly. Trial and error is not an elegant solution, but it can be an effective problem solving approach in small batches.
+      </div>
+      <ol>
+        <li>An intelligence operative caught on to a user's nefarious activities and captured one of his emails.
+          The attachment was base64 encoded, just as the attachments were in Email 1.
+          The attachment was easily decoded to an encrypted text file that you can download <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/11.forensics/email/secret.txt" target="_blank">here</a>.
+          The <code>unknownChunk.raw</code> from Part C is a section of the HDD that was additionally recovered from the user's computer.
+          Looking at the files you carved, are there any clues that can help you decrypt and view the email attachment? (Hint: I would start looking in an Excel file...) <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C.1. &nbsp;</span>
+        </li>
+        <li>Decrypt the file. Once decrypted, can you determine exactly what type of file this is by its header?
+          3rd Hint: what tool allows you to look at an unknown file to examine the header?
+          Use the <a href="http://courses.cyber.usna.edu/CYBERWAR/resources/01.general/fileheaders.html" target="_blank">file header table</a> to decide! <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C.2. &nbsp;</span>
+        </li>
+        <li>Rename the file that you carved with the appropriate extension and verify you can open it. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet C.3. &nbsp;</span></li>
+      </ol>
+    </div>
+    <div>
+      <h2>D. Personal OPSEC</h2>
+      <div class="bareannotation" style="clear:right;">
+        <img src="calendar-46.php?key=37b7e14177a8f36b5e796344d761d3c61b285c39&type=lab&event=8" alt="Loose Lips Still Sink Ships" style="width:250px;">
+      </div>
+      <p>
+        Just as you understand that your actions from your laptop leave evidence on your laptop, your and others' past actions have also left evidence (Locard's Exchange Principle), evidence that still exists on the Internet.
+      </p>
+      <p>
+        The personal evidence in the cyber domain can negatively impact Fleet operations.
+        Adversaries are continually searching for information about targets, constantly looking for information that can be used to gain access to systems in technical and non-technical ways.
+        The phrase <em>Loose Lips, Sink Ships</em> is even more relevant in today's Information Age.
+      </p>
+      <div>
+        <h3>Data Aggregators</h3>
+        <p class="note">
+          If you are not listed in Spokeo or Peoplefinder, that is good (but you must remain vigilant).
+          Print out a copy of the no results found page with your name as the search criteria to receive credit for this part of the assignment.
+        </p>
+        <div class="news" style="clear:right;">
+          <h1>My Epic Hacking</h1>
+          Mat Honan, of Wired.com, had his <a href="../../2012/08/apple-amazon-mat-honan-hacking/index.htm" target="_blank">personal identity and online accounts hacked</a> due to readily available public information and common commercial security practices.
+        </div>
+        <ul>
+          <li>Spokeo
+            <p>
+              Spokeo is an online data aggregator that provides a publicly accessible web interface to search and retrieve aggregated data.
+              Spokeo gathers publicly available (publicly shared) data about an individual, correlates the data, and allows the data to be publicly searched.
+              Spokeo is intended to be used <q>to help reunite friends and family, browse celebrities, and discover information about your online footprint, by simply searching a name, address, email, phone or username</q> (<cite>Spokeo</cite>).
+              Spokeo data includes information that can be used to develop a profile of a person, and includes data that is often used in authentication mechanisms.
+              This should be a concern to anyone who has an online persona, and is certainly concerning for organizations that conduct operations across the Internet.
+            </p>
+            <p>
+              In this portion of the lab you are going to see what data Spokeo has about you and how you can take steps to remove that data.
+              <span class="note">There may not be results for some students.</span>
+            </p>
+            <ol>
+              <li>Go to the Spokeo homepage: <a href="../../index-27.htm" target="_blank"><code>http://www.spokeo.com/</code></a><br>
+                <span class="note">Spokeo does not offer HTTPS</span></li>
+              <li>Enter your name into the search form, and click the <em>Search</em> button</li>
+              <li>You will be presented with a search results page in the form of a U.S. map<br>
+                <img src="calendar.php-66.png?key=ead4837ca363f7aba5146ffe3497d801e85098f0&type=lab&event=8" id="spokeoImg01" alt="Spokeo Search Results" style="width:40px;" onmouseover='document.getElementById("spokeoImg01").style.width="400px";' onmouseout='document.getElementById("spokeoImg01").style.width="40px";'>
+              </li>
+              <li>From the U.S. map select a state that you know you have lived in. <!-- State, how many listings --> <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; &larr; Worksheet E.1. &nbsp;</span></li>
+              <li>From the resulting regional map select a city that you know you lived in. <span class="note">If there was only 1 listing at the U.S. map screen you will not see a regional map, you will go directly to the Spokeo individual listing.
+                Continue to Step 8.</span></li>
+              <li>From the resulting city map select an area that you know you lived in. <span class="note">If there was only 1 listing at the regional map screen you will not see a city map, you will go directly to the Spokeo individual listing.
+                Continue to Step 8.</span></li>
+              <li>If there are multiple listings for the city you selected, then select on of the listings.</li>
+              <li>You should now be at a Spokeo individual listing page<br>
+              <img src="calendar.php-67.png?key=dcee7bc106e2203522e9a012f4fa6ffcfb62ff69&type=lab&event=8" id="spokeoImg02" alt="Spokeo Individual Listing" style="width:40px;" onmouseover='document.getElementById("spokeoImg02").style.width="400px";' onmouseout='document.getElementById("spokeoImg02").style.width="40px";'>
+              </li>
+              <li>Open up a Notepad++ document, you will merely be using Notepad++ as a scratch/working space</li>
+              <li>Copy and paste the Spokeo individual listing page URL into a Notepad++ document. The URL should look something like:
+                <pre>
+  http://www.spokeo.com/<span class="red">Name-Searched-For</span>/<span class="red">State</span>/<span class="red">City</span>/<span class="red">spokeoGeneratedIdentifier</span></pre>
+              </li>
+            </ol>
+            <p>
+              At this point Spokeo has given you as much information as they are willing to for free. But given the information presented you should have confidence that you found yourself. Now that you have found yourself, it is time to do something about it. It is time to remove some forensics evidence.
+            </p>
+            <ol>
+              <li>At the bottom of the Spokeo individual listing there is a toolbar, click the <em>Privacy</em> tool bar link.</li>
+              <li>You will be taken to a page that discusses how Spokeo is aggregating data.</li>
+              <li>Click the <em>Opt Out</em> link near the bottom of the privacy page.</li>
+              <li>Read the paragraph about <em>Removing your listing from Spokeo</em>.</li>
+              <li>For <em>Profile URL</em> enter in the URL you copied from above.<br>
+                <pre>
+  http://www.spokeo.com/<span class="red">Name-Searched-For</span>/<span class="red">State</span>/<span class="red">City</span>/<span class="red">spokeoGeneratedIdentifier</span></pre>
+              </li>
+              <li>For <em>Email Address</em> enter an email address that you can readily access.</li>
+              <li>Complete the rest of the form and submit the removal request (click <em>Remove This Listing</em>).</li>
+              <li>You will receive an email from Spokeo that contains a URL to remove the link from the Spokeo database.
+                Copy, paste, and go to the URL using a web browser.
+              </li>
+              <li>The resulting page will confirm that the Spokeo individual profile was removed.</li>
+              <li>Verify that the profile was removed by going back to the Spokeo individual listing.
+                <pre>
+  http://www.spokeo.com/<span class="red">Name-Searched-For</span>/<span class="red">State</span>/<span class="red">City</span>/<span class="red">spokeoGeneratedIdentifier</span></pre>
+                Refresh the page and you should see that <q>No profile information</q> is available<br>
+                <img src="calendar.php-68.png?key=c752e2ec31c2d0bcf7bd94e8903bfa9af869b137&type=lab&event=8" id="spokeoImg03" alt="Spokeo No Profile" style="width:40px;" onmouseover='document.getElementById("spokeoImg03").style.width="400px";' onmouseout='document.getElementById("spokeoImg03").style.width="40px";'><br>
+                <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet E. &nbsp;</span><!-- spokeo check -->
+              </li>
+            </ol>
+          </li>
+          <!--<LI>PeopleFinder
+            <P>
+              Like Spokeo, PeopleFinder is a <Q>one-stop resource for people searching online ... [that contains data on] up to 80% of [the] people currently residing in the United States</Q>. In this portion of the lab you are going to see what data PeopleFinder has about you and how you can take steps to remove that data.
+            </P>
+            <OL>
+              <LI>Go to the PeopleFinder homepage: <A href="http://www.peoplefinder.com/" target="_blank">http://www.peoplefinder.com/</A>.<BR>
+              <SPAN class="note">PeopleFinder does not offer HTTPS.</SPAN></LI>
+              <LI>Enter your name into the search form, and click the <EM>Search</EM> button.<BR>
+                <IMG id="pplFndrImg01" style="width:40px;"src="images/pplfndr-srch-rslt-01.png"
+                  onmouseover='document.getElementById("pplFndrImg01").style.width="400px";'
+                  onmouseout='document.getElementById("pplFndrImg01").style.width="40px";'><BR>
+                <SPAN style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet E.2. &nbsp;</SPAN><!- - compare to spokeo, what add info does pplfind offer for free? - -></LI>
+              <LI>Click the link for a search result that you are confident is about you.</LI>
+              <LI>You should now be at a PeopleFinder individual listing page.<BR>
+                <IMG id="pplFndrImg02" style="width:40px;"src="images/pplfndr-srch-rslt-02.png"
+                  onmouseover='document.getElementById("pplFndrImg02").style.width="400px";'
+                  onmouseout='document.getElementById("pplFndrImg02").style.width="40px";'>
+              </LI>
+              <LI>Copy and paste the PeopleFinder individual listing page URL into a Notepad++ document. The URL should look something like:
+                <PRE>
+  http://www.peoplefinder.com/people-search/<SPAN class="red">firstName</SPAN>-<SPAN class="red">lastName</SPAN>/<SPAN class="red">#</SPAN>/</PRE>
+            </OL>
+            <P>
+              At this point PeopleFinder has given you as much information as they are willing to for free. But given the information presented you should have confidence that you found yourself. Now that you have found yourself, it is once again time to remove some forensics evidence.
+            </P>
+            <OL>
+              <LI>Near the bottom of the PeopleFinder individual listing page there is an <EM>Opt Out</EM> link</LI>
+              <LI>Click the <EM>Opt Out</EM></LI>
+              <LI>Complete the form, for <EM>E-Mail Address</EM> enter an email address that you can readily access.</LI>
+              <LI>Submit the form (click <EM>Remove Me</EM> button).</LI>
+              <LI>You will not receive an immediate response from PeopleFinder</LI>
+              <LI>Later on you can perform the same search process to verify that the data was removed from PeopleFinder</LI>
+            </OL>
+          </LI> -->
+        </ul>
+        <p>
+          There are many more data aggregator sites and services online, Spokeo is just one.
+          Many of the data aggregator sites charge for the <em>full reports</em> and require registration to remove data from their databases.
+          Just because you took steps to remove data from Spokeo does not mean you are completely secure; recall we cannot nullify (zero) risk, but we can and should take steps to appropriately mitigate risks. <span style="color:green; border-style:solid; border-width:1pt;">&nbsp; Worksheet E.3. &nbsp;</span> <!-- Beyond fact other data agg, why did this process decrease but not eliminate foren evi you on web -->
+        </p>
+      </div>
+      <div class="noScreen noPrint"> <!-- AY2015 Fall: Ran out of development time -->
+        <h3>Browser Privacy Settings</h3>
+        <p>
+          We may not be able to remove all personal data from the Internet, but we can take steps to minimize data being kept in the future. Most modern day browsers have <em>Do Not Track</em> settings in them. In this portion of the lab you will turn on the <em>Do Not Track</em> settings in commonly used browsers. One thing to note about the <em>Do Not Track</em> settings is that they are voluntary, there is no mandate (legal or technical policy) to enforce a web site or even the browser vendor to adhere to or offer <em>Do Not Track</em> settings.
+        </p>
+        <ul>
+          <li>Google Chrome</li>
+          <li>Mozilla Firefox</li>
+          <li>Microsoft Edge</li>
+          <li>MIcrosoft Internet Explorer</li>
+        </ul>
+      </div>
+      <div class="noScreen noPrint"> <!-- AY2015 Fall: Ran out of development time -->
+        <h3>Photo Forensics</h3>
+        <ul>
+          <li>Mozilla Firefox, Exif Viewer</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h2>References</h2>
+      <ol>
+        <li><a href="../../index-27.htm" target="_blank">Spokeo</a>. <cite><a href="../../about.html" target="_blank">Spokeo, About</a></cite>. <code class="noCodeBox">http://www.spokeo.com/about</code>. Retrieved: 04 Nov 2014.</li>
+        <li><a href="../../index-28.htm" target="_blank">PeopleFinder</a>. <cite><a href="http://www.peoplefinder.com/about-us/" target="_blank">About PeopleFinder.com</a></cite>. <code class="noCodeBox">http://www.peoplefinder.com/about-us/</code>. Retrieved: 04 Nov 2014.</li>
+      </ol>
+    </div>
+  </div></body>
+</html>
+</div> <!-- /container --></body></html>

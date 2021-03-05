@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "ad727ef58f596ac3768fcadfdd75f0ca7fe2225e6af0f87fd165fbc88e072c09";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Aspects and Pillars of Cyber Security
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'><font color='black'><b>2 - Aspects and Pillars of Cyber Security</b></font></a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <span id="top"></span>
+    <div class="noScreen">
+                <br> 
+    </br> 
+      <h1>Aspects and Pillars of Cyber Security</h1>
+    </div>
+    <!--DIV class="noPrint toc">
+      <H2>Table of Contents</H2>
+      <UL>
+        <LI><A class="tocLink" href="#learnObjs">Learning Objectives</A></LI>
+        <LI><A class="tocLink" href="#discussion">Discussion</A></LI>
+
+      </UL>
+    </DIV-->
+    <div class="learnObjs">
+      <h2>Learning Outcomes <!--SPAN class="samePageLink">[<A href="#top">Top</A>]</SPAN--></h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      Cyber Aspects
+      <ul>
+        <li>Describe the aspects of the cyber domain</li>
+        <li>Describe the interaction of the aspects of the cyber domain</li>
+      </ul>
+      Cyber Pillars
+      <ul>
+        <li>Describe the aspects of the cyber domain</li>
+        <li>Describe the interaction of the aspects of the cyber domain</li>
+        <li>Explain the DoD Cyber Security Model; i.e. the Pillars of Cyber Security</li>
+        <li>Describe cyber attacks in terms of compromise to the Pillars of Cyber Security</li>
+      </ul>
+      
+    </div>
+    <br>
+
+<!--Instructor information-->
+
+<!--Instructor information-->    
+    
+    <div id="discussion">
+      <h2>Discussion <!--SPAN class="samePageLink">[<A href="#top">Top</A>]</SPAN--></h2>
+      
+      <h3>What we are Studying in this Course</h3>
+  <p>
+    The cyber domain is a big field that overlaps many disciplines. The August 2009 initial report of the Dean's  <em>Cyber Warfare Ad Hoc Committee</em> included the following:
+  </p>
+  <div class="quotation">
+    <em>Cyber Warfare</em> is a somewhat unusual topic in that it involves a technical academic core of tightly inter-related subject matter, as well as a wide range of important topics that, while dependent on the technical core for fullest appreciation, are not dependent on each other. Stated another way, cyber warfare is comprised of, first, a foundational component, dealing with a set of interconnected fundamental technical concepts, and, second, a wide range of interdisciplinary topics, touching upon the areas of law, political science, strategy and tactics, policy, ethics, and the study of foreign languages and culture.
+  </div>
+  <p>
+    CYBERWAR is an introduction to the <em>technical core</em> described in the excerpt. The material we cover is organized into three sections:
+  </p>
+  <ol>
+    <li>Cyber Battlefield
+      <p>
+        This portion of the course will teach you about the basic components that constitute what is generally called <em>cyberspace</em>. Starting with digital data, the physical <a href="calendar.php-76.html?load=glossary#C">computer</a>, operating systems, and <a href="calendar.php-76.html?load=glossary#P">programs</a>; and continuing with the Web, the <a href="calendar.php-76.html?load=glossary#I">Internet</a>, and both wired and wireless networks.
+      </p>
+    </li>
+    <li>Cyber Security Tools
+      <p>
+        There are some theoretical underpinnings to what it is we are protecting (or attacking) in the cyber domain, and how we make rational decisions about security in the cyber domain (cyber security). Additionally, there are a few broad categories of tools &mdash; <a href="calendar.php-76.html?load=glossary#F">firewalls</a>, <a href="calendar.php-76.html?load=glossary#E">encryption</a>, <a href="calendar.php-76.html?load=glossary#H">hashing</a>, policies and procedures &mdash; that we combine in different ways to meet different security goals.
+      </p>
+    </li>
+    <li>Cyber Operations
+      <p>
+        In this portion of the course we study digital forensics, cyber reconnaissance, cyber attack, and cyber defense. The last three labs actually have you and your classmates conducting cyber operations in a controlled environment &mdash; i.e. actually mapping out an opponent's network, actually performing and defending against cyber attacks.
+      </p>
+    </li>
+  </ol>
+      
+  <h1>The Cyber Domain</h1>
+  <h3>Aspects of the Cyber Domain</h3>
+  <p>
+    Based on your current understanding what do you think comprises the cyber domain? You probably agree that your laptop is a part of the cyber domain, and you are correct. But are there other aspects of the cyber domain beyond computers? The answer is yes. The cyber domain is comprised of much more than just computers connected to a network. The cyber domain also consists of physical systems connected to computers. The location of the those systems is a part of the cyber domain &mdash; the system of interest on the USNA grounds, is the system in the U.S., is the system in Australia <!-- Risky Business Podcast -->, is the system in Turkey, is the system in China.
+  </p>
+  <p>
+    There is a human factor to the cyber domain, and it is not just the geopolitical aspect of the cyber domain. We continually see that the human is the weakest link in the cyber domain. Human nature has driven many technological advances, but human nature has also been the initial attack vector in many cyber security incidents.
+  </p>
+  <p>
+    The cyber domain is comprised of the users (generally humans at this point) [persona], devices and software that users interact with [interface], logic used by devices and software systems [logic], circuits that provide paths for logic to flow [circuit], and location of the circuits, physical systems, and users [geographic].
+  </p>
+  <p>
+    The cyber domain is founded in technical principles. The cyber domain is a part of our world. We must be able to operate in the cyber domain as individuals, as organizations, and as defenders of nations. As we become more interconnected we become more dependent on the cyber domain.
+  </p>
+  <h4>Persona Aspects</h4>
+  <div class="news">
+    Guccifer 2.0 is an example of a Cyber Persona you might have seen. <a href="../../story/guccifer-elite-hackers-mistakes/index.htm">Guccifer 2.0 Wired Article Link</a>
+  </div>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php.png?key=e58c2b7db16aa0eafc2998195cccd39009981102&type=class&event=2" alt="Persona Layer">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          <em>Persona Aspects</em> represent users that have a role (persona) in the cyber domain. At different times a single person may have multiple personas in the cyber domain. By the nature of you reading and interacting with this website you are a part of the cyber domain.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h4>Interface Aspects</h4>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php-1.png?key=ff7417afbc657f3cd02dbc3113d6798119fe5015&type=class&event=2" alt="Interface Layer">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          <em>Interface Aspects</em> represent the hardware devices and software that users interact with to provide input into other components in the cyber domain. Historical interface devices included keyboards and mice, today touch screens, microphones, and even cameras are common place. In the future the interface may be long term implants inside our bodies.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4>Data Aspects</h4>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php-2.png?key=3763f9684c2124cfa4e959d7ac58f211a6590437&type=class&event=2" alt="Logic Layer">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          <em>Data Aspects</em> represent the information that is stored within the information systems; i.e. the meaning of the raw data that are flowing between or stored in systems in the cyber domain.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4>Network Aspects</h4>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php-3.png?key=eae8cbea7a6d5af3be0102f499dab77c6784dec9&type=class&event=2" alt="Circuit Layer">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          <em>Network Aspects</em> represent the paths that data flow across between systems or systems that store data; i.e. the raw data.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4>Geographic Aspects</h4>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php-4.png?key=ff369229c47a466e57c99aa239c04a5f85a1ca9c&type=class&event=2" alt="Geographic Layer">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          <em>Geographic Aspects</em> represent the physical location of the user, system, or data paths. Geographic aspects include natural boundaries and geopolitical boundaries (borders separating human defined regions).
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4>Interaction of Cyber Domain Aspects</h4>
+  <div class="table">
+    <div class="tableRow">
+      <div class="tableCell">
+        <img src="calendar.php-5.png?key=37cbf924ae1eb62ed076731d4562c977c7072053&type=class&event=2" alt="Cyber Domain Aspect Interaction">
+      </div>
+      <div class="tableCell vcenter">
+        <p>
+          In a standard layer model there are clearly defined interactions between adjacent layers, and typically a layer only interacts with the layer directly above or below it. The cyber domain is more complex than a simple layer model. In the cyber domain entities associated with one aspect can have many simultaneous interactions with adjacent aspects. Additionally, interactions can skip traditional layers and interact with non-adjacent aspects.
+        </p>
+        <p>
+          Furthermore the interactions between the aspects are continually changing in number of interactions, and how the interactions are occurring. The same interaction that was safe yesterday might not be safe today. Nonetheless, we must operate in the cyber domain.
+        </p>
+        <p>
+          For example:
+        </p>
+        <ul>
+          <li>A user can be connected to the cyber domain via more than one interface. Society (persona aspect) defines the geopolitical boundaries that comprise geographic aspects.</li>
+          <li>A mode of operation may be safe today, but a vulnerability may be discovered overnight that makes the same mode of operation unsafe tomorrow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="annotation">
+    In Jan 2015 Mr. Chris Inglis, former Deputy Director of the National Security Agency, gave a <a href="https://intranet.usna.edu/CyberCenter/videos/Fall2014-Spring2015/Inglis_Video_Spring_20151.php" target="_blank">guest lecture</a> discussing the cyber domain and its importance to military operations.
+  </div>
+  <p>
+    The cyber domain is too complex and large to cover all of the areas in a single course, much less all of the areas in great detail. In this course we will focus on the technical foundations from a cyber security view point. Primarily Persona Aspects, Interface Aspects, and Data Aspects. There will be times when we discuss Network Aspects and Geographic Aspects, but future courses in your time at the Naval Academy will cover those aspects in greater detail.
+  </p>
+      
+      <div class="annotation">
+        <img src="calendar.php-6.png?key=9327e98e39dca1a5d7d93bad3c43b24653199f37&type=class&event=2" height="128" width="128"><br>
+        DoD Cyber Security emblem (formerly Information Assurance)
+      </div>
+  <h1>The Pillars of Cyber Security</h1>
+      <div id="ia1">
+        <p>
+          During the course, we will learn about the Cyber Battlefield &mdash; digital data, computers, operating systems, programs, networks, the Internet, systems of programs communicating over networks (with the <a href="calendar.php-76.html?load=glossary#W">world wide web</a> as the biggest example).  We will see lots of examples of things that can go wrong in the cyber domain &mdash; things that we recognize as dangerous, things that we recognize we need to defend against. But what, actually, are we actually defending?
+        </p>
+        <p>
+          This is a deeper question than it might first appear. Understanding the answer will help us understand what attacks are, how to defend against them, and even help us understand what we really want when we ask for "security".
+        </p>
+        <ol>
+          <li>We are not interested in just protecting <em>computers</em>. If you really wanted to protect your computer, you'd simply turn it off and stick it in a fireproof/waterproof safe.</li>
+          <li>We are not interested in just protecting <em>data</em>. If you really wanted to protect some piece of data, you'd disconnect your hard drive, and stick it in a fireproof/waterproof safe.</li>
+        </ol>
+        <p>
+          What then? We have <em>information systems</em> that store, process, and transmit data to different parts of the system in order to provide <em>services</em> &mdash; what service depends on the system. For example, Skype is a system that provides video, telephone, and chat services. Security for Skype means the on-going ability to provide their service while maintaining the following key attributes:
+        </p>
+        <div class="annotation">
+          This is Ciana.<br>
+          <img src="calendar.php?key=1c0ae6fd34d4f4b05e055287e84cce92fda7bcca&type=class&event=2" alt="ciana"><br>
+          <small><a href="../../photos/jimfischer/4540646854/index.htm" target="_blank">www.flickr.com/photos/jimfischer/4540646854/</a></small><br>
+          She'll be your mnemonic for the five <a href="calendar.php-76.html?load=glossary#P">Pillars of Cyber Security</a>!
+        </div>
+        <div class="table">
+          <div class="tableRow">
+            <div class="tableCell vcenter">
+              C
+            </div>
+            <div class="tableCell">
+              <p style="margin-left:1em;">
+                <a href="calendar.php-76.html?load=glossary#C">Confidentiality</a>
+              </p>
+            </div>
+          </div>
+          <div class="tableRow">
+            <div class="tableCell vcenter">
+              I
+            </div>
+            <div class="tableCell">
+              <p style="margin-left:1em;">
+                <a href="calendar.php-76.html?load=glossary#I">Integrity</a>
+              </p>
+            </div>
+          </div>
+          <div class="tableRow">
+            <div class="tableCell vcenter">
+              A
+            </div>
+            <div class="tableCell">
+              <p style="margin-left:1em;">
+                <a href="calendar.php-76.html?load=glossary#A">Availability</a>
+              </p>
+            </div>
+          </div>
+          <div class="tableRow">
+            <div class="tableCell vcenter">
+              N
+            </div>
+            <div class="tableCell">
+              <p style="margin-left:1em;">
+                <a href="calendar.php-76.html?load=glossary#N">Non-repudiation</a>
+              </p>
+            </div>
+          </div>
+          <div class="tableRow">
+            <div class="tableCell vcenter">
+              A
+            </div>
+            <div class="tableCell">
+              <p style="margin-left:1em;">
+                <a href="calendar.php-76.html?load=glossary#A">Authentication</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <p>
+          These attributes are referred to as the <em>Pillars of Cyber Security</em> (formerly Pillars of Information Assurance). And for almost any information system, they describe the fundamental properties that must be maintained. Essentially,
+these properties are what we want to protect (or attack, if you're on the other side). Information Assurance (IA) is the practice of managing risks while maintaining these properties. Malicious human <a href="calendar.php-76.html?load=glossary#T">threats</a> are not the only kind information assurance considers &mdash; a hungry squirrel might gnaw through a cable and bring down a <a href="calendar.php-76.html?load=glossary#S">server</a>. Protecting against this is information assurance, though not really cyber security. We'll focus on the cyber security related aspects of IA. [More seriously: IA includes concerns like <a href="../../2012/08/08/could-extreme-weather-take-down-the-internet/index.htm" target="_blank">could extreme weather take down the Internet</a>?]
+        </p>
+        <div class="fleet" style="clear: right;">
+          <h1>A New Unmanned Aerial Surveillance Platform</h1><br>
+          The MQ-4C "Triton" BAMS UAS, a new unmanned aerial surveillance platform, is finishing development and initial operational capability is planned for 2018. The MQ-4C BAMS "will enhance battlespace awareness, shortening
+the sensor-to-shooter kill chain".<br>
+          <img src="calendar-1.php?key=4538245add0a7850bcd546e9c2660dad43b5f237&type=class&event=2" alt="MQ-4C" style="width:100%; clear:right;"><br>
+          This UAV is clearly a component in a larger information system, not only the system that tells it where to fly, but also this "sensor-to-shooter kill chain".  Think about how the five pillars apply to this system?  What kind of bad things could an enemy accomplish by attack on the <em>Integrity</em> of this system?  <em>Availability?</em> <em>Confidentiality?</em> <em>Authentication?</em>
+        </div>
+        <div>
+          <p>
+            As with with any domain there are specific definitions for terms; the following are the definitions for the Pillars of Cyber Security.
+          </p>
+          <ul>
+          <li><strong>Confidentiality:</strong> Protection of information from disclosure to unauthorized individuals, systems, or entities. Confidentiality is <strong>data</strong> oriented.</li>
+          <li><strong>Integrity:</strong> Protection of information, systems, and services from unauthorized modification or destruction. Integrity is <strong>data</strong> oriented.</li>
+          <li><strong>Availability:</strong> Timely, reliable access to data and information services by authorized users. Availability is <strong>service</strong> oriented.</li>
+          <li><strong>Non-repudiation:</strong> The ability to correlate, with high
+          certainty, a recorded action with its originating individual or entity. Non-repudiation is <strong>entity</strong> oriented.</li>
+          <li><strong>Authentication:</strong> The ability to verify the identity of
+          an individual or entity. Authentication is <strong>entity</strong> oriented.</li>
+          </ul>
+        </div>
+        <p>
+          <span class="note">There is some overlap between the Pillars of Cyber Security. In many cases a defensive measure will protect more than one pillar. In many cases a particular attack will violate more than one. Often the question of what pillars were violated by an action is somewhat subjective, and depends on the viewpoint from which you are asking.</span>
+        </p>
+        <p>
+          <span class="note">There is a close relationship between non-repudiation and authentication, but they are separate. Authentication is compromised when an attacker has the ability to pose as another individual or system, often by stealing valid authentication credentials. In contrast, non-repudiation reflects our ability to <em>prove later, after the fact,</em> that an action is associated with a specific individual or entity. Very often, log entries or <a href="calendar.php-76.html?load=glossary#D">digital signatures</a> of events (which we will cover later) are used to provide non-repudiation, so a violation occurs when the logging or signature mechanism is compromised. One example is the digital signature you can place on a document, using something that is associated with you (a digital <a href="calendar.php-76.html?load=glossary#C">certificate</a>, for example). Non-repudiation establishes that, later on, an analysis of the signed document can show, with high certainty, that it must have been signed by someone who possessed that digital certificate.</span>
+        </p>
+        <p>
+          <span class="note">Some organizations and publications limit their discussion of Cyber Security pillars to confidentiality, integrity, and availability; other organizations list many more. While the overall number of pillars/attributes that must be maintained in supporting information assurance is debated, the inclusion of confidentiality, integrity, and availability is nearly universal. In this course, we also include non-repudiation and authentication as distinct pillars.</span>
+        </p>
+      </div>
+
+      <div class="sec">
+        <h2>Examples</h2>
+        <p>
+          Understanding something as an attack requires understanding which of the five pillars are violated &mdash; which properties are lost. Let's consider some examples.
+        </p>
+        <ul>
+          <li>Confidentiality
+            <ul>
+              <li>In December 2013, national retailer, Target, reported the <a href="../../2013/12/sources-target-investigating-data-breach/index.htm">theft</a> of records for 40 million credit and debit cards used at its stores. Not long after the breach, the card data was being <a href="../../2013/12/cards-stolen-in-target-breach-flood-underground-markets/index.htm">sold</a> in underground forums to thieves. The credit card data was supposed to be confidential, but <em>confidentiality</em> of the data was not preserved.</li>
+            </ul>
+          </li>
+          <li>Integrity
+            <ul>
+              <li>In 2010, the
+              <a href="../../article/3218104/what-is-stuxnet-who-created-it-and-how-does-it-work.html">Stuxnet</a>
+              computer <a href="calendar.php-76.html?load=glossary#W">worm</a> was used to infiltrate the computer
+              systems controlling Iran's nuclear enrichment centrifuges. The Stuxnet code
+              modified the programmable logic controller (PLC) software, causing the
+              centrifuges to spin out of control, while giving the console operators only
+              normal indications. The <b>integrity</b> of the PLC software was violated in this
+              attack.</li>
+            </ul>
+          </li>
+        <li>
+        Availability
+
+        <ul>
+        <li>In 2008, computer systems supporting banks, media, communications,
+        transportation, and other infrastructure in the nation of Georgia experienced
+        a widespread denial-of-service
+        <a href="../../2008/08/13/technology/13cyber.html?_r=0">attack</a>
+        originating from Russia. At the
+        time, a dispute had flared up between Georgia and Russia over control of areas
+        along the Georgia-Russia border. The <b>availability</b> of critical systems through
+        Georgia's (entire country) connection to the Internet was greatly diminished.
+        </li></ul>
+        </li>
+        <li>
+        Non-repudiation
+        <p>
+        Although there aren't many publicized examples of non-repudiation
+        violations, or 'repudiation attacks,' the following are some general
+        examples:
+        </p>
+
+        <ul>
+        <li>Unauthorized manipulation of e-commerce transaction logs (making it hard
+        or impossible to later prove a company performed an action, such as an
+        equipment purchase or a stock market trade).
+        <li>Unauthorized manipulation of administrator access logs on any computer
+        (making it hard or impossible to later prove who was logged on, and when).
+        </li></ul>
+        </li>
+        <li>
+        Authentication
+        <ul>
+        <li>In 2011, a company called RSA, which provides security services,
+        acknowledged its proprietary authentication system, which is employed by
+        some defense contractors and other high-security industries, was
+        <a href="../../2011/04/02/the-rsa-hack-how-they-did-it/index.htm?mtrref=undefined">compromised</a>. As a result,
+        the attackers were also able to log into systems at Lockheed Martin, and other
+        companies, using the stolen credentials of legitimate users.</li>
+        </ul>
+        </li>
+
+        
+      </ul></div>
+      </div>
+    <h2> Review Questions</h2>
+      <ol>
+        <li>
+          What is comprised of digital data, the physical computer, operating systems, and programs; and continuing with the Web, the Internet, and both wired and wireless networks?
+        </li>
+        <li>
+          What are the five aspects of the Cyber Domain?
+        </li>
+        <li>
+          What are the five Pillars of Cyber Security and how do they interact with the five aspects of the Cyber Domain?
+        </li>
+        <li>
+          How do the Pillars of Cyber Security correlate with Information Assurance in the Cyber Domain?
+        </li>
+        <li>
+          Define Cyber Warfare using the terms Cyber Battlefield, Cyber Security Tools, and Cyber Operations.
+        </li>
+      </ol>
+    <h3> References</h3>
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>2009. <i>Initial Report of the Dean's Cyber Warfare Ad Hoc Committee.</i> Annapolis: August 21, 2009.</span></p>
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Committee on National Security Systems. 2015. <i>Committee on National Security Systems (CNSS) Glossary.</i> Ft. Meade, MD: April 6, 2015.</span></p>
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Department of Defense. 2014. <i>DodI 8500.01: Cybersecurity.</i> Washington: March 14, 2014.</span></p>
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Fruhlinger, Josh. 2017. "What Is Stuxnet, Who Created It and How Does It Work?" <i>CSO Online</i>, August 22, 2017.<br><a href="../../article/3218104/what-is-stuxnet-who-created-it-and-how-does-it-work.html">https://www.csoonline.com/article/3218104/what-is-stuxnet-who-created-it-and-how-does-it-work.html</a></span></p>  
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Krebs, Brian. 2013. "Cards Stolen in Target Breach Flood Underground Markets." <i>Krebs on Security,</i> December 20, 2013.<br><a href="../../2013/12/cards-stolen-in-target-breach-flood-underground-markets/index.htm">https://krebsonsecurity.com/2013/12/cards-stolen-in-target-breach-flood-underground-markets/</a></span></p>  
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Krebs, Brian. 2013. "Sources: Target Investigating Data Breach." <i>Krebs on Security,</i> December 18, 2013.<br><a href="../../2013/12/sources-target-investigating-data-breach/index.htm">https://krebsonsecurity.com/2013/12/sources-target-investigating-data-breach/</a></span></p>
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Joint Force Development. 2018. <i>Joint Publication 3-12: Cyberspace Operations.</i> June 8, 2018.</span></p>  
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Markoff, John. 2008. "Before the Gunfire, Cyberattacks" <i>New York Times</i>, August 12, 2008.<br><a href="../../2008/08/13/technology/13cyber-1.html?_r=0&mtrref=undefined&gwh=5BD96825979E1BE8F3EB2B4052BF4378&gwt=pay">https://www.nytimes.com/2008/08/13/technology/13cyber.html?_r=0&mtrref=undefined&gwh=5BD96825979E1BE8F3EB2B4052BF4378&gwt=pay</a></span></p>  
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Richmond, Riva. 2011. "The RSA Hack: How They Did It" <i>New York Times</i>, April 2, 2011.<br><a href="https://bits.blogs.nytimes.com/2011/04/02/the-rsa-hack-how-they-did-it/?mtrref=undefined&gwh=D96240BD4AE2D9E4FC8888A25D4D9286&gwt=pay">https://bits.blogs.nytimes.com/2011/04/02/the-rsa-hack-how-they-did-it/?mtrref=undefined&gwh=D96240BD4AE2D9E4FC8888A25D4D9286&gwt=pay</a></span></p>  
+
+<p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>U.S. Code. 2012. <i>Title 44 - Public Printing and Documents Section 3542.</i> Washington: Government Printing Office, January 3, 2012.</span></p>
+
+    <hr>
+    <br>
+  </body>
+</html>
+</div> <!-- /container --></body></html>
