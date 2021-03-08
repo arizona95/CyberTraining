@@ -247,13 +247,137 @@ binted
   <body id="bg">
     <div id="NavBar"><script type="text/javascript" src="../../navbar.js"></script></div>
     
-    <p class="sec">
-      <h2>binted - a simple binary text editor</h2>
-      To use binted, download <a href="binted.jar?key=7ec228b43ba7aa7fe86889c70e653d7842072f79&type=resources&event=3">binted.jar</a>, and
-      double-click on the resulting icon.
+      <h2>Graduate Remain Timer</h2>
+      해군사관학교 3학년 생도들이 2023.03.5 졸업하기까지 얼마나 남았을까 .....
+      <div id="blank" style="height: 2hv"></div>
+      <br/>
+      Counting down in binary
     
 
-  </body>
+  <div id="gradDayTimer" style="border-style: solid; padding: 0.5em;"></div>
+      <script type="text/javascript">
+        var ygYYYY=2023;
+        var ygGradMonty = 3;
+        var ygGradDay=5;
+        var ygGradTime=12;
+          setInterval(function(){
+          var today = new Date();
+          var BigDay = new Date(ygYYYY,ygGradMonty,ygGradDay,ygGradTime,0,0,0); /* noon on Graduation Day */
+          var msLeft = (BigDay.getTime() - today.getTime());
+          var sLeft = Math.floor(msLeft/1000);
+          var i = 0, s = sLeft, m = 2147483648; /* 2^31 */
+          var L = "";
+          while(i < 32)
+          {
+            if (m <= s) { L = L + "1"; s = s - m; } else { L = L + "0"; }
+            m = m / 2;
+            i++;
+          }
+
+          document.getElementById("gradDayTimer").innerHTML = "Only <CODE>" + L
+       + "</CODE> seconds left 'til " + ygYYYY +"'s graduation! "; },100);
+        </script>
+        <div id="blank1" style="border-style: none; padding: 1em;"></div>
+
+
+        <table class="RM">
+  <tr>
+    <td align="right"><b>hex digit</b></td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center">9</td>
+    <td align="center">a</td>
+    <td align="center">b</td>
+    <td align="center">c</td>
+    <td align="center">d</td>
+    <td align="center">e</td>
+    <td align="center">f</td>
+  </tr>
+  <tr>
+    <td align="right"><b>4-bit pattern</b></td>
+    <td>0000</td>
+    <td>0001</td>
+    <td>0010</td>
+    <td>0011</td>
+    <td>0100</td>
+    <td>0101</td>
+    <td>0110</td>
+    <td>0111</td>
+    <td>1000</td>
+    <td>1001</td>
+    <td>1010</td>
+    <td>1011</td>
+    <td>1100</td>
+    <td>1101</td>
+    <td>1110</td>
+    <td>1111</td>
+  </tr>
+      </table>
+        Counting down in hex looks better
+        <div id="gradDayTimerHex" style="border-style: solid; padding: 0.5em;"></div>
+        <script type="text/javascript">
+          setInterval(function(){
+          var today = new Date();
+          var BigDay = new Date(ygYYYY,ygGradMonty,ygGradDay,ygGradTime,0,0,0); /* noon on Graduation Day */
+          var msLeft = (BigDay.getTime() - today.getTime());
+          var sLeft = Math.floor(msLeft/1000);
+          document.getElementById("gradDayTimerHex").innerHTML = "Only <CODE>" + sLeft.toString(16)
+          + "</CODE> seconds left 'til " + ygYYYY + "'s graduation! "; },100);
+        </script>
+
+        <div id="blank2" style="border-style: none; padding: 1em;"></div>
+        Counting down in Decimal
+        <div id="gradDayTimerDec" style="border-style: solid; padding: 0.5em;"></div>
+        <script type="text/javascript">
+          setInterval(function(){
+          var today = new Date();
+          var BigDay = new Date(ygYYYY,ygGradMonty,ygGradDay,ygGradTime,0,0,0); /* noon on Graduation Day */
+          var msLeft = (BigDay.getTime() - today.getTime());
+          var sLeft = Math.floor(msLeft/1000);
+          document.getElementById("gradDayTimerDec").innerHTML = "Only <CODE>" + sLeft.toString(10)
+          + "</CODE> seconds left 'til " + ygYYYY + "'s graduation! "; },100);
+        </script>
+
+        <div id="blank2" style="border-style: none; padding: 1em;"></div>
+        Counting down in Oct
+        <div id="gradDayTimerOct" style="border-style: solid; padding: 0.5em;"></div>
+        <script type="text/javascript">
+          setInterval(function(){
+          var today = new Date();
+          var BigDay = new Date(ygYYYY,ygGradMonty,ygGradDay,ygGradTime,0,0,0); /* noon on Graduation Day */
+          var msLeft = (BigDay.getTime() - today.getTime());
+          var sLeft = Math.floor(msLeft/1000);
+          document.getElementById("gradDayTimerOct").innerHTML = "Only <CODE>" + sLeft.toString(8)
+          + "</CODE> seconds left 'til " + ygYYYY + "'s graduation! "; },100);
+        </script>
+
+        <div id="blank2" style="border-style: none; padding: 1em;"></div>
+        Counting down in Quaternary
+        <div id="gradDayTimerQuat" style="border-style: solid; padding: 0.5em;"></div>
+        <script type="text/javascript">
+          setInterval(function(){
+          var today = new Date();
+          var BigDay = new Date(ygYYYY,ygGradMonty,ygGradDay,ygGradTime,0,0,0); /* noon on Graduation Day */
+          var msLeft = (BigDay.getTime() - today.getTime());
+          var sLeft = Math.floor(msLeft/1000);
+          document.getElementById("gradDayTimerQuat").innerHTML = "Only <CODE>" + sLeft.toString(4)
+          + "</CODE> seconds left 'til " + ygYYYY + "'s graduation! "; },100);
+        </script>
+
+        <div id="blank2" style="border-style: none; padding: 3em;"></div>
+        16진수 - 시간이 빨리 갈거같다.
+
+        <script>/* added */</script>
+
+
+    </body>
 </html>
 
 </div> <!-- /container --></body></html>

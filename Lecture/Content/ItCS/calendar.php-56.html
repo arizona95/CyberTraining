@@ -246,10 +246,82 @@ general
 
   <body id="bg">
   <div id="NavBar"><script type="text/javascript" src="../navbar.js"></script></div>
+<script type="text/javascript">
+var pad = function(s)
+{
+  while(s.length < 3) s = ' ' + s;
+  return s;
+}; 
+var off = 32; // off + rows*cols >= 126
+var rows = 11;
+var cols = Math.floor((126 - off)/rows + 0.5);
+
+document.write('<table class="RM"><tr><td align="center" colspan="' 
+               +
+         cols
+         + 
+         '"><b>ASCII Table for Printable Characters</b></td></tr><tr>\n');
+for(var i = 0; i < cols; ++i)
+{
+  document.write('<td style="padding-left: 0.5em; padding-right: 0.5em;"><pre>Dec Hex Char');
+  for(var j = 0; j < rows; ++j)
+  {
+    var n = off + i*rows + j;
+    if (n < 127)
+    {
+      document.write('\n' + pad(String(n)) + '  ' 
+      +  n.toString(16) 
+      +  '  ' + String.fromCharCode(n));
+    } 
+ }
+  document.write("</pre></td>\n");
+}
+document.write("</tr></table>\n");
+</script>
+
+<script type="text/javascript">
+var asciiatizer = function()
+{
+  var input = document.forms.ASCIIatizer.textToASCIIatize.value;
+  var numOut = "<code>";
+  var binOut = "<code>";
+  for(var i = 0; i < input.length; ++i)
+  {
+    var color = i%2 == 0 ? '#D9DCDE' : '#FADA8E';
+    var n = '<span style="background-color: ' + color + ';">' + asNum(input[i]) + '</span>';
+    numOut += n;
+    var b = '<span style="background-color: ' + color + ';">' + asBin(input[i]) + '</span>';
+    binOut += b;
+  }
+  numOut += '</code>';
+  binOut += '</code>';
+  document.getElementById('ASCIIatizerres').innerHTML = 
+  ' &rarr; as ASCII &rarr; ' + numOut + ' &rarr; as bytes &rarr; ' + binOut;
+};
+
+var quo = function(n,d) { return Math.floor(n/d); }
+
+var asNum = function(c)
+{
+  var s = String(c.charCodeAt(0));
+  while(s.length != 3)
+    s = ' ' + s;
+  return s;
+}; 
+
+var asBin = function(c)
+{
+  var n = c.charCodeAt(0);
+  var s = '';
+  for(var b = 128; b >= 1; b = quo(b,2))
+    s += (quo(n,b))%2;
+  return s;
+};
+ 
+
+</script>
 
 
-
-This module takes as input a decimal number, hexadecimal number, binary number or ASCII character and displays the other three.
 <script type="text/javascript">
 
 function binHandler(binNumber)
@@ -355,13 +427,22 @@ function decToHex(decNumber)
 
 <body>
 <form action="#" name="conversionForm">
-            Enter either a binary, decimal or hexadecimal number: <br>
-      Binary:  <input size="8" maxlength="8" name="binaryTextbox" onchange="binHandler(binaryTextbox.value)"> &nbsp &nbsp 
-      Decimal: <input size="3" maxlength="3" name="decimalTextbox" onchange="decHandler(decimalTextbox.value)"> &nbsp &nbsp
-      Hexadecimal: <input size="2" maxlength="2" name="hexadecimalTextbox" onchange="hexHandler(hexadecimalTextbox.value)"> &nbsp &nbsp
-      ASCII Character: <input size="8" maxlength="1" name="characterTextbox" onchange="charHandler(characterTextbox.value)">
+            4개의 칸중 하나만 입력하고 엔터를 쳐봅시다. <br>
+      Binary:  <input size="10" maxlength="8" name="binaryTextbox" onchange="binHandler(binaryTextbox.value)"> &nbsp &nbsp 
+      Decimal: <input size="10" maxlength="3" name="decimalTextbox" onchange="decHandler(decimalTextbox.value)"> &nbsp &nbsp
+      Hexadecimal: <input size="10" maxlength="2" name="hexadecimalTextbox" onchange="hexHandler(hexadecimalTextbox.value)"> &nbsp &nbsp
+      ASCII Character: <input size="10" maxlength="1" name="characterTextbox" onchange="charHandler(characterTextbox.value)">
       
 </form>
+
+<form action="" onsubmit="return false;" name="ASCIIatizer">
+    <div>
+      <b>Introduce Myself by Computer</b><br>
+      자신의 이름을 영어로 적어보자..
+      <input type="text" name="textToASCIIatize" onchange="asciiatizer();">
+      <span id="ASCIIatizerres"></span>
+    </div>
+  </form>  
 
 
   </body>
