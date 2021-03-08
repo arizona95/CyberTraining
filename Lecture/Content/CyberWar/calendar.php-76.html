@@ -1,0 +1,1339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "a3c3f116ebc3359888c0a3ce208667cb4fa85d4d8494dd213d0f97379eba26f5";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+Select &rarr;
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li><a href="#A">A</a></li>
+<li><a href="#B">B</a></li>
+<li><a href="#C">C</a></li>
+<li><a href="#D">D</a></li>
+<li><a href="#E">E</a></li>
+<li><a href="#F">F</a></li>
+<li><a href="#G">G</a></li>
+<li><a href="#H">H</a></li>
+<li><a href="#I">I</a></li>
+<li><a href="#J">J</a></li>
+<li><a href="#K">K</a></li>
+<li><a href="#L">L</a></li>
+<li><a href="#M">M</a></li>
+<li><a href="#N">N</a></li>
+<li><a href="#O">O</a></li>
+<li><a href="#P">P</a></li>
+<li><a href="#Q">Q</a></li>
+<li><a href="#R">R</a></li>
+<li><a href="#S">S</a></li>
+<li><a href="#T">T</a></li>
+<li><a href="#U">U</a></li>
+<li><a href="#V">V</a></li>
+<li><a href="#W">W</a></li>
+<li><a href="#X">X</a></li>
+<li><a href="#Y">Y</a></li>
+<li><a href="#Z">Z</a></li>
+<li role="separator" class="divider"></li>
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//dtD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <!-- <META http-equiv="Content-Type" content="text/html;charset=utf-8"> -->
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>CYBERWAR: Glossary</title>
+    <link rel="stylesheet" href="../home.css">
+    <style type="text/css">
+      .blue {
+        color:#0000FF;
+      }
+      dl {
+        border-collapse:collapse;
+        /*color:black;*/
+        font-size:1.2em;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        overflow:hidden;
+        width:100%;
+      }
+      dt {
+        font-weight:bold;
+      }
+      .title {
+        background:#CCCCCC;
+      }
+      .annotation:before {
+        content:"Note:";
+        font-weight:bold;
+      }
+      .annotation {
+        float:right;
+        border:solid;
+        border-width:1px;
+        /*font-size:0.8em;*/
+        border-color:#ffcc00;
+        border-radius:10px;
+        background-color:#eeeeee;
+        padding:0.5em;
+        margin-right:0em;
+        margin-bottom:0.5em;
+        margin-left:0.5em;
+        margin-top:0.5em;
+        width:30em;
+      }
+      .annotation H1 {
+        font-size:1em;
+        font-weight:bold;
+        display:inline;
+        margin:0em;
+        text-decoration:none;
+        border-style:none;
+      }
+    </style>
+    <script type="text/javascript">
+      var a = "jjdohert";
+      var b = "@usna.edu";
+    </script>
+  </head>
+  <body>
+    <span name="top"></span>
+    <div id="NavBar">
+      <script type="text/javascript" src="../navbar.js"></script>
+    </div>
+    <div>
+      <div class="annotation" style="text-align:left; clear:right;">
+        <strong>Adding to the glossary
+        <p>
+          Students may suggest that a term be added to the glossary by sending an email to <span id="emailref1">hoffmeis [AT] usna [DOT] edu</span>.
+          <script type="text/javascript">
+            document.getElementById("emailref1").innerHTML = a + b;
+          </script>
+          Please include the term and a suggested definition/description, which may be edited.
+          Accepted terms will be attributed.
+        </p>
+      </strong></div>
+      <div style="text-align:center">
+        <span style="font-size:2.4em">Glossary of CYBERWAR Terms</span>
+        <p>
+          <span style="font-size:1.1em">These definitions and examples are intended to be appropriate only for an CYBERWAR level of understanding.</span>
+        </p>
+  <p><span style="font-size:1.5em">
+    <a href="#A">A</a>&nbsp; <a href="#B">B</a>&nbsp; <a href="#C">C</a>&nbsp;
+    <a href="#D">D</a>&nbsp; <a href="#E">E</a>&nbsp; <a href="#F">F</a>&nbsp;
+    <a href="#G">G</a>&nbsp; <a href="#H">H</a>&nbsp; <a href="#I">I</a>&nbsp;
+    <a href="#J">J</a>&nbsp; <a href="#K">K</a>&nbsp; <a href="#L">L</a>&nbsp;
+    <a href="#M">M</a>&nbsp; <a href="#N">N</a>&nbsp; <a href="#O">O</a>&nbsp;
+    <a href="#P">P</a>&nbsp; <a href="#Q">Q</a>&nbsp; <a href="#R">R</a>&nbsp;
+    <a href="#S">S</a>&nbsp; <a href="#T">T</a>&nbsp; <a href="#U">U</a>&nbsp;
+    <a href="#V">V</a>&nbsp; <a href="#W">W</a>&nbsp; <a href="#X">X</a>&nbsp;
+    <a href="#Y">Y</a>&nbsp; <a href="#Z">Z</a>&nbsp; <a href="#numSign">#</a>
+    </span>
+  </p>
+      </div>
+    </div>
+
+
+    <dl>
+      <!-- ===== AAAAA ===== -->
+      <dt class="title"><a name="A">A</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>absolute pathname</span></dt>
+      <dd>a pathname that beings at the root directory of the file system.</dd>
+
+      <dt><span>access log</span></dt>
+      <dd>a file located on the web server where a history of client requests is recorded. The file
+        contains information that is useful for computer forensics, such as client IP address, date/time of the request,
+        the page requested, etc. Here's an example from the SI110 web server:</dd>
+      <dd> 131.122.91.61 - - [26/Jun/2012:18:22:50 -0400] "GET /~si110/lec/l06/lec.html HTTP/1.1" 304 -</dd>
+
+      <dt><span>ACL</span></dt>
+      <dd>(access control list) firewall configuration settings that establish a set of rules for filtering packets to grant/deny access to/from network
+  services.</dd>
+
+      <dt><span>ad hoc</span></dt>
+      <dd>A WLAN arrangement where host stations do not use a base station, but communicate directly (peer-to-peer). See infrastructure.</dd>
+      <dt><span>AES</span></dt>
+      <dd>(Advanced Encryption Standard) a symmetric key block cipher using 128-bit blocks and a key length of 128, 192, or 256 bits. AES is approved by
+  the National Security Agency for protecting SECRET information when using a 128 bit key, and for TOP SECRET when using the longer key lengths.
+      </dd>
+
+      <dt><span>alert</span></dt>
+      <dd>a JavaScript function that displays its string argument as a message in a dialog window.<br>
+          Example: <span class="blue">alert( "Input error!");</span></dd>
+
+      <dt><span>Application Layer</span></dt>
+      <dd>the top of the TCP/IP protocol stack. Protocols at this layer define the language used
+          by client and server applications to communicate (e.g., the language a browser uses to "talk" with a web server).<br>
+          Example protocols include: HTTP, DNS, SSH, DHCP.
+          Addressing is handled by lower layers.</dd>
+
+      <dt><span>APT</span></dt>
+      <dd>(advanced persistent threat) an organization with the ability and intent to persistently and effectively carry
+          out sophisticated cyber attack. Example: the March 2011 breach of the RSA SecurID that compromised 40 million
+          two-factor authentication tokens has been attributed to China.</dd>
+
+      <dt><span>ARP</span></dt>
+      <dd>(Address Resolution Protocol) a TCP/IP protocol stack Link Layer protocol used to resolve an IP address into a MAC address. A host will use data in
+  its "ARP table" to determine which link to forward a packet to. The arp application (both Windows and UNIX) displays ARP table information, for example:
+      </dd>
+      <dd><pre>
+          C:\>arp -a
+          Interface: 131.122.90.201 --- 0x13
+          Internet Address      Physical Address      Type
+          131.122.88.2          b8-ac-6f-13-5a-6f     dynamic
+          131.122.91.255        ff-ff-ff-ff-ff-ff     static
+          255.255.255.255       ff-ff-ff-ff-ff-ff     static
+        </pre>
+      </dd>
+
+      <dt><span>ASCII</span></dt>
+      <dd>an encoding scheme for representing printable English characters (and some others). Each character is represented by a decimal integer value that is stored in one byte.</dd>
+      <dd> Example: 'a' = 97 = 01100001</dd>
+
+      <dt><span>assignment</span></dt>
+      <dd>(JavaScript) an expression where the value of the expression on the right hand side of the assignment operator (=) gets stored in (changes) the variable on the left hand side.</dd>
+      <dd>Example: n = x*y + 7; (remember: the action goes from right to left).</dd>
+
+      <dt><span>asymmetric cryptography</span></dt>
+      <dd>(public key cryptography) a cryptosystem using public/private key pairs. Plaintext encrypted with one of the two keys can only be decrypted with the other key.</dd>
+      <dd>Example: RSA.</dd>
+
+      <dt><span>attribute</span></dt>
+      <dd>a property of an HTML element, consisting of a  <span class="blue">name=value</span> pair specified in the start tag.</dd>
+      <dd>Example: <span class="blue">&lt;b style="color:#00ff00"&gt;</span> sets the color to green.</dd>
+
+      <dt><span>Authentication</span></dt>
+      <dd>one of the DoD Pillars of IA: a security measure designed to establish the validity of a transmission, message, or originator, or a means of verifying authorization to receive specific categories of information.</dd>
+
+      <dt><span>Availability</span></dt>
+      <dd>one of the DoD Pillars of IA: timely, reliable access to data and information services for authorized users.</dd>
+
+      <!-- ===== BBBBB ===== -->
+      <dt class="title"><a name="B">B</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>Backtrack</span></dt>
+      <dd>a version of the Linux operating system used for computer forensics and penetration testing.</dd>
+
+      <dt><span>base station</span></dt>
+      <dd>(see also: WAP) a network device with a radio receiver/transmitter that serves as the hub of a wireless internet.</dd>
+
+      <dt><span>binary</span></dt>
+      <dd>("base-2") a representation for numbers that uses the two digit symbols <span class="blue">0</span> and <span class="blue">1</span>, each of which is called a "bit". Data is stored in a computer as a binary number.</dd>
+
+      <dt><span>bit</span></dt>
+      <dd>(<span class="blue">b</span>inary dig<span class="blue">it</span>) a base-2 digit, 0 or 1.</dd>
+
+      <dt><span>block</span></dt>
+      <dd>(JavaScript) one or more statements delimited by curly braces.</dd>
+
+      <dt><span>block cipher</span></dt>
+      <dd>an encryption algorithm that operates on fixed length groups of bits, the "block size".</dd>
+
+      <dt><span>boolean</span></dt>
+      <dd>>representing the logical values <span class="blue">true</span> or <span class="blue">false</span>.</dd>
+
+      <dt><span>botnet<br>
+      <span style="font-size:0.6em">[ Submitted by: Eason 161782 ]</span></span></dt>
+      <dd>A collection of zombie computers.</dd>
+
+      <dt><span>box</span></dt>
+      <dd>A Slang term for a computer. E.g. "My USNA laptop is a Windows box."</dd>
+
+      <dt><span>branch</span></dt>
+      <dd>a point in a computer program where a decision is made as to what code will be executed next. A JavaScript <span class="blue">if</span> statement is an example branching construct.</dd>
+
+      <dt><span>broadcast address</span></dt>
+      <dd>the address at which all hosts on a local network will be recipients. Packets sent to a broadcast address are not routable, i.e., they will never leave the local network. At the TCP/IP protocol stack Link Layer, the broadcast address is the MAC address FF:FF:FF:FF:FF:FF (if expressed in binary this would be "all ones") The IPv4 TCP/IP protocol stack Transport Layer has two broadcast addresses: (1) 255.255.255.255 (if expressed in binary this would be "all ones"), and (2) the network prefix with "all ones" for the host identifier bits.</dd>
+
+      <dt><span>browser</span></dt>
+      <dd>(web browser) a client application that retrieves and displays information from the World Wide Web. A browser uses HTTP(S).</dd>
+
+      <dt><span>brute force attack</span></dt>
+      <dd>a technique for defeating a cipher or authentication mechanism by systematically searching through all possibilities (see dictionary attack). </dd>
+
+    <dt><span>BSS</span></dt>
+    <dd>(Basic Service Set) a base station and the set of connected host stations, in either an ad hoc or infrastructure arrangement. A base station is identified by its BSSID.</dd>
+
+      <dt><span>BSSID</span></dt>
+      <dd>(Basic Service Set ID) the MAC address of a base station, used to identify it to host stations.</dd>
+
+      <dt><span>byte</span></dt>
+      <dd>a sequence of 8 bits.</dd>
+
+      <!-- ===== CCCCC ===== -->
+      <dt class="title"><a name="C">C</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>Caesar Shift Cipher</span></dt>
+      <dd>a symmetric key encryption method for alphabetic text where the key is an integer "shift" value. The cipher text is formed by replacing each plain text letter by the letter located the shift distance away from it in the alphabet. The Caesar Cipher is subject to frequency analysis attack.</dd>
+
+      <dt><span>certificate</span></dt>
+      <dd>a PKI electronic document used to bind a public key with an identity. The certification rests in the digital signature of a Certificate Authority.</dd>
+
+      <dt><span>Certificate Authority</span></dt>
+      <dd>(CA) an entity in the public key infrastructure (PKI). The CA is trusted to issue a digital certificate attesting that a particular public key belongs to a particular identity (e.g., that this public key belongs to this domain name, or that this public key belongs to this email address, or that the source of this software s this company).</dd>
+
+      <dt><span>charCodeAt( i )</span></dt>
+      <dd>a JavaScript function that produces the ASCII code of the character at index location <span class="blue">i</span> in a string.</dd>
+      <dd>Example: <span class="blue">"abcXYZ".charCodeAt(1)</span> gives the value <span class="blue">98</span> because  in the string <span class="blue">"abcXYZ"</span>, the character <span class="blue">b</span> is at index location <span class="blue">1</span>, and the ASCII code for character <span class="blue">b</span> is <span class="blue">98</span>.</dd>
+
+      <dt><span>chosen plain text attack</span></dt>
+      <dd>a cryptanalysis technique where the attacker attempts to glean information about a cipher by examining cipher text that is known to include the encryption of some particular plain text.</dd>
+
+      <dt><span>cipher</span></dt>
+      <dd>an encryption/decryption algorithm. Examples: Caesar Shift, Vigenere, AES, RSA.</dd>
+
+      <dt><span>cipher text</span></dt>
+      <dd>the result of encrypting plain text using an algorithm called a cipher.</dd>
+
+      <dt><span>client</span></dt>
+      <dd>an application that makes use of a service provided by a server, typically from across a network. Example: a web browser is a client application of a web server. The host on which the client application runs is also called a client.</dd>
+
+      <dt><span>client-server</span></dt>
+      <dd>A system in which one host (computer connected to a network) requests a service (information) from another host.</dd>
+      <dd>The requesting host is the <em>client</em>, the responding host (service/information provider) is the <em>server</em>.</dd>
+
+      <dt><span>client-side script</span></dt>
+      <dd>script written in an HTML document and executed by the web browser after the document has been retrieved from the web server and the DOM has been constructed.</dd>
+
+      <dt><span>command and control server</span></dt>
+      <dd>A threat host that remotely directs the actions of zombie computers.</dd>
+
+      <dt><span>command arguments</span></dt>
+      <dd>a string that gets passed as a value to the command being executed.</dd>
+      <dd>Example: in the WINDOWS command <span class="blue">type hw.txt</span>, the string <span class="blue"><em>hw.txt</em></span> is an argument to the command <span class="blue"><em>type</em></span>.</dd>
+
+      <dt><span>command options</span></dt>
+      <dd>an argument that modifies the behavior of a command.</dd>
+      <dd>Example: in the UNIX command, <span class="blue">cat -n hw.txt</span>, the argument <span class="blue">-n </span> is an option to the <span class="blue"><em>cat</em></span> command (this option numbers the output lines).</dd>
+
+      <dt><span>compiled language</span></dt>
+      <dd>A programming language where source code is compiled (translated) by another program (compiler) into machine language (0's and 1's).</dd>
+
+      <dt><span>computer</span></dt>
+      <dd>a device that inputs, processes, outputs (and possibly stores) data.</dd>
+
+      <dt><span>computer forensics</span></dt>
+      <dd>applying the scientific method to examine digital data for the purpose of reconstructing a sequence of events involving computers and information.</dd>
+
+      <dt><span>concatenation</span></dt>
+      <dd>joining two strings. JavaScript uses the <span class="blue"> + </span> operator to concatenate strings, e.g., <span class="blue">alert( "Blue" + "Force" )</span> displays the string <span class="blue">BlueForce</span>.</dd>
+
+      <dt><span>conclusion</span></dt>
+      <dd>the final phase of a cyber-attack, where the threat achieves the intended objective and removes forensic evidence.</dd>
+
+      <dt><span>Confidentiality</span></dt>
+      <dd>one of the DoD Pillars of IA: assurance that information is not disclosed to unauthorized individuals, processes, or devices.</dd>
+
+      <dt><span>cookie</span></dt>
+      <dd>HTTP cookie, browser cookie) a small piece of data that a web server will request to be stored on the local host. The browser may subsequently send the cookie data back to the web server on future website visits. Examples of cookie data: login name/password (authentication cookie), user's website preferences (personalization cookie), history of pages visited (tracking cookie).</dd>
+
+      <dt><span>CPU</span></dt>
+      <dd>(central processing unit, “processor”) computer hardware that performs the instruction cycle.</dd>
+
+      <dt><span>CPU instruction</span></dt>
+      <dd>a set of bits that encodes a basic CPU task (e.g.: fetch bytes from RAM, perform an arithmetic operation, compare two values).</dd>
+
+      <dt><span>cross-site scripting</span></dt>
+      <dd>(XSS) an attack where code from one source gets executed with security credentials that belong to another source.</dd>
+
+      <dt><span>cryptosystem</span></dt>
+      <dd>the collection of algorithms required by a particular method of encryption/decryption (e.g., for key generation, and for encryption/decryption).</dd>
+
+      <dt><span>cryptography</span></dt>
+      <dd>the practice and study of techniques for secure communication in the presence of third parties.</dd>
+
+
+      <!-- ===== ddddD ===== -->
+      <dt class="title"><a name="D">D</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>Data Link Layer</span></dt>
+      <dd>the TCP/IP stack layer responsible for communication between adjacent devices on the same network, using MAC addresses.</dd>
+
+      <dt><span>data type</span></dt>
+      <dd>a data attribute that determines its possible values. JavaScript data types include: <span class="blue">Number</span> (for integer and real numbers), <span class="blue">String</span> (for sequences of ASCII characters), <span class="blue">Boolean</span> (for true/false).</dd>
+
+      <dt><span>decimal</span></dt>
+      <dd>("base-10") a representation for numbers that uses the ten digit symbols 0,1,2,3,4,5,6,7,8,9.</dd>
+
+      <dt><span>declaration</span></dt>
+      <dd>(JavaScript) a statement that specifies the name and possibly an initial value of a variable.</dd>
+      <dd>Examples:</dd>
+      <dd><span class="blue">var n;</span></dd>
+      <dd><span class="blue">var firstname = "Trudy";</span></dd>
+
+      <dt><span>decryption</span></dt>
+      <dd>the process of transforming encrypted information (cipher text) to make it readable (plain text).</dd>
+
+      <dt><span>DHCP</span></dt>
+      <dd>(Dynamic Host Configuration Protocol) an Application Layer protocol to configure a computer's network parameters, including the host's IP address and subnet mask, and the IP address of a gateway router and DNS server. DHCP uses UDP and port 67 on a DHCP server, port 68 on a DCHP client.</dd>
+
+      <dt><span>dictionary attack</span></dt>
+      <dd>a technique for defeating a cipher or authentication mechanism by searching only the likely possibilities (see <em>brute force attack</em>).</dd>
+
+      <dt><span>digital signature</span></dt>
+      <dd>a feature of asymmetric cryptography that provides proof of message origination (non-repudiation).</dd>
+      <dd>Digitally signed data is the cipher text (<span class="blue"> S </span>) formed from the private key encryption of the hashed data (<span class="blue"> D </span>): <span class="blue">S = Private( Hash(D) )</span>.</dd>
+      <dd>If the recipient of <span class="blue">S</span> and <span class="blue">D</span> can verify that <span class="blue">Public(S) = Hash(D)</span>, the message had to have originated from the possessor of the private key.</dd>
+
+      <dt><span>DNS</span></dt>
+      <dd>(Domain Name System) (1) a distributed hierarchical system for naming hosts, and (2) the name of the protocol used for name service. The primary purpose of a DNS name server is to resolve a domain name into its IP address (although if so configured, can resolve an IP address into a domain name). Example: house.gov resolves to 143.228.181.132. DNS uses UDP and port 53 for name resolution.</dd>
+
+      <dt><span>document</span></dt>
+      <dd>a JavaScript variable representing the root of the DOM tree. Web page content can be modified via this variable. Examples:</dd>
+      <dd><span class="blue">document.write( "hello" )</span></dd>
+      <dd><span class="blue">document.location( "http://www.usma.edu" )</span></dd>
+      <dd><span class="blue">document.getElementById( "foo" ).innerHTML = "&lt;b&gt;This is now bold&lt;/b&gt;"</span></dd>
+
+      <dt><span>DOM</span></dt>
+      <dd>(Document Object Model) the browser's internal representation of how an HTML document should be rendered. The DOM is a tree structure accessible via JavaScript to give web pages dynamic behavior by adding, changing, or deleting HTML elements.</dd>
+
+      <dt><span>domain name</span></dt>
+      <dd>a string identifying a host in the Domain Name System (DNS).</dd>
+      <dd> Examples: www.google.com, mich302csd01.cs.usna.edu</dd>
+
+      <dt><span>dotted quad</span></dt>
+      <dd>The four bytes of an IPv4 address written as decimal integers separated by periods.</dd>
+      <dd>Example: <span class="blue">1.1.1.100</span></dd>
+
+      <!-- ===== EEEEE ===== -->
+      <dt class="title"><a name="E">E</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>element</span></dt>
+      <dd>a component of an HTML document. In most cases an element consists of a <em>start tag</em> (e.g.: <span class="blue">&lt;b&gt;</span>) paired with an <em>end tag</em> (e.g.: <span class="blue">&lt;/b&gt;</span>), between which is optional <em>innerHTML</em>. The start tag can have <em>attributes</em>.</dd>
+      <dd>Example: <span class="blue">&lt;b id="foo" style="color:#ff0000"&gt;How bold!&lt;/b&gt;</span></dd>
+
+      <dt>encode</dt>
+      <dd>To convert data from one system of communication into another.</dd>
+      <dd>E.g. ASCII, base64, Unicode, UTF-8</dd>
+
+      <dt><span>encryption</span></dt>
+      <dd>The process of transforming information (plain text) using an algorithm (cipher) to make it unreadable (cipher text) except to those who possess special knowledge (a key).</dd>
+      <dd>Encryption is a tool used to provide Confidentiality.</dd>
+      <dd>E.g. AES, DES, Blowfish, Twofish, <!-- but not red fish, blue fish -->Serpent</dd>
+
+      <dt><span>escaping</span></dt>
+      <dd>(JavaScript) indicating to the JavaScript interpreter that a character is to be treated as having other than the usual meaning. The 'escape' character is backslash: <span class="blue">\</span>. For example, single quotes delimit a string, but a single quote is sometimes needed as an apostrophe <em>within</em> a string:</dd>
+      <dd>Example: <span class="blue">'don\'t'</span>&nbsp;&nbsp;&nbsp;&larr; Here the inner quote is "escaped": the backslash tells the interpreter that
+the next single quote does not end the string.</dd>
+
+      <dt><span>Extended Service Set (ESS)</span></dt>
+      <dd>A set of BSSs that are interconnected and use a common SSID.</dd>
+
+      <dt><span>Extended Service Set IDentifier (ESSID)</span></dt>
+      <dd>A sequence of 32 bytes identifying an Extended Service Set.</dd>
+      <dd>An ESSID is commonly ASCII characters, but any sequence of 32 bytes can be used.</dd>
+      <dd>Example: usna-wap</dd>
+
+      <dt><span>Ethernet</span></dt>
+      <dd>a Link Layer protocol where the digital signals are transmitted over wires at the Physical Layer.</dd>
+      <dd>Example: the "IEEE 802.3ab" protocol (also called "1000BASE-T") defines 1000 Mbits/sec (1 Gbit/sec) data transmission over copper wire.</dd>
+
+      <dt><span>element</span></dt>
+      <dd>a component of an HTML document. In most cases an element consists of a <em>start tag</em> (e.g.: <span class="blue">&lt;b&gt;</span>) paired with an <em>end tag</em> (e.g.: <span class="blue">&lt;/b&gt;</span>), between which is optional <em>innerHTML</em>. The start tag can have <em>attributes</em>.</dd>
+      <dd>Example: <span class="blue">&lt;b id="foo" style="color:#ff0000"&gt;How bold!&lt;/b&gt;</span></dd>
+
+      <dt><span>encryption</span></dt>
+      <dd>the process of transforming information (<em>plain text</em>) using an algorithm (<em>cipher</em>) to make it unreadable (<em>cipher text</em>) except to those who possess special knowledge (a <em>key</em>). Encryption is a tool used to provide <em>Confidentiality</em>. </dd>
+
+      <dt><span>escaping</span></dt>
+      <dd>(JavaScript) indicating to the JavaScript interpreter that a character is to be treated as having other than the usual meaning. The 'escape' character is backslash: <span class="blue">\</span>. For example, single quotes delimit a string, but a single quote is sometimes needed as an apostrophe <em>within</em> a string:</dd>
+      <dd>Example: <span class="blue">'don\'t'</span>&nbsp;&nbsp;&nbsp;&larr; Here the inner quote is "escaped": the backslash tells the interpreter that
+the next single quote does not end the string.</dd>
+
+      <dt><span>ESS</span></dt>
+      <dd>(Extended Service Set) a set of connected BSS.</dd>
+
+      <dt><span>ESSID</span></dt>
+      <dd>(Extended Service Set ID) a character string identifying an ESS. Example: <em>usna-wap</em>.</dd>
+
+      <dt><span>Ethernet</span></dt>
+      <dd>a Link Layer protocol where the digital signals are transmitted over wires at the Physical Layer.</dd>
+      <dd>Example: the "IEEE 802.3ab" protocol (also called "1000BASE-T") defines 1000 bits/sec data transmission over copper wire.</dd>
+
+      <dt><span>eval</span></dt>
+      <dd>a JavaScript function that evaluates or executes its argument. If the argument is an expression, it is evaluated to produce a value. If the argument is one or more JavaScript statements, they are executed. Examples:</dd>>
+      <dd><span class="blue">eval( 2*3+4 )</span> evaluates to <span class="blue">10</span>.</dd>
+      <dd><span class="blue">eval( N = prompt( "Guess again" ); )</span> assigns to variable <span class="blue">N</span> the user value entered in the <span class="blue">prompt</span> dialog window.</dd>
+
+      <dt><span>event</span></dt>
+      <dd>an external action, typically initiated by the user, that the browser acts upon by executing built-in JavaScript code called an <em>event handler</em>. Example event handlers include: <em>onclick</em>, <em>onmouseover</em>, <em>onkeypress</em>, <em>onsubmit</em>.</dd>
+
+      <dt><span>expression</span></dt>
+      <dd>a combination of variables, operators, literals, and function calls that the browser evaluates to produce a value.</dd>
+      <dd>Examples:</dd>
+      <dd><span class="blue">1 + 2</span> &larr; an <em>arithmetic</em> expression involving literals and the <span class="blue">+</span> operator</dd>
+      <dd><span class="blue">n = 80</span> &larr; an <em>assignment</em> expression involving the variable <span class="blue">n</span></dd>
+      <dd><span class="blue">if(n < 80) alert( "ok!" ); n < 80</span> is a <em>relational</em> expression used in an <span class="blue">if</span> statement.</dd>
+      <dd><span class="blue">String.fromCharCode(97)</span> &larr; a <em>function</em> expression.</dd>
+
+      <!-- ===== FFFFF ===== -->
+      <dt class="title"><a name="F">F</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>file</span></dt>
+      <dd>a logically related collection of bytes existing on persistent media (e.g. on a Hdd), used to store information.</dd>
+
+      <dt><span>file format</span></dt>
+      <dd>the encoding used to represent the information stored in a file, e.g., an image could be stored using the JPG, GIF, or PNG format (or others).</dd>
+
+      <dt><span>file header</span></dt>
+      <dd>a block of bytes at the beginning of a file that conveys information about the file format. For example, every JPG file starts with these 4 bytes (expressed here in hex): <span class="blue">FF D8 FF E0</span></dd>
+
+      <dt><span>file name</span></dt>
+      <dd>(file name) a string of characters used to identify a file within a directory (folder). The file name is the last component of an absolute pathname; a <em>file name extension</em> is the last component of a file name.</dd>
+
+      <dt><span>file name extension</span></dt>
+      <dd>the suffix portion of a file name, which in correct practice is used to indicate the file format (e.g., .bmp = Windows Bitmap, .html = HTML). The file name extension is a hint to the operating system as to which application should be used to open the file (.e.g, WINDOWS opens .doc files with Microsoft WORD).</dd>
+
+      <dt><span>file permissions</span></dt>
+      <dd>file (or folder/directory) privileges, .e.g., read, write, execute.</dd>
+
+      <dt><span>file system</span></dt>
+      <dd>a logical organization of files and folders (directories). In a tree arrangement everything is located under the hierarchical top of the file system, called the "root directory". In a WINDOWS operating system the root directory is the <span class="blue">C:\</span> folder; in a UNIX operating system the root directory is <span class="blue">/</span>.</dd>
+
+      <dt><span>file type</span></dt>
+      <dd>the kind of data stored in a file; how the bytes in a file are intended to be interpreted, e.g., as text, as an image, as CPU instructions, etc.</dd>
+
+      <dt><span>filtering</span></dt>
+      <dd>the analysis performed by a firewall to drop or forward packets. Criteria are established by a set of <em>ACL</em> rules, and include: source or destination port or IP address, protocol, flow rate.</dd>
+
+      <dt><span>firewall</span></dt>
+      <dd>hardware or software that controls access to network services by <em>filtering</em> packets.</dd>
+
+      <dt><span>&lt;form&gt;</span></dt>
+      <dd>an HTML element for submitting user data to a web server. Data entered by a user into one or more <span class="blue">&lt;input&gt;</span> elements that comprise the form is sent to the web server in response to the <em>onsubmit</em> event (analogous to a paper form that is filled out and turned in).</dd>
+
+      <dt><span>frequency analysis attack</span></dt>
+      <dd>an attack on a cipher based on the frequency of occurrence of letters or groups of letters in a cipher text.</dd>
+
+      <dt><span>function</span></dt>
+      <dd>JavaScript code that performs a specific task when it is <em>called</em>. Examples: <span class="blue">alert()</span>, <span class="blue">Math.random()</span>, <span class="blue">eval()</span>.</dd>
+
+      <!-- ===== GGGGG ===== -->
+      <dt class="title"><a name="G">G</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>gateway</span></dt>
+      <dd>(see router).</dd>
+
+      <dt><span>GET</span></dt>
+      <dd>an HTTP command that requests a resource. An HTTP client will ask an HTTP server to <b>GET</b> something
+from the server's file system (an HTML file, an image file, ...).</dd>
+
+      <dt><span>gigabyte</span></dt>
+      <dd>(GB) 2^30 bytes = 1,024 megabytes.</dd>
+
+      <dt><span>GUI</span></dt>
+      <dd>(Graphical User Interface) an interface for giving commands to an OS that primarily does not require typing, rather, involves the user interacting with windows, icons, and menus using an on-screen pointer.</dd>
+
+      <!-- ===== HHHHH ===== -->
+      <dt class="title"><a name="H">H</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>hash</span></dt>
+      <dd>(hash value) the value produced by a <em>hash function</em> (also called a "message digest").</dd>
+
+      <dt><span>hashing</span></dt>
+      <dd>(cryptographic hashing) a technique that computes an output value (a "hash") from input data (the "message", or "key"), by applying a <em>hash function</em>. When the hash function has certain properties, hashing is a tool that provides <em>Integrity</em>. Hashing is also often used in password authentication.</dd>
+
+      <dt><span>hash function</span></dt>
+      <dd>(cryptographic hash function) the algorithm used to produce a hash. A hash function will take an arbitrary block of data and produce a fixed number of bytes
+To provide integrity it should be (a) easy to compute a hash from a message, (b) hard to produce a message from a hash, (c) hard to find two messages with the same hash. Example cryptographic hash functions: MD5, SHA-1.</dd>
+
+      <dt><span>hexadecimal</span></dt>
+      <dd>("base-16", "hex") a representation for numbers that uses the sixteen digit symbols 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f, where the symbol <span class="blue">a</span> denotes the decimal value 10, <span class="blue">b</span> denotes 11, etc. Hex is a more compact representation than binary or decimal: there are 4 binary bits per hex digit.</dd>
+
+      <dt><span>Hdd</span></dt>
+      <dd>(hard disk drive, \223hard disk\224) computer hardware used for permanent data storage. Data is written to/read from magnetic media on rotating platters.</dd>
+
+      <dt><span>hop</span></dt>
+      <dd>the network path between adjacent routers.</dd>
+
+      <dt><span>host</span></dt>
+      <dd>a computing device connected to a network.</dd>
+
+      <dt><span>host identifier</span></dt>
+      <dd>The low-order (i.e., suffix) bits of an IPv4 address that are unique to each host on the same <em>internet</em>.</dd>
+
+      <dt><span>HTML (Hyper-Text Mark-up Language)</span>  </dt>
+      <dd>A type of content focused mark-up language that is the defacto language that web pages are written in.</dd>
+      <dd>Like other source code files, an HTML file is plain text.</dd>
+      <dd>In HTML Tags are used to mark-up the content.</dd>
+      <dd><em>Start tags</em> indicate the start of a section of content, <em>end tags</em> indicate the end of a section of content.</dd>
+      <dd>HTML Tags form an HTML Element, HTML Elements can be nested.</dd>
+      <dd>Example: Hello World! (<code>hello.html</code>)
+        <pre>
+&#60;HTML&#62;
+  &#60;HEAD&#62;
+  &#60;/HEAD&#62;
+  &#60;BODY&#62;
+    Hello World!
+  &#60;/BODY&#62;
+&#60;/HTML&#62;</pre></dd>
+
+      <dt><span>HTTP</span></dt>
+      <dd>(Hypertext Transfer Protocol) the application Layer protocol defining how web clients and web servers communicate. HTTP uses TCP and port 80.</dd>
+
+      <dt><span>HTTPS</span></dt>
+      <dd>(Hypertext Transfer Protocol Secure) HTTP that is encrypted/decrypted between the Application and Transport Layers using TLS. HTTPS uses TCP and port 443.</dd>
+
+      <dt><span>hub</span></dt>
+      <dd>network hardware that connects multiple network devices. A hub operates below the TCP/IP protocol stack Link Layer and does not use addressing. A hub transmits electrical signals received on one connection to all other connections. Hubs were essentially made obsolete by cheap switch technology.</dd>
+
+      <!-- ===== IIIII ===== -->
+      <dt class="title"><a name="I">I</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>if statement</span></dt>
+      <dd>("conditional") a JavaScript structure that is used to make a decision, i.e., either do one portion of code or another (i.e., an <span class="blue">if</span> statement forms a "branch"). Example:</dd>
+      <dd><span class="blue"> if( a < b )</span></dd>
+          <dd><span class="blue">&nbsp;&nbsp;alert( "ok!" );</span></dd>
+      <dd><span class="blue">else</span></dd>
+      <dd><span class="blue">&nbsp;&nbsp;a = prompt( "Please enter a different value." );</span></dd>
+
+      <dt><span>infiltration</span></dt>
+      <dd>the second phase of a cyber-attack where the threat gains control of a host on the target network.</dd>
+
+      <dt><span>Information Assurance</span></dt>
+      <dd>(IA) (a) protecting and defending information and information systems by ensuring their availability, integrity, authentication, confidentiality, and non-repudiation (the "DoD Pillars of IA"), and (b) managing risks related to the use, processing, storage, and transmission of information, data, and the systems and processes used for those purposes. In the broadest sense, IA also deals with man-made and natural physical threats and national asset infrastructure such as power, water, agriculture, public health and finance.</dd>
+
+      <dt><span>infrastructure</span></dt>
+      <dd>A WLAN arrangement where host stations use a base station. See <em>ad hoc</em>.</dd>
+
+      <dt><span>injection</span></dt>
+      <dd>("code injection") an attack resulting from an input validation failure that permits <em>code</em> to be input. This unexpected code
+is then executed.</dd>
+
+      <dt><span>innerHTML</span></dt>
+      <dd>a property of elements that have both a <em>start</em> and an <em>end</em> tag. The <em>innerHTML</em> is the text appearing between the two. The following example changes the <em>innerHTML</em> of the bold tag from the word "Before" to the word "After":</dd>
+      <dd><span class="blue">&lt;b id="foo"&gt; Before &lt;/b&gt;</span></dd>
+      <dd><span class="blue">&lt;script&gt;document.getElementById("foo").innerHTML = "After";&lt;/script&gt;</span></dd>
+
+      <dt><span>&lt;input&gt;</span></dt>
+      <dd>an HTML element for entering user data into an HTML <span class="blue">&lt;form&gt;</span>. Various kinds of &lt;input&gt; elements are possible, e.g., <em>text</em>, <em>checkbox</em>, <em>button</em>, <em>password</em>, etc.</dd>
+
+      <dt><span>input validation</span></dt>
+      <dd>ensuring input data is correct. Data can be examined based on various criteria including: type, value, character set, consistency, etc.</dd>
+
+      <dt><span>instruction cycle</span></dt>
+      <dd>the repeated sequence performed by the CPU: <em>fetch</em> (an instruction from RAM), <em>decode</em> (the instruction to setup CPU circuitry), <em>execute</em> (the instruction to accomplish a basic CPU task).</dd>
+
+      <dt><span>Integrity</span></dt>
+      <dd>one of the DoD Pillars of IA: protection against unauthorized modification or destruction of information.</dd>
+
+      <dt><span><span class="blue">i</span>nternet(lowercase i)</span></dt>
+      <dd>one or more <em>intranets</em>.</dd>
+
+      <dt><span><span class="blue">I</span>nternet(uppercase I)</span></dt>
+      <dd>the <em>internet</em> that uses the TCP/IP protocol stack.</dd>
+
+      <dt><span>Internet Protocol</span></dt>
+      <dd>(IP) the protocol used at the <em>Network Layer</em> of the TCP/IP protocol stack. Versions 4 (IPv4) and 6 (IPv6) are currently in use.</dd>
+
+      <dt><span>interpreted language</span></dt>
+      <dd>A programming language where source code is interpreted by another program (interpreter).</dd>
+      <dd>The interpreter interprets the code, and then executes commands on the host system accordingly.</dd>
+      <dd>Also known as a <em>scripting language</em>.</dd>
+
+      <dt><span>interpreter</span></dt>
+      <dd>A program that translates instructions written in a programming language that humans can understand (e.g., text written in JavaScript), into instructions written in a language that a CPU can understand.</dd>
+
+      <dt><span>intranet</span></dt>
+      <dd>a collection of hosts in an organizational structure. A "local network". Examples: hosts at USNA, hosts in the CS Dept of Univ of MD.</dd>
+
+      <dt><span>IP address</span></dt>
+      <dd>(Internet Protocol Address) an integer assigned to and uniquely identifying every host on a TCP/IP network.</dd>
+
+      <dt><span>ipconfig (Windows)</span></dt>
+      <dd>(ifconfig - UNIX) a command-line utility program that displays network interface information (e.g., IP Address, subnet mask, gateway router IP address)</dd>
+
+      <dt><span>IPv4</span></dt>
+      <dd>(Internet Protocol Version 4) an Network Layer protocol employing 32-bit addresses (32-bits allows at most 2^32 = approx 4.3 billion network devices). The 4-bytes in an IPv4 address are usually expressed as a <em>dotted quad</em>, e.g., <span class="blue">94.136.40.82</span>, which logically has two parts, a <em>network address</em> and a <em>host identifier</em>, defined by a <em>subnet mask</em>:</dd>
+      <dd><code>Network Address: <span class="red"><b>131</b></span>.<span class="red"><b>122</b></span>.<span class="red"><b>101</b></span>.0</code></dd>
+      <dd><code>Host Identifier:&nbsp;&nbsp;&nbsp;0.&nbsp;&nbsp;0.&nbsp;&nbsp;0.<span class="blue"><b>5</b></span></code></dd>
+      <dd><code>IPv4 Address:&nbsp;&nbsp;&nbsp;&nbsp;<span class="red"><b>131</b></span>.<span class="red"><b>122</b></span>.<span class="red"><b>101</b></span>.<span class="blue"><b>5</b></span></code></dd>
+      <dd><code>Subnet Mask:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;255.255.255.0</code></dd>
+
+      <dt><span>IPv6</span></dt>
+      <dd>(Internet Protocol Version 6) an Network Layer protocol employing 128-bit addresses. A 128-bit address length allows at most 2^128 = 340,282,366,920,938,463,463,374,607,431,768,211,456 network devices. An example IPv6 address: <span class="blue">2001:0db8:85a3:0000:0000:8a2e:0370:7334</span>.</dd>
+
+      <!-- ===== JJJJJ ===== -->
+      <dt class="title"><a name="J">J</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>JavaScript</span></dt>
+      <dd>a scripting language primarily used to write programs ("scripts") that provide dynamic functionality to web pages. The web browser can execute JavaScript code embedded in an HTML file.</dd>
+
+      <!-- ===== KKKKK ===== -->
+      <dt class="title"><a name="K">K</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>key</span></dt>
+      <dd>With respect to <b><em>hashing</em></b>: the input to the hash function F; it is the data that gets transformed into a hash value H: F(key) = H.</dd>
+      <dd>With respect to <b><em>encryption</em></b>: an input to the encryption algorithm that is used to transform between plain text and ciphertext. Examples: a Caesar Cipher key is an integer shift value, 0 &le; key &lt; 26; a Vigenere Cipher key is a string of ASCII characters; an AES key is a 128-, 192-, or 256-bit integer.</dd>
+
+      <dt><span>kilobyte</span></dt>
+      <dd>(KB) 2^10 bytes = 1,024 bytes.</dd>
+
+      <!-- ===== LLLLL ===== -->
+      <dt class="title"><a name="L">L</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>Local Area Network (LAN)</span></dt>
+      <dd>a network located in a geographically limited area; e.g. an "office LAN".</dd>
+
+      <dt><span>likelihood</span></dt>
+      <dd>a term in the <em>risk equation</em>. Likelihood is a function of <em>threats</em> and <em>vulnerabilities</em>.</dd>
+
+      <dt><span>link</span></dt>
+      <dd>("hyperlink") Usually appearing as underlined text on a web page, a link is a rendered anchor element that refers to further information. For example, this HTML: <span class="blue">&lt;a href="http://xkcd.com"&gt; XKCD &lt;/a&gt;</span> ... results in this link: <a href="../../index-17.htm">XKCD</a>.</dd>
+
+      <dt><span>Link Layer</span></dt>
+      <dd>the TCP/IP stack layer responsible for communication between adjacent devices on the same network, using MAC addresses.</dd>
+
+      <dt><span>literal</span></dt>
+      <dd>(JavaScript) an explicitly written constant value (as opposed to a <em>variable</em>, a value that can change). Examples: <span class="blue">1</span>, <span class="blue">3.141</span>, <span class="blue">"PWND!"</span></dd>
+
+      <dt><span>loop</span></dt>
+      <dd>a programming structure that is used to repeat one or more statements a certain number of times.</dd>
+      <dd>Example:</dd>
+      <dd><span class="blue">while( N < 80 )</span></dd>
+            <dd><span class="blue">&nbsp;&nbsp;N = prompt( "Guess again" );</span></dd>
+
+      <!-- ===== MMMMM ===== -->
+      <dt class="title"><a name="M">M</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>MAC address</span></dt>
+      <dd>(Media Access Control) the address used at the Link Layer of the TCP/IP protocol stack for sending a packet to an adjacent (i.e., physically connected) host. Every physical hardware network interface device has a unique MAC address "burned into" its circuitry at manufacture. 48-bit MAC addresses allow for 2^48 = 281,474,976,710,656 (~3 trillion) possible network interface devices. An example 48-bit MAC address, written in hex: <span class="blue">00-21-28-26-38-6C</span></dd>
+
+      <dt><span>malware</span></dt>
+      <dd><span class="blue">mal</span>icious soft<span class="blue">ware</span>.</dd>
+
+      <dt><span>man-in-the-middle attack</span></dt>
+      <dd>an attack where the threat intercepts and forwards messages without his presence known by the communicating parties.</dd>
+
+      <dt><span>Math-dot</span></dt>
+      <dd>the collection of JavaScript math functions, e.g., <span class="blue">Math.sqrt</span>, <span class="blue">Math.random</span>, <span class="blue">Math.floor</span></dd>
+
+      <dt><span>MD5</span></dt>
+      <dd>(Message Digest Algorithm) a cryptographic hash function; an MD5 hash is 16 bytes long.</dd>
+
+      <dt><span>megabyte</span></dt>
+      <dd>(MB) 2^20 bytes = 1,048,576 bytes = 1,024 kilobytes.</dd>
+
+      <dt><span>Metasploit</span></dt>
+      <dd>a framework for executing exploit code against a remote target machine, with anti-forensic tools.</dd>
+
+      <!-- ===== NNNNN ===== -->
+      <dt class="title"><a name="N">N</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>name resolution</span></dt>
+      <dd>the process of determining the IP address corresponding to a domain name. A user typically resolves a domain name using a tool such as <span class="blue">nslookup</span>.</dd>
+
+      <dt><span>name server</span></dt>
+      <dd>a host providing name resolution service.</dd>
+
+      <dt><span>NAT</span></dt>
+      <dd>(Network Address Translation) the modification done by a router to the address information contained in an IP packet. NAT is used to map a single public IP address into many private IP addresses. This technique is being used to alleviate IPv4 address exhaustion.</dd>
+
+      <dt><span>netcat</span></dt>
+      <dd>a command-line tool that can directly read/write at the Transport Layer of the TCP/IP protocol stack.</dd>
+
+      <dt><span>netstat</span></dt>
+      <dd>a command-line tool that displays information about the sockets being used.</dd>
+
+      <dt><span>network address</span></dt>
+      <dd>A network prefix expressed as a dotted quad. Example: 131.122.88/24 defines a network address where the first 24 bits in an IP address are identical. A gateway router uses the network address to decide if a packet must be forwarded to a different network.</dd>
+
+      <dt><span>network prefix</span></dt>
+      <dd>The high-order bits of an IPv4 address that are common to all hosts on the same internet, usually written as a <em>network address</em> (the remaining bits form a unique <em>host identifier</em>).</dd>
+
+      <dt><span>Network Layer</span></dt>
+      <dd>the TCP/IP protocol stack layer responsible for communication between networks ("routing"), using IP addresses and the <em>Internet Protocol</em>.</dd>
+
+      <dt><span>nmap</span></dt>
+      <dd>a network reconnaissance tool for discovering hosts and services on a computer network ("mapping the network").</dd>
+
+      <dt><span>Non-repudiation</span></dt>
+      <dd>one of the DoD Pillars of IA: assurance that the sender of data is provided with proof of delivery and that the recipient is provided with proof of the sender's identity, so neither can later deny having processed the data.</dd>
+
+      <dt><span>nslookup</span></dt>
+      <dd>a command-line tool for name resolution.</dd>
+
+      <!-- ===== OOOOO ===== -->
+      <dt class="title"><a name="O">O</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>one-time pad</span></dt>
+      <dd>a cipher having the properties that the key is: (a) random, (b) at least as long as the message to be encrypted, and (c) used only once. It is mathematically provable that such a cipher is perfectly secure; in practice, it is difficult to generate truly random keys.</dd>
+
+      <dt><span>operating system</span></dt>
+      <dd>(\223OS\224) the collection of programs that functions as an  intermediary between users/applications and the hardware. The OS is responsible for access control, and manages user accounts, the file system, and processes.</dd>
+
+      <dt><span>operator</span></dt>
+      <dd>(JavaScript) used in an expression to perform an operation. Some examples:</dd>
+      <dd>Arithmetic operators: <span class="blue">+&nbsp;&nbsp;-&nbsp;&nbsp;*&nbsp;&nbsp;/&nbsp;&nbsp;%</span></dd>
+      <dd>Relational operators: <span class="blue">&lt;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&lt;=&nbsp;&nbsp;&gt;=&nbsp;&nbsp;==&nbsp;&nbsp;!=</span></dd>
+      <dd>Logical (boolean) operators: <span class="blue">&amp;&amp;&nbsp;&nbsp;||&nbsp;&nbsp;!</span></dd>
+      <dd>Others: <span class="blue">=</span> (assignment), <span class="blue">+</span> (concatenation)</dd>
+
+      <!-- ===== PPPPP ===== -->
+      <dt class="title"><a name="P">P</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>packet</span></dt>
+      <dd>a unit of data transmitted on a network, consisting of a piece of the original message, plus addressing information. A message is disassembled into packets by the originating host, which are transmitted through possibly differing routes to the destination, which then re-assembles the packets into the message.</dd>
+
+      <dt><span>patch</span></dt>
+      <dd>software that updates a program, to correct a security vulnerability.</dd>
+
+      <dt><span>pathname</span></dt>
+      <dd>(path) a location in a file system hierarchy. Example: <span class="blue">C:\Users\Public</span></dd>
+
+      <dt><span>penetration testing</span></dt>
+      <dd>evaluating the security of a computer system or network, using tools and techniques a would-be attacker might employ.</dd>
+
+      <dt><span>peripheral</span></dt>
+      <dd>a device connected to a computer, such as a keyboard, mouse, monitor, printer.</dd>
+
+      <dt><span>permissions</span></dt>
+      <dd>attributes specifying privileges (on a file, a process, a network connection, ...)</dd>
+
+      <dt><span>phishing</span></dt>
+      <dd>a social engineering attack that attempts to obtain information by masquerading as a trusted entity. Phishing tricks an unsuspecting user into "biting" at some type of bait - e.g., opening an enticing email or email attachment, clicking a harmful link on a fake website that appears genuine, etc.</dd>
+
+      <dt><span>Physical Layer</span></dt>
+      <dd>the lowest layer in the TCP/IP protocol stack, responsible for transmitting/receiving data as bits on the physical network medium (e.g., copper wire, fiber optic cable, radio waves).</dd>
+
+      <dt><span>Pillars of Cyber Security</span></dt>
+      <dd>Confidentiality, Availability, Integrity, Non-repudiation, Authentication</dd>
+
+      <dt><span>ping</span></dt>
+      <dd>a command-line tool for determining if a host on a network is visible ("up"). Ping uses the Network Layer of the TCP/IP protocol stack. Note that hosts do not have to respond to pings.</dd>
+
+      <dt><span>PKI</span></dt>
+      <dd>(Public Key Infrastructure) in cryptography: an arrangement that binds public keys with identities by means of a Certificate Authority. In general: the hardware, software, people, policies, and procedures needed to create, manage, distribute, use, store, and revoke digital certificates.</dd>
+
+      <dt><span>plain text</span></dt>
+      <dd>the input to a cipher.</dd>
+
+      <dt><span>port number</span></dt>
+      <dd>the address used at the Transport Layer of the TCP/IP protocol stack for communicating between processes. Communicating client and server processes will each be using an integer port number in the range 0 to 65,535. Network services are said to be "offered on a well-known port". As an example, a typically configured web server will use port 80, the well-known port for web service (HTTP traffic); packets originating from web clients must be addressed to port 80 on the web server host.</dd>
+
+      <dt><span>private IP address</span></dt>
+      <dd>an IP address that cannot be routed to, from a host outside a gateway router.</dd>
+
+      <dt><span>privilege</span></dt>
+      <dd>permission to perform an action.</dd>
+
+      <dt><span>process</span></dt>
+      <dd>A program file loaded into RAM, in some state of execution; an "executing instance of a program".</dd>
+
+      <dt><span>program [executable]</span></dt>
+      <dd>A set of CPU instructions stored in a file.</dd>
+
+      <dt><span>program [source code]</span></dt>
+      <dd>A text file written in a programming language (e.g., JavaScript, C++).</dd>
+      <dd>The statements in the program are generally read by a compiler or interpreter in order: top-bottom, left-right</dd>
+
+      <dt><span>prompt</span></dt>
+      <dd>a JavaScript function that displays its string argument as a message in a dialog window, but also allows the user to input a text string (i.e., an <em>alert</em> dialog with a text input). Example: <span class="blue">prompt( "Enter your guess:");</span></dd>
+
+      <dt><span>protocol</span></dt>
+      <dd>Previously agreed upon specification that describes how (format) hosts will communicate.</dd>
+  <dd>E.g. HTTP (Hyper-Text Transfer Protocol), HTTPS (Hyper-Text Transfer Protocol Secure), Transmission Control Protocol (TCP), User Datagram Protocol (UDP), Internet Protocol (IP).</dd>
+
+      <dt><span>protocol stack</span></dt>
+      <dd>the collection of protocols used for network communication, organized as an abstract set of layers.</dd>
+
+      <dt><span>public key cryptography</span></dt>
+      <dd>(see asymmetric cryptography).</dd>
+
+      <!-- ===== QQQQQ ===== -->
+      <dt class="title"><a name="Q">Q</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <!-- ===== RRRRR ===== -->
+      <dt class="title"><a name="R">R</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>rainbow table</span></dt>
+      <dd>a precomputed table for reversing cryptographic hash functions (usually password hashes).</dd>
+
+      <dt><span>Random Access Memory (RAM)</span></dt>
+      <dd>Computer hardware used for temporary data storage, also called main memory</dd>
+      <dd>Temporary since data is lost from RAM when power is turned off.</dd>
+
+      <dt><span>Remote Desktop Protocol (RDP)</span></dt>
+      <dd>A Microsoft Windows Application Layer protocol defining <em>remote desktop</em> service for remote display of a Windows desktop. RDP uses TCP and port 3389. <em>rdesktop</em> is an RDP client application for UNIX systems.</dd>
+
+      <dt><span>reconnaissance</span></dt>
+      <dd>the first phase of a cyber-attack where the threat gains information about the target network.</dd>
+
+      <dt><span>redirect</span></dt>
+      <dd>the technique of forwarding a web page to a URL other than the one currently rendered.</dd>
+
+      <dt><span>render</span></dt>
+      <dd>to produce the visual, on-screen web page display by examining the DOM tree.</dd>
+
+      <dt><span>relative pathname</span></dt>
+      <dd>a pathname that begins at the working directory of a process.</dd>
+
+      <dt><span>remote shell</span></dt>
+      <dd>a shell that is executing on a host that is not the local host.</dd>
+
+      <dt><span>risk equation</span></dt>
+      <dd><em>risk = likelihood x impact</em></dd>
+
+      <dt><span>router</span></dt>
+      <dd>("gateway") the network device responsible for forwarding packets between different networks. A router operates at the TCP/IP protocol stack Network Layer and uses IP addressing</dd>
+
+      <dt><span>RSA</span></dt>
+      <dd>an algorithm for public key cryptography that is based on the difficulty of factoring large integers.</dd>
+
+      <!-- ===== SSSSS ===== -->
+      <dt class="title"><a name="S">S</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>salt</span></dt>
+      <dd>extra bits added as input to a cryptographic hash function, used to defeat dictionary attack. In typical usage for password authentication, the salt is stored along with the hash of salt+password.</dd>
+
+      <dt><span>SCP</span></dt>
+      <dd>(Secure Copy Protocol) an Application Layer protocol that uses SSH to provide remote file copy. Client applications include <em>WinSCP</em> (Windows) and <em>scp</em> (UNIX).</dd>
+
+      <dt><span>script</span></dt>
+      <dd>a program.</dd>
+
+      <dt><span>Sdd</span></dt>
+      <dd>(solid state drive, "flash drive") computer hardware used for permanent data storage. Data is written to/read from flash memory.</dd>
+
+      <dt><span>secret key cryptography</span></dt>
+      <dd>(see symmetric cryptography).</dd>
+
+      <dt><span>server</span></dt>
+      <dd>an application that provides a service to a client, typically across a network. The host providing the service is also called a server.</dd>
+
+      <dt><span>server side script</span></dt>
+      <dd>script contained in a file that is located on and executed by the web server.</dd>
+
+      <dt><span>Service Set</span></dt>
+      <dd>A set of BSSs that are interconnected and use a common SSID.</dd>
+
+      <dt><span>Service Set IDentifier (SSID)</span></dt>
+      <dd>A sequence of 32 bytes identifying a Service Set.</dd>
+      <dd>An SSID is commonly ASCII characters, but any sequence of 32 bytes can be used.</dd>
+      <dd>Example: dlink</dd>
+
+      <dt><span>SFTP</span></dt>
+      <dd>(SSH File Transfer Protocol) an Application Layer protocol that uses SSH to provide secure remote file system operations (including file copy). Client applications include <em>WinSCP</em> (Windows) and <em>sftp</em> (UNIX).</dd>
+
+      <dt><span>shell</span></dt>
+      <dd>an interface for giving commands to an OS where the user types commands as text. Also called the "command-line interface".</dd>
+
+      <dt><span>SMB</span></dt>
+      <dd>(Server Message Block) an Application Layer protocol providing shared file and printer access on Microsoft Windows hosts. SMB uses TCP and port 445.</dd>
+
+      <dt><span>socket</span></dt>
+      <dd>an endpoint of TCP/IP communication consisting of an IP Address, a port number, and a Transport Layer protocol. For example, a client <em>nslookup</em> process and a DNS <em>name server</em>  process might be communicating using these sockets:</dd>
+      <dd>client socket = 128.56.19.80, port 45876, UDP</dd>
+      <dd>server socket = 131.122.4.21, port 53, UDP</dd>
+
+      <dt><span>spear phishing</span></dt>
+      <dd>phishing targeted at specific users.</dd>
+
+      <dt><span>SSH</span></dt>
+      <dd>(Secure Shell) an Application Layer protocol that uses public-key cryptography to secure data transmission on a network.
+SSH is used by SFTP and SCP, but is also frequently used to provide a secure remote shell. SSH uses TCP and port 22.</dd>
+
+      <dt><span>SSL</span></dt>
+      <dd>(Secure Sockets Layer) a cryptographic protocol publicly introduced as SSL 2.0 with Version 2 of the Netscape Navigator browser in 1995. All versions of SSL have been shown to be vulnerable to man-in-the-middle attack. TLS 1.0 was intended to improve upon SSL 3.0, but has also been shown to be vulnerable.</dd>
+
+      <dt><span>statement</span></dt>
+      <dd>JavaScript that results in the browser performing an action. Unlike an expression, a statement is delimited by a semi-colon, and does not yield a value. Examples:</dd>
+      <dd><span class="blue">alert( "Try again!" );</span> &larr; a function call statement</dd>
+      <dd><span class="blue">var length;</span> &larr; a declaration statement</dd>
+      <dd><span class="blue">cost = principal*(1+rate);</span> &larr; an assignment statement</dd>
+
+      <dt><span>station</span></dt>
+      <dd>a host that connects to a wireless network.</dd>
+
+      <dt><span>steganography</span></dt>
+      <dd>the practice of concealing information in digital data, e.g., using every 100th bit of an image to hide a message.</dd>
+
+      <dt><span>string (JavaScript)</span></dt>
+      <dd>a JavaScript data type consisting of a sequence of ASCII characters. Literal strings can be delimited either by single quotes or double quotes. Examples:</dd>
+      <dd><span class="blue">"This is a string"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">'So is this'</span></dd>
+
+      <dt><span>String.fromCharCode( i )</span></dt>
+      <dd>a JavaScript function that produces a single-character string corresponding to the decimal ASCII code <span class="blue">i</span>.</dd>
+      <dd>Example:</dd>
+      <dd><span class="blue">String.fromCharCode(65)</span> produces the string <span class="blue">"A"</span> (<span class="blue">65</span> is the ASCII code for <span class="blue">"A"</span>).</dd>
+
+      <dt><span>subnet mask</span></dt>
+      <dd>A 32-bit value that encodes the number of prefix bits in a network address, usually written as a dotted quad. Example: 255.255.255.0 specifies a 24 bit network prefix, i.e., a network where all hosts have the same values for the first 3 components of their dotted quads.</dd>
+
+      <dt><span>super-user</span></dt>
+      <dd>(root, administrator, admin) a special account with unlimited system privileges, used to administer a system.</dd>
+
+      <dt><span>syntax</span></dt>
+      <dd>The set of rules that defines the correct structure of written computer program code. For example in JavaScript, a constant appearing on the left hand side of the assignment operator is a <em>syntax error</em>: <span class="blue">7 = 9*n;</span> &larr; this is an error since it attempts to change the value of 7, a constant.</dd>
+
+      <dt><span>switch</span></dt>
+      <dd>network hardware connecting multiple network devices that, unlike a hub, re-transmits a received packet only on the physical connection of the destination. A switch operates at the TCP/IP protocol stack Link Layer and uses MAC addressing.</dd>
+
+      <dt><span>symmetric key cryptography</span></dt>
+      <dd>a cryptosystem using a key shared between the communicating parties, and otherwise kept secret. The same key is used to encrypt and decrypt. Example: AES.</dd>
+
+      <!-- ===== TTTTT ===== -->
+      <dt class="title"><a name="T">T</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>tag</span></dt>
+      <dd>part of an HTML element, in most cases having two parts: <em>start</em> and <em>end</em>. Tags consist of the <em>element name</em> in angle brackets, with the slash character <span class="blue">/</span> distinguishing the end tag, if present. Examples:</dd>
+      <dd><span class="blue">&lt;a href="http://www.rickastley.com"&gt; Click me &lt;/a&gt;</span></dd>
+      <dd><span class="blue">&lt;img src="kitteh.jpg"&gt;</span> &larr; the img element has no end tag</dd>
+
+      <dt><span>TCP</span></dt>
+      <dd>(Transmission Control Protocol) the TCP/IP protocol stack Transport Layer protocol providing reliable connection-oriented transmission, error detection, flow and congestion control.</dd>
+
+      <dt><span>TCP/IP stack</span></dt>
+      <dd>the most commonly used protocol stack, consisting of five layers:</dd>
+      <dd>Application</dd>
+      <dd>Transport</dd>
+      <dd>Internet</dd>
+      <dd>Link</dd>
+      <dd>Physical</dd>
+
+      <dt><span>threat</span></dt>
+      <dd>someone who <em>can</em> and who <em>wants to</em> exploit a vulnerability.</dd>
+
+      <dt><span>TLD</span></dt>
+      <dd>(Top Level Domain) a domain at the highest level in the DNS hierarchy.  Examples include .com, .edu, .gov, ...</dd>
+
+      <dt><span>TLS</span></dt>
+      <dd>(Transport Layer Security) a cryptographic protocol that encrypts/decrypts data between the Application and Transport Layers. TLS 1.0 has been shown to be vulnerable to man-in-the-middle attack (Sep 2011); TLS 1.2 (2008) is the currently accepted protocol for Transport Layer security.</dd>
+
+      <dt><span>traceroute (UNIX)</span></dt>
+      <dd>(tracert - Windows) a command-line utility program that displays TCP/IP routing information.</dd>
+
+      <dt><span>Transport Layer</span></dt>
+      <dd>(TCP/IP protocol stack) the layer responsible for network communication between processes, using port numbers as addresses.</dd>
+
+      <dt><span>two-factor authentication</span></dt>
+      <dd>an authentication method which requires presenting two of three things: something you - "know", "have", "are".</dd>
+      <dd>Examples: (a) you have an ATM card and you know the PIN#, (b) you know a password and you have a fingerprint.</dd>
+
+      <dt><span>typeof</span></dt>
+      <dd>a JavaScript operator that evaluates to (returns) a string showing the data type of its argument.</dd>
+      <dd>Examples:</dd>
+      <dd><span class="blue">typeof( 1 )</span> returns <span class="blue">"Number"</span>,</dd>
+      <dd><span class="blue">typeof( "PWND!" )</span> returns <span class="blue">"string"</span>,</dd>
+      <dd><span class="blue">typeof( 1 < 2 )</span> returns <span class="blue">"boolean"</span></dd>
+
+      <!-- ===== UUUUU ===== -->
+      <dt class="title"><a name="U">U</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>UDP</span></dt>
+      <dd>(User Datagram Protocol) the TCP/IP protocol stack Transport Layer protocol providing unreliable connectionless transmission.</dd>
+
+      <dt><span>URL</span></dt>
+      <dd>Uniform Resource Locator - a reference to a resource located somewhere on the web. The general form is: <span class="blue">protocol://server:port/pathname?query</span></dd>
+      <dd><span class="blue">:port</span> is optional. If not given, the default port for the given protocol is assumed (e.g., HTTP uses port 80).</dd>
+      <dd><span class="blue">?query</span> is optional. If given, <span class="blue">query</span> indicates a script to be run on the <span class="blue">server</span>.</dd>
+      <dd>Example protocols: http, file, ftp</dd>
+
+      <dt><span>user name</span></dt>
+      <dd>(login name, account name) the name associated with a login account.</dd>
+
+      <!-- ===== VVVVV ===== -->
+      <dt class="title"><a name="V">V</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>variable</span></dt>
+      <dd>(JavaScript) a symbolic name representing a value that can change.</dd>
+
+      <dt><span>Vigenere Cipher</span></dt>
+      <dd>a symmetric key encryption method for alphabetic text that uses a series of different Caesar ciphers. The Vigenere Cipher is subject to frequency analysis attack</dd>
+
+      <dt><span>virus <span style="font-size:0.6em">[ Submitted by: Toohig 166462 ]</span></span></dt>
+      <dd>(computer virus) a type of malware that spreads by replicating itself from an infected computer to another computer, as a result of some user action.</dd>
+
+      <dt><span>vulnerability</span></dt>
+      <dd>a weakness in an information system that can be exploited.</dd>
+
+      <!-- ===== WWWWW ===== -->
+      <dt class="title"><a name="W">W</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>WAP</span></dt>
+      <dd>(Wireless Access Point) a network device analogous to a hub, where the Physical Layer connections are wireless. A WAP is the <em>base station</em> in a <em>WLAN</em>. In typical use a WAP will also contain a router with a wired connection to the Internet.</dd>
+
+      <dt><span>web client (browser)</span></dt>
+      <dd>An information system (hardware, OS, and software) that requests and renders (displays) content from a web server via HTTP or HTTPS.</dd>
+
+      <dt><span>web server</span></dt>
+      <dd>An information system (hardware, OS, and software) that serves web pages and other content to a web client via HTTP or HTTPS.</dd>
+
+      <dt><span>WEP</span></dt>
+      <dd>(Wired Equivalent Privacy) the wireless network security mechanism introduced with WiFi (1999). Although WEP remains in common use, it is considered obsolete and deprecated as the RC4 encryption algorithm it uses was shown to be vulnerable to various attacks. Note: RC4 is used by BitTorrent, SSL, and PDF.</dd>
+
+      <dt><span>WiFi</span></dt>
+      <dd>(Wireless Fidelity) a Link Layer protocol where the digital signals are transmitted via radio waves (i.e., wirelessly) at the Physical Layer. "WiFi" is a brand name of the <em>WiFi Alliance</em> organization, and refers to a device using any of the IEEE 802.11 family of protocols, e.g. 802.11n.</dd>
+
+      <dt><span>WLAN</span></dt>
+      <dd>(Wireless Local Area Network) one or more <em>Basic Service Sets</em>.</dd>
+
+      <dt><span>working directory</span></dt>
+      <dd>(current directory) the file system location currently associated with a process. When a process uses a pathname that is not absolute it will use a relative pathname that starts at the current directory.</dd>
+
+      <dt><span>worm <span style="font-size:0.6em">[ Submitted by: Hull 163096 ]</span></span></dt>
+      <dd>A form of malware that replicates across networks, without requiring user action.</dd>
+
+      <dt><span>World Wide Web (www, web)</span></dt>
+      <dd>A global collection of servers and clients (web browsers) communicating over the Internet using HTTP (Hyper-Text Transfer Protocol) to communicate.</dd>
+  <dd>The web is an example of a <em>client-server</em> system.</dd>
+  <dd><span class="note">The web is not the Internet, the web runs on top of the Internet (layers).</span></dd>
+
+      <dt><span>WPA</span></dt>
+      <dd>(WiFi Protected Access) a wireless network security mechanism, intended as an interim replacement (2003) for WEP until WPA2 became available (2004). Like WEP, WPA is vulnerable to attack.</dd>
+
+      <dt><span>WPA2</span></dt>
+      <dd>the currently accepted wireless network security mechanism. WPA2 uses AES encryption.</dd>
+
+      <!-- ===== XXXXX ===== -->
+      <dt class="title"><a name="X">X</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>X.509</span></dt>
+      <dd>a standard for PKI. An <em>X.509 Certificate</em> includes information such as the issuer (Certificate Authority), the issuer's digital signature, the subject whose public key is being certified, the subject's public key, and dates the certificate is valid.</dd>
+
+      <!-- ===== YYYYY ===== -->
+      <dt class="title"><a name="Y">Y</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <!-- ===== ZZZZZ ===== -->
+      <dt class="title"><a name="Z">Z</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>zero day</span></dt>
+      <dd>an attack that exploits a previously unknown vulnerability.</dd>
+
+      <dt><span>zombie <span style="font-size:0.6em">[ Submitted by: Livingston 163882 ]</span></span></dt>
+      <dd>A computer whose activities can be controlled by a Command and Control Server as a result of malware having been installed.</dd>
+
+      <!-- ===== ##### ===== -->
+      <dt class="title"><a id="numSign">#</a> &nbsp; <a href="#top">(top)</a></dt>
+
+      <dt><span>42</span></dt>
+      <dd>The answer to life, the universe and everything.</dd>
+    </dl>
+  </body>
+</html>
+</div> <!-- /container --></body></html>

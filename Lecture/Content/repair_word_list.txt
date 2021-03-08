@@ -1,19 +1,2 @@
-Domain
-	도메인
-	영역
-
-Discussion
-	논의
-
-President's 60-Day Cyberspace
-	대통령의 60 일 사이버 공간
-
-수업
-	과정
-
- 
-	,,,,,,,,, 무,,,,,,,,,,,,,,,,.
-
-
-NAVY01
+CYBERWAR
 	SY110

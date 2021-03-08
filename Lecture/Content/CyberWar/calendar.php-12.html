@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "5dda6d872950e62f32e334aa2edad503c3844fabca8ea5317a514fabd07c1ecc";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Web And HTML
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'>6 - Bits And Bytes And Files</a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'><font color='black'><b>9 - Web And HTML</b></font></a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>BRAND: Web and HTML</title>
+
+  </head>
+  <body>
+    <div class="noScreen">
+      <br><br><br>
+      <h1>Web and HTML</h1>
+    </div>
+    <div class="learnObjs">
+      <h2>Learning Outcomes</h2>
+      <p>
+        After completing these activities you should be able to:
+      </p>
+      <ul>
+        <li>Describe the World-Wide-Web ("web") as a client-server system involving the HTTP protocol.</li>
+        <li>Explain the components of a URL.</li>
+        <li>Given a simple HTML file, describe how it will be rendered by a browser.</li>
+        <li>Create an HTML file that uses relative and absolute paths, and make it viewable on a webserver.</li>
+        <li>Describe client-server interaction for a static web page, and the processing done by the browser on the data it receives.</li>
+      </ul>
+    </div>
+    <br><br>
+    <div class="sec">
+      This lesson marks a change.  In previous lessons, we have talked
+      about a single <a href="calendar.php-76.html?load=glossary#C">computer</a>. Now we turn our attention to the World Wide Web, which is a system comprised of <em>many</em> computers.
+    </div>
+  
+    <h2>Introduction</h2>
+    <div id="intro">
+      <ul>
+        <li><b>The "<a href="calendar.php-76.html?load=glossary#W">World Wide Web</a>"</b>. The World Wide Web is the vast global collection of <em><a href="calendar.php-76.html?load=glossary#S">servers</a></em> and <em><a href="calendar.php-76.html?load=glossary#C">clients</a></em> (aka <a href="calendar.php-76.html?load=glossary#B">browsers</a>) communicating over the <a href="calendar.php-76.html?load=glossary#I">Internet</a> using the <a href="calendar.php-76.html?load=glossary#H">HTTP</a> <a href="calendar.php-76.html?load=glossary#P"> or HTTPS</a> <a href="calendar.php-76.html?load=glossary#P"> protocols</a>. The Web is an example of a <em>client-server</em> system.</li>
+          <ul>
+            <li>A Server is a computer (and associated programs) that provides a service.</li>
+            <li>A Client is a computer (or program) that uses a service provided by a server.</li>
+            <li>Protocols.  Computers and networked (interconnected computers) systems are very complex.  Only by employing very careful, highly structured design can we humans deal with that complexity.  Protocols are at the heart of that design.  A protocol is an agreement about communication between two communicating parties -- a complete specification of what things can be said, what responses can and must be made, and what these things mean.
+          </li></ul>
+        <li>A <b>website</b> is a collection of one or more files that contain the content you see displayed when you visit a website with your browser.  These files include the main webpage, but also image files, script files (that make the webpage do things), and other files.</li>
+        <li><b>Web Server</b>. Web servers are computers (and the software running on them) that exist to supply website content, using the HTTP or HTTPS protocol, on demand. What this means is that files for the website are stored on one or more web servers.  Some popular web server software includes IIS, from Microsoft, and Apache, from the Apache Software Foundation.</li>
+        <li><b>"Web Client" = Browser</b>. For a user, and for this course, a web client is just a  browser, such as Chrome, Firefox, IE, or Opera.</li>
+        <li><b>"Web" vs. "Internet"</b>. The "Web" and the "Internet" are not the same thing. The Internet includes all the infrastructure and protocols through which browsers and web servers communicate, but encompasses much more. Many other kinds of communication run over the Internet: e-mail, voice-over-IP telephone calls, remote logins to computers (recall, <code>ssh</code>), <a href="calendar.php-76.html?load=glossary#F">file</a> sharing, etc.
+        <ul>
+          <li>Web &mdash; web servers, web clients. HTTP and HTTPS protocols.</li>
+          <li>Internet &mdash; includes web, but also includes e-mail, streaming media, VOIP, chat, internet gaming, etc., plus all the communications hardware and protocols to connect them.</li>
+        </ul>
+        </li>
+      </ul>
+      
+    </div>  
+      
+    <div class="annotation noInst" style="clear:right">
+      There are many different web-browsers.  In this course you'll
+      need to have Mozilla Firefox and Google Chrome at a minimum.
+      Other browsers include Microsoft Internet Explorer, Apple Safari, the Opera browser, and
+      browser variants that are optimized for phones and tablets.<br>
+      <center>
+      <img src="calendar.php-19.png?key=536d2a75a147fcddac44f045514bb1ca165d5bb5&type=class&event=9" height="50" width="50">&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="calendar.php-20.png?key=c1aa0785078fcc6b679b651818a2c6c2bd98dcb7&type=class&event=9" height="50" width="50">&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="calendar.php-21.png?key=f3e41074d2a6c3ef351f847bdcfcb01a15e80fd7&type=class&event=9" height="50" width="50">&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="calendar.php-22.png?key=70c3c72c980598e04703befbe48a1b8ebfc1ff97&type=class&event=9" height="50" width="50">&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="calendar.php-23.png?key=6550bdc08378896c08cfbfbd3b3458ed127d197f&type=class&event=9" height="50" width="50"> 
+      </center>   
+    </div>      
+      
+    <h2>Browsers and URLs</h2>
+    <div id="browsersandurls">
+      <ul>
+        <li>A browser's primary control (input) is the <em>address bar</em>.  You enter into the address bar a <a href="calendar.php-76.html?load=glossary#U"><em>URL</em></a>, or Uniform Resource Locator, which tells the browser where to find the item you want, and the name of the item.</li>
+
+        <li><em>URL</em>. A URL typically specifies three things:
+          <ol>
+            <li>The <em>protocol</em>: what language
+            the browser and server should use to communicate. The protocol part is the first part of the URL.
+            <li>The <em>server part</em>: the name of the web server to contact.
+            <li>The <em><a href="calendar.php-76.html?load=glossary#F">file system</a> part</em>: a path specifying a file on that web server.
+          </li></ol>
+      
+          <pre>
+http://www.usna.edu/Users/cs/wcbrown/index.html
+\__/   \__________/\__________________________/
+ |          |                 |
+protocol    |         path on server's file system
+         server</pre>
+        <br>
+        <li>What this means is that when you click on a link or manually enter a URL in your browser address bar to go to (request) a website, your browser is stating which protocol it is using, the name of the server it wants to contact, and the filepath for that website file (where on that server the website file is located, and the name of that website file).  </li><br>
+        <li><em>Protocol Part</em>. Most browsers support several protocols, including <code>http</code> and <code>https</code> for client-server web traffic, and also protocols like <code>file</code> and <code>ftp</code>. The HTTPS protocol is just a <em>secure</em> version of http &mdash; more on that later.</li>
+        
+        <li><em>Server Part (<a href="calendar.php-76.html?load=glossary#D">Domain Name</a>)</em>. The server is specified by a <em>domain name</em> &mdash; something like <code>www.cnn.com</code> or <code>en.wikipedia.org</code>. We'll talk a bit more about domain names in the networking section of the course.  Note that one domain is often hosted by many servers (physical or virtual), to balance the workload for large domains (e.g., Amazon.com is supported by many many servers). It is also possible for one server to support multiple domains. However, for the purposes of this course we will gloss over this distinction and treat "server name" and "domain name" synonymously, as if there is a one-to-one mapping between domains and servers.</li>
+        
+        <li><em>File System Path Part</em>. The "content" of a web server can be thought of as a hierarchical structure of files, similar to a directory (and its files and sub-directories) on a Windows or UNIX system. The path is a relative path from some point in the server's file system. By convention, the file system path of a URL uses UNIX path conventions, which means forward slashes (<code>/</code>) instead of back slashes (<code>\</code>), regardless of whether the server is a Windows server or a UNIX server (recall that Windows denotes directories internally using a back slash).</li>
+        
+      </ul>
+    </div>  
+      
+    <div class="fleet noInst" style="clear:right;">
+      <h1>Public web pages for navy ships</h1>
+      <p>
+      Many ships in the U.S. Navy have their own public web sites. The URL 
+      is <code>http://www.</code><em>shipname</em><code>.navy.mil</code>.
+      For example, the USS NIMITZ's website is at
+      <a href="../../index-7.htm">http://www.nimitz.navy.mil</a>.
+      When a client requests the web page from one of the URLs above, that request is directed to the web server that hosts (serves) the web site. For ships and submarines, hosting a web site is not practical because of limited <a href="calendar.php-76.html?load=glossary#A">availability</a>, bandwidth considerations, risk of detection, and the increased <a href="calendar.php-76.html?load=glossary#V">vulnerability</a> (penetration point into) to the ship's internal network. Instead, shore-based commands provide and manage the web server that hosts ship and submarine web sites, much like how you will have a web site on <code>midn.cyber.usna.edu</code>, but <em>you</em> do not have to worry about the operation of <code>midn.cyber.usna.edu</code> (just your content).
+      </p>
+      As far as who's in charge of a ship's web site &mdash;
+      i.e. who is responsible for the images, HTML files,
+      etc. that comprise the site &mdash;
+      depending on the command, any Officer on board
+      could be placed in charge of the ship's web page. So you may
+      end up being responsible for a site like this.
+    </div>      
+
+
+    <h2>Two Protocols: File and HTTP</h2>
+    <div id="twoprotocols">
+    
+      <ul>
+    
+        <li><b>The <code>file</code> protocol</b>. You can open up a file on your computer in the browser using the <code>file</code> protocol.  Note that this is <em>not</em> the web! It's not client-server and it doesn't use http/https. Suppose you were user mxxxxxx and you had a file on your Desktop called <code>vacation.jpg</code>. Putting the following URL in the browser's address bar would result in the browser showing you that image:
+        <pre>
+file:///C:/Users/mxxxxxx/Desktop/vacation.jpg</pre>
+        Note that the "server" portion of the URL has collapsed to nothing, which is why there are three <code>/</code>'s in a row, indicating that we're accessing the file on our local machine (no remote server). Using <em>Ctrl-o</em>, you can browse the local file system to open a file, which may be more convenient than typing a URL. The <code>file</code> protocol is really useful when building web sites, since you can get a quick look at a web page before you put it on a web server.</li>
+        <br>
+        <li><b><code>HTTP</code> (Hyper-Text Transfer Protocol)</b>. At its simplest, HTTP is just a language of requests and responses that allows files to be fetched from web servers all over the Internet. Your browser uses this language to get the file named in the URL from the server. The HTTP command it uses is "<code><a href="calendar.php-76.html?load=glossary#G">GET</a></code>".  The key point is YOUR browser makes a request to a remote server ON YOUR BEHALF ... usually to have a given file sent to it. 
+          
+        </li></ul></div> <!-- Two Protocols -->  
+
+
+    <h2>HTML (Hyper-Text Markup Language)</h2>
+    <div id="html">
+    What the web server sends the browser and what the browser shows us are usually very different things.  Most web pages are plain text files in a language called <em>HTML</em>.  HTML stands for HyperText Markup Language, HyperText refers to the linking between documents (i.e. the links on a web page).  The markups in HTML specify how the content should be interpreted, and rendered by a web browser; this web page (and all the web pages on the <script type="text/javascript">document.write(crsNum);</script> website) are written in HTML.  The browser doesn't show you the HTML it receives, rather the browser interprets the HTML code and displays the web page. When the browser follows the HTML instructions and draws something pretty on the screen, we say that the browser is <em><a href="calendar.php-76.html?load=glossary#R">rendering</a></em> the HTML. So in the example HTTP transaction from the previous section, what you were seeing from the server was the raw HTML, not the rendered page. To understand how websites work, and certainly to create your own, you need to know the basics of HTML.
+    
+      <ul>
+        <li><em>HTML is Text</em>: HTML is simple text. You can create HTML files with text editors like Notepad++.</li>
+        <li><em>HTML Tags</em>: The structure of HTML is provided by <a href="calendar.php-76.html?load=glossary#T"><em>tags</em></a>. Tags in HTML are used to mark sections of content.  A tag is a name in angle brackets (<code>&lt;</code> <code>&gt;</code>). Most tags come in start/end pairs, where the end pair just has a <code>/</code> before the name, e.g. <code>&lt;HTML&gt; ... &lt;/HTML&gt;</code>.  The start and end tags bound the content that is affected by the structure or format specified by the tags used.</li>
+        <li>For example, to format "I said <b>hello</b> out there!", where the word hello is in bold, you would have in your HTML file: <pre>I said &lt;b&gt;hello&lt;/b&gt; out there!</pre>The &lt;b&gt &lt;/b&gt tags makes the content in between the start and the end tag bold face.</li>
+        <li>Some tags are structural; they define sections of the file. For example, every HTML file is wrapped up in <code>&lt;html&gt; ... &lt;/html&gt;</code> tags &mdash; while others (like <code>&lt;b&gt; ... &lt;/b&gt;</code> are pure formatting).</li>
+        <li>In the next lesson, we'll learn more about creating web pages in HTML as well as specific tags. For now, let's take a look at the basic structure of a page.  A browser renders the HTML code in order from top to bottom.  You may have noticed this on a slow loading webpage where the content at the top loads before the content farther down the page.
+        
+        <table>
+          <tr>
+            <td width="50%">HTML Code</td>
+            <td width="50%">As Rendered in the Browser</td>
+          </tr>
+          <tr>
+          <td width="50%">
+            <pre>
+<font><strong><font><strong>&lt;</strong></font><font>html</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>head</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>/head</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>body</font><font><strong>&gt;</strong></font></strong></font>
+
+<font><strong><font><strong>&lt;</strong></font><font>h1</font><font><strong>&gt;</strong></font></strong></font>A Simple Web Page<font><strong><font><strong>&lt;</strong></font><font>/h1</font><font><strong>&gt;</strong></font></strong></font>
+
+  <font><strong><font><strong>&lt;</strong></font><font>p</font><font><strong>&gt;</strong></font></strong></font>This page has <font><strong><font><strong>&lt;</strong></font><font>b</font><font><strong>&gt;</strong></font></strong></font>two<font><strong><font><strong>&lt;</strong></font><font>/b</font><font><strong>&gt;</strong></font></strong></font> paragraphs.
+  The first has an image
+  <font><strong><font><strong>&lt;</strong></font><font>img</font> <font>src=</font><font color="#008000">&quot;SleepyFace.JPG&quot;</font><font><strong>&gt;</strong></font></strong></font> and
+  <font><strong><font><strong>&lt;</strong></font><font>a</font> <font>href=</font><font color="#008000">&quot;http://www.usna.edu&quot;</font><font><strong>&gt;</strong></font></strong></font>a link<font><strong><font><strong>&lt;</strong></font><font>/a</font><font><strong>&gt;</strong></font></strong></font>.      
+  <font><strong><font><strong>&lt;</strong></font><font>/p</font><font><strong>&gt;</strong></font></strong></font><br>
+  <font><strong><font><strong>&lt;</strong></font><font>p</font><font><strong>&gt;</strong></font></strong></font>The second has
+  <font><strong><font><strong>&lt;</strong></font><font>span</font> <font>style=</font><font color="#008000">&quot;color:#ff0000;&quot;</font><font><strong>&gt;</strong></font></strong></font>different colors<font><strong><font><strong>&lt;</strong></font><font>/span</font><font><strong>&gt;</strong></font></strong></font>,
+  which is cool.  It also has some funky characters:
+  <font color="ff0000">&amp;#0931;</font> <font color="ff0000">&amp;#8680;</font> <font color="ff0000">&amp;#9650;</font> 
+  <font><strong><font><strong>&lt;</strong></font><font>/p</font><font><strong>&gt;</strong></font></strong></font>
+
+<font><strong><font><strong>&lt;</strong></font><font>/body</font><font><strong>&gt;</strong></font></strong></font>
+<font><strong><font><strong>&lt;</strong></font><font>/html</font><font><strong>&gt;</strong></font></strong></font>
+</pre>
+            </td>
+              <td width="50%">
+              <span style="font-size:1.5em;">A Simple Web Page</span>
+              <p>
+                This page has <b>two</b> paragraphs.
+                The first has an image
+                <img src="SleepyFace.JPG?key=1de892d9f4311bf902dd8b3440b114902b249c6e&type=class&event=9"> and
+                <a href="http://www.usna.edu">a link</a>.      
+              </p>
+              <p>
+                The second has
+                <span style="color:#ff0000;">different colors</span>,
+                which is cool.  It also has some funky characters:
+                &#0931; &#8680; &#9650; 
+              </p>
+            </td>
+          </tr>
+        </table>
+        </li>
+        
+      
+          
+      </ul>
+    </div>
+        
+
+    <h2>Client-Server Interaction</h2>
+    <div id="clientserver">
+      <ul>
+        <li><b>Sequence</b>. When you enter a URL like <code>https://intranet.usna.edu/MIDREGS/chapter_05/5.3_computer_use_and_regulations.php</code> in your browser's address bar, it initiates the following sequence of actions:
+          <ol>
+            <li>
+            The browser contacts the server <code>intranet.usna.edu (using the HTTPS protocol)</code>
+            and asks it to get the file <code>/MIDREGS/chapter_05/5.3_computer_use_and_regulations.php</code>.
+            </li>
+            <li>
+            The server retrieves the file <code>/MIDREGS/chapter_05/5.3_computer_use_and_regulations.php</code>
+            and sends it (<em>serves</em> it) to the browser.
+            </li>
+            <li>
+            The browser receives the file from the server and renders
+            it on screen in your browser window.
+            </li>
+          </ol>
+        
+        </li></ul></div> <!-- clientserver -->
+      
+        <div id="httpclientserver">
+      
+    Consider the HTML file <pre><a href="resources/student_renders/ex2.html">http://courses.cyber.usna.edu/CYBERWAR/resources/student_renders/ex2.html</a></pre> shown below:<br><br>
+      
+      <table>
+    <tr><td width="50%">HTML Code: <code>ex2.html</code></td><td width="50%">As
+    Rendered in the Browser</td></tr>
+    <tr>
+      <td>
+        <pre><strong>&lt;HTML&gt;</strong>
+  <strong>&lt;HEAD&gt;</strong>
+  <strong>&lt;/HEAD&gt;</strong>
+  <strong>&lt;BODY&gt;</strong>
+    
+    <strong>&lt;H1&gt;</strong>A Simple Web Page With a Few Links<strong>&lt;/H1&gt;</strong>
+
+    <strong>&lt;P&gt;</strong>
+      First we have a cat:
+      <strong>&lt;IMG src=<span class="green">&quot;SleepyFace.JPG&quot;</span>&gt;</strong>
+    <strong>&lt;</strong>/P&gt;
+    
+    <strong>&lt;</strong>P&gt;
+      Then a comic:<strong>&lt;BR&gt;</strong>
+      <strong>&lt;IMG src=<span class="green">&quot;http://www.foxtrot.com/wp-content/uploads/2014/07/ft111002noncompliant.png&quot;</span>&gt;</strong>
+    <strong>&lt;/P&gt;</strong>
+    
+    <strong>&lt;P&gt;</strong>
+      Then a link:  
+      The above cartoon comes from the
+      <strong>&lt;A href=<span color="#008000">&quot;http://www.foxtrot.com/2011/10/02/non-compliant/&quot;</span>&gt;</strong>FoxTrot Website<strong>&lt;/A&gt;</strong>
+    <strong>&lt;/P&gt;</strong>
+
+  <strong>&lt;/BODY&gt;</strong>
+<strong>&lt;/HTML&gt;</strong></pre>
+      </td>
+      <td>
+        <img src="calendar.php-24.png?key=cc298f692a319ae79f99673a5e82ad42d2d43733&type=class&event=9" width="100%">
+      </td>
+    </tr>
+      </table>
+      <br>
+      <div class="annotation">
+        Modern day browsers have lots of features that you are already familiar with. Historically, the input control where the user entered in the URL for the web site they wanted to visit was called the <em>address bar</em>, because it only served the purpose of entering and displaying the current URL (current address). Many modern day browsers also provide web search features if the user input is not a URL; hence, some people are now using the term <em>omni bar</em> to signify that the address bar now has other features associated with it.<br>
+        Think about how programmers had to add more input handling code to support the added features. More features, means greater system complexity.
+      </div>
+      We're going to take a look at what happens "under the hood" from the time you enter the URL in your browser's address bar until you actually see the page rendered. (The <a href="http://www.foxtrot.com/2011/10/02/non-compliant/">FoxTrot cartoon</a> is worth a close look.)
+
+        <ol class="inst">
+      <li>You enter<code> http://courses.cyber.usna.edu/CYBERWAR/resources/student_renders/ex2.html</code> into the URL bar and press Enter.</li>
+      <li>The browser sends <code>courses.cyber.usna.edu</code> a GET request for the file <code>/CYBERWAR/resources/student_renders/ex2.html</code></li>
+      <li>The server finds <code>/CYBERWAR/resources/student_renders/ex2.html</code> on its hard drive and sends it back to the browser.</li>
+      <li>The browser receives <code>ex2.html</code> and looks through it, noticing that images <code>SleeyFace.JPG</code> and <code>http://www.foxtrot.com/wp-content/uploads/2014/07/ft111002noncompliant.png</code> will be needed in order to render the page.</li>
+      <li>the browser issues a GET request to <code>courses.cyber.usna.edu</code> for <code>/sy110/resources/student_renders/SleepyFace.JPG</code>, and a GET request to <code>www.foxtrot.com</code> for <code>/wp-content/uploads/2014/07/ft111002noncompliant.png</code>. These will actually go out more or less simultaneously. </li>
+      <li><code>courses.cyber.usna.edu</code> receives the request for<code>/sy110/resources/student_renders/SleepyFace.JPG</code>, finds that file on its hard drive and sends it back to the browser.</li>
+      <li><code>www.foxtrot.com</code> receives the request for<code>/wp-content/uploads/2014/07/ft111002noncompliant.png</code>, finds that file on it's hard drive and sends it back to the browser.</li>
+      <li>eventually, the browser receives both image files, and it now has all the data it needs to render the page on the screen ... so it does.</li>
+      </ol>
+      
+      Notice that there's another URL in the document, from the line:
+      <pre><strong>&lt;A href=<span class="green">&quot;http://www.foxtrot.com/2011/10/02/non-compliant/&quot;</span>&gt;</strong>FoxTrot Website<strong>&lt;/A&gt;</strong></pre>
+      This does not result in any further HTTP traffic, i.e. in any further GET requests, because no information about that file is required to render the page <code>ex2.html</code>. Of course, if the user clicks on that link, the browser will then issue a GET request
+      for it. In short, <u>embedded <b>images</b> will usually result in a GET request to the server on which the image is located, but <b>links</b> in a web page do not result in GET requests to the linked URLs.</u>
+    <br>
+    <br>
+    <p>
+    <img src="calendar.php-25.png?key=e27b5eb37ab27e8888187d77416f1dad6077f165&type=class&event=9" height="400pt">
+    </p>
+      <p>
+  Browsers often allow you to view the HTTP traffic that
+  goes on under the hood. In Chrome, if you open up the
+  Developer Tools (hotdog button &rarr; Tools &rarr; Developer Tools) and
+  click on the Network tab, you can see all the GET requests that
+  Chrome sends when it renders a page.  Try opening it up, and
+  entering a common URL like <code>http://www.amazon.com</code>.  It's
+  astounding how many GET's are required to render a page like
+  that! 
+      </p>
+
+    <li><b>Browser Status</b>. Browsers used to (until around 2010) have a <em>status bar</em> at the bottom of the screen that gave you important information about the status of the browser. That's gone on all major browsers, but there's still a little popup for the status in some circumstances, and it's important.  Hover your mouse over <a href="../../index-8.htm">this link</a> and look for the popup window with the text <code>www.usma.edu</code>. This status popup is telling you the address the browser will go to if you click on this link. There's a little bit of a misdirection trick that knowing about the status popup can help you avoid.
+        
+        <li><b>Links and <a href="calendar.php-76.html?load=glossary#R">Redirection</a></b>. 
+          <ul>
+            <li>Don't click on the following link, but check out where the browser will actually send you if you click on it:
+              <p style="padding:0.5em;">
+                <a href="http://www.lotsaevil.com">http://www.trustworthy.org</a>
+              </p>
+            </li>
+            <li>A classic use of the misleading link is a trick called <em>Rick Rolling</em>.  You Rick Roll someone by tricking them into watching the Rick Astley "Never Gonna Give You Up" video (<a href="../../watch-2.html?v=oHg5SJYRHA0">watch if you dare</a>). In general, Rick Rolling is tricking a user to visit a location that they did not intend to visit.</li>
+            <li>If this kind of misdirection doesn't seem like a big deal, check out this Wired article
+            <a href="../../2012/01/anons-rickroll-botnet/index.htm"><em>Anonymous Tricks Bystanders Into Attacking Justice Department</em></a> about a January 2012 use of exactly this technique.</li>
+          </ul>
+        
+        </li></div> <!-- httpclientserver -->
+
+    <div class="sec">
+    <h2>Web Server Logs</h2>
+    It is good to be mindful of the fact that you do leave footprints when you navigate around the web. Recall the simple transaction steps for a URL like <code>http://midn.cyber.usna.edu/~sy110/index.html</code>:
+      <ol>
+        <li>
+        The browser contacts the server <code>midn.cyber.usna.edu</code>
+        and asks it to get the file <code>/~sy110/index.html</code>.
+        </li>
+        <li>
+        The server retrieves the file <code>/~sy110/index.html</code>
+        and sends it (<em>serves</em> it) to the browser.
+        </li>
+        <li>
+        The browser receives the file from the server and renders
+        it on screen in your browser window.
+        </li>
+      </ol>
+    There is a record of the transaction created on both the server and the client (browser). 
+      <ul>
+        <li>In step one above, the server makes a record in a file called its <a href="calendar.php-76.html?load=glossary#A">access log</a>. The record notes that you requested the file and the file was sent to you.</li>
+        <li>In step three above, the browser records that it visited the site (that's where your browser's <em>history</em> comes from), and it keeps a copy of the visited page in what's called a <em>cache</em>. That way, if you turn around and ask for the same page again soon after, the browser can just display the copy it's already <em>cached</em>, and avoid the delay and effort of fetching it from the server again (since the page is not likely to have changed in the interim).
+      </li></ul>
+    The server logs, browser history and browser cache are all traces you leave behind as you navigate the web. Think about that!
+    </div>
+    
+    <h2>Review Questions</h2>
+      <ol>
+        <li>
+         What is the difference between a server and a client?
+        </li>
+        <li>
+         What is the main difference between the web and the Internet?
+        </li>
+        <li>
+         What are the three steps of client-server interaction?
+        </li>
+        <li>
+         When a webpage loads an image from “https://amazon.com/img/smileyFace.Jpg” where is the GET request sent?
+        </li>
+        <li>
+         When you access information on a website, where is one place evidence of your access is kept, that is not on your local device?
+        </li>
+      </ol>
+    
+    <h3> References</h3>
+
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+      margin-left:.25in;text-indent:-.25in;line-height:normal'><span style=''>Norton, Quinn. 2017. "Anonymous Tricks Bystanders Into Attacking Justice Department." <i>Wired</i>, June 3, 2017.<br><a href="../../2012/01/anons-rickroll-botnet/index.htm">https://www.wired.com/2012/01/anons-rickroll-botnet/</a></span></p>  
+    
+    <hr>
+    <br>
+  </body>
+</html>
+</div> <!-- /container --></body></html>

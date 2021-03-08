@@ -1,0 +1,903 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "4c00b5bf65109663119a668240ea645c3740bbbdc9e8c7dd26a1127879f61d8e";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php.html?load=home">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+
+            
+            <li><a title="Calendar" href="calendar.php-1.html?show=calendar_display">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Resources" href="calendar.php-2.html?load=resources">
+                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                </a></li>
+
+            <li><a title="Information" href="calendar.php-3.html?load=policy">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a></li>
+
+        
+        
+          </ul>
+
+        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+<a href="#" title="View files associated with lecture" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Bits And Bytes And Files
+</a>
+<ul class="dropdown-menu  scrollable-menu">
+<li class="dropdown-header">Options</li>
+<li><form method="post" class="navbar-form navbar-left" role="search" target="_blank">
+  <div class="input-group">
+    <input type="hidden" class="form-control" name="print" id="print">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-print"></i> Print</button>
+    </div>
+  </div>
+</form></li>
+<li><form method="get" class="navbar-form navbar-left" role="search">
+  <div class="input-group">
+    <input type="hidden" name="show" value="calendar_search">
+    <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form></li>
+<li><form method="post" class="navbar-form navbar-left" role="search" onsubmit="return hashPassword()">
+  <div class="input-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-lock"></i></button>
+    </div>
+</div>
+</form></li>
+</ul>
+</li>
+            <li class="dropdown">
+              <a href="#" title="Select class" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
+                Class<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-4.html?type=class&event=1'>1 - Intro to the Cyber Domain</a></li>
+<li><a href='calendar.php-5.html?type=class&event=2'>2 - Aspects and Pillars of Cyber Security</a></li>
+<li><a href='calendar.php-6.html?type=class&event=3'>3 - Computer Architecture</a></li>
+<li><a href='calendar.php-7.html?type=class&event=4'>4 - Risk And Vulnerabilities</a></li>
+<li><a href='calendar.php-8.html?type=class&event=5'>5 - Policy And Law</a></li>
+<li><a href='calendar.php-9.html?type=class&event=6'><font color='black'><b>6 - Bits And Bytes And Files</b></font></a></li>
+<li><a href='calendar.php-10.html?type=class&event=7'>7 - OS-File Systems</a></li>
+<li><a href='calendar.php-11.html?type=class&event=8'>8 - OS-Permissions, Shell, And Remote Access</a></li>
+<li><a href='calendar.php-12.html?type=class&event=9'>9 - Web And HTML</a></li>
+<li><a href='calendar.php-13.html?type=class&event=10'>10 - JavaScript - Overview</a></li>
+<li><a href='calendar.php-14.html?type=class&event=11'>11 - Vulnerabilities and Malware</a></li>
+<li><a href='calendar.php-15.html?type=class&event=12'>12 - Cyberspace as a Human Domain</a></li>
+<li><a href='calendar.php-16.html?type=class&event=13'>13 - Client-Side Scripting: Part One</a></li>
+<li><a href='calendar.php-17.html?type=class&event=14'>14 - Client-Side Scripting: Part Two</a></li>
+<li><a href='calendar.php-18.html?type=class&event=15'>15 - Server-Side Scripting</a></li>
+<li><a href='calendar.php-19.html?type=class&event=16'>16 - Human Factors in Cyber Operations</a></li>
+<li><a href='calendar.php-20.html?type=class&event=17'>17 - Stack-Intro and Physical Layer</a></li>
+<li><a href='calendar.php-21.html?type=class&event=18'>18 - Stack - Data Link Layer</a></li>
+<li><a href='calendar.php-22.html?type=class&event=19'>19 - Stack - Network Layer</a></li>
+<li><a href='calendar.php-23.html?type=class&event=20'>20 - Stack - Transport Layer</a></li>
+<li><a href='calendar.php-24.html?type=class&event=21'>21 - Stack - Application Layer</a></li>
+<li><a href='calendar.php-25.html?type=class&event=22'>22 - Wireless</a></li>
+<li><a href='calendar.php-26.html?type=class&event=23'>23 - Network Security Appliances and Firewalls</a></li>
+<li><a href='calendar.php-27.html?type=class&event=24'>24 - Symmetric Encryption</a></li>
+<li><a href='calendar.php-28.html?type=class&event=25'>25 - Asymmetric Encryption</a></li>
+<li><a href='calendar.php-29.html?type=class&event=26'>26 - Steganography</a></li>
+<li><a href='calendar.php-30.html?type=class&event=27'>27 - Digital Forensics</a></li>
+<li><a href='calendar.php-31.html?type=class&event=28'>28 - Cyber Recon</a></li>
+<li><a href='calendar.php-32.html?type=class&event=29'>29 - Attackers And Defenders</a></li>
+<li><a href='calendar.php-33.html?type=class&event=30'>30 - Cyber Attack</a></li>
+<li><a href='calendar.php-34.html?type=class&event=31'>31 - Cyber Defense</a></li>
+              </ul>
+            </li>
+                        <li class="dropdown">
+              <a href="#" title="Select lab" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+                Lab<span class="caret"></span></a>
+              <ul class="dropdown-menu  scrollable-menu">
+                <li><a href='calendar.php-35.html?type=lab&event=1'>1 - Computer Architecture And Supply Chain</a></li>
+<li><a href='calendar.php-36.html?type=lab&event=2'>2 - Windows-Unix Shell And Command Line</a></li>
+<li><a href='calendar.php-37.html?type=lab&event=3'>3 - Introduction to Build a Website</a></li>
+<li><a href='calendar.php-38.html?type=lab&event=4'>4 - Injection Attacks and XSS</a></li>
+<li><a href='calendar.php-39.html?type=lab&event=5'>5 - LAN-WLAN</a></li>
+<li><a href='calendar.php-40.html?type=lab&event=6'>6 - Hashing And Passwords</a></li>
+<li><a href='calendar.php-41.html?type=lab&event=7'>7 - Digital Certificates</a></li>
+<li><a href='calendar.php-42.html?type=lab&event=8'>8 - Digital Forensics</a></li>
+<li><a href='calendar.php-43.html?type=lab&event=9'>9 - Cyber Recon</a></li>
+<li><a href='calendar.php-44.html?type=lab&event=10'>10 - Cyber Attack</a></li>
+<li><a href='calendar.php-45.html?type=lab&event=11'>11 - Cyber Defense</a></li>
+<li><a title='Material not online at this time' href='#'><span style='color=#AAAAAA'>12 - _archive</span></a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    
+    <script>
+      var ygGradDay = 27;
+      var ygYYYY = 2022;
+    </script>
+
+  </head>
+  <body>
+
+  <div class="noScreen">
+  <br> 
+  </br> 
+    <h1>Digital Data &ndash; Bits &amp; Bytes &amp; Files</h1>
+  </div>
+
+    <div class="learnObjs">
+    <h2>Learning Outcomes <!--SPAN class="samePagelink">[<A href="#top">Top</A>]</SPAN--></h2>
+    <p>
+      After completing these activities you should be able to:
+    </p> 
+    Digital Data – Bits & Bytes
+    <ul>
+      <li>Define terms such as bit, byte, hex</li>
+      <li>Convert between binary, decimal, and hex number representations</li>
+    </ul>
+    Digital Data - Files
+    <ul>
+      <li>Define the term encoding; e.g. ASCII, Unicode</li>
+      <li>Explain what is meant by the terms file type, file format, file header, and file extension</li>
+      <li>Explain how a file extension is used and abused</li>
+    </ul>
+    
+
+  </div>
+  
+  <br>
+  
+<!--Instructor information-->
+
+<br>
+<!--Instructor information-->
+
+  
+    <p class="sec">
+      "Cyber Space" is a name for this global information system
+      consisting of many familiar pieces &mdash; like web sites,
+      distributed video games, email &mdash; and many less familiar
+      pieces as well, that work behind the scenes.  All of these
+      systems do little more than process, store and retrieve
+      <em>digital data</em>.  So to even begin to understand Cyber
+      Space, we need to get a handle on what "digital data" is all
+      about.  That's what this lesson will do.
+    </p>
+
+  <aside>
+    <div class="fleet" style="clear:both">
+    <h2>In The Fleet - Submarine Radio Communications</h2>
+      Ballistic missile submarines
+    remain undetected beneath the ocean's surface awaiting the order
+    to launch their missiles. The launch order must be sent via radio
+    transmission, but sea water blocks those radio waves typically used
+    with satellites or for long-range radio because of their high frequencies.
+    For submarines, very low frequency (VLF) radio waves must be used (3-30kHz)
+    to penetrate the ocean and reach the submarine's VLF antenna.
+
+      <p>Communicating with submarines while completely submerged comes at a
+    cost. VLF radio waves have a severely limited capacity for
+    carrying data.
+    VLF data transmission rates are around 300 bps. Compare that with a
+    data transmission rate of 10 Mbps for a 4G wireless phone. Your smart
+    phone is 33,000 times faster than VLF! In other words, it would take
+    2 hours and 47 minutes to download one MP3 song using submarine VLF
+    communications, where it would only take 0.3 seconds using your 4G
+    phone.</p>
+  
+  <figure>
+      <div style="text-align: center;">
+    <a href="calendar-7.php?key=33e422d7809f52c7cbb272d30b56fd7fc6c4eacc&type=class&event=6">
+      <img src="calendar-8.php?key=d70cc9309249d7cd72fb4de30ecdd45c48295d84&type=class&event=6" style="width:40%;border-width:0;">
+    </a><br>
+    <small><b>(Image courtesy of
+      <a href="../../index-6.htm">Jim Hawkins</a>)</b></small><br>
+      This is a picture of the VLF antenna array that used to be at
+      Greenbury Point.  The three small antennas you see today are
+      all that's left. The rest were pulled down in the late 90's.
+      </div>
+  </figure>
+    </div>
+  </aside>
+  
+    <p class="sec" id="defBitByte">
+      <h2>Bits and Bytes</h2>
+      Digital data consists solely of 0's and 1's.  <b>An individual 0 or
+      1 value is called a <a class="glosslink" href="calendar.php-76.html?load=glossary#B"><em>bit</em></a></b>.  So to represent a piece of
+      information, you need to be able to express that information as
+      a sequence of 0's and 1's.  
+    
+    <p>For the remainder of this lesson,
+      we'll explore how this is done for many different kinds of
+      information. First, however, there's a practical issue to take
+      care of.  All computational devices group bits into chunks of
+      eight<b></b>, and that's usually the smallest unit of data they
+      actually operate on.  <b>An 8-bit chunk is called a <a class="glosslink" href="calendar.php-76.html?load=glossary#B"><em>byte</em></a>.</b>
+      The difference between bit and byte is really important. 
+      <p>
+  A <a class="glosslink" href="calendar.php-76.html?load=glossary#C">computer</a> is typically capable of storing and processing an
+  immense number of bits and bytes.  So we often speak of
+  kilo, mega, giga and tera bytes or bits.  What do those mean?
+  Normally kilo means thousand, mega means million, giga means
+  billion, and tera means trillion, and that's approximately
+  true in the context of digital data, but not exactly.  In the
+  context of digital data:
+  
+  <!--
+  <ul>
+    <CODE>Prefix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Byte Approximation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actual bytes</CODE>
+    <li><CODE>kilo = 10<SUP>3&nbsp;</SUP> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,000 &asymp; 2<sup>10</sup> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,024</CODE></li>
+    <li><CODE>mega = 10<SUP>6&nbsp;</SUP> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,000,000 &asymp; 2<sup>20</sup> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,048,576</CODE></li>
+    <li><CODE>giga = 10<SUP>9&nbsp;</SUP> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,000,000,000 &asymp; 2<sup>30</sup> = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,073,741,824</CODE></li>
+    <li><CODE>tera = 10<SUP>12</SUP> = &nbsp;&nbsp;&nbsp;&nbsp;1,000,000,000,000 &asymp; 2<sup>40</sup> = &nbsp;&nbsp;&nbsp;&nbsp;1,099,511,627,776</CODE></li>
+    <li><CODE>peta = 10<SUP>15</SUP> = 1,000,000,000,000,000 &asymp; 2<SUP>50</SUP> = 1,125,899,906,842,624</CODE></li>
+  </ul>
+  -->
+  
+  <table>
+    <tr>
+      <th>Prefix</th>
+    <th style="text-align: center; padding: 15px;">Number of Bytes (Base 2)</th>
+    <th style="text-align: right;">Number of Bytes (Base 10)</th>
+    </tr>
+    <tr>
+      <td>kilo</td>
+    <td style="text-align: center; padding-left: 15px; padding-right: 15px;">2<sup>10</sup></td>
+    <td style="text-align: right;">1,024</td>
+    </tr>
+    <tr>
+      <td>mega</td>
+    <td style="text-align: center;  padding-left: 15px; padding-right: 15px;">2<sup>20</sup></td>
+    <td style="text-align: right;">1,048,576</td>
+    </tr>
+    <tr>
+      <td>giga</td>
+    <td style="text-align: center;  padding-left: 15px; padding-right: 15px;">2<sup>30</sup></td>
+    <td style="text-align: right;">2,073,741,824</td>
+    </tr>
+    <tr>
+      <td>tera</td>
+    <td style="text-align: center;  padding-left: 15px; padding-right: 15px;">2<sup>40</sup></td>
+    <td style="text-align: right;">1,099,511,627,776</td>
+    </tr>
+    <tr>
+      <td>peta</td>
+    <td style="text-align: center;  padding-left: 15px; padding-right: 15px;">2<sup>50</sup></td>
+    <td style="text-align: right;">1,125,899,906,842,624</td>
+    </tr>
+  </table>
+  <br>
+  ... so "<a class="glosslink" href="calendar.php-76.html?load=glossary#M">megabyte</a>" means 2<sup>20</sup> bytes,
+  which is 8 &times; 2<sup>20</sup> = 2<sup>23</sup>
+  bits.  Finally, you often see these abbreviated as K=kilo,
+  M=mega, G=giga, T=tera and b=bit and B=byte.  So, Gb means
+  "gigabit" whereas GB means "<a class="glosslink" href="calendar.php-76.html?load=glossary#G">gigabyte</a>", which is eight times as
+  many bits.  In fact, it's not always easy to know whether the
+  "<a class="glosslink" href="calendar.php-76.html?load=glossary#D">decimal</a>" or "<a class="glosslink" href="calendar.php-76.html?load=glossary#B">binary</a>" interpretation of "kilo", "mega" etc. is
+  meant, especially in marketing material.
+      
+    
+
+    <div class="sec" id="defBinaryNumbers">
+      <h2>Binary Numbers</h2>
+      <div style="float: right; padding-left: 0.5em; padding-bottom: 0.5em;">
+  <img title="This one is from the Red Belt collection, of &#39;medium&#39; difficulty." src="../../comics/su_doku.jpg" height="220pt"><br>
+  <small><b><a href="../../74/index.htm">xkcd.com/74/</a></b></small>
+      </div>
+      <div class="quotation">"There are 10 kinds of people: those who
+      know binary, and those who don't."</div>
+      On the face of it, it's pretty amazing that all information can
+      be somehow expressed as sequences of bits.  Actually though,
+      it's all possible because <em>numbers</em> can be expressed as
+      sequences of bits.
+      A number expressed as a sequence of 0's and 1's is called a
+      <em>binary number</em>, and the idea is no different from how we use
+      sequences of decimal digits to represent numbers. Recall how
+      that works: When we write 467 we mean
+      4&times;10<sup>2</sup> + 6&times;10<sup>1</sup> + 7&times;10<sup>0</sup>.
+      Now, in a binary number we only allow bits as digits, and
+      instead of powers of 10, we have powers of 2.  So in binary,
+      1101 means
+      1&times;2<sup>3</sup> + 1&times;2<sup>2</sup> + 0&times;2<sup>1</sup> + 1&times;2<sup>0</sup>
+      which is 13 in decimal.
+
+      Numbers of any size can be represented by sequences of 0's and
+      1's, though larger numbers require longer sequences.
+      <div class="annotation" style="clear: right;">
+  In fact, it's easy to compute how many
+  bits you need to represent a number of a specific size.  With k
+  bits, you can represent any number from 0 up to and including 2<sup>k</sup>-1.
+  To represent a positive integer N, you need 1 + log<sub>2</sub>N bits.
+  In a byte, i.e. eight bits, we can represent numbers up to
+  2<sup>8</sup>-1 = 256 - 1 = 255.
+      </div>
+      Because of the importance of bytes, we will concentrate on being
+      able to write numbers as 8-bit sequences, and being able to
+      interpret an 8-bit sequence as a number.  The smallest number we
+      can represent in 8-bits is 0, which is the byte 00000000.  The
+      largest is 255 which, in binary, is 11111111.  Of course,
+      anything in between is possible as well.
+    </div>
+    <table>
+        <tr><td colspan="2" align="center"><b>
+                    videos showing how to convert from binary
+                    to decimal and back</b></td>
+        </tr>
+        <tr>
+            <td>
+            <video width="360" height="264" controls="" poster="calendar.php-81.html?key=b41d85f9d87121a6a6e18b6ccb96578d8e5f3c4d&type=class&event=7" preload="none">
+                <source src="calendar.php?key=5aff90ccad682f9cda6a790d7d7c717187152d61&type=class&event=6" type="video/mp4">
+                <source src="calendar.php?key=a0467fde73d74aabb3bae7ebbd805294699fd1d2&type=class&event=6" type="video/ogg">
+        Your browser does not support video.
+            </video>
+            </td>
+            <td>
+            <video width="360" height="264" controls="" poster="calendar.php-82.html?key=c81acc0441de95bd08f2e8af99637c9d62be9985&type=class&event=7" preload="none">
+                <source src="calendar.php?key=ec7c06e98c68338ce48a8cf6c7d08451fc6c1c48&type=class&event=6" type="video/mp4">
+                <source src="calendar.php?key=2c7977072e8899101396d44b6f088baacaba7882&type=class&event=6" type="video/ogg">
+        Your browser does not support video.
+            </video>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <video width="360" height="264" controls="" poster="calendar.php-83.html?key=51e7876449fb2efa767d8cc602cb91c0c2352c6c&type=class&event=7" preload="none">
+                <source src="calendar.php?key=cc6fb45d872e30ffae52ba757c143ff259e98ab7&type=class&event=6" type="video/mp4">
+                <source src="calendar.php?key=b7328b62118ba429430c31b6add8180c7991c0fc&type=class&event=6" type="video/ogg">        
+        Your browser does not support video.
+            </video>
+            </td>
+            <td>
+            <video width="360" height="264" controls="" poster="calendar.php-84.html?key=56e9463678dcf62e9120d1715f651e895af38c77&type=class&event=7" preload="none">
+                <source src="calendar.php?key=96e95bd51ca522361f692dbff17e4feac9be4028&type=class&event=6" type="video/mp4">
+                <source src="calendar.php?key=215b5b8358abeb35b4ca8dfc1e55243ea56b6173&type=class&event=6" type="video/ogg">
+        Your browser does not support video.
+            </video>
+            </td>
+       </tr>
+   </table>
+    <br>
+    <div id="gradDayTimer" style="border-style: solid; padding: 0.5em;"></div>
+    <script type="text/javascript">
+    var ygYYYY=2022;
+    var ygGradDay=22;
+      setInterval(function(){
+      var today = new Date();
+      var BigDay = new Date(ygYYYY,4,ygGradDay,12,0,0,0); /* noon on Graduation Day */
+      var msLeft = (BigDay.getTime() - today.getTime());
+      var sLeft = Math.floor(msLeft/1000);
+      var i = 0, s = sLeft, m = 2147483648; /* 2^31 */
+      var L = "";
+      while(i < 32)
+      {
+        if (m <= s) { L = L + "1"; s = s - m; } else { L = L + "0"; }
+        m = m / 2;
+        i++;
+      }
+
+      document.getElementById("gradDayTimer").innerHTML = "Only <CODE>" + L
+   + "</CODE> seconds left 'til " + ygYYYY +"'s graduation!  [Counting down in binary is depressing!]"; },100);
+    </script>
+
+
+    <p class="sec">
+      <h2><a class="glosslink" href="calendar.php-76.html?load=glossary#H">Hexadecimal</a></h2>
+      Bytes are all-important in computing,
+      and after a while it becomes cumbersome
+      to write out all eight bits of a byte.
+      So we often write out bytes as two <em>hexadecimal digits</em>.
+      Hexadecimal is actually the base 16 number system, but for our
+      purposes that is irrelevant.  The important point is that it
+      gives us a concise representation for bytes, since each hex
+      digit represents a 4-bit pattern. Thus two hex-digits represent
+      an 8-bit pattern, i.e. a byte.  The following table  gives the
+      mapping between the hex digits (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f)
+      and 4-bit patterns.
+      <table>
+  <tr>
+    <td align="right"><b>hex digit</b></td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center">9</td>
+    <td align="center">a</td>
+    <td align="center">b</td>
+    <td align="center">c</td>
+    <td align="center">d</td>
+    <td align="center">e</td>
+    <td align="center">f</td>
+  </tr>
+  <tr>
+    <td align="right"><b>4-bit pattern</b></td>
+    <td>0000</td>
+    <td>0001</td>
+    <td>0010</td>
+    <td>0011</td>
+    <td>0100</td>
+    <td>0101</td>
+    <td>0110</td>
+    <td>0111</td>
+    <td>1000</td>
+    <td>1001</td>
+    <td>1010</td>
+    <td>1011</td>
+    <td>1100</td>
+    <td>1101</td>
+    <td>1110</td>
+    <td>1111</td>
+  </tr>
+      </table>
+      Using this table, you should be able to convert 3cf6 into binary digits, and convert 01101110 into two hex digits.
+     <br>
+     <br>
+    <div id="gradDayTimerHex" style="border-style: solid; padding: 0.5em;"></div>
+    <script type="text/javascript">
+      setInterval(function(){
+      var today = new Date();
+      var BigDay = new Date(ygYYYY,4,ygGradDay,12,0,0,0); /* noon on Graduation Day */
+      var msLeft = (BigDay.getTime() - today.getTime());
+      var sLeft = Math.floor(msLeft/1000);
+      document.getElementById("gradDayTimerHex").innerHTML = "Only <CODE>" + sLeft.toString(16)
+      + "</CODE> seconds left 'til " + ygYYYY + "'s graduation!  [Counting down in hex looks better!]"; },100);
+    </script>
+
+    
+
+    <div class="sec" id="defASCII">
+      <h2>ASCII Encoding and Text</h2>
+  <div class="annotation">
+    Encoding is converting data from one system of communication into another. There are other encoding schemes beyond ASCII; for example: base64, Unicode, UTF-8.
+  </div>
+      Other than numbers, the most fundamental data is plain text.  The
+      method for representing text digitally (i.e. as bits and bytes)
+      depends on the alphabet the text uses, of course. However, in
+      the cyber world, English is the base language and everything
+      else is an add-on.  Convenient for us, eh?  Basic text is
+      represented using one byte (i.e. one number in the range 0-255,
+      although in reality we only use 0-127)
+      for each character, where the characters allowed and the byte
+      values (i.e. numbers) they correspond to are given by
+      the <em>ASCII Table</em>.
+    
+  <script type="text/javascript">
+  var pad = function(s)
+  {
+    while(s.length < 3) s = ' ' + s;
+    return s;
+  };
+  var off = 32; // off + rows*cols >= 126
+  var rows = 11;
+  var cols = Math.floor((126 - off)/rows + 0.5);
+
+  document.write('<TABLE><tr><td align="center" colspan="'
+           +
+         cols
+         +
+         '"><b>ASCII Table for Printable Characters</b></td></tr><tr>\n');
+  for(var i = 0; i < cols; ++i)
+  {
+    document.write('<td style="padding-left: 0.5em; padding-right: 0.5em;"><pre>Dec Hex Char');
+    for(var j = 0; j < rows; ++j)
+    {
+    var n = off + i*rows + j;
+    if (n < 127)
+    {
+      document.write('\n' + pad(String(n)) + '  '
+      +  n.toString(16)
+      +  '  ' + String.fromCharCode(n));
+    }
+   }
+    document.write("</pre></td>\n");
+  }
+  document.write("</tr></table>\n");
+  </script>
+
+      So, for example, the letter <code>a</code> has ASCII value 97
+      which is byte <code>0110 0001</code> (spaced for readability).  ASCII values 32-126 are
+      the <em>printable characters</em>, and any sequence of bytes
+      consisting solely of them is considered to be <em>plain text</em>.
+      We might allow the additional values
+      9 &larr; tab, 10 &larr; newline, 13 &larr; carriage return,
+      which provide limited formatting.
+    
+  <script>var asciiatizer = function()
+{
+  var input = document.forms.ASCIIatizer.textToASCIIatize.value;
+  var numOut = "<code>";
+  var binOut = "<code>";
+  for(var i = 0; i < input.length; ++i)
+  {
+    var color = i%2 == 0 ? '#D9DCDE' : '#FADA8E';
+    var n = '<span style="background-color: ' + color + ';">' + asHex(input[i]) + '</span>';
+    numOut += n;
+    var b = '<span style="background-color: ' + color + ';">' + asBin(input[i]) + '</span>';
+    binOut += b;
+  }
+  numOut += '</code>';
+  binOut += '</code>';
+  document.getElementById('ASCIIatizerres').innerHTML = 
+  ' &rarr; as ASCII (hex) &rarr; ' + numOut + ' &rarr; as bytes &rarr; ' + binOut;
+};
+
+var quo = function(n,d) { return Math.floor(n/d); }
+
+var asNum = function(c)
+{
+  var s = String(c.charCodeAt(0));
+  while(s.length != 3)
+    s = ' ' + s;
+  return s;
+}; 
+
+var asHex = function(c)
+{
+  var s = c.charCodeAt(0).toString(16);
+  while(s.length != 3)
+    s = ' ' + s;
+  return s;
+}; 
+
+var asBin = function(c)
+{
+  var n = c.charCodeAt(0);
+  var s = '';
+  for(var b = 128; b >= 1; b = quo(b,2))
+    s += (quo(n,b))%2;
+  return s;
+};
+ 
+</script>
+  
+    <small><b>String to ASCII Demo</b></small><br>
+    
+    <form action="" onsubmit="return false;" name="ASCIIatizer">
+      input a string and press enter
+      <input type="text" name="textToASCIIatize" onchange="asciiatizer()">
+       <span id="ASCIIatizerres"></span>
+    </form>
+    
+    <div class="annotation">
+      You can actually enter ASCII values into the address bar in
+      Google Chrome.  Although you have to write them
+      in <em>hexadecimal notation</em> rather than decimal or
+      binary. (Hexadecimal is a base 16 (rather than 10 or 2) number
+      system, whose digits are 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f.)
+      For example, <code>c</code> has ASCII value 99 which is 63 in
+      hex, so a <code>c</code> can be written in the address bar as
+      <code>%63</code>.  Thus, entering
+      <code>%63nn.com</code> in your browser's address bar
+      gets you go cnn.com! BTW: Mozilla Firefox no longer supports this feature for the server name (<code>cnn.com</code> since there are actually security implications with this.
+    </div>
+      <p>
+        A sequence of characters is called a <em>string</em>, and what
+        we've just seen is that ASCII gives us a way to encode strings
+        as sequences of bits (or, if you prefer, bytes).
+      </p>
+  </div>
+
+<!-- Former Lesson on Files Starts Here -->  
+  
+  <p class="sec" id="defFILES">
+      <h2>Files</h2>
+      A <a class="glosslink" href="calendar.php-76.html?load=glossary#F">file</a> on a computer is simply a sequence of bytes,
+      nothing more, nothing less.
+      What imbues the file with meaning is how we (or a <a class="glosslink" href="calendar.php-76.html?load=glossary#P">Program</a>)
+      choose to interpret those bytes.  This is actually the same with
+      language.  The string <b>bow</b> has no intrinsic meaning.  It's
+      up to us to decide whether it means something you shoot with,
+      put in a little girl's hair, whether it means bending over in
+      a polite manner, or the forward part of a ship's hull.
+      If each byte of a file corresponds to a printable ASCII
+      character, we could choose to interpret the file as containing
+      text, so such files are called <em>text files</em>.  However,
+      many text files have a more specific meaning.  What you're
+      reading right now is contained within a plain text file of a
+      special type: an <a class="glosslink" href="calendar.php-76.html?load=glossary#H">HTML</a> file.
+      
+      <div class="annotation">
+    If you right-click in this browser window and select "view
+    source" you can actually see the plain text file that produced
+    this web page.
+      </div>
+      Many files are not plain text, but even though such files don't
+      immediately mean something to us, there's usually some Program
+      out there that understands how to interpret those bytes in a
+      meaningful way.
+
+    <p>
+      The rules that define how the bytes of a particular file are
+      supposed to be interpreted are called a <a class="glosslink" href="calendar.php-76.html?load=glossary#F">file format</a>.
+      We described the format of a plain text file in the previous
+      paragraph. You might have heard of .jpg files (JPEG files).
+      JPEG is a file format for images, and any file whose bytes
+      conform to the JPG rules can be viewed as an image with the
+      proper Program. So usually to use a file you need to know
+      what kind it is (i.e. what format it follows) and what Program(s)
+      to use to operate on that kind of file. Here are some common
+      formats:
+      <ul>
+    <li>plain text: contains text of course; open with Notepad
+      or Notepad++; typical extension is .txt</li>
+    <li>JPG: image file; open with Windows Photo Viewer, Photoshop,
+      etc.; typical extension is .jpg or .jpeg</li>
+    <li>ZIP file: contains a bundled collection of files and
+      folders; typical extension is .zip</li>
+    <li>PDF file: Portable Document Format; Open with Adobe
+      Acrobat Reader;  typical extension is .pdf</li>
+    <li>mp3 files: Mpeg Layer 3 file; audio file using a specific
+      compression algorithm; can be opened in many players, including
+      iTunes, Windows Media Player, and WinAmp; extension is typically .mp3</li>
+      </ul>
+    
+    <p>
+      One of the most important <a class="glosslink" href="calendar.php-76.html?load=glossary#F">file types</a> is one you might not have
+      thought of: a Program.  A <em>Program</em> is a regular old file
+      whose bytes can be interpreted by the computer as
+      instructions to be executed.
+    </p>
+
+    
+
+    <div class="sec">
+      <h2>The Role of File Extensions</h2>
+      <div class="annotation">
+  Windows by default hides the file extension from you.
+  For this course (and life) you really want to see this
+  information. Follow these instructions to turn off the
+  extension hiding, so you actually know the true names of
+  files.
+  <br>
+  <ol>
+    <li>Under the Windows Start button, click on File Explorer.</li>
+    <li>Under the 'View' menu, make sure 'File Name Extensions' box is checked</li>
+    <li>You may also want to show hidden files and folders</li>
+    <li>Check the box for 'Hidden Items' too</li>
+  </ol>
+  <b>Why is hiding file extensions bad?</b><br>
+  Well, aside from making it hard for you to know what a file's
+  real name is, hidden file extensions can be used to trick
+  people.
+  Check out #1 on this
+  <a href="../../blog/six-tricks-scammers-use-to-con-you-into-clicking-a-malicious-exe-file-1184.html">
+    list of ways to trick users into executing malicious programs
+  </a>.
+      </div>
+      <p>
+      Filenames typically (by tradition) end in a '.' followed by
+      three letters &mdash; like <code>fact.jpg</code> ends
+      in <code>.jpg</code>. This last part of the filename is called
+      the <a class="glosslink" href="calendar.php-76.html?load=glossary#F"><em>file extension</em></a>. The <a class="glosslink" href="calendar.php-76.html?load=glossary#O">operating system</a> (Windows) and many programs trust the extension to tell them the file type,
+      and thus choose, for example, what Program to use when opening
+      the file.  However, this trust is misplaced.  The extension does
+      not tell you the file type reliably. Try this:
+      </p>
+      <ol>
+  <li>Right-click on <a href="calendar.php-11.png?key=ddecbb9583291548017a2992d4dae081b4597290&type=class&event=6">this link</a> and choose 'Save link as' Under This PC save the <a class="glosslink" href="calendar.php-76.html?load=glossary#L">link</a> to the desktop.</li>
+  <li>Go to Start --> File Explorer --> Desktop and find the file
+    <code>CSL.png</code> (which is an image).  Right-click on it and choose rename to change its
+    name to <code>CSL.doc</code>.  You will have to scroll all the way to the right to rename the .png portion to .doc (the <code>.doc</code> extension is for MS Word).
+    Answer yes to the "are you sure you want to change it" dialog box.  Notice how the icon changed.  Windows thinks this is a Word
+    document now.
+  </li>
+  <li>
+    Double-click on CSL.doc to open it up.  Windows will try to
+    open it with Word.  What happens?
+  </li>
+      </ol>
+      The moral of the story here was that extensions can lie!  The
+      only real way to know the type of the file is to examine its
+      bytes and see what format it's in.  Usually, the first few bytes
+      tell you the type reliably as you saw in the above activity.
+
+      <p>
+  Here's a common example of playing games with file
+  extensions.  The mail <a class="glosslink" href="calendar.php-76.html?load=glossary#S">server</a> here at USNA won't let you send a
+  zip file.  Any <code>.zip</code> attachment just mysteriously disappears.
+  In fact, the server only looks at the <a class="glosslink" href="calendar.php-76.html?load=glossary#F">file name</a>, not at the
+  bytes that make up the file.  So you can simply rename the
+  file, say changing <code>foo.zip</code> into <code>foo.piz</code>, and then attach it.
+  The file will be sent, no problem, and the recipient merely
+  needs to change the extension back to <code>.zip</code> when he saves it.
+  So, don't believe what file extensions tell you!
+      </p>
+
+    </div>
+
+
+    <div class="annotation">
+      <b>How many bytes does it take ...</b>
+      <ul>
+  <li>to store the complete works of Shakespeare in plain text?  5,590,193 bytes</li>
+  <li>to store the complete Harry Potter series in plain text? 6,272,550 bytes</li>
+  <li>to store Beethoven's 9th Symphony? 62,948,072 bytes </li>
+  <li>to store a two-hour long High-Def movie? 4,294,967,296 bytes</li>
+      </ul>
+    </div>
+
+
+    <p class="sec" id="headers">
+      <h2>File headers</h2>
+      Because files have a format, there must be some parts of the format that
+      are the same for all files of the same type.  For instance, something
+      has to be common to all PDF files.  One common feature across file
+      formats is a header.  A <a class="glosslink" href="calendar.php-76.html?load=glossary#F">file header</a> is a short sequence of data at the head,
+      or beginning, of the file data.  This can readily be recognized when
+      viewing a file in a hex editor.  In general you really need a hex
+      editor, not just a text editor, because for many non-text files
+      the header contains some non-printable characters.
+      For instance, a PDF file always has a
+      header of <code>%PDF</code>, which in hex is 25 50 44 46.
+      Below are some common headers (in hex).
+      <ul>
+        <li>JPG: <code>ff d8 ff e0 00 10</code></li>
+        <li>avi: <code>52 49 46 46</code> (this is actually
+          printable as <code>RIFF</code>)</li>
+        <li>doc: <code>d0 cf 11 e0 a1 b1 1a e1 00 00</code></li>
+      </ul>
+      Open a few files on your computer and see if you can corroborate this
+      information. Headers are many different lengths, and one particular
+      file type may have multiple valid headers.
+      Remember, it's easy to lie with extensions, but quite hard to lie
+      with headers!
+    
+    <p>
+      Follow <a href="calendar.php-85.html?key=dddc5ae46da1a296f73451c22f10d9bf1550f81d&type=class&event=6">this link</a> to an activity that should help you to understand: 1. that files really are just a bunch of bits/bytes, 2. that changing the bits in a file changes what happens when the file is opened with the appropriate program, and 3. that since many file formats have rules about what bytes a file starts with, you can often determine the type of a file by examining the first few bytes. We'll see that this can be important!
+    </p>
+    <div class="sec">
+      <h2>"GIFAR" Files</h2>
+      <p>
+        You can play games with file format rules &mdash; sometimes for unsavory purposes. <img src="calendar.php-12.png?key=23e4c528e80c43649e3b05238170f23827cc5256&type=class&event=6" style="height: 62pt; float: right; clear: right;"> One interesting example is the <em>gifar</em>. Basically, we can create a single file (sequence of bytes) that satisfies the formatting rules both for an image format and for an "archive" format. Specifically, for instance, we can create a single file that is a valid <code>.jpg</code> image file and a valid Java <code>.jar</code> (a file that's intended to be processed by the Program "java"). The gist is the first part of the file is the JPG image, and the second part is the Java jar file. This works because a JPG file must have a JPG  header as its first several bytes, and must have a JPG footer  indicating the end of the image data, but not necessarily the end of the file. There can be more bytes after the JPG footer, but any JPG viewer simply ignores them. Meanwhile, Java processes a jar file starting with the bytes at the <em>back end</em> of the file.  These bytes act as a sort of "table of contents" that tells Java how far forward in the file to jump for other pieces of Java-specific data. The table of contents in a gifar never tells Java to look as far forward in the file as the JPG footer or beyond.
+      </p>
+      <p>
+        You might ask "What's the point?". Java jar files can instruct the Java Program to do seriously bad things to your computer &mdash; they can really be evil. JPG image files, on the other hand, are pretty benign. So websites that allow users to post content will often allow JPG image files to be posted, but definitely not Java <code>jar</code> files. What the bad guys figured out, is that by posting a gifar, they could post files to these websites that the websites thought were innocuous JPG image files (and so would allow to be posted), but which were also malicious Java jar files.
+      </p>
+      <br><h2>Review Questions</h2><br>
+      <ol>
+      <li> What is the difference between a bit and a byte? </li>
+      <li> What are ASCII characters and how do they correspond to binary and hexadecimal numbers? </li>
+      <li> What is a file on a computer? </li>
+      <li> Why are file extensions and file headers important? </li>
+      <li> What is a GIFAR file? </li>
+      <br><br><br>
+      <h3> Resources </h3>
+      <br> Loredana Botezatu. https://hotforsecurity.bitdefender.com/blog/six-tricks-scammers-use-to-con-you-into-clicking-a-malicious-exe-file-1184.html. Hot For Security. 'Six tricks scammers use to con you into clicking a malicious .exe file'. Oct. 2011.
+    </ol></div>
+  </body>
+</html>
+</div> <!-- /container --></body></html>
