@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "b863b582b02b973168ee51185667e886ce3ef1ed4ba6012af0db647a9af4c45e";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+    <!-- unable to find the file below from CUSTOMCSS (resources) variable:
+         <link href='calendar-core/home.css' rel='stylesheet'>
+    -->
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php-2.html">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+        
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>SI110: Binary - Decimal - Hex Converter</title>
+    <link rel="STYLESHEET" href="../home.css">
+  </head>
+
+  <body id="bg">
+
+<div>
+  <div>
+    Algorithm:
+    <form id="algorithm">
+      <input type="radio" name="algorithm" value="fcfs" checked/> FCFS<br/>
+      <input type="radio" name="algorithm" value="sjf"/> SJF<br/>
+      <input type="radio" name="algorithm" value="priority"/> Priority scheduling<br/>
+      <input type="radio" name="algorithm" value="robin"/> Round Robin
+    </form>
+    <br>
+  </div>
+    <table id="inputTable">
+        <tr>
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Execute Time</th>
+            <th class="servtime">Service Time</th>
+            <th class="priority-only">Priority</th>
+        </tr>
+        <tr>
+            <td>P0</td>
+            <td>0</td>
+            <td><input class="initial exectime" type="text" value="5" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only initial"><input type="text"/></td>
+        </tr>
+        <tr>
+            <td>P1</td>
+            <td>1</td>
+            <td><input class="initial exectime" value="3" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only" ><input type="text"/></td>
+        </tr>
+    </table>
+    </div>
+    <input type="button" value="+" onclick="addRow();" />
+    <p id="quantumParagraph" hidden>Quantum: 
+        <input style="width: 50px;" id="quantum" type="text" value="3" />
+    </p>
+    
+    <input type="button" value="-" onclick="deleteRow();" />
+
+
+<div>
+  </div>    
+    <p id="quantumParagraph" hidden>Quantum: 
+        <input style="width: 50px;" id="quantum" type="text" value="3" />
+    </p>
+
+    <input type="button" value="Go" onclick="draw();" />
+
+    
+
+    <br/><br/>
+
+    <fresh>
+    </fresh>
+    <p>
+    Timer: <strong id="timer"></strong> sec
+    </p>
+
+
+
+
+
+
+
+    <style>
+              fresh th {
+            background: linear-gradient(WhiteSmoke, lightgray);
+            text-align: left;
+            border: 1px solid black;
+            height: 400 px;
+        }
+        fresh td {
+            border: 1px solid black;
+            border-bottom: 0;
+            /*border-right: 0;*/
+            height: 20px;
+            text-align: left;
+        }
+
+        div th, div td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+            display: inline;
+            border-collapse: collapse;
+        }
+        input {
+            text-align: center;
+        }
+        #curtain {
+          background-color: white;
+        }
+
+
+    </style> 
+
+
+
+    <script>
+      recalculateServiceTime();
+$('.priority-only').hide();
+
+$(document).ready(function () {
+  $('input[type=radio][name=algorithm]').change(function () {
+    if (this.value == 'priority') {
+      $('.priority-only').show();
+      $('.servtime').show();
+      $('#minus').css('left', '604px');
+    }
+    else {
+      $('.priority-only').hide();
+      $('.servtime').show();
+      $('#minus').css('left', '428px');
+    }
+
+    if (this.value == 'robin') {
+      $('.servtime').hide();
+      $('#quantumParagraph').show();
+    }
+    else {
+      $('#quantumParagraph').hide();
+      $('.servtime').show();
+    }
+
+    recalculateServiceTime();
+  });
+});
+
+function addRow() {
+  var lastRow = $('#inputTable tr:last');
+  var lastRowNumebr = parseInt(lastRow.children()[1].innerText);
+
+  var newRow = '<tr><td>P'
+  + (lastRowNumebr + 1)
+  + '</td><td>'
+  + (lastRowNumebr + 1)
+  + '</td><td><input class="exectime" type="text"/></td><td class="servtime"></td>'
+  //if ($('input[name=algorithm]:checked', '#algorithm').val() == "priority")
+  + '<td class="priority-only"><input type="text"/></td></tr>';
+
+  lastRow.after(newRow);
+
+  var minus = $('#minus');
+  minus.show();
+  minus.css('top', (parseFloat(minus.css('top')) + 24) + 'px');
+
+  if ($('input[name=algorithm]:checked', '#algorithm').val() != "priority")
+    $('.priority-only').hide();
+
+
+  $('#inputTable tr:last input').change(function () {
+    recalculateServiceTime();
+  });
+}
+
+function deleteRow() {
+  var lastRow = $('#inputTable tr:last');
+  lastRow.remove();
+
+  var minus = $('#minus');
+  minus.css('top', (parseFloat(minus.css('top')) - 24) + 'px');
+
+  if (parseFloat(minus.css('top')) < 150)
+    minus.hide();
+}
+
+$(".initial").change(function () {
+  recalculateServiceTime();
+});
+
+function recalculateServiceTime() {
+  var inputTable = $('#inputTable tr');
+  var totalExectuteTime = 0;
+
+  var algorithm = $('input[name=algorithm]:checked', '#algorithm').val();
+  if (algorithm == "fcfs") {
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      $(value.children[3]).text(totalExectuteTime);
+
+      var executeTime = parseInt($(value.children[2]).children().first().val());
+      totalExectuteTime += executeTime;
+    });
+  }
+  else if (algorithm == "sjf") {
+    var exectuteTimes = [];
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      exectuteTimes[key - 1] = parseInt($(value.children[2]).children().first().val());
+    });
+
+    var currentIndex = -1;
+    for (var i = 0; i < exectuteTimes.length; i++) {
+      currentIndex = findNextIndex(currentIndex, exectuteTimes);
+
+      if (currentIndex == -1) return;
+
+      $(inputTable[currentIndex + 1].children[3]).text(totalExectuteTime);
+
+      totalExectuteTime += exectuteTimes[currentIndex];
+    }
+  }
+  else if (algorithm == "priority") {
+    var exectuteTimes = [];
+    var priorities = [];
+
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      exectuteTimes[key - 1] = parseInt($(value.children[2]).children().first().val());
+      priorities[key - 1] = parseInt($(value.children[4]).children().first().val());
+    });
+
+    var currentIndex = -1;
+    for (var i = 0; i < exectuteTimes.length; i++) {
+      currentIndex = findNextIndexWithPriority(currentIndex, priorities);
+
+      if (currentIndex == -1) return;
+
+      $(inputTable[currentIndex + 1].children[3]).text(totalExectuteTime);
+
+      totalExectuteTime += exectuteTimes[currentIndex];
+    }
+  }
+  else if (algorithm == "robin") {
+    $('#minus').css('left', '335px');
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      $(value.children[3]).text("");
+    });
+  }
+}
+
+function findNextIndexWithPriority(currentIndex, priorities) {
+  var currentPriority = 1000000;
+  if (currentIndex != -1) currentPriority = priorities[currentIndex];
+  var resultPriority = 0;
+  var resultIndex = -1;
+  var samePriority = false;
+  var areWeThereYet = false;
+
+  $.each(priorities, function (key, value) {
+    var changeInThisIteration = false;
+
+    if (key == currentIndex) {
+      areWeThereYet = true;
+      return true;
+    }
+    if (value <= currentPriority && value >= resultPriority) {
+      if (value == resultPriority) {
+        if (currentPriority == value && !samePriority) {
+          samePriority = true;
+          changeInThisIteration = true;
+          resultPriority = value;
+          resultIndex = key;                            
+        }                        
+      }
+      else if (value == currentPriority) {
+        if (areWeThereYet) {
+          samePriority = true;
+          areWeThereYet = false;
+          changeInThisIteration = true;
+          resultPriority = value;
+          resultIndex = key;
+        }
+      }
+      else {
+        resultPriority = value;
+        resultIndex = key;
+      }
+
+      if (value > resultPriority && !changeInThisIteration)
+        samePriority = false;
+    }
+  });
+  return resultIndex;
+}
+
+function findNextIndex(currentIndex, array) {
+  var currentTime = 0;
+  if (currentIndex != -1) currentTime = array[currentIndex];            
+  var resultTime = 1000000;
+  var resultIndex = -1;
+  var sameTime = false;
+  var areWeThereYet = false;
+
+  $.each(array, function (key, value) {
+    var changeInThisIteration = false;
+
+    if (key == currentIndex) {
+      areWeThereYet = true;
+      return true;
+    }
+    if (value >= currentTime && value <= resultTime) {
+      if (value == resultTime) {                        
+        if (currentTime == value && !sameTime) {
+          sameTime = true;
+          changeInThisIteration = true;
+          resultTime = value;
+          resultIndex = key;                            
+        }                        
+      }
+      else if (value == currentTime) {
+        if (areWeThereYet) {
+          sameTime = true;
+          areWeThereYet = false;
+          changeInThisIteration = true;
+          resultTime = value;
+          resultIndex = key;
+        }
+      }
+      else {
+        resultTime = value;
+        resultIndex = key;
+      }
+
+      if (value < resultTime && !changeInThisIteration)
+        sameTime = false;
+    }
+  });
+  return resultIndex;
+}
+
+function animate() {
+  $('fresh').prepend('<div id="curtain" style="position: absolute; right: 0; width:100%; height:100px;"></div>');
+  
+  $('#curtain').width($('#resultTable').width());
+  $('#curtain').css({left: $('#resultTable').position().left});
+  
+  var sum = 0;
+  $('.exectime').each(function() {
+      sum += Number($(this).val());
+  });
+  
+  console.log($('#resultTable').width());
+  var distance = $("#curtain").css("width");
+  
+  animationStep(sum, 0);
+  jQuery('#curtain').animate({ width: '0', marginLeft: distance}, sum*1000/2, 'linear');
+}
+
+function animationStep(steps, cur) {
+  $('#timer').html(cur);
+  if(cur < steps) {
+    setTimeout(function(){ 
+         animationStep(steps, cur + 1);
+    }, 500);
+  }
+  else {
+  }
+}
+
+function draw() {
+  $('fresh').html('');
+  var inputTable = $('#inputTable tr');
+  var th = '';
+  var td = '';
+
+  var algorithm = $('input[name=algorithm]:checked', '#algorithm').val();
+  if (algorithm == "fcfs") {
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      var executeTime = parseInt($(value.children[2]).children().first().val());
+      th += '<th style="height: 60px; width: ' + executeTime * 20 + 'px;">P' + (key - 1) + '</th>';
+      td += '<td>' + executeTime + '</td>';
+    });
+
+    $('fresh').html('<table id="resultTable"><tr>'
+                    + th
+                    + '</tr><tr>'
+                    + td
+                    + '</tr></table>'
+                   );
+  }
+  else if (algorithm == "sjf") {
+    var executeTimes = [];
+
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      var executeTime = parseInt($(value.children[2]).children().first().val());
+      executeTimes[key - 1] = { "executeTime": executeTime, "P": key - 1 };
+    });
+
+    executeTimes.sort(function (a, b) {
+      if (a.executeTime == b.executeTime)
+        return a.P - b.P;
+      return a.executeTime - b.executeTime
+    });
+
+    $.each(executeTimes, function (key, value) {
+      th += '<th style="height: 60px; width: ' + value.executeTime * 20 + 'px;">P' + value.P + '</th>';
+      td += '<td>' + value.executeTime + '</td>';
+    });
+
+    $('fresh').html('<table id="resultTable"><tr>'
+                    + th
+                    + '</tr><tr>'
+                    + td
+                    + '</tr></table>'
+                   );
+  }
+  else if (algorithm == "priority") {
+    var executeTimes = [];
+
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      var executeTime = parseInt($(value.children[2]).children().first().val());
+      var priority = parseInt($(value.children[4]).children().first().val());
+      executeTimes[key - 1] = { "executeTime": executeTime, "P": key - 1, "priority": priority };
+    });
+
+    executeTimes.sort(function (a, b) {
+      if (a.priority == b.priority)
+        return a.P - b.P;
+      return b.priority - a.priority
+    });
+
+    $.each(executeTimes, function (key, value) {
+      th += '<th style="height: 60px; width: ' + value.executeTime * 20 + 'px;">P' + value.P + '</th>';
+      td += '<td>' + value.executeTime + '</td>';
+    });
+
+    $('fresh').html('<table id="resultTable" style="width: 70%"><tr>'
+                    + th
+                    + '</tr><tr>'
+                    + td
+                    + '</tr></table>'
+                   );
+  }
+  else if (algorithm == "robin") {
+    var quantum = $('#quantum').val();
+    var executeTimes = [];
+
+    $.each(inputTable, function (key, value) {
+      if (key == 0) return true;
+      var executeTime = parseInt($(value.children[2]).children().first().val());
+      executeTimes[key - 1] = { "executeTime": executeTime, "P": key - 1 };
+    });
+
+    var areWeThereYet = false;
+    while (!areWeThereYet) {
+      areWeThereYet = true;
+      $.each(executeTimes, function (key, value) {
+        if (value.executeTime > 0) {
+          th += '<th style="height: 60px; width: ' + (value.executeTime > quantum ? quantum : value.executeTime) * 20 + 'px;">P' + value.P + '</th>';
+          td += '<td>' + (value.executeTime > quantum ? quantum : value.executeTime) + '</td>';
+          value.executeTime -= quantum;
+          areWeThereYet = false;
+        }
+      });
+    }
+    $('fresh').html('<table id="resultTable" style="width: 70%"><tr>'
+                    + th
+                    + '</tr><tr>'
+                    + td
+                    + '</tr></table>'
+                   );
+  }
+  animate();
+}
+    </script>
+
+</body>
+    </html>
