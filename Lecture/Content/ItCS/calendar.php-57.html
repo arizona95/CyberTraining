@@ -333,6 +333,9 @@ function recalculateServiceTime() {
 
     var currentIndex = -1;
     for (var i = 0; i < exectuteTimes.length; i++) {
+       console.log("test@@")
+      console.log(currentIndex)
+      console.log(exectuteTimes)
       currentIndex = findNextIndex(currentIndex, exectuteTimes);
 
       if (currentIndex == -1) return;
