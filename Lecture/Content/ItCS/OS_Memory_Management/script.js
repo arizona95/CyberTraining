@@ -220,7 +220,7 @@ var logBox = document.getElementById("logBox");
 var memoryDiv = document.getElementById("memory");
 var processTable = document.getElementById("processTable");
 
-var memControlBlockSize = 16;
+var memControlBlockSize = 0;
 var processID = 0;
 var processes = [];
 
