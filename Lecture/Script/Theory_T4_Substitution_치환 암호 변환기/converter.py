@@ -93,6 +93,7 @@ if __name__ == '__main__':	# 프로그램의 시작점일 때만 아래 코드 �
 
 			with open("decrypted.txt", 'w', encoding = "utf-8") as f :
 				f.write(decryption_by_rules)
+				exit()
 
 		# 2. 바뀔 문자 입력
 		to_change = get_to_change()
@@ -100,6 +101,7 @@ if __name__ == '__main__':	# 프로그램의 시작점일 때만 아래 코드 �
 
 			with open("decrypted.txt", 'w', encoding = "utf-8") as f :
 				f.write(decryption_by_rules)
+				exit()
 
 		# 2. 규칙 업데이트
 		substitution_rules[from_change] = to_change

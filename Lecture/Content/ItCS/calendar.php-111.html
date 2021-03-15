@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head;
+         any other head content must come *after* these tags -->
+
+    <!-- Icon to use on the browser bar -->
+    <link rel="icon" href="calendar/images/web-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="calendar/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="calendar/Skeleton/css/normalize.css">
+    <link rel="stylesheet" href="calendar/Skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="calendar/css/skeleton-modifications.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='calendar/fonts/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- Ace Code Editor - https://ace.c9.io/ -->
+    <script type="text/javascript" src="calendar/ace-builds/src-noconflict/ace.js" charset="utf-8">
+    </script>
+
+    <!-- Chart.js - http://www.chartjs.org -->
+    <script type="text/javascript" src="calendar/chartjs/Chart.bundle.min.js" charset="utf-8">
+    </script>
+
+    <!-- To support challenge/response authentication within course notes-->
+        <script type="text/javascript">
+      var nonce = "720e65935c1542ad804c9a5eb08da2b64859b7f48f2efd4c7cce38602087ed5b";
+    </script>
+    <script type="text/javascript" src="calendar/js/sha256.js"></script>
+    
+    <!-- Styles for the submission System -->
+    <link href="calendar/css/calendar-default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="../../ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="calendar/highlight/styles/color-brewer.css">
+    <script src='calendar/highlight/highlight.pack.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="calendar/Font-Awesome/css/font-awesome.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="calendar/datatables.net/datatables.min.css">
+
+    <!-- Printing -->
+    <link rel="stylesheet" type="text/css" media="print" href="calendar/css/calendar-print.css">
+
+    <!-- Custom CSS based on user preferences -->
+    <link href='docs/sy110_cdrD.css' rel='stylesheet'>
+    <!-- unable to find the file below from CUSTOMCSS (resources) variable:
+         <link href='calendar-core/home.css' rel='stylesheet'>
+    -->
+      
+      
+    <!-- Custom JavaScript based on user preferences -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="calendar/jquery/js/jquery-3.3.1.min.js"></script>
+    <script src="calendar/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="calendar/bootstrap3-ie10-viewport-bug-workaround/ie10-viewport-bug-workaround.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" src="calendar/datatables.net/datatables.min.js"></script>
+
+  <title>CYBERWAR (Fall 2020)</title>
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--
+            <a class="navbar-brand" href="#">
+              <img alt="Navbar!" src="css/images/web-icon.png" width="24">
+            </a>
+          -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="calendar.php-2.html">
+                CYBERWAR - Introduction to Cyber Security</a></li>
+        
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+  <!-- End TopBar and CSS Stuff! -->
+<!-- Begin providing the contents of the page -->
+<div class="container">
+<!--
+  OriginalCipher.html
+  A.K.Herber '12
+  20Jun2012
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <title>SI110: Vigenere Cipher</title>
+    <link rel="STYLESHEET" href="../../lec/lec.css">
+
+    <script type="text/javascript">
+    <!--    
+
+    // Makes entire String uppercase and Removes non-letter
+    // items from string if there is something there
+    function fixString(inputStr){
+      if (inputStr == null)
+        return "";      
+      else {        
+        inputStr = inputStr.toUpperCase();        
+        //regex out the non-letters
+        inputStr = inputStr.replace(/[^a-z]/gi, "");        
+        return inputStr;
+      }
+    }
+
+    // Actually completes the Vigenere cipher
+    function vCipher (key, plain, cipher){
+      //Make the values manageable (uppercase, letter characters only)
+      var key = fixString(key);
+      var plain = fixString(plain);
+      var cipher = fixString(cipher);
+      
+      var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"      
+      
+      //Detect if Ciphering or Deciphering or Getting the Key
+      
+      var output = "";
+      
+      // Figure out what we have and process appropriately
+      // If we have the key, solve forwards or backwards
+      if(key != ""){
+      
+        var input;    
+        
+        if(cipher == "" && plain == ""){
+          alert("2 Fields must be populated.");
+          return;
+        }
+        else if(cipher == ""){  
+          input = plain;
+          var forward = true;
+        }
+        else {
+          input = cipher;
+          var forward = false;
+        }
+        
+        var keyIndex = 0;
+        
+        //The loop
+        for (i = 0; i < input.length; i ++){
+        
+          //Grab the letter at I
+          var charIn = input.charAt(i);
+          
+          //Get the numerical value of the letter to prevent ascii math in our code
+          var charVal = alphabet.indexOf(charIn);
+          
+          //Add/Subtract the value of the key's postion to the value of the Input text position
+          if (forward)        
+            charVal += alphabet.indexOf(key.charAt(keyIndex));
+          else
+            charVal -= alphabet.indexOf(key.charAt(keyIndex));
+          
+          //Mod the value by 26 to maintain the character within the alphabet
+          //Complex method to account for the modulus of a negative number
+          charVal = ((charVal%26)+26)%26;
+          
+          //Turn the value back into a letter
+          output += alphabet.charAt(charVal);
+          
+          //Increment the key Index to continue looping
+          keyIndex = (keyIndex + 1) % key.length;
+        }
+        
+        //Reassign the text values for pretty coding
+        if(forward)
+          cipher = output;
+        else
+          plain = output;
+      }
+      
+      // If we dont have the key, solve for it.
+      else{
+        var output = "";
+        
+        //The loop
+        for (i = 0; i < plain.length; i++){
+        
+          //Grab the letter at I
+          var plainCharVal = alphabet.indexOf(plain.charAt(i));
+          var cipherCharVal = alphabet.indexOf(cipher.charAt(i));
+          
+          //Calculate the distance between them 
+          //(this is the numerical location of the key character)
+          charVal = cipherCharVal - plainCharVal;
+          
+          //Mod the value by 26 to maintain the character within the alphabet
+          //Complex method to account for the modulus of a negative number
+          charVal = ((charVal%26)+26)%26;
+          
+          //Turn the value back into a letter
+          output += alphabet.charAt(charVal);
+        }
+        
+        //Reassign the text values for pretty coding
+        key = output;
+      }
+      
+      //Set html boxes with new info
+      document.getElementById("key").value = key;
+      document.getElementById("plain").value = plain;
+      document.getElementById("cipher").value = cipher;
+      
+      return;
+    }
+    
+    -->
+    </script>
+    
+  </head>
+  
+  <body id="bg">
+    <script type="text/javascript">var noCSDepartmentBadge = null;</script>
+    <div id="NavBar"><script type="text/javascript" src="../../navbar.js"></script></div>  
+
+
+    <p class="sec">
+      With this utility you can use the Vigenere Cipher do encrypt
+      messages, decrypt messages, and recover keys.
+      Enter two of the three values (key, plaintext, ciphertext) and
+      click the "Update" button, and this utility computes the third
+      value.
+    </p>
+
+    
+    <form action="">
+      <table>
+        <tr>
+          <td align="right">Key:</td><td><input type="text" id="key" style="font:24px 'Courier New';"></td>
+        </tr>
+        <tr>
+          <td align="right">Plaintext:</td><td><input type="text" id="plain" style="font:24px 'Courier New';"></td>
+        </tr>
+        <tr>
+          <td align="right">Ciphertext:</td><td><input type="text" id="cipher" style="font:24px 'Courier New';"></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><input value="Update" type="button" onclick="vCipher(key.value, plain.value, cipher.value)">
+          <input value="Clear" type="reset"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+
+</div> <!-- /container --></body></html>
