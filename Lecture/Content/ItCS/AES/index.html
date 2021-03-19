@@ -1,0 +1,95 @@
+<html>
+  <head>
+     <script src="../jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="aes.js" charset="utf-8"></script>
+    <link href="aes.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="menu">
+
+      <center>
+        <button id="menuEnc" class="selected">
+          <p>Encryption</p>
+        </button>
+        <button id="menuDec">
+          <p>Decryption</p>
+        </button>
+        <button id="menuSpecs">
+          <p>Specification</p>
+        </button>
+        <!--<div class="warning" id="warning">
+        <button id="hide">
+          <p>Hide</p>
+        </button>
+        <h2>Warning!</h2>
+        <p>THIS IS NOT SECURE! I repeat, THIS IS NOT SECURE! I am trying to follow
+          all the AES documentation to the letter, but I AM NOT AN EXPERT. If you can improve this code, please fork this pen and implement your improvement. I will try to inspect all the forks and i will implement your improvement in this pen. Sorry for
+          my english.</p>
+      </div>-->
+      </center>
+    </div>
+    <div class="footer">
+      <center>
+        <p id="status"></p>
+      </center>
+    </div>
+    <div id="enc">
+      <center>
+        <h2></h2>
+        <h1>CYBERWAR - AES Encryption</h1>
+        <h2>PlainText</h2>
+        <textarea id="clearTextInput" placeholder="Type some text here..."></textarea>
+        <h2>Key</h2>
+        <input type="password" id="key" placeholder="Type a password...">
+        <br>
+        <button id="encrypt">
+          <p>Encrypt</p>
+        </button>
+        <br>
+        <h2>CipherText</h2>
+        <textarea disabled id="cipherTextOutput"></textarea>
+      </center>
+    </div>
+    <div id="dec">
+      <center>
+        <h2></h2>
+        <h1>CYBERWAR - AES Decryption</h1>
+        <h2>CipherText</h2>
+        <textarea id="cipherTextInput" placeholder="Type some text here..."></textarea>
+        <h2>Key</h2>
+        <input type="password" id="key2" placeholder="Type a password...">
+        <br>
+        <button id="decrypt">
+          <p>Decrypt</p>
+        </button>
+        <br>
+        <h2>PlainText</h2>
+        <textarea disabled id="clearTextOutput"></textarea>
+      </center>
+    </div>
+    <div id="specs">
+      <center>
+        <h1>Specification</h1>
+      </center>
+      <pre>AES key length: 128 bit
+  AES block length: 128 bit
+  AES key: first 128 bit of the key derivation output
+  AES mode: CTR
+  AES salt length: 64 bit
+  CTR counter length: 64 bit
+  AES padding: none
+
+  Authentication function: HMAC-SHA256
+  Authentication function key length: 128 bit
+  Authentication function key: last 128 bit of the key derivation output
+
+  Key derivation function: PBKDF2-HMAC-SHA256
+  Key derivation salt length: 256 bit
+  Key derivation output length: 256 bit
+  Key derivation iterations: 8192
+
+  Ciphertext composition: key derivation salt (256 bit) + AES salt (64 bit) + authentication code (256 bit) + ciphertext (cleartext length)</pre>
+    </div>
+  </body>
+</html>

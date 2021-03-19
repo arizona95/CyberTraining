@@ -1,0 +1,19 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "description": "Run python scripts in your browser. Offline!",
+   "icons": {
+      "128": "skulpt128.png",
+      "16": "skulpt16.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDduhJ3eESnXdCfv0zGMJZgl3lsVhqon6uGRvqJrEwh0Gnc8VM4d17kQQt+pa54ocUtH8gBf+M8kaUJatyTsZYCHG5uAQC93BN5DlKm8Fikf2LLEForigS/DM11XbdjtxGOxU3uYv0tEyL57SgvRjSEfRL0dbBzdOGjRYcy22G9NQIDAQAB",
+   "name": "Skulpt Interpreter",
+   "sandbox": {
+      "pages": [ "sandbox.html" ]
+   },
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1"
+}

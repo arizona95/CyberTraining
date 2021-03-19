@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#toolbar {
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: #222222;
+}
+
+#toolbar h1 {
+    display: inline;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    color: #EEEECE;
+}
+
+#toolbar button {
+    float: middle;
+    height: 45px;
+    width : 100px;
+    margin-left: 200px;
+    margin-bottom: 5px;
+    background-color: #4CAF50;
+    color: #FFFFEF;
+    border: none;
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+#toolbar span {
+    color: #FFFFEF;
+    vertical-align: middle;
+    display: inline-block;
+    height: 30px;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#editor { 
+    border-top-style: solid;
+    border-top-color: #666666;
+    border-top-width: 1px;
+    position: relative;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    height: 600px;
+}
+
+#output { 
+    border-top-style: solid;
+    border-top-color: #666666;
+    border-top-width: 1px;
+    position: relative;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 400px;
+}

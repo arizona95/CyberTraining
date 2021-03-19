@@ -1,0 +1,42 @@
+<!--
+  - Copyright (c) 2012 The Chromium Authors. All rights reserved.
+  - Use of this source code is governed by a BSD-style license that can be
+  - found in the LICENSE file.
+  -->
+<!doctype html>
+<html>
+  <head>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script src="skulpt.js" type="text/javascript"></script>
+    <script src="builtin.js" type="text/javascript"></script>
+</head>
+  <body>
+
+    <script>
+    function builtinRead(x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+        return Sk.builtinFiles["files"][x];
+    }
+
+      // Set up message event handler:
+      window.addEventListener('message', function(event) {
+        console.log(event)
+        
+        function outf(text) {
+            event.source.postMessage({'stdout': text}, "*");
+        }
+        
+        Sk.configure({output:outf, read:builtinRead});
+        
+        try {
+            var response = Sk.importMainWithBody("<stdin>", false, event.data.source_code);
+            console.log(response);
+            eval(response);
+        } catch(e) {
+            event.source.postMessage({'stdout':e.toString()}, "*");
+        }
+    });
+    </script>
+  </body>
+</html>
