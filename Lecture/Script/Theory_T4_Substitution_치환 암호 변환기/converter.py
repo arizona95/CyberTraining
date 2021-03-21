@@ -48,7 +48,7 @@ def frequency_check(target):
 	printer = ""
 	for cnt, word in enumerate(sorted_dict) :
 		#문자열 길이 맞추기
-		printer +=  f"{word}:{sorted_dict[word]:7}    "
+		printer +=  f"{word}:{sorted_dict[word]:6}    "
 
 		#5개 출력 마다 줄바꿈
 		if (cnt+1)%7 == 0 : printer += "\n"
@@ -56,7 +56,36 @@ def frequency_check(target):
 	print("\n" + printer + "\n")
 
 
+def word_frequency_check(target):
 
+	#빈도분석 함수
+
+	dictionary = dict()
+
+	if target != None:
+		target = re.sub('[^A-Za-z ]+', '', target)  # 영어대문자, 영어소문자 만 남김
+
+	if target == None or target == '':
+		return
+
+	for word in target.split(" ") :
+		try:
+			cnt = dictionary[word]
+			dictionary[word] = cnt + 1
+		except KeyError:
+			dictionary[word] = 1
+
+	sorted_dict = dict(sorted(dictionary.items(), key= operator.itemgetter(1), reverse=True))
+
+	printer = ""
+	for cnt, word in enumerate(sorted_dict) :
+		#문자열 길이 맞추기
+		printer +=  f"{word:15}:{sorted_dict[word]:7}    "
+
+		#5개 출력 마다 줄바꿈
+		if (cnt+1)%7 == 0 : printer += "\n"
+
+	print("\n" + printer + "\n")
 
 def substitution_by_rules(cipher_txt, substitution_rules) :
 	decryption_by_rules = cipher_txt
@@ -85,6 +114,8 @@ if __name__ == '__main__':	# 프로그램의 시작점일 때만 아래 코드 �
 	print(cipher_txt+"\n")
 	# 1. 빈도수 출력
 	frequency_check(decryption_by_rules)
+	# 1. 단어 빈도수 출력
+	word_frequency_check(decryption_by_rules)
 
 	while 1 :
 		# 2. 바꿀 문자 입력
