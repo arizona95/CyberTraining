@@ -103,8 +103,8 @@ function clicked(who){
 	if (sourceNode == ""){	
 		sourceNode = objects[who.id];
 		setSelection1(sourceNode.obj);
-		appendText("sender is " + sourceNode.name + "<br />");
-		appendText( sourceNode.name + "'s IP is: " + sourceNode.ip + "<br />");
+		appendText("발신자는 " + sourceNode.name + "<br />");
+		appendText( sourceNode.name + " 의 IP 는:  " + sourceNode.ip + "<br /><br />");
 	}
 	else if (sourceNode == objects[who.id]){
 		if(destNode == ""){
@@ -117,8 +117,8 @@ function clicked(who){
 
 			sourceNode = objects[who.id];
 			setSelection1(sourceNode.obj);
-			appendText("sender is " + sourceNode.name + "<br />");
-			appendText( sourceNode.name + "'s IP is: " + sourceNode.ip + "<br />");	
+			appendText("발신자는 " + sourceNode.name + "<br />");
+			appendText( sourceNode.name + " 의 IP 는:  " + sourceNode.ip + "<br /><br />");	
 			goBit = false;
 			destNode = "";
 		}
@@ -126,8 +126,8 @@ function clicked(who){
 	else if (destNode == ""){
 		destNode = objects[who.id];
 		setSelection2(destNode.obj);
-		appendText("receiver is " + destNode.name + "<br />");
-		appendText( destNode.name + "'s IP is: " + destNode.ip + "<br />");
+		appendText("수신자는 " + destNode.name + "<br />");
+		appendText( destNode.name + " 의 IP 는:  " + destNode.ip + "<br /><br />");
 		appendText("<hr />");
 		goBit = true;
 	}	
@@ -138,8 +138,8 @@ function clicked(who){
 		
 		sourceNode = objects[who.id];
 		setSelection1(sourceNode.obj);
-		appendText("sender is " + sourceNode.name + "<br />");
-		appendText( sourceNode.name + "'s IP is: " + sourceNode.ip + "<br />");
+		appendText("발신자는 " + sourceNode.name + "<br />");
+		appendText( sourceNode.name + " 의 IP 는:  " + sourceNode.ip + "<br /><br />");
 		goBit = false;
 		destNode = "";
 	}	
@@ -186,7 +186,7 @@ function arpRequest(){
 				}
 			}			
 			
-			arpIP = prompt("Enter IP you are searching for:", arpIP);
+			arpIP = prompt("찾고자 하는 IP 를 입력하세요:", arpIP);
 			
 			//get the first arpReq node to the source location
 			arpReqsA.style.left = sourceNode.x + "px";
@@ -287,7 +287,7 @@ function step1(){
 	packet.style.left = sourceNode.x + "px";
 	packet.style.top = sourceNode.y + "px";
 	
-	appendText(currentNode.name + " calculates " + currentNode.name + "'s network address." + "<br />");
+	appendText(currentNode.name + " calculates " + currentNode.name + "'s network address." + "<br /><br />");
 	appendText("IP: " + currentNode.ip + "<br />");
 	appendText("Subnet Mask: 255.255.255.0" + "<br />");
 	appendText("Net Address: " + currentNode.net + "<br />");
@@ -296,7 +296,7 @@ function step1(){
 }
 
 function step2(){
-	appendText(currentNode.name + " calculates " + destNode.name + "'s network address." + "<br />");
+	appendText(currentNode.name + " calculates " + destNode.name + "'s network address." + "<br /><br />");
 	appendText("IP: " + destNode.ip + "<br />");
 	appendText("Subnet Mask: 255.255.255.0" + "<br />");
 	appendText("Net Address: " + destNode.net + "<br />");
@@ -305,7 +305,7 @@ function step2(){
 }
 
 function step3(){
-	appendText(currentNode.name + " determines if " + destNode.name + " is on the same network." + "<br />");
+	appendText(currentNode.name + " determines if " + destNode.name + " is on the same network." + "<br /><br />");
 	appendText(currentNode.name + "'s Net Address: " + currentNode.net + "<br />");
 	appendText(destNode.name + "'s Net Address: " + destNode.net + "<br />");
 	if(currentNode.net == destNode.net){
@@ -376,7 +376,7 @@ function step8(){
 
 function step9(){
 
-	//detect if sender is router(gateway)
+	//detect if 발신자는 router(gateway)
 	if(currentNode.type == "router"){
 		//go to the router specific step	
 		state=13;
