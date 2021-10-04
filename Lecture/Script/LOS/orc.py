@@ -24,5 +24,3 @@ res = urllib.request.urlopen(req)
 data = res.read().decode('utf-8')
 
 print(len(data))
-
-
