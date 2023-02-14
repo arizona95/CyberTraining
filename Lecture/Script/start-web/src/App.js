@@ -1,44 +1,81 @@
-import React, { useState, useEffect } from "react";
-import "./styles.css"
+//import logo from './logo.svg';
+//import './App.css';
 
-export default function App() {
-  const [seconds, setSeconds] = useState(100);
-  const [onoff, setOnoff] = useState(true);
-  const [inputMin, setInputMin] = useState(0);
-  const [inputSec, setInputSec] = useState(0);
+import React, {useEffect, useState} from "react"
 
-  useEffect(() => {
-    if (onoff === true){
-      const countdown = setInterval(() => {
-        if (parseInt(seconds) > 0) {
-          setSeconds(parseInt(seconds) - 1);
-        }
-        if (parseInt(seconds) <= 0) {
-          clearInterval(countdown);
-        }
-      }, 1000);
+function App(){
+    const [sec, setSec] = useState(100);
+    const [onoff, setOnoff] = useState(true);
+    const [inputSec, setInputSec] = useState(0);
+    const [inputMin, setInputMin] = useState(0);
 
-      return ()=> clearInterval(countdown)
-    }
-  }, [seconds, onoff]);
+    useEffect(()=>{
+        console.log(inputMin)
+        console.log(inputSec)
+        console.log(sec)
+        console.log(inputMin*60+inputSec)
+        const counterVar = setInterval(() =>{
 
+            if(onoff === true){
+                if(sec>0){
+                    setSec(parseInt(sec)-1)
+                }
+            }
+        }, 1000)
+
+        return () => clearInterval(counterVar)
+    }, [sec, onoff]);
+
+    return (
+        <div className="App">
+        <h1>Counter!</h1>
+        <div>
+            <h2>{parseInt(sec/60)}:{sec%60}</h2>
+            <h3>
+                {onoff===true?"running":"stopped"}
+            </h3>
+            <button onClick={()=>{
+                setSec(parseInt(sec)+1)
+            }} >increaser </button>
+
+            <button onClick={()=>{
+                setOnoff(onoff === true ? false:true)
+            }} >stop-run </button>
+
+            <input onChange = {(v)=> {setInputMin(parseInt(v.target.value))}}/>
+            <input onChange = {(v)=> {setInputSec(parseInt(v.target.value))}}/>
+
+            <button onClick={()=>{
+                setSec(inputMin*60+inputSec);
+            }} >setting-set</button>
+        </div>
+        </div>
+
+    );
+}
+
+export default App;
+/*
+function App() {
   return (
     <div className="App">
-      <h1>CountDown!</h1>
-      <div>
-        <h2>
-          {parseInt(seconds/60)}:{seconds%60}
-        </h2>
-        <h3>
-          {onoff===true?"running":"stopped"}
-        </h3>
-      </div>
-      <button onClick={()=>{setSeconds(parseInt(seconds+1))}}> plus-one </button>
-      &nbsp;<button onClick={()=>{setSeconds(0)}}>to-zero</button>
-      &nbsp;<button onClick={()=>{setOnoff(onoff === true?false:true)}}>timer-onoff</button>
-      &nbsp;<input onChange = {(i)=>{setInputMin(parseInt(i.target.value))}}/>
-      &nbsp;:&nbsp;<input onChange = {(i)=>{setInputSec(parseInt(i.target.value))}}/>
-      &nbsp;<button onClick={()=>{setSeconds(60*inputMin+inputSec)}}>setting-timer</button>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
+
+export default App;
+*/
