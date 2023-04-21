@@ -1,0 +1,7 @@
+powershell "Move-Item -Path '%HOMEDRIVE%%HOMEPATH%\Downloads\CanonicalGroupLimited.Ubuntu*' -Destination '%HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Ubuntu.appx'"
+powershell "Add-AppPackage -path %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Terminal.msixbundle"
+powershell "Add-AppPackage -path %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Ubuntu.appx"
+powershell "Copy '%HOMEDRIVE%\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.11*\*' '%HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Terminal' -Recurse"
+powershell "Copy '%HOMEDRIVE%\Program Files\WindowsApps\CanonicalGroupLimited.Ubuntu20.04*\*' '%HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Ubuntu' -Recurse"
+powershell "%HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Ubuntu\ubuntu2004.exe"
+powershell "%HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Terminal\WindowsTerminal.exe"
