@@ -98,7 +98,7 @@ def substitution_by_rules(cipher_txt, substitution_rules) :
 
 
 if __name__ == '__main__':	# 프로그램의 시작점일 때만 아래 코드 실행
-	
+
 	# 암호문 읽기
 	# f.close 보다 간단한 문법 !
 	with open("cipher.txt", 'r', encoding = "utf-8") as f :
