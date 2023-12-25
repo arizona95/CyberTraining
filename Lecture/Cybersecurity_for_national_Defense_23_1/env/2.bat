@@ -1,5 +1,0 @@
-powershell "mkdir %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework"
-powershell "mkdir %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Terminal"
-powershell "mkdir %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Ubuntu"
-powershell "wget -Uri https://github.com/microsoft/terminal/releases/download/v1.11.2921.0/Microsoft.WindowsTerminal_1.11.2921.0_8wekyb3d8bbwe.msixbundle -OutFile %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\Terminal.msixbundle"
-powershell "wget -Uri http://archive.ubuntu.com/ubuntu/pool/universe/b/bgpdump/bgpdump_1.6.0-2_amd64.deb -OutFile %HOMEDRIVE%%HOMEPATH%\Downloads\cyber_homework\bgpdump_1.6.0-2_amd64.deb"
